@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # Routes
   get 'account' => 'account#index'
   get 'account/security' => 'account#security'
+  get 'account/manage_email' => 'account#manage_email'
   get 'apply' => 'apply#index'
   get 'jobs' => 'jobs#index'
   get 'recommendations' => 'recommendations#index'
