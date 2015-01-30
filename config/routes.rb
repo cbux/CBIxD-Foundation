@@ -4,8 +4,9 @@ Rails.application.routes.draw do
 
   # Routes
   get 'account' => 'account#index'
+  get 'account/security' => 'account#security'
   get 'apply' => 'apply#index'
-  get 'jobs' => 'job#index'
+  get 'jobs' => 'jobs#index'
   get 'recommendations' => 'recommendations#index'
   get 'resumes' => 'resume#index'
   get 'saved_jobs' => 'saved_jobs#index'
