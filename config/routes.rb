@@ -10,12 +10,13 @@ Rails.application.routes.draw do
   get 'jobs' => 'jobs#index'
   get 'recommendations' => 'recommendations#index'
   get 'resumes' => 'resume#index'
+  get 'resumes/cover_letter' => 'resume#cover_letter'
   get 'saved_jobs' => 'saved_jobs#index'
   get 'saved_searches' => 'saved_searches#index'
   get 'sink' => 'sink#index'
   get 'user' => 'user#index'
   get 'user/sign_up' => 'user#sign_up'
-  get 'user/forgot_password' => 'user#forgot_password'
+ 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
