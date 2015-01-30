@@ -4,8 +4,9 @@ Rails.application.routes.draw do
 
   # Routes
   get 'account' => 'account#index'
+  get 'account/security' => 'account#security'
   get 'apply' => 'apply#index'
-  get 'jobs' => 'job#index'
+  get 'jobs' => 'jobs#index'
   get 'recommendations' => 'recommendations#index'
   get 'resumes' => 'resume#index'
   get 'saved_jobs' => 'saved_jobs#index'
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
   get 'sink' => 'sink#index'
   get 'user' => 'user#index'
   get 'user/sign_up' => 'user#sign_up'
-    get 'user/forgot_password' => 'user#forgot_password'
+  get 'user/forgot_password' => 'user#forgot_password'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
