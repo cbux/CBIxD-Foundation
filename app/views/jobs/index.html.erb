@@ -2,15 +2,16 @@
 <div class="row">
     <div class="large-9 columns">
         <h1> Sales Representative Jobs in Atlanta, GA</h1>
-    </div>
+    </div><!--close column-->
     <div class="large-3 columns">
         <a href="#" class="button secondary">Create Job Alert</a>
-    </div>
-</div>
+    </div><!--close column-->
+</div><!--clos row-->
 
 <!--filters-->
+<!--TODO Collaps filters on mobile-->
 <div class="row">
-    <div class="large-4 columns">
+    <div class="large-3 columns">
         <!--Distance from you-->
         <label>Distance from You</label>
         <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="button dropdown secondary">with 25 miles</button>
@@ -25,33 +26,33 @@
         <label>Date Posted</label>
             <div class="row">
                 <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">24 Hours</label>
-            </div>
+            </div><!--close row-->
             <div class="row">
                 <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">3 Days</label>
-            </div>
+            </div><!--close row-->
             <div class="row">
                 <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">7 Days</label>
-            </div>
+            </div><!--close row-->
             <div class="row">
                 <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">30 Days</label>
-            </div>
+            </div><!--close row-->
         <!--Job Type-->
-        <label>Check these out</label>
+        <label>Job Type</label>
             <div class="row">
                 <input id="checkbox1" type="checkbox"><label for="checkbox1">Full-Time</label>
-            </div>
+            </div><!--close row-->
             <div class="row">
                 <input id="checkbox2" type="checkbox"><label for="checkbox2">Part-Time</label>
-            </div>
+            </div><!--close row-->
             <div class="row">
                 <input id="checkbox2" type="checkbox"><label for="checkbox2">Contractor</label>
-            </div>
+            </div><!--close row-->
             <div class="row">
                 <input id="checkbox2" type="checkbox"><label for="checkbox2">Intern</label>
-            </div>
+            </div><!--close row-->
             <div class="row">
                 <input id="checkbox2" type="checkbox"><label for="checkbox2">Seasonal/Temp</label>
-            </div>
+            </div><!--close row-->
         <!--Salary-->
             <label>Salary</label>
                 <input type="text" placeholder="Minimum Salary" />
@@ -61,11 +62,11 @@
             <label>Job Category</label>
                 <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="button dropdown secondary">Select a Category</button>
                 <br>
-            <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
-              <li><a href="#">Information Technology</a></li>
-              <li><a href="#">Sales</a></li>
-              <li><a href="#">Accounting</a></li>
-            </ul>
+                <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
+                    <li><a href="#">Information Technology</a></li>
+                    <li><a href="#">Sales</a></li>
+                    <li><a href="#">Accounting</a></li>
+                </ul>
         <!--Degree Required-->
         <!-- TODO Multiselect-->
             <label>Degree Required</label>
@@ -76,23 +77,57 @@
               <li><a href="#">Bachelors</a></li>
               <li><a href="#">Master</a></li>
             </ul>
-    </div>
-    <div class="large-8 columns">
+    </div><!--close column-->
+
+    <!--start right column sort and results-->
+    <div class="large-9 columns">
         <div class="row">
-            <div class="large-4 columns">
+            <div class="medium-3 columns">
                 <p>1,356 jobs found</p>
-            </div>
-            <div class="large-4 columns">
-                <ul>
-                    <label>Sort By:</label>
-                    <li>Relevance</li>
-                    <li>Date</li>
-                    <li>Location</li>
-                </ul>
-            </div>
-        </div>
+            </div><!--close column-->
+            <!--start sort-->
+            <!--TODO collapse sort on mobile-->
+            <div class="medium-7 columns">
+                <dl class="sub-nav">
+                    <dt>Sort By:</dt>
+                        <dd class="active"><a href="#">Relevance</a></dd>
+                        <dd><a href="#">Date</a></dd>
+                        <dd><a href="#">Location</a></dd>
+                </dl>
+            </div><!--close columns-->
+        </div> <!--end row-->
+        <hr />
+        <!--job result-->
         <div class="row">
-            <p>Account Manager</p>
-        </div>
-    </div>
-</div>
+            <div class="large-6 columns">
+                <p>Account Manager</p>
+                <p>Full-Time | Entry Level | $10/hr | Sales, Training | Our client, a leader in the production of medical technology solutions has an immediate need for...</p>
+                <!--TODO hide link list on mobile-->
+                <ul class="inline-list">
+                    <li><a href="#">Save Job</a></li>
+                    <li><a href="#">Email Job</a></li>
+                    <li><a href="#">See Details</a></li>
+                </ul>
+            </div><!--close column-->
+            <div class="large-2 columns">
+                <a href="#">ABC Company</a>
+            </div><!--close column-->
+            <div class="large-2 columns">
+                <p>GA-Atlanta</p>
+                <a href="#"> + View 2 more</a>
+            </div><!--close column-->
+            <div class="large-2 columns">
+                <p>1 Hour Ago</p>
+            </div><!--close column-->
+            <hr />
+        </div><!--close row-->
+    </div><!--close right column-->
+        <!--pagination-->
+        <div class="row">
+            <div class="large-1 columns"></div>
+            <div class="large-4 large-offset-7 columns">
+                <a href="#" class="button secondary">Previous</a>
+                <a href="#" class="button secondary">Next</a>
+            </div><!--close column-->
+        </div><!--close row-->
+</div><!--close row-->
