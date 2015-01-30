@@ -1,7 +1,6 @@
 <div class="row"> 
 	<div class="column small-12 text-center">
 		<img src="#"/>
-		<p> Text about benefits</p>
 	</div>
 
 </div>
@@ -28,7 +27,23 @@
 	      		<input id="checkbox1" type="checkbox"><label for="checkbox1">Remember Me</label>
 			</div>
 			<div class="column small-6 end text-right">
-				<a href="#">Forgot Password</a>
+				<a href="#" data-reveal-id="myModal">Forgot Password</a>
+				<div id="myModal" class="reveal-modal" data-reveal>
+					  	<h2>Forgot Password</h2>
+					  	<p class="lead">Some text about what to do here.</p>
+					  	 <div class="row">
+						    <div class="large-12 columns">
+						      <label>Email Address
+						        <input type="text" placeholder="Email Address" />
+						      </label>
+						    </div>
+						  </div>
+						  <div class="row">
+
+						  			<a href="#" class="button ">Send Password</a>
+						  </div>
+					  	<a class="close-reveal-modal">&#215;</a>
+					</div>	
 			</div>
 		</div>
 		<div class="row">
@@ -38,10 +53,11 @@
 		</div>
 		<div class="row">
 			<div class="column small-12 large-centered medium-centered text-center">
-				<p> Don't have an account? <a href="#">Sign Up Now</a></p>	
+				<p> Don't have an account? <a href="#">Sign Up Now</a></p>
 			</div>
 		</div>
 	</div>
+
 
 
 <!-- Social Stuff-->
@@ -51,7 +67,7 @@
 	
 		<div class="row">
 			<div class="column small-12 large-centered medium-centered text-center">
-				<p> or sign in with</p>
+				<p> or sign up with</p>
 			</div>
 		</div>
 

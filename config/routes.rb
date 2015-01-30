@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'saved_searches' => 'saved_searches#index'
   get 'sink' => 'sink#index'
   get 'user' => 'user#index'
+  get 'user/sign_up' => 'user#sign_up'
+    get 'user/forgot_password' => 'user#forgot_password'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
