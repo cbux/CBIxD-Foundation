@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'account/security' => 'account#security'
   get 'account/manage_email' => 'account#manage_email'
   get 'apply' => 'apply#index'
+  get 'apply/apply_unknown' => 'apply#apply_unknown'
+  get 'apply/signin_guest' => 'apply#signin_guest'
   get 'jobs' => 'jobs#index'
   get 'recommendations' => 'recommendations#index'
   get 'resumes' => 'resume#index'
