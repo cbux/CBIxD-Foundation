@@ -1,38 +1,22 @@
-
-<div data-alert class="alert-box success radius">
- YOU HAVE SIGNED OUT SUCCESSFULLY. 
-  <a href="#" class="close">&times;</a>
+<div class="row">
+	<div class="column small-12 medium-12 large-12">
+		<div data-alert class="alert-box success radius">
+		 YOU HAVE SIGNED OUT SUCCESSFULLY. 
+		  <a href="#" class="close">&times;</a>
+		</div>
+	</div>
 </div>
 
 <div class="row"> 
 	<div class="column small-12 text-center">
-		<img src="#" title="CareerBuilder Logo" alt="CareerBuilder Logo"/>
-		<p> Text about benefits</p>
-		<p>Already have an account? <a href="#">Sign In</a></p>
+		<img src="#"/>
 	</div>
 
 </div>
 
-
-
-
 <!-- Form Area -->
 <div class="row">
 	<div class="column small-12 medium-6 large-6">
-		<div class="row">
-			<div class="column small-12 large-centered medium-centered">
-				<label>First Name
-	        		<input type="text" placeholder="First Name" />
-	      		</label>
-			</div>
-		</div>
-		<div class="row">
-			<div class="column small-12 large-centered medium-centered">
-				<label>Last Name
-	        		<input type="text" placeholder="Last Name" />
-	      		</label>
-			</div>
-		</div>
 		<div class="row">
 			<div class="column small-12 large-centered medium-centered">
 				<label>Email
@@ -42,14 +26,7 @@
 		</div>
 		<div class="row">
 			<div class="column small-12 large-centered medium-centered">
-				<label>Zipcode
-	        		<input type="text" placeholder="Zipcode" />
-	      		</label>
-			</div>
-		</div>
-		<div class="row">
-			<div class="column small-12 large-centered medium-centered">
-				<label>Password
+					<label>Password
 			<div class="row collapse">
 				<div class="column small-10">
 					<!-- TODO password validation -->
@@ -63,26 +40,42 @@
 		</label>
 			</div>
 		</div>
-		<!-- TODO message : Make Dynamic Password Validation -->
 		<div class="row">
-			<div class="column small-6 large-6 medium-6">
-				<li> 8 to 15 characters</li>
-				<li>Lowercase Letters</li>
+			<div class="column small-6">
+	      		<input id="checkbox1" type="checkbox"><label for="checkbox1">Remember Me</label>
 			</div>
-		
-			<div class="column small-6 large-6 medium-6">
-				<li>Number or Symbol</li>
-				<li>Uppercase Letters</li>
+			<div class="column small-6 end text-right">
+				<a href="#" data-reveal-id="myModal">Forgot Password</a>
+				<div id="myModal" class="reveal-modal" data-reveal>
+					  	<h2>Forgot Password</h2>
+					  	<p class="lead">Some text about what to do here.</p>
+					  	 <div class="row">
+						    <div class="large-12 columns">
+						      <label>Email Address
+						        <input type="text" placeholder="Email Address" />
+						      </label>
+						    </div>
+						  </div>
+						  <div class="row">
+
+						  			<a href="#" class="button ">Send Password</a>
+						  </div>
+					  	<a class="close-reveal-modal">&#215;</a>
+					</div>	
 			</div>
 		</div>
-	
 		<div class="row">
 			<div class="column small-12 large-centered medium-centered">
-				<a href="#" class="button expand">Sign Up</a>
+				<a href="#" class="button expand">Sign In</a>
 			</div>
 		</div>
-		
+		<div class="row">
+			<div class="column small-12 large-centered medium-centered text-center">
+				<p> Don't have an account? <a href="#">Sign Up Now</a></p>
+			</div>
+		</div>
 	</div>
+
 
 
 <!-- Social Stuff-->

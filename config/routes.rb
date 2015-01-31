@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'sink' => 'sink#index'
   get 'user' => 'user#index'
   get 'user/sign_up' => 'user#sign_up'
+  get 'user/sign_out' => 'user#sign_out'
  
 
   # The priority is based upon order of creation: first created -> highest priority.
