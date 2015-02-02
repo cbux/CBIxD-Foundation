@@ -6,14 +6,20 @@
 </div>
 
 <!-- Form Area -->
+
 <div class="row">
+<form data-abide>
 	<div class="column small-12 medium-6 large-6">
 		<div class="row">
 			<div class="column small-12 large-centered medium-centered">
-				<label>Email
-	        		<input type="text" placeholder="Email" />
-	      		</label>
-			</div>
+
+				<div class="email-field">
+				    <label>Email <small>required</small>
+				      <input type="email" required>
+				    </label>
+				    <small class="error">An email address is required.</small>
+			  </div>
+			</div> <!-- Ends Email-->
 		</div>
 		<div class="row">
 			<div class="column small-12 large-centered medium-centered">
@@ -66,7 +72,7 @@
 			</div>
 		</div>
 	</div>
-
+</form>
 
 
 <!-- Social Stuff-->
