@@ -4,8 +4,6 @@ Rails.application.routes.draw do
 
   # Routes
   get 'account' => 'account#index'
-  get 'account/security' => 'account#security'
-  get 'account/manage_email' => 'account#manage_email'
   get 'apply' => 'apply#index'
   get 'apply/apply_unknown' => 'apply#apply_unknown'
   get 'apply/parsed_unknown' => 'apply#parsed_unknown'

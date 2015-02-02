@@ -4,26 +4,34 @@
 	</div>
 </div>
 <div class="row">
-	<div class="column small-12">
+	<div class="column small-12 large-6 show-for-small-only">
 		<select>
-			<option selected="true">Account Information</option>
-			<option>Account Security</option>
-			<option>Manage Email Settings</option>
-			<option>Delete Account</option>
+			<option selected=<%= @info %>>Account Information</option>
+			<option selected=<%= @security %>>Account Security</option>
+			<option selected=<%= @email %>>Manage Email Settings</option>
+			<option selected=<%= @delete %>>Delete Account</option>
 		</select>
 	</div>
 </div>
 <div class="row">
-	<div class="column small-12">
-		<label>First Name
-      <input type="text" placeholder="" />
-    </label>
-    <label>Last Name
-      <input type="text" placeholder="" />
-    </label>
-    <label>Zip Code
-      <input type="text" placeholder="" />
-    </label>
-    <a href="#" class="button expand">Save Changes</a>
-  </div>
+<!-- only show side nav on medium and up -->
+	<div class="column large-3 medium-4">
+		<ul class="side-nav show-for-medium-up">
+			  <li  class=<%= @info_active %>>
+			  	<%= link_to "Account Information", account_path(params.merge(page: "account_information")) %>
+			  </li>
+			  <li class=<%= @security_active %>>
+			  	<%= link_to "Account Security", account_path(params.merge(page: "security")) %>
+			  </li>
+			  <li class=<%= @email_active %>>
+			  	<%= link_to "Manage Email Settings", account_path(params.merge(page: "manage_email")) %>
+			  </li>
+			  <li class=<%= @delete_active %>>
+			  	<%= link_to "Delete Account", account_path(params.merge(page: "delete_account")) %>
+			  </li>
+		</ul>
+	</div>
+	<div class="column small-12 medium-8 large-9">
+		<%= render @account_view %>
+	</div>
 </div>
