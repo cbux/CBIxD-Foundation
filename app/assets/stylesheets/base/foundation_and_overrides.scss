@@ -114,7 +114,7 @@ $smoke       : #EEEEEE;
 // $iron        : #CCCCCC;
 // $base        : #AAAAAA;
 // $aluminum    : #999999;
-// $jumbo       : #888888;
+$jumbo       : #888888;
 // $monsoon     : #777777;
 // $steel       : #666666;
 // $charcoal    : #555555;
@@ -1415,7 +1415,7 @@ $smoke       : #EEEEEE;
 // $topbar-menu-link-weight: $font-weight-bold;
 // $topbar-menu-link-color: $white;
 // $topbar-menu-icon-color: $white;
-// $topbar-menu-link-color-toggled: $jumbo;
+$topbar-menu-link-color-toggled: $jumbo;
 // $topbar-menu-icon-color-toggled: $jumbo;
 
 // Transitions and breakpoint styles

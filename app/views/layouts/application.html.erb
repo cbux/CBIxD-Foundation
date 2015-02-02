@@ -17,14 +17,24 @@
 		    <li class="name">
 		      <h1><a href="#">CareerBuilder</a></h1>
 		    </li>
+		    
 		     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-		    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+		    <li class="toggle-topbar right">
+		    	<a href="#">
+		    		<span>Menu</span>
+		    	</a>
+		    </li>
+		    <li class="toggle-topbar-2 right">
+		    	<a href="#" id="search-toggle-button" onclick="toggle_visibility('search-toggle-button','search-toggle');">
+		    		<span>Search</span>
+		    	</a>
+		    </li>
 		  </ul>
 
 		  <section class="top-bar-section">
 		    <!-- Right Nav Section -->
 		    <ul class="right">
-		      <li class=""><a href="#">Sign In</a></li>
+		      <li class=""><a href="#">User</a></li>
 		      <li class="show-for-large-up"><a href="#">Employers</a></li>
 		 <!-- Nav Item with Dropdown
 		      <li class="has-dropdown">
@@ -49,6 +59,23 @@
 		    </ul>
 		  </section>
 		</nav>
+		<section class="global-search" id="search-toggle">
+      <div class="row">
+      	<div class="medium-4 medium-offset-1 small-12 columns">
+      		<label>Keyword
+      			<input type="text" placeholder="" />
+    			</label>
+      	</div>
+      	<div class="medium-4 small-12 columns">
+      		<label>Location
+      			<input type="text" placeholder="" />
+    			</label>
+      	</div>
+      	<div class="medium-2 small-12 columns end">
+      		<a class="button postfix">Search</a>
+      	</div>
+      </div>
+    </section>	
 
     <%= yield %>
     <%= javascript_include_tag "application" %>

@@ -9,3 +9,61 @@ footer {
 .help-center {
 	background-color: $white-smoke;
 }
+
+.top-bar
+	.name, .toggle-topbar, .toggle-topbar-2 {
+		display: inline-block;
+}
+
+.top-bar .toggle-topbar {
+	position: relative;
+}
+
+.top-bar .toggle-topbar-2 a {
+	color: #FFFFFF;
+	text-transform: uppercase;
+	font-size: 0.8125rem;
+	font-weight: bold;
+	position: relative;
+	display: block;
+	padding: 0 15px;
+	height: 45px;
+	line-height: 45px;
+}
+
+// #search-toggle {
+// 	display: none;
+// }
+
+
+
+.global-search {
+  left: 0;
+  position: relative;
+  width: auto;
+  transition: left 300ms ease-out;
+  display: none;
+}
+
+.global-search-toggle {
+	display: block !important;
+}
+
+.global-search .postfix {
+	margin-top: 20px;
+}
+
+@media only screen and (min-width: 40.063em) {
+  .top-bar .toggle-topbar-2 {
+    display: none;
+  }
+  .global-search {
+    transition: none 0 0;
+    left: 0 !important;
+    display: block;
+  }
+}
+
+.toggle-topbar-2.expanded {
+	color: $topbar-menu-link-color-toggled;
+}
