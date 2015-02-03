@@ -32,3 +32,13 @@ function toggle_visibility(button, id) {
     f.style.color = '#888888';
   }
 }
+
+function toggle_password_text(id) {
+	var p = document.getElementById(id);
+	if(p.innerHTML == "Show") {
+		p.innerHTML = "Hide";
+	}
+	else {
+		p.innerHTML = "Show";
+	}
+}
