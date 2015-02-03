@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'jobs/jdp_nonbranded' => 'jobs#jdp_nonbranded'
   get 'recommendations' => 'recommendations#index'
   get 'resumes' => 'resumes#index'
+  get 'resumes/resume_preview' => 'resumes#resume_preview'
   get 'resumes/cover_letter' => 'resumes#cover_letter'
   get 'resumes/resume_selected' => 'resumes#resume_selected'
   get 'resumes/cover_letter_blank' => 'resumes#cover_letter_blank'
