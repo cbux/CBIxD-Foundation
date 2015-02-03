@@ -21,13 +21,13 @@ $(function(){ $(document).foundation(); });
 function toggle_visibility(button, id) {
   var e = document.getElementById(id);
   var f = document.getElementById(button);
-  if(e.className == 'global-search global-search-toggle') {
+  if(e.classList.contains('global-search-toggle')) {
     // e.style.display = 'none';
-    e.className = "global-search";
+    e.classList.remove('global-search-toggle');
     f.style.color = '#FFFFFF';
   }
   else {
-    e.className += " global-search-toggle";
+    e.classList.add('global-search-toggle');
     // e.style.display = 'block';
     f.style.color = '#888888';
   }

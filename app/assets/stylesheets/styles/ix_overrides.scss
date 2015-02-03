@@ -2,6 +2,14 @@
 	margin-top: .5em;
 }
 
+nav .row {
+	margin-top: 0;
+}
+
+nav {
+	background-color: $topbar-bg-color;
+}
+
 footer {
 	background-color: $smoke;
 }
@@ -62,6 +70,9 @@ footer {
     left: 0 !important;
     display: block;
   }
+  .no-search {
+		display: none;
+	}
 }
 
 .toggle-topbar-2.expanded {
@@ -74,10 +85,11 @@ footer {
 	background: white;
 }
 
-.hidebtn {
-	content: 'Hide';
+.alert-box {
+	margin-bottom: 0;
+	padding: .5rem 0;
 }
 
-.showbtn {
-	content: 'Show';
+.top-bar .name h1 a {
+	padding: 0;
 }
