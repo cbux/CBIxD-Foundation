@@ -12,54 +12,79 @@
   </head>
 
   <body>
-  	<nav class="top-bar" data-topbar role="navigation">
-		  <ul class="title-area">
-		    <li class="name">
-		      <h1><%= link_to "Careerbuilder", root_path %></h1>
-		    </li>
-		    
-		     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-		    <li class="toggle-topbar right">
-		    	<a href="#">
-		    		<span>Menu</span>
-		    	</a>
-		    </li>
-		    <li class="toggle-topbar-2 right">
-		    	<a href="#" id="search-toggle-button" onclick="toggle_visibility('search-toggle-button','search-toggle');">
-		    		<span>Search</span>
-		    	</a>
-		    </li>
-		  </ul>
+  	<% if params[:message] == 'true' %>
+  		<div data-alert class="alert-box true">
+  			<div class="row">
+					<div class="column small-12 medium-12 large-12">
+						message here
+					</div>
+				</div>
+			</div>
+		<% end %>
+  	<% if params[:signed_out] == 'true' %>
+  		<div data-alert class="alert-box success">
+  			<div class="row">
+					<div class="column small-12 medium-12 large-12">
+			 			You have successfully signed out. 
+			  		<a href="#" class="close">&times;</a>
+					</div>
+				</div>
+			</div>
+		<% end %>
+  	<nav>
+  		<div class="row">
+  			<div class="column small-12">
+		  		<div class="top-bar" data-topbar role="navigation">
+					  <ul class="title-area">
+					    <li class="name">
+					      <h1><%= link_to "Careerbuilder", root_path %></h1>
+					    </li>
+					    
+					     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+					    <li class="toggle-topbar right">
+					    	<a href="#">
+					    		<span>Menu</span>
+					    	</a>
+					    </li>
+					    <li class="toggle-topbar-2 right">
+					    	<a href="#" id="search-toggle-button" onclick="toggle_visibility('search-toggle-button','search-toggle');">
+					    		<span>Search</span>
+					    	</a>
+					    </li>
+					  </ul>
 
-		  <section class="top-bar-section">
-		    <!-- Right Nav Section -->
-		    <ul class="right">
-		      <li class=""><%= link_to "Sign In", user_path %></li>
-		      <li class="show-for-large-up"><a href="#">Employers</a></li>
-		 <!-- Nav Item with Dropdown
-		      <li class="has-dropdown">
-		        <a href="#">Right Button Dropdown</a>
-		        <ul class="dropdown">
-		          <li><a href="#">First link in dropdown</a></li>
-		          <li class="active"><a href="#">Active link in dropdown</a></li>
-		        </ul>
-		      </li> 
-		      Nav Item with Dropdown End-->
-		    </ul>
+					  <section class="top-bar-section">
+					    <!-- Right Nav Section -->
+					    <ul class="right">
+					      <li class=""><%= link_to "Sign In", user_path %></li>
+					      <li class="show-for-large-up"><a href="#">Employers</a></li>
+					 <!-- Nav Item with Dropdown
+					      <li class="has-dropdown">
+					        <a href="#">Right Button Dropdown</a>
+					        <ul class="dropdown">
+					          <li><a href="#">First link in dropdown</a></li>
+					          <li class="active"><a href="#">Active link in dropdown</a></li>
+					        </ul>
+					      </li> 
+					      Nav Item with Dropdown End-->
+					    </ul>
 
-		    <!-- Left Nav Section -->
-		    <ul class="left">
-		      <li><%= link_to "My Careerbuilder", root_path %></li>
-		      <li><%= link_to "Find Jobs", jobs_path %></li>
-		      <li><%= link_to "Recommendations", recommendations_path %></li>
-		      <li><%= link_to "Resumes", resumes_path %></li>
-		    <!-- Removed Resources for Now
-		      <li><a href="#">Resources</a></li>
-		    -->
-		    </ul>
-		  </section>
+					    <!-- Left Nav Section -->
+					    <ul class="left">
+					      <li><%= link_to "My Careerbuilder", root_path %></li>
+					      <li><%= link_to "Find Jobs", jobs_path %></li>
+					      <li><%= link_to "Recommendations", recommendations_path %></li>
+					      <li><%= link_to "Resumes", resumes_path %></li>
+					    <!-- Removed Resources for Now
+					      <li><a href="#">Resources</a></li>
+					    -->
+					    </ul>
+					  </section>
+					</div>
+				</div>
+			</div>
 		</nav>
-		<section class="global-search" id="search-toggle">
+		<section class="global-search <%= @search_bar %>" id="search-toggle">
       <div class="row">
       	<div class="medium-4 medium-offset-1 small-12 columns">
       		<label>Keyword

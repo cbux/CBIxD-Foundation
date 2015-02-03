@@ -1,10 +1,10 @@
+<% @search_bar = "no-search" %>
 <div class="row"> 
 	<div class="column small-12 text-center">
 		<img src="#"/>
 	</div>
 
 </div>
-
 <!-- Form Area -->
 
 <div class="row">
@@ -23,18 +23,7 @@
 		</div>
 		<div class="row">
 			<div class="column small-12 large-centered medium-centered">
-					<label>Password
-			<div class="row collapse">
-				<div class="column small-10">
-					<!-- TODO password validation -->
-			    <input type="password" placeholder="password" />
-			  </div>
-		    <div class="small-2 columns">
-		    	<!-- TODO show/hide password -->
-		      <a href="#" class="button secondary postfix">Show</a>
-		    </div>
-		  </div>
-		</label>
+					<%= render 'password_field' %>
 			</div>
 		</div>
 		<div class="row">
@@ -96,5 +85,3 @@
 
 	</div>
 </div>
-
-
