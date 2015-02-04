@@ -9,53 +9,22 @@
 <!-- Form Area -->
 <div class="row">
 	<div class="column small-12 medium-6 large-6">
-		<form class"custom" data-abide>
+		<form class="custom" data-abide>
 			<div class="row">
-				<div class="column small-12 large-centered medium-centered">
-					<label>First Name
-		        <input type="text" placeholder="First Name" />
-		      </label>
+				<div class="column small-12">
+					<%= render 'text_field', text_label: "First Name", required:"required" %>
 				</div>
-			</div>
-			<div class="row">
-				<div class="column small-12 large-centered medium-centered">
-					<label>Last Name
-		      	<input type="text" placeholder="Last Name" />
-		      </label>
+				<div class="column small-12">
+					<%= render 'text_field', text_label: "Last Name", required:"required" %>
 				</div>
-			</div>
-			<div class="row">
-				<div class="column small-12 large-centered medium-centered">
-					<label>Email
-		        <input type="email" required/>
-		        <small class="error">An email address is required.</small>
-		      </label>
+				<div class="column small-12">
+					<%= render 'email_field', required:"required" %>
 				</div>
-			</div>
-			<div class="row">
-				<div class="column small-12 large-centered medium-centered">
-					<label>Zipcode
-		        <input type="text" placeholder="Zipcode" />
-		      </label>
+				<div class="column small-12">
+					<%= render 'zip_field', required:"required" %>
 				</div>
-			</div>
-			<div class="row">
-				<div class="column small-12 large-centered medium-centered">
-					<%= render 'password_field' %>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column small-6 large-6 medium-6">
-					<li id="character-count"> 8 to 15 characters</li>
-					<li id="lowercase-count">Lowercase Letters</li>
-				</div>
-				<div class="column small-6 large-6 medium-6">
-					<li id="number-or-symbol">Number or Symbol</li>
-					<li id="uppercase-count">Uppercase Letters</li>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column small-12 large-centered medium-centered">
+				<%= render 'password_creation_field' %>
+				<div class="column small-12">
 					<a href="#" class="button expand">Sign Up</a>
 				</div>
 			</div>
