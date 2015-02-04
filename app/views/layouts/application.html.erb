@@ -56,17 +56,20 @@
 					  <section class="top-bar-section">
 					    <!-- Right Nav Section -->
 					    <ul class="right">
-					      <li class=""><%= link_to "Sign In", sign_in_path %></li>
+					    	<% if @auth == "unknown" %>
+					      	<li class=""><%= link_to "Sign In", sign_in_path %></li>
+					      <% elsif @auth == "known" %>
+					      	<li class=""><%= link_to "Sign In", sign_in_path %></li>
+					      <% elsif @auth == "authenticated" %>
+					      	<li class="has-dropdown">
+					      		<%= link_to "Hi, James" %>
+					      		<ul class="dropdown">
+					      			<li><%= link_to "My Account", account_path %></li>
+					      			<li><%= link_to "Sign Out", sign_in_path %></li>
+					      		</ul>
+					      	</li>
+					      <% end %>
 					      <li class="show-for-large-up"><a href="#">Employers</a></li>
-					 <!-- Nav Item with Dropdown
-					      <li class="has-dropdown">
-					        <a href="#">Right Button Dropdown</a>
-					        <ul class="dropdown">
-					          <li><a href="#">First link in dropdown</a></li>
-					          <li class="active"><a href="#">Active link in dropdown</a></li>
-					        </ul>
-					      </li> 
-					      Nav Item with Dropdown End-->
 					    </ul>
 
 					    <!-- Left Nav Section -->

@@ -1,83 +1,8 @@
 <% @search_bar = "no-search" %>
 <div class="row"> 
 	<div class="column small-12 text-center">
-		<img src="#"/>
+		<img src="www.placeholdit.com/100x30"/>
 	</div>
-
 </div>
 <!-- Form Area -->
-
-<div class="row">
-	<form data-abide>
-		<div class="column small-12 medium-6 large-6">
-			<div class="row">
-				<div class="column small-12 large-centered medium-centered">
-					<!-- Email Field -->
-					<%= render 'email_field', required: "" %>
-				  <!-- Ends Email-->
-				</div>
-			</div>
-			<div class="row">
-				<div class="column small-12 large-centered medium-centered">
-					<%= render 'password_field', data_abide_validator: "" %>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column small-6">
-		      <input id="checkbox1" type="checkbox">
-		      <label for="checkbox1">Remember Me</label>
-				</div>
-				<div class="column small-6 end text-right">
-					<a href="#" data-reveal-id="myModal">Forgot Password</a>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column small-12 large-centered medium-centered">
-					<%= submit_tag "Sign In", class: "button expand" %>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column small-12 large-centered medium-centered text-center">
-					<p> Don't have an account? <%= link_to "Sign Up Now", user_sign_up_path %></p>
-				</div>
-			</div>
-		</div>
-	</form>
-	<!-- Social Stuff-->
-	<div class="column small-12 medium-5 large-5">
-		<div class="row">
-			<div class="column small-12 large-centered medium-centered text-center">
-				<p> or sign in with</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="column small-12 large-centered medium-centered">
-				<a href="#" class="button expand">Facebook </a>
-				<a href="#" class="button expand">Google Plus </a>
-			</div>
-		</div>	
-	</div>
-</div>
-
-
-<div id="myModal" class="reveal-modal" data-reveal>
-	<div class="row">
-		<div class="small-12 columns">
-			<h2>Forgot Password</h2>
-			<p class="lead">Some text about what to do here.</p>
-		</div>
-	</div>
-	<div class="row">
-		<div class="small-12 columns">
-			<label>Email Address
-				<input type="text" placeholder="Email Address" />
-			</label>
-		</div>
-	</div>
-	<div class="row">
-		<div class="column small-12">
-			<a href="#" class="button expand">Send Password</a>
-		</div>
-	</div>
-	<a class="close-reveal-modal">&#215;</a>
-</div>
+<% render 'sign_in_form' %>
