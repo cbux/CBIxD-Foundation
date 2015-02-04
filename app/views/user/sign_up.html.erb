@@ -1,80 +1,66 @@
+<% @search_bar = "no-search" %>
 <div class="row"> 
 	<div class="column small-12 text-center">
 		<img src="#"/>
 		<p> Text about benefits</p>
 		<p>Already have an account? <a href="#">Sign In</a></p>
 	</div>
-
 </div>
-
 <!-- Form Area -->
 <div class="row">
 	<div class="column small-12 medium-6 large-6">
-		<div class="row">
-			<div class="column small-12 large-centered medium-centered">
-				<label>First Name
-	        		<input type="text" placeholder="First Name" />
-	      		</label>
+		<form class"custom" data-abide>
+			<div class="row">
+				<div class="column small-12 large-centered medium-centered">
+					<label>First Name
+		        <input type="text" placeholder="First Name" />
+		      </label>
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="column small-12 large-centered medium-centered">
-				<label>Last Name
-	        		<input type="text" placeholder="Last Name" />
-	      		</label>
+			<div class="row">
+				<div class="column small-12 large-centered medium-centered">
+					<label>Last Name
+		      	<input type="text" placeholder="Last Name" />
+		      </label>
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="column small-12 large-centered medium-centered">
-				<label>Email
-	        		<input type="text" placeholder="Email" />
-	      		</label>
+			<div class="row">
+				<div class="column small-12 large-centered medium-centered">
+					<label>Email
+		        <input type="email" required/>
+		        <small class="error">An email address is required.</small>
+		      </label>
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="column small-12 large-centered medium-centered">
-				<label>Zipcode
-	        		<input type="text" placeholder="Zipcode" />
-	      		</label>
+			<div class="row">
+				<div class="column small-12 large-centered medium-centered">
+					<label>Zipcode
+		        <input type="text" placeholder="Zipcode" />
+		      </label>
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="column small-12 large-centered medium-centered">
-				<label>Password
-			<div class="row collapse">
-				<div class="column small-10">
-					<!-- TODO password validation -->
-			    <input type="password" placeholder="password" />
-			  </div>
-		    <div class="small-2 columns">
-		    	<!-- TODO show/hide password -->
-		      <a href="#" class="button secondary postfix">Show</a>
-		    </div>
-		  </div>
-		</label>
+			<div class="row">
+				<div class="column small-12 large-centered medium-centered">
+					<%= render 'password_field' %>
+				</div>
 			</div>
-		</div>
-		<!-- TODO message : Make Dynamic Password Validation -->
-		<div class="row">
-			<div class="column small-6 large-6 medium-6">
-				<li> 8 to 15 characters</li>
-				<li>Lowercase Letters</li>
+			<div class="row">
+				<div class="column small-6 large-6 medium-6">
+					<li id="character-count"> 8 to 15 characters</li>
+					<li id="lowercase-count">Lowercase Letters</li>
+				</div>
+				<div class="column small-6 large-6 medium-6">
+					<li id="number-or-symbol">Number or Symbol</li>
+					<li id="uppercase-count">Uppercase Letters</li>
+				</div>
 			</div>
-		
-			<div class="column small-6 large-6 medium-6">
-				<li>Number or Symbol</li>
-				<li>Uppercase Letters</li>
+			<div class="row">
+				<div class="column small-12 large-centered medium-centered">
+					<a href="#" class="button expand">Sign Up</a>
+				</div>
 			</div>
-		</div>
-	
-		<div class="row">
-			<div class="column small-12 large-centered medium-centered">
-				<a href="#" class="button expand">Sign Up</a>
-			</div>
-		</div>
-		
+		</form>
 	</div>
-
 
 <!-- Social Stuff-->
 
