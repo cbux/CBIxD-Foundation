@@ -14,6 +14,11 @@
 
 <!--premium branding-->
 <div class="row">
+    <!--ad-->
+    <% if params[:branding] == "nonbranded" %>
+        <%= render 'jdp_ad' %>
+    <% end %>
+
     <img class="premiumbanner" src="<%= image_path ('statefarm_premiumbanner.jpg') %>" alt="state farm premium banner placeholder"/>
 
 <!--job header-->
@@ -62,7 +67,7 @@
         </dl>
 </div><!--close row-->
 <div class="row">
-    <div class="large-8 large-push-4 columns">
+    <div class="large-8 columns">
         <h3> Job Description </h3>
         <p>SALES REPS NEEDED - B2B - OUTSIDE SALES - BUSINESS DEVELOPMENT MANAGERS 
             <br /><br />
@@ -121,7 +126,7 @@
         <br /><br /><br />
 
     </div><!--close columns-->
-    <div class="large-4 large-pull-8 columns">
+    <div class="large-4 columns">
         <h3>Company Overview</h3>
         <ul>
             <li>10,000-25,000 employees</li>
@@ -143,6 +148,10 @@
             <li><img class="placeholder" src="<%= image_path ('icon_placeholder.png') %>" alt="icon placeholder"/></li>
         </ul>
         <p><a href="#" class="button secondary">View all jobs at abccompany</a></p>
+        <!--similar jobs for nonbranded-->
+        <% if params[:branding] == "nonbranded" %>
+            <%= render 'similar_jobs' %>
+        <% end %>
     </div><!--close columns-->
 </div><!--close row-->
 <!--search results navigation-->
