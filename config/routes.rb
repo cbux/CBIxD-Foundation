@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'apply/signin_guest' => 'apply#signin_guest'
   get 'jobs' => 'jobs#index'
   get 'jobs/jdp_nonbranded' => 'jobs#jdp_nonbranded'
+  get 'jobs/jdp_premium' => 'jobs#jdp_premium'
   get 'recommendations' => 'recommendations#index'
   get 'resumes' => 'resumes#index'
   get 'resumes/cover_letter' => 'resumes#cover_letter'

@@ -1,11 +1,23 @@
 <% @search_bar = "no-search" %>
-<!--job header-->
+
+<!--search results navigation-->
+<div class="large-5 columns">
+    <a href="#"> Back to Search Results </a>
+</div><!--close columns-->
+<div class="large-4 columns">
+    <p class="right">25 of 1,456 Jobs in your search</p>
+</div><!--close columns-->
+<div class="large-3 columns">
+    <a href="#" class="button secondary right"> lft</a>
+    <a href="#" class="button secondary right"> rght</a>
+</div><!--close columns-->
+
+<!--premium branding-->
 <div class="row">
-    <!--ad-->
-    <div class="panel">
-        <h5>Ad 728 x 90</h5>
-    </div>
-    <div class="large-6 columns">
+    <img class="premiumbanner" src="<%= image_path ('statefarm_premiumbanner.jpg') %>" alt="state farm premium banner placeholder"/>
+
+<!--job header-->
+    <div class="large-12 columns">
         <h2>Account Manager</h2>
         <p>1 Hour Ago</p>
         <a href="#">ABC Company</a>
@@ -50,7 +62,7 @@
         </dl>
 </div><!--close row-->
 <div class="row">
-    <div class="large-8 columns">
+    <div class="large-8 large-push-4 columns">
         <h3> Job Description </h3>
         <p>SALES REPS NEEDED - B2B - OUTSIDE SALES - BUSINESS DEVELOPMENT MANAGERS 
             <br /><br />
@@ -107,14 +119,9 @@
             </ul>
         </div><!--close button bar-->
         <br /><br /><br />
-        <div class="show-for-medium-up">
-        <h3>Careerbuilder Tip</h3>
-        <p>For your <a href="#">privacy and protection</a>, when applying to a job online, never give your social security number to a prospective employer, provide credit card or bank account information, or perform any sort of monetary transaction. <a href="#">Learn more</a>.
-        <br /><br />
-        By applying to a job using CareerBuilder.com you are agreeing to comply with and be subject to the CareerBuilder.com <a href="#">Terms and Conditions</a> for use of our website. To use our website, you must agree with the <a href="#">Terms and Conditions</a> and both meet and comply with their provisions.
-        </div><!--close show for medium up-->
+
     </div><!--close columns-->
-    <div class="large-4 columns">
+    <div class="large-4 large-pull-8 columns">
         <h3>Company Overview</h3>
         <ul>
             <li>10,000-25,000 employees</li>
@@ -125,13 +132,37 @@
             <br /><br />
             SMS has been instrumental in helping companies recapture lost revenue and profits from the most recent economic downturn by providing the appropriate business experts to our clients to put in place methods, systems, and controls to control costs, increase productivity, while maintaining a positive cash flow . Our strategies help determine unique, "out-of-the-box" ways to increase both business and profitability while helping our clients stay competitive in challenging markets.
         </p>
+        <div class="flex-video">
+        <iframe width="420" height="315" src="//www.youtube.com/embed/h2IychVOKPw" frameborder="0" allowfullscreen></iframe>
+        </div><!--close flex video-->
+        <p><a href="#">View 8 More Videos</a></p>
+        <ul class="small-block-grid-4 hide-for-small-only">
+            <li><img class="placeholder" src="<%= image_path ('icon_placeholder.png') %>" alt="icon placeholder"/></li>
+            <li><img class="placeholder" src="<%= image_path ('icon_placeholder.png') %>" alt="icon placeholder"/></li>
+            <li><img class="placeholder" src="<%= image_path ('icon_placeholder.png') %>" alt="icon placeholder"/></li>
+            <li><img class="placeholder" src="<%= image_path ('icon_placeholder.png') %>" alt="icon placeholder"/></li>
+        </ul>
         <p><a href="#" class="button secondary">View all jobs at abccompany</a></p>
-        <div class="show-for-medium-up">
-            <h3>Similar Jobs</h3>
-                <h2><a href="#">Account Manager</a></h2>
-                <p><a href="#">ABC Company</a> in GA-Atlanta</p>
-                <hr />
-        </div><!--close for show medium up-->
-
     </div><!--close columns-->
+</div><!--close row-->
+<!--search results navigation-->
+<div class="row">
+<div class="large-5 columns">
+    <a href="#"> Back to Search Results </a>
+</div><!--close columns-->
+<div class="large-4 columns">
+    <p class="right">25 of 1,456 Jobs in your search</p>
+</div><!--close columns-->
+<div class="large-3 columns">
+    <a href="#" class="button secondary right"> lft</a>
+    <a href="#" class="button secondary right"> rght</a>
+</div><!--close columns-->
+</div><!--close row-->
+<div class="row">
+        <div class="show-for-medium-up panel">
+        <h3>Careerbuilder Tip</h3>
+        <p>For your <a href="#">privacy and protection</a>, when applying to a job online, never give your social security number to a prospective employer, provide credit card or bank account information, or perform any sort of monetary transaction. <a href="#">Learn more</a>.
+        <br /><br />
+        By applying to a job using CareerBuilder.com you are agreeing to comply with and be subject to the CareerBuilder.com <a href="#">Terms and Conditions</a> for use of our website. To use our website, you must agree with the <a href="#">Terms and Conditions</a> and both meet and comply with their provisions.
+        </div><!--close show for medium up-->
 </div><!--close row-->
