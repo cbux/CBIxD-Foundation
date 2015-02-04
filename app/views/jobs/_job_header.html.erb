@@ -1,13 +1,24 @@
 <div class="row">
-	<% if params[:branding] == "premium" %>
-		<div class="column medium-4 hide-for-small-only">
-			<img src="http://placehold.it/260x260">
-		</div>
-		<div class="column small-12 medium-8">
-	<% else %>
-		<div class="column small-12 ">
-	<% end %>
-		<h1> Job title HERE</h1>
-		<p> text text more text and some other text</p>
+<% if params[:branding] == "premium" || params[:branding] == "standard" || params[:branding] == "basic" %>
+	<div class="column medium-4 hide-for-small-only">
+		<img src="http://placehold.it/180x180">
 	</div>
-</div>
+	<div class="column small-12 medium-8">
+<% else %>
+	<div class="column small-12 ">
+<% end %>
+    <h1>Account Manager</h1>
+    <p>1 Hour Ago</p>
+    <a href="#">ABC Company</a>
+    <p>GA-Atlanta</p>
+	</div>
+<!--apply button bar-->
+    <div class="row">
+        <div class="left button-bar">
+            <ul class="button-group">
+                <li><a href="#" class="small button">Apply Now</a></li>
+                <li><a href="#" class="small button secondary">Email Job</a></li>
+                <li><a href="#" class="small button secondary">Save Job</a></li>
+            </ul>
+        </div><!--close button bar-->
+</div><!--close row-->

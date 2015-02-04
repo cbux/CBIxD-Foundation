@@ -1,16 +1,23 @@
 <% @search_bar = "no-search" %>
 
 <!--search results navigation-->
-<div class="large-5 columns">
-    <a href="#"> Back to Search Results </a>
-</div><!--close columns-->
-<div class="large-4 columns">
-    <p class="right">25 of 1,456 Jobs in your search</p>
-</div><!--close columns-->
-<div class="large-3 columns">
-    <a href="#" class="button secondary right"> > </a>
-    <a href="#" class="button secondary right"> < </a>
-</div><!--close columns-->
+<div class="row">
+    <div class="small-5 columns hide-for-small-only">
+        <a href="#"> < Back to Search Results </a>
+    </div><!--close columns-->
+
+    <div class="small-5 columns show-for-small-only">
+        <a href="#"> < Back </a>
+    </div><!--close columns-->
+
+    <div class="small-4 columns hide-for-small-only">
+        <p class="right">25 of 1,456 Jobs in your search</p>
+    </div><!--close columns-->
+    <div class="small-3 columns">
+        <a href="#" class="button secondary right"> > </a>
+        <a href="#" class="button secondary right"> < </a>
+    </div><!--close columns-->
+</div><!--close row-->
 
 <div class="row">
     <!--ad-->
@@ -18,55 +25,36 @@
         <%= render 'jdp_ad' %>
     <% end %>
 
-    <!--premium branding-->
-    <% if params[:branding] == "premium" %>
-        <%= render 'premium_banner' %>
+    <!--branding-->
+    <% if params[:branding] == "premium" || params[:branding] == "standard" %>
+        <%= render 'top_banner' %>
     <% end %>
+</div><!--close row-->
 
 <!--job header-->
-
-    <!--company logo-->
-    <% if params[:branding] == "premium" || "standard" || "basic" %>
-        <%= render 'company_logo' %>
-    <% end %>
-
-    <div class="large-12 columns">
-        <h2>Account Manager</h2>
-        <p>1 Hour Ago</p>
-        <a href="#">ABC Company</a>
-        <p>GA-Atlanta</p>
-    <!--apply button bar-->
-        <div class=" left button-bar">
-            <ul class="button-group">
-                <li><a href="#" class="small button">Apply Now</a></li>
-                <li><a href="#" class="small button secondary">Email Job</a></li>
-                <li><a href="#" class="small button secondary">Save Job</a></li>
-            </ul>
-        </div><!--close button bar-->
-    </div><!--close column-->
-</div><!--close row-->
+        <%= render 'job_header' %>
 <div class="row">
     <!--icon bar job snapshot-->
         <dl class="sub-nav">
-            <div class="large-1 columns">
+            <div class="small-1 columns">
                 <dd>Full-Time</dd>
             </div>
-            <div class="large-2 columns">
+            <div class="small-2 columns">
                 <dd>4 Years Experience</dd>
             </div>
-            <div class="large-2 columns">
+            <div class="small-2 columns">
                 <dd>Bachelors Degree</dd>
             </div>
-            <div class="large-2 columns">
+            <div class="small-2 columns">
                 <dd>$100K-$120K Salary</dd>
             </div>
-            <div class="large-1 columns">
+            <div class="small-1 columns">
                 <dd>25% Travel</dd>
             </div>
-            <div class="large-1 columns">
+            <div class="small-1 columns">
                 <dd>Managed Others</dd>
             </div>
-            <div class="large-3 columns">
+            <div class="small-3 columns">
                 <dd>
                     <button href="#" class="button secondary">More Details</button><br>
 
@@ -124,14 +112,6 @@
         <h3>Equal Opportunity Employment</h3>
         <p>ABC is commited to having our online application process accesible by all, including those individuals wiht a disability where appropriate, by offering an alternative way to apply for job openings. The alternative method is only available for those who cannot otherwise complete the online applicaiton due to disability or need for accomidations. ABC provides reasonable accomidation for applicants under the guidance of the Americans with Disabilities Act (ADA), Section 503 of the Rehabilitations Act of 1973, the Vietnam-Era Veterans' Readjustment Assistance Act of 1974 and certain state and/or local laws.</p>
 
-        <div class=" left button-bar">
-            <ul class="button-group">
-                <li><a href="#" class="small button">Apply Now</a></li>
-                <li><a href="#" class="small button secondary">Email Job</a></li>
-                <li><a href="#" class="small button secondary">Save Job</a></li>
-            </ul>
-        </div><!--close button bar-->
-        <br /><br /><br />
 
     </div><!--close columns-->
     <div class="large-4 columns">
@@ -162,19 +142,44 @@
         <% end %>
     </div><!--close columns-->
 </div><!--close row-->
+
+<div class="row">
+        <!--branding-->
+    <% if params[:branding] == "premium" %>
+        <%= render 'bottom_banner' %>
+    <% end %>
+</div><!--close row-->
+
+<!--apply button bar-->
+<div class="row">
+    <div class="left button-bar">
+        <ul class="button-group">
+            <li><a href="#" class="small button">Apply Now</a></li>
+            <li><a href="#" class="small button secondary">Email Job</a></li>
+            <li><a href="#" class="small button secondary">Save Job</a></li>
+        </ul>
+    </div><!--close button bar-->
+</div><!--close row-->
+
 <!--search results navigation-->
 <div class="row">
-<div class="large-5 columns">
-    <a href="#"> Back to Search Results </a>
-</div><!--close columns-->
-<div class="large-4 columns">
-    <p class="right">25 of 1,456 Jobs in your search</p>
-</div><!--close columns-->
-<div class="large-3 columns">
-    <a href="#" class="button secondary right"> > </a>
-    <a href="#" class="button secondary right"> < </a>
-</div><!--close columns-->
+     <div class="small-5 columns hide-for-small-only">
+        <a href="#"> < Back to Search Results </a>
+    </div><!--close columns-->
+
+    <div class="small-3 columns show-for-small-only">
+        <a href="#"> < Back </a>
+    </div><!--close columns-->
+
+    <div class="large-4 columns hide-for-small-only">
+        <p class="right">25 of 1,456 Jobs in your search</p>
+    </div><!--close columns-->
+    <div class="large-3 columns">
+        <a href="#" class="button secondary right"> > </a>
+        <a href="#" class="button secondary right"> < </a>
+    </div><!--close columns-->
 </div><!--close row-->
+
 <div class="row">
         <div class="show-for-medium-up panel">
         <h3>Careerbuilder Tip</h3>
