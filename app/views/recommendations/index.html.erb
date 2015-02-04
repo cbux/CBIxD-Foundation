@@ -8,7 +8,7 @@
 <!--filters-->
 <!--TODO Collapse preferences into new page on mobile-->
 <div class="row">
-    <div class="large-2 columns">
+    <div class="large-2 columns hide-for-small-only">
         <!--Recommendations preferences-->
             <h6> Recommendation Preferences</h6>
             <ul class="side-nav">
@@ -22,7 +22,7 @@
             </ul>
     </div><!--close column-->
     <div class="large-1 columns">
-        <ul class="side-nav">
+        <ul class="side-nav hide-for-small-only">
             <li class="divider"></li>
             <li class="divider"></li>
             <li class="divider"></li>
@@ -34,16 +34,28 @@
             <li><a href="#">X</a></li>
         </ul>
     </div><!--close column-->
-
     <!--start right column sort and results-->
     <div class="large-9 columns">
         <div class="row">
-            <div class="medium-3 columns">
+            <div class="large-3 columns">
                 <p>100 jobs found</p>
             </div><!--close column-->
+            <!--collapse sort to dropdown on mobile-->
+            <div class="large-6 small-6 show-for-small-only">
+                <label>Sort By:</label>
+                <button href="#" data-dropdown="mobilesort" aria-controls="mobilesort" aria-expanded="false" class="button dropdown">Relevance</button><br>
+                    <ul id="mobilesort" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
+                        <li><a href="#">Date</a></li>
+                        <li><a href="#">Location</a></li>
+                    </ul>
+            </div><!--end show for small only-->
+            <!--rec preferences button for mobile version-->
+            <div class="small-12 columns show-for-small-only">
+                <a href="#" class="button expand">Edit Recommendations</a>
+            </div>
             <!--start sort-->
             <!--TODO collapse sort on mobile-->
-            <div class="medium-7 columns">
+            <div class="medium-7 columns hide-for-small-only">
                 <dl class="sub-nav">
                     <dt>Sort By:</dt>
                         <dd class="active"><a href="#">Relevance</a></dd>
@@ -53,7 +65,7 @@
             </div><!--close columns-->
         </div> <!--end row-->
         <hr />
-        <!--job result-->
+        <!--TODO: insert job result partial-->
         <div class="row">
             <div class="large-6 columns">
                 <h2>Account Manager</h2>
