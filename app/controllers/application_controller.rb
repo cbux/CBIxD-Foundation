@@ -6,10 +6,10 @@ class ApplicationController < ActionController::Base
 
   private
   def auth
-  	if params[:auth] && params[:auth] == "unknown" || params[:auth] == "known" || params[:auth] == "authenticated" ||
+  	if params[:auth]
   		session[:auth] = params[:auth]
   	end
-  	@auth = session[:authentication]
+  	@auth = session[:auth]
   	@auth ||= "unknown"
   end
 end

@@ -31,7 +31,7 @@
 				</div>
 			</div>
 		<% end %>
-  	<nav>
+  	<nav class=<%= @nav_bar %>>
   		<div class="row">
   			<div class="column small-12">
 		  		<div class="top-bar" data-topbar role="navigation">
@@ -65,7 +65,7 @@
 					      		<%= link_to "Hi, James" %>
 					      		<ul class="dropdown">
 					      			<li><%= link_to "My Account", account_path %></li>
-					      			<li><%= link_to "Sign Out", sign_in_path %></li>
+					      			<li><%= link_to "Sign Out", root_path(params.merge({:auth => "known"}).except(:action, :controller)) %></li>
 					      		</ul>
 					      	</li>
 					      <% end %>
@@ -108,7 +108,7 @@
     <%= yield %>
     <%= javascript_include_tag "application" %>
 
-    <footer>
+    <footer class=<%= @footer_bar %>>
     	<div class="help-center">
 	    	<div class="row help-center">
 	    		<div class="column small-12 text-center">

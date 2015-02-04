@@ -1,5 +1,13 @@
+<% @search_bar = "no-search" %>
+<% @footer_bar = "no-footer" %>
+<div class="row"> 
+	<div class="column small-12 text-center">
+		<img src="http://www.placehold.it/300x90"/>
+	</div>
+</div>
 <div class="row">
-	<form data-abide>
+	<%= form_tag( @path, method: "get", data: {abide: ''}, id: "sign-in-form") do %>
+		<%= hidden_field_tag 'auth', 'authenticated' %>
 		<div class="column small-12 medium-6 large-6">
 			<div class="row">
 				<div class="column small-12 large-centered medium-centered">
@@ -33,7 +41,7 @@
 				</div>
 			</div>
 		</div>
-	</form>
+	<% end %>
 	<!-- Social Stuff-->
 	<div class="column small-12 medium-5 large-5">
 		<div class="row">

@@ -14,6 +14,13 @@ footer {
 	background-color: $smoke;
 }
 
+.global-search .row {
+	margin-top: 0;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+
 .help-center {
 	background-color: $white-smoke;
 }
@@ -73,6 +80,12 @@ footer {
   .no-search {
 		display: none;
 	}
+	.no-nav {
+		display: none;
+	}
+	.no-footer {
+		display: none;
+	}
 }
 
 .toggle-topbar-2.expanded {
@@ -100,4 +113,8 @@ footer {
 
 .red {
 	color: red;
+}
+
+.global-search {
+	background-color: $base;
 }

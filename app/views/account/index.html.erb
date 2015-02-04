@@ -1,4 +1,5 @@
 <% @search_bar = "no-search" %>
+<% @path = account_path %>
 <% if @auth == "authenticated" %>
 	<div class="row">
 		<div class="column small-12">
@@ -38,5 +39,6 @@
 		</div>
 	</div>
 <% else %>
+
 	<%= render :partial => "user/sign_in_form" %>
 <% end %>

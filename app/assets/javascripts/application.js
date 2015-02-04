@@ -17,7 +17,9 @@
 //= require_tree .
 
 $(document)
-  .foundation({
+  .foundation(
+  {
+    bindings:'events',
     abide : {
 			// patterns: {
 			// cbpassword: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{8,15}$/
