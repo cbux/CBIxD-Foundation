@@ -8,8 +8,8 @@
     <p class="right">25 of 1,456 Jobs in your search</p>
 </div><!--close columns-->
 <div class="large-3 columns">
-    <a href="#" class="button secondary right"> lft</a>
-    <a href="#" class="button secondary right"> rght</a>
+    <a href="#" class="button secondary right"> > </a>
+    <a href="#" class="button secondary right"> < </a>
 </div><!--close columns-->
 
 <div class="row">
@@ -24,6 +24,12 @@
     <% end %>
 
 <!--job header-->
+
+    <!--company logo-->
+    <% if params[:branding] == "premium" || "standard" || "basic" %>
+        <%= render 'company_logo' %>
+    <% end %>
+
     <div class="large-12 columns">
         <h2>Account Manager</h2>
         <p>1 Hour Ago</p>
@@ -139,16 +145,16 @@
             <br /><br />
             SMS has been instrumental in helping companies recapture lost revenue and profits from the most recent economic downturn by providing the appropriate business experts to our clients to put in place methods, systems, and controls to control costs, increase productivity, while maintaining a positive cash flow . Our strategies help determine unique, "out-of-the-box" ways to increase both business and profitability while helping our clients stay competitive in challenging markets.
         </p>
-        <div class="flex-video">
-        <iframe width="420" height="315" src="//www.youtube.com/embed/h2IychVOKPw" frameborder="0" allowfullscreen></iframe>
-        </div><!--close flex video-->
-        <p><a href="#">View 8 More Videos</a></p>
-        <ul class="small-block-grid-4 hide-for-small-only">
-            <li><img class="placeholder" src="<%= image_path ('icon_placeholder.png') %>" alt="icon placeholder"/></li>
-            <li><img class="placeholder" src="<%= image_path ('icon_placeholder.png') %>" alt="icon placeholder"/></li>
-            <li><img class="placeholder" src="<%= image_path ('icon_placeholder.png') %>" alt="icon placeholder"/></li>
-            <li><img class="placeholder" src="<%= image_path ('icon_placeholder.png') %>" alt="icon placeholder"/></li>
-        </ul>
+        <!--premium video-->
+        <% if params[:branding] == "premium" %>
+            <%= render 'video' %>
+        <% end %>
+
+        <!--premium social media-->
+        <% if params[:branding] == "premium" %>
+            <%= render 'socialmedia' %>
+        <% end %>
+
         <p><a href="#" class="button secondary">View all jobs at abccompany</a></p>
         <!--similar jobs for nonbranded-->
         <% if params[:branding] == "nonbranded" %>
@@ -165,8 +171,8 @@
     <p class="right">25 of 1,456 Jobs in your search</p>
 </div><!--close columns-->
 <div class="large-3 columns">
-    <a href="#" class="button secondary right"> lft</a>
-    <a href="#" class="button secondary right"> rght</a>
+    <a href="#" class="button secondary right"> > </a>
+    <a href="#" class="button secondary right"> < </a>
 </div><!--close columns-->
 </div><!--close row-->
 <div class="row">
