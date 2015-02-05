@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'jobs' => 'jobs#index'
   get 'jobs/jdp' => 'jobs#jdp'
   get 'recommendations' => 'recommendations#index'
-  get 'rec_prefs' => 'recommendations#rec_prefs'
+  get 'recprefs' => 'recommendations#recprefs'
   get 'resumes' => 'resumes#index'
   get 'resumes/resume_preview' => 'resumes#resume_preview'
   get 'resumes/resume_preview_edit' => 'resumes#resume_preview_edit'
