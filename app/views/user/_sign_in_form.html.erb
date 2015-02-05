@@ -6,7 +6,7 @@
 	</div>
 </div>
 <div class="row">
-	<%= form_tag( @path, method: "get", data: {abide: ''}, id: "sign-in-form") do %>
+	<%= form_tag( @path, method: "get", id: "sign-in-form") do %>
 		<%= hidden_field_tag 'auth', 'authenticated' %>
 		<div class="column small-12 medium-6 large-6">
 			<div class="row">
@@ -17,8 +17,8 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="column small-12 large-centered medium-centered">
-					<%= render 'user/password_field', data_abide_validator: "" %>
+				<div class="column small-12 large-centered mshow_hide_id: "showhidecreation"edium-centered">
+					<%= render 'user/password_field', show_hide_id: "showhide", password_id: "password", password_label: "password", data_abide_validator: "" %>
 				</div>
 			</div>
 			<div class="row">

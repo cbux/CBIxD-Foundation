@@ -1,11 +1,11 @@
 <form data-abide>
 	<div class="row">
 		<div class="column small-12">
-			<%= render 'user/password_field', data_abide_validator: "passwordcb" %>
+			<%= render 'user/password_field', password_id: "password", password_label: "Confirm Password", show_hide_id: "showhide", data_abide_validator: "" %>
 		</div>
 	</div>
 	<div class="row">
-		<%= render 'user/password_creation_field', data_abide_validator: "passwordcb" %>
+		<%= render 'user/password_creation_field', password_create_label: "New Password", data_abide_validator: "passwordcb" %>
 	</div>
 </form>
 <a href="#" class="button expand">Save Changes</a>

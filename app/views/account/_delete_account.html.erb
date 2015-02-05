@@ -15,7 +15,7 @@
 	</div>
 </div>
 
-<form data-abide>
-	<%= render 'user/password_field', data_abide_validator: "passwordcb" %>
+<form>
+	<%= render 'user/password_field', password_label: "Confirm Password", password_id: "password", show_hide_id: "showhide", data_abide_validator: "passwordcb" %>
 </form>
 <a href="" class="button expand">Delete Account</a>
