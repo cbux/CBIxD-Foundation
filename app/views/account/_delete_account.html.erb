@@ -1,3 +1,4 @@
+<% @alert_name = "deleted account" %>
 <div class="row">
 	<div class="column small-12">
 		<p>When you select the "Remove my account" button below, your account will be deleted within the next thirty days.
@@ -15,7 +16,10 @@
 	</div>
 </div>
 
-<form>
+<form action=<%= root_path %> method="get">
+	<%= hidden_field_tag 'deleted_account', 'true' %>
+	<%= hidden_field_tag 'success', 'true' %>
+	<%= hidden_field_tag 'auth', 'unknown' %>
 	<%= render 'user/password_field', password_label: "Confirm Password", password_id: "password", show_hide_id: "showhide", data_abide_validator: "passwordcb" %>
+	<%= submit_tag "Delete Account", name: nil, id: "account-delete", class: "button expand" %>
 </form>
-<a href="" class="button expand">Delete Account</a>

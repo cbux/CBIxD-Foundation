@@ -1,86 +1,34 @@
+<% @alert_name = "e-mail settings" %>
 <h3>Email me about</h3>
 <!-- Email Section-->
-<div class="row">
-	<div class="column small-10">
-		<p>
-			Details on new products, tips, and special offers 
-		</p>
-	</div>
-	<div class="column small-2">
-		<div class="switch round tiny">
-			<input id="exampleCheckboxSwitch2" type="checkbox">
-			<label for="exampleCheckboxSwitch2"></label>
-		</div>
-	</div>
-</div>
-<!-- Email Section-->
-<div class="row">
-	<div class="column small-10">
-		<p>
-			Job Recommendations
-			<span data-tooltip aria-haspopup="true" class="has-tip" title="Send you emails with recommended jobs based on jobs you've previously applied to."> What's This?
-			</span>
-		</p>
-	</div>
-	<div class="column small-2">
-		<div class="switch round tiny">
-			<input id="exampleCheckboxSwitch1" type="checkbox">
-			<label for="exampleCheckboxSwitch1"></label>
-		</div>
-	</div>
-</div>
-<!-- Email Section-->
-<div class="row">
-	<div class="column small-10">
-		<p>
-		When my application has been viewed
-		</p>
-	</div>
-	<div class="column small-2">
-		<div class="switch round tiny">
-		  <input id="exampleCheckboxSwitch3" type="checkbox">
-		  <label for="exampleCheckboxSwitch3"></label>
-		</div>
-	</div>
-</div>
-<!-- Email Section-->
-<div class="row">
-	<div class="column small-10">
-		<p>
-		When my resume has been viewed
-		</p>
-	</div>
-
-
-
-	<div class="column small-2">
-		<div class="switch round tiny">
-		  <input id="exampleCheckboxSwitch4" type="checkbox">
-		  <label for="exampleCheckboxSwitch4"></label>
-		</div>
-	</div>
-</div>
+<form action="<%= @path %>" method="get" data-abide id="email-change-form">
+	<%= hidden_field_tag 'page', 'manage_email' %>
+	<%= hidden_field_tag 'success', 'true' %>
+	<%= render 'email_subscription_field', email_description: "Details on new products, tips, and special offers ", email_id: "marketing_email", form: 'email-change-form', checked: @marketing_checked %>
+	<!-- Email Section-->
+	<%= render 'email_subscription_field', email_description: "Job Recommendations", email_id: "recs_email", form: 'email-change-form', checked: @recs_checked %>
+	<!-- Email Section-->
+	<%= render 'email_subscription_field', email_description: "When my application has been viewed", email_id: "avn_email", form: 'email-change-form', checked: @avn_checked %>
+	<!-- Email Section-->
+	<%= render 'email_subscription_field', email_description: "When my resume has been viewed", email_id: "rvn_email", form: 'email-change-form', checked: @rvn_checked %>
+</form>
 
 <hr/>
 <div class="row">
 	<div class="column small-12">
-	<a href="#" data-reveal-id="myModal"> Unsubscribe from all CareerBuilder Emails</a>
-
-	<div id="myModal" class="reveal-modal" data-reveal>
-	  <h2>Unsubscribe from all emails</h2>
-	  <p>You will be unsubscribed from all updates, job notifications, and newsletter emails from CareerBuilder. Are you sure you want to unsubscribe?</p>
-	  
-	  <div class="row">
-	  	<div class="column small-2 offset-1">
-	  		<div class="button  secondary"> Unsubscribe</div>
-	  	</div>
-
-	  		<div class="column small-9">
-	  		<div class="button"> Nevermind</div>
-	  	</div>
-	  </div>
-	  <a class="close-reveal-modal">&#215;</a>
-	</div>
-		
+		<a href="#" data-reveal-id="myModal"> Unsubscribe from all CareerBuilder Emails</a>
+		<div id="myModal" class="reveal-modal" data-reveal>
+		  <h2>Unsubscribe from all emails</h2>
+		  <p>You will be unsubscribed from all updates, job notifications, and newsletter emails from CareerBuilder. Are you sure you want to unsubscribe?</p>
+		  <div class="row">
+		  	<div class="column small-2 offset-1">
+		  		<%= link_to "Unsubscribe", account_path(params.merge(success: "true", unsubscribe: "true").except(:action, :controller)) %>
+		  	</div>
+		  	<div class="column small-9">
+		  		<a class="button" data-reveal-id="myModal">Nevermind</a>
+		  	</div>
+		  </div>
+		  <a class="close-reveal-modal">&#215;</a>
+		</div>
 	</div>
 </div>

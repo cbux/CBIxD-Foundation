@@ -102,3 +102,14 @@ function toggle_password_text(id) {
 		p.innerHTML = "Show";
 	}
 }
+
+// Page Change on Navigation Dropdown Change
+function dropdownPageChange() {
+	var a = $('#dropdown_nav').val();
+	window.location.href = window.location.pathname + "?page=" + a;
+}
+
+// Save Email Settings when Checkbox is clicked
+function checkboxChange(id){
+	$(id).submit();
+}

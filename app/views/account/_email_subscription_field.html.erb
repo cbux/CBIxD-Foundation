@@ -1,0 +1,11 @@
+<div class="row">
+	<div class="column small-9">
+		<%= email_description %>
+	</div>
+	<div class="column small-3">
+		<div class="switch round tiny">
+		  <input id=<%= email_id %> type="checkbox" onchange='checkboxChange("#<%= form %>")' <%= checked %>>
+		  <label for="<%= email_id %>"></label>
+		</div>
+	</div>
+</div>

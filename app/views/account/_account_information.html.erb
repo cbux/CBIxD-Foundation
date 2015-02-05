@@ -1,10 +1,14 @@
-<label>First Name
-  <input type="text" placeholder="" />
-</label>
-<label>Last Name
-  <input type="text" placeholder="" />
-</label>
-<label>Zip Code
-  <input type="text" placeholder="" />
-</label>
-<a href="#" class="button expand">Save Changes</a>
+<% @alert_name = "account information" %>
+<form action="<%= @path %>" method="get" data-abide id="email-change-form">
+	<%= hidden_field_tag 'page', 'account_information' %>
+	<%= hidden_field_tag 'success', 'true' %>
+	<label>First Name
+  	<input type="text" placeholder="" />
+	</label>
+	<label>Last Name
+	  <input type="text" placeholder="" />
+	</label>
+	<label>Zip Code
+	  <input type="number" placeholder="" />
+	</label>
+	<%= submit_tag "Save Changes",name: nil, id: "account-information-save", class: "button expand" %>

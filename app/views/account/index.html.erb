@@ -8,11 +8,19 @@
 	</div>
 	<div class="row">
 		<div class="column small-12 large-6 show-for-small-only">
-			<select>
-				<option selected=<%= @info %>>Account Information</option>
-				<option selected=<%= @security %>>Account Security</option>
-				<option selected=<%= @email %>>Manage Email Settings</option>
-				<option selected=<%= @delete %>>Delete Account</option>
+			<select id="dropdown_nav" onchange="dropdownPageChange()">
+				<option value="account_information" <%= @info_selected %>>
+					Account Information
+				</option>
+				<option value="security" <%= @security_selected %>>
+					Account Security
+				</option>
+				<option value="manage_email" <%= @email_selected %>>
+					Manage Email Settings
+				</option>
+				<option value="delete_account" <%= @delete_selected %>>
+					Delete Account
+				</option>
 			</select>
 		</div>
 	</div>
@@ -21,16 +29,16 @@
 		<div class="column large-3 medium-4">
 			<ul class="side-nav show-for-medium-up">
 				  <li  class=<%= @info_active %>>
-				  	<%= link_to "Account Information", account_path(params.merge(page: "account_information")) %>
+				  	<%= link_to "Account Information", account_path(params.merge(page: "account_information").except(:action, :controller, :success, :error, :message)) %>
 				  </li>
 				  <li class=<%= @security_active %>>
-				  	<%= link_to "Account Security", account_path(params.merge(page: "security")) %>
+				  	<%= link_to "Account Security", account_path(params.merge(page: "security").except(:action, :controller, :success, :error, :message)) %>
 				  </li>
 				  <li class=<%= @email_active %>>
-				  	<%= link_to "Manage Email Settings", account_path(params.merge(page: "manage_email")) %>
+				  	<%= link_to "Manage Email Settings", account_path(params.merge(page: "manage_email").except(:action, :controller, :success, :error, :message)) %>
 				  </li>
 				  <li class=<%= @delete_active %>>
-				  	<%= link_to "Delete Account", account_path(params.merge(page: "delete_account")) %>
+				  	<%= link_to "Delete Account", account_path(params.merge(page: "delete_account").except(:action, :controller, :success, :error, :message)) %>
 				  </li>
 			</ul>
 		</div>
