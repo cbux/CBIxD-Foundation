@@ -45,6 +45,9 @@ class AccountController < ApplicationController
 		if params[:page] == "manage_email"
 			@success_message = "You've successfully updated email subscriptions"
 		end
+		if params[:page] == "account_information"
+			@success_message = "You've successfully updated your account information"
+		end
 	end
 
 

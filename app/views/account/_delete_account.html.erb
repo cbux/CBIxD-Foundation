@@ -17,8 +17,9 @@
 </div>
 
 <form action=<%= root_path %> method="get">
-	<%= hidden_field_tag 'deleted-account', 'true' %>
+	<%= hidden_field_tag 'deleted_account', 'true' %>
 	<%= hidden_field_tag 'success', 'true' %>
+	<%= hidden_field_tag 'auth', 'unknown' %>
 	<%= render 'user/password_field', password_label: "Confirm Password", password_id: "password", show_hide_id: "showhide", data_abide_validator: "passwordcb" %>
 	<%= submit_tag "Delete Account", name: nil, id: "account-delete", class: "button expand" %>
 </form>
