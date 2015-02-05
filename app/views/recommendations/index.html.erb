@@ -1,15 +1,17 @@
 <!--header-->
 <div class="row">
-    <div class="large-9 columns">
+    <div class="small-12 large-6 columns">
         <h1> Job Recommendations</h1>
     </div><!--close column-->
-</div><!--clos row-->
 
-<!--filters-->
-<!--TODO Collapse preferences into new page on mobile-->
+    <div class="small-12 large-6 columns">
+        <p>1,356 jobs found</p>
+    </div><!--close column-->
+</div><!--close row-->
+
+<!--Recommendations preferences-->
 <div class="row">
-    <div class="large-2 columns hide-for-small-only">
-        <!--Recommendations preferences-->
+    <div class="large-2 columns show-for-large-only">
             <h6> Recommendation Preferences</h6>
             <ul class="side-nav">
                 <li><label>Locations</label></li>
@@ -22,7 +24,7 @@
             </ul>
     </div><!--close column-->
     <div class="large-1 columns">
-        <ul class="side-nav hide-for-small-only">
+        <ul class="side-nav show-for-large-only">
             <li class="divider"></li>
             <li class="divider"></li>
             <li class="divider"></li>
@@ -34,68 +36,48 @@
             <li><a href="#">X</a></li>
         </ul>
     </div><!--close column-->
-    <!--start right column sort and results-->
-    <div class="large-9 columns">
-        <div class="row">
-            <div class="large-3 columns">
-                <p>100 jobs found</p>
-            </div><!--close column-->
-            <!--collapse sort to dropdown on mobile-->
-            <div class="large-6 small-6 show-for-small-only">
-                <label>Sort By:</label>
-                <button href="#" data-dropdown="mobilesort" aria-controls="mobilesort" aria-expanded="false" class="button dropdown">Relevance</button><br>
-                    <ul id="mobilesort" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
-                        <li><a href="#">Date</a></li>
-                        <li><a href="#">Location</a></li>
-                    </ul>
-            </div><!--end show for small only-->
-            <!--rec preferences button for mobile version-->
-            <div class="small-12 columns show-for-small-only">
-                <a href="#" class="button expand">Edit Recommendations</a>
-            </div>
-            <!--start sort-->
-            <!--TODO collapse sort on mobile-->
-            <div class="medium-7 columns hide-for-small-only">
-                <dl class="sub-nav">
-                    <dt>Sort By:</dt>
-                        <dd class="active"><a href="#">Relevance</a></dd>
-                        <dd><a href="#">Date</a></dd>
-                        <dd><a href="#">Location</a></dd>
-                </dl>
-            </div><!--close columns-->
-        </div> <!--end row-->
-        <hr />
-        <!--TODO: insert job result partial-->
-        <div class="row">
-            <div class="large-6 columns">
-                <h2>Account Manager</h2>
-                <p>Full-Time | Entry Level | $10/hr | Sales, Training | Our client, a leader in the production of medical technology solutions has an immediate need for...</p>
-                <!--TODO hide link list on mobile-->
-                <ul class="inline-list">
-                    <li><a href="#">Save Job</a></li>
-                    <li><a href="#">Email Job</a></li>
-                    <li><a href="#">See Details</a></li>
-                </ul>
-            </div><!--close column-->
-            <div class="large-2 columns">
-                <a href="#">ABC Company</a>
-            </div><!--close column-->
-            <div class="large-2 columns">
-                <p>GA-Atlanta</p>
-                <a href="#"> + View 2 more</a>
-            </div><!--close column-->
-            <div class="large-2 columns">
-                <p>1 Hour Ago</p>
-            </div><!--close column-->
-            <hr />
-        </div><!--close row-->
+
+<!--start right column sort and results-->
+
+<!--rec preferences button for mobile version-->
+    <div class="small-12 columns hide-for-large-only">
+        <a href="#" class="button">Edit Recommendations</a>
+    </div>
+
+<!--collapse sort to dropdown on mobile-->
+    <div class="large-6 small-6 hide-for-large-only">
+        <button href="#" data-dropdown="mobilesort" aria-controls="mobilesort" aria-expanded="false" class="button dropdown">Relevance</button><br>
+            <ul id="mobilesort" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
+                <li><a href="#">Date</a></li>
+                <li><a href="#">Location</a></li>
+            </ul>
+    </div><!--end show for small only-->
+
+<!--start sort-->
+    <div class="medium-5 right columns show-for-large-only">
+        <dl class="sub-nav">
+            <dt>Sort By:</dt>
+                <dd class="active"><a href="#">Relevance</a></dd>
+                <dd><a href="#">Date</a></dd>
+                <dd><a href="#">Location</a></dd>
+        </dl>
+    </div><!--close columns-->
+
+<!--job result-->
+    <div class="small-9 columns">
+        <%= render :partial => 'jobs/job_result' %>
+        <%= render :partial => 'jobs/job_result' %>
+    </div><!--close columns-->
     </div><!--close right column-->
-        <!--pagination-->
-        <div class="row">
-            <div class="large-1 columns"></div>
-            <div class="large-4 large-offset-7 columns">
-                <a href="#" class="button secondary">Previous</a>
-                <a href="#" class="button secondary">Next</a>
-            </div><!--close column-->
-        </div><!--close row-->
+
+</div><!--close row for filters and result-->
+
+<!--pagination-->
+<div class="row">
+    <div class="small-12 large-4 large-offset-9 columns">
+        <a href="#" class="button secondary">Previous</a>
+        <a href="#" class="button secondary">Next</a>
+    </div><!--close column-->
 </div><!--close row-->
+
+
