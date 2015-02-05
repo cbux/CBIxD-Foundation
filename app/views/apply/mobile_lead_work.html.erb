@@ -28,52 +28,25 @@
 <!-- Progress steps End-->
 
 <div class="row">
-	<div class="column small-12 large-6">
-		<label>First Name
-        <input type="text" />
-      </label>
-	</div>
+	<div class="column small-12">
 
-	<div class="column small-12 large-6">
-		<label>Last Name
-        <input type="text" />
-      </label>
+	<%= render 'resumes/edit_work' %>
 	</div>
-
-	<div class="column small-12 large-6">
-		<label>Email Address
-        <input type="text" />
-      </label>
-	</div>
-
-
-	<div class="column small-12 large-6">
-		<label>Phone Number
-        <input type="text" />
-      </label>
-	</div>
-
-	<div class="column small-12 large-6">
-		<label>City,State or Zipcode
-        <input type="text" />
-      </label>
-	</div>
-
-	<div class="column small-12 large-6">
-		<label>Work Status
-	        <select>
-	          <option value="husker">Select One</option>
-	          <option value="starbuck">Employment Authorization Document</option>
-	          <option value="hotdog">US Citizen</option>
-	          <option value="apollo">Green Card Holder</option>
-	        </select>
-	    </label>
-	</div>
-   
+		
 </div>
+<%= render 'resumes/time_start_end_fields' %>
+<div class="row">
+	<div class="column">
+		<div class="button expand secondary">Add Position</div>
+	</div>
+</div>
+
+		<!-- Add Section button ends-->
+
 
 <div class="row">
 	<div class="column small-12 ">
+	<hr/>
     	<div class="button expand"> Next</div>
     </div>
 </div>
@@ -83,3 +56,5 @@
     	<div class="button secondary expand"> Cancel</div>
     </div>
 </div>
+
+
