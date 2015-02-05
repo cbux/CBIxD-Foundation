@@ -1,3 +1,4 @@
+<% @search_bar = "no-search" %>
 <div class="row">
 	<div class="column small-12 medium-12 large-12">
 		<h2 class="subheader">Applying to</h2>
@@ -63,42 +64,12 @@
 </div>
 
 <!-- Password Area-->
-
-	<div class="row">
-		<div class="column large-6 medium-6 small-12">
-				<label>Password
-			<div class="row collapse">
-				<div class="column small-10">
-					<!-- TODO password validation -->
-			    <input type="password" placeholder="password" />
-			  </div>
-		    <div class="small-2 columns">
-		    	<!-- TODO show/hide password -->
-		      <a href="#" class="button secondary postfix">Show</a>
-		    </div>
-		  </div>
-			</label>
-		</div>
-	</div>
-
-	<!-- TODO message : Make Dynamic Password Validation -->
 <div class="row">
-	<div class="column large-6 medium-6">
-		<div class="row">
-			<div class="column small-12 large-6 medium-6">
-				<li> 8 to 15 characters</li>
-				<li>Lowercase Letters</li>
-			</div>
-		
-			<div class="column small-12 large-6 medium-6">
-				<li>Number or Symbol</li>
-				<li>Uppercase Letters</li>
-			</div>
-		</div>
-		
-	</div>
-	<hr/>
-</div>
+<form data-abide>
+	<%= render :partial => "user/password_creation_field" %>
+</form>
+</div>	
+
 
 <!-- End Password Area-->
 
