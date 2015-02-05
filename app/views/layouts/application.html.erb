@@ -21,6 +21,15 @@
 				</div>
 			</div>
 		<% end %>
+		<% if params[:success] == 'true' %>
+  		<div data-alert class="alert-box success true">
+  			<div class="row">
+					<div class="column small-12 medium-12 large-12">
+						<%= @success_message %>
+					</div>
+				</div>
+			</div>
+		<% end %>
   	<% if params[:signed_out] == 'true' %>
   		<div data-alert class="alert-box success">
   			<div class="row">

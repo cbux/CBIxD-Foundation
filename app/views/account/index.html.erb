@@ -29,16 +29,16 @@
 		<div class="column large-3 medium-4">
 			<ul class="side-nav show-for-medium-up">
 				  <li  class=<%= @info_active %>>
-				  	<%= link_to "Account Information", account_path(params.merge(page: "account_information").except(:action, :controller)) %>
+				  	<%= link_to "Account Information", account_path(params.merge(page: "account_information").except(:action, :controller, :success, :error, :message)) %>
 				  </li>
 				  <li class=<%= @security_active %>>
-				  	<%= link_to "Account Security", account_path(params.merge(page: "security").except(:action, :controller)) %>
+				  	<%= link_to "Account Security", account_path(params.merge(page: "security").except(:action, :controller, :success, :error, :message)) %>
 				  </li>
 				  <li class=<%= @email_active %>>
-				  	<%= link_to "Manage Email Settings", account_path(params.merge(page: "manage_email").except(:action, :controller)) %>
+				  	<%= link_to "Manage Email Settings", account_path(params.merge(page: "manage_email").except(:action, :controller, :success, :error, :message)) %>
 				  </li>
 				  <li class=<%= @delete_active %>>
-				  	<%= link_to "Delete Account", account_path(params.merge(page: "delete_account").except(:action, :controller)) %>
+				  	<%= link_to "Delete Account", account_path(params.merge(page: "delete_account").except(:action, :controller, :success, :error, :message)) %>
 				  </li>
 			</ul>
 		</div>

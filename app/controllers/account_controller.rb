@@ -38,6 +38,13 @@ class AccountController < ApplicationController
 			@delete_selected = "selected" 
 			@delete_active = "active"
 		end
+
+		if params[:page] == "security"
+			@success_message = "You've successfully updated your password"
+		end
+		if params[:page] == "manage_email"
+			@success_message = "You've successfully updated email subscriptions"
+		end
 	end
 
 

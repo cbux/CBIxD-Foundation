@@ -1,4 +1,7 @@
-<form data-abide>
+<% @alert_name = "account information" %>
+<form action="<%= @path %>" method="get" data-abide id="email-change-form">
+	<%= hidden_field_tag 'page', 'account_information' %>
+	<%= hidden_field_tag 'success', 'true' %>
 	<label>First Name
   	<input type="text" placeholder="" />
 	</label>
@@ -6,6 +9,6 @@
 	  <input type="text" placeholder="" />
 	</label>
 	<label>Zip Code
-	  <input type="text" placeholder="" />
+	  <input type="number" placeholder="" />
 	</label>
-	<%= submit_tag "Save Changes", class: "button expand" %>
+	<%= submit_tag "Save Changes",name: nil, id: "account-information-save", class: "button expand" %>

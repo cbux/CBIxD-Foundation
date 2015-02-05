@@ -1,4 +1,7 @@
-<form data-abide>
+<% @alert_name = "password" %>
+<form action="<%= @path %>" method="get" data-abide id="password-change-form">
+	<%= hidden_field_tag 'page', 'security' %>
+	<%= hidden_field_tag 'success', 'true' %>	
 	<div class="row">
 		<div class="column small-12">
 			<%= render 'user/password_field', password_id: "password", password_label: "Confirm Password", show_hide_id: "showhide", data_abide_validator: "" %>
@@ -9,6 +12,6 @@
 	</div>
 	<div class="row" id="bump">
 		<div class="column small-12">
-			<a href="" class="button expand">Save Changes</a>
+			<%= submit_tag "Change Password",:name => nil, id: "password-save", class: "button expand" %>
 		</div>
 </form>
