@@ -73,6 +73,14 @@ label small.error {
 	margin-top: 20px;
 }
 
+.search .postfix {
+	margin-top: 20px;
+}
+
+.hero {
+	padding: 3em 0 5em;
+}
+
 @media only screen and (min-width: 40.063em) {
   .top-bar .toggle-topbar-2 {
     display: none;
@@ -90,6 +98,9 @@ label small.error {
 	}
 	.no-footer {
 		display: none;
+	}
+	.hero {
+		padding: 10em 0;
 	}
 }
 
@@ -120,6 +131,14 @@ label small.error {
 	color: red;
 }
 
-.global-search {
+.global-search, .search {
 	background-color: $base;
+}
+
+.green-back {
+	background-color: green;
+}
+
+.red-back {
+	background-color: red;
 }
