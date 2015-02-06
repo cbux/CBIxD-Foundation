@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'apply/mobile_lead' => 'apply#mobile_lead'
   get 'apply/mobile_lead_work' => 'apply#mobile_lead_work'
   get 'apply/mobile_lead_edu' => 'apply#mobile_lead_edu'
+   get 'apply/mobile_lead_preview' => 'apply#mobile_lead_preview'
   get 'apply/apply_unknown' => 'apply#apply_unknown'
   get 'apply/parsed_unknown' => 'apply#parsed_unknown'
   get 'apply/signin_guest' => 'apply#signin_guest'
