@@ -11,10 +11,10 @@
 		  <li  data-step="1">
 		    Profile
 		  </li>
-		  <li data-step="2" class="is-active">
+		  <li data-step="2">
 		    Work History
 		  </li>
-		  <li   data-step="3" >
+		  <li   data-step="3"  class="is-active">
 		    Education
   		  </li>
   		   <li  data-step="4" class="progress_resume_last">
@@ -27,30 +27,16 @@
 
 <!-- Progress steps End-->
 
+<%= render 'resumes/edit_edu' %>
 <div class="row">
 	<div class="column small-12">
-
-	<div class="row">
-		<div class="column small-12">
-			<h4>Work Experience</h4>
-		</div>
+	<hr/>
 	</div>
-
-	<%= render 'resumes/edit_work' %>
-	<%= render 'resumes/time_start_end_fields' %>
-	<div class="row">
-		<div class="column small-12">
-			<hr/>
-		</div>
-	</div>
-<%= render 'resumes/edit_work' %>
 </div>
-		
-</div>
-
+<%= render 'resumes/edit_edu' %>
 <div class="row">
 	<div class="column">
-		<div class="button expand secondary">Add Position</div>
+		<div class="button expand secondary">Add Education</div>
 	</div>
 </div>
 
