@@ -1,21 +1,30 @@
 <div class="row">
+
 <% if params[:branding] == "premium" || params[:branding] == "standard" || params[:branding] == "basic" %>
-	<div class="column medium-4 hide-for-small-only">
+
+	<div class="columns medium-4 large-3 hide-for-small-only">
 		<img src="http://placehold.it/180x180">
-	</div>
-	<div class="column small-12 medium-8">
+	</div><!--close column-->
+
+	<div class="columns small-12 medium-8 large-9 columns">
+
 <% else %>
-	<div class="column small-12 ">
+
+	<div class="small-12 medium-12 large-12 columns ">
+
 <% end %>
+
     <h1>Account Manager</h1>
     <p>1 Hour Ago</p>
     <a href="#">ABC Company</a>
     <p>GA-Atlanta</p>
 
-        <ul class="button-group">
-            <li><a href="#" class="small button">Apply Now</a></li>
-            <li><a href="#" class="small button secondary">Email Job</a></li>
-            <li><a href="#" class="small button secondary">Save Job</a></li>
-        </ul>
+    <ul class="button-group">
+        <li><a href="#" class="small button">Apply Now</a></li>
+        <li><a href="#" class="small button secondary">Email Job</a></li>
+        <li><a href="#" class="small button secondary">Save Job</a></li>
+    </ul>
+
 	</div><!--close column-->
+
 </div><!--close row-->

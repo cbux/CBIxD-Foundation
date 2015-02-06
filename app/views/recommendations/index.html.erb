@@ -1,56 +1,72 @@
 <!--header-->
 <div class="row">
-    <div class="small-12 large-6 columns">
+
+    <div class="small-12 medium-12 large-6 columns">
         <h1> Job Recommendations</h1>
     </div><!--close column-->
 
 <% if params[:auth] == "unknown" %>
+
     <div class="row">
-        <div class="small-12 columns">
+
+        <div class="small-12 medium-12 large-12 columns">
             <p>To start getting recommendations, apply for a job or sign-in.</p>
             <a href="#" class="button">Start a job search</a>
-        </div><!-- close columsn -->
+        </div><!-- close column -->
+
     </div><!-- close row -->
+
     <%= render :partial => 'user/sign_in_form' %>
+
 <% end %>
 
 <% if params[:result] == "zero" %>
-   <div class="small-12 large-6 columns">
+
+<div class="row">
+
+    <div class="small-12 medium-12 large-6 columns">
         <p>0 jobs found</p>
     </div><!--close column-->
+
 </div><!--close row-->
 
 <div class="row">
-    <div class="small-12 large-6 columns">
+
+    <div class="small-12 medium-12 large-6 columns">
         <h2>What recommendations would you like to see?</h2>
         <p>You can always change these later in your recommendation preferences</p>
 
         <form>
-              <label>Desired Job Title
+            <label>Desired Job Title
                 <input type="text" placeholder="" />
-              </label>
-                <label>Location
+            </label>
+            <label>Location
                 <input type="text" placeholder="" />
-              </label>
+            </label>
                 <input id="jobalertcheck" type="checkbox"><label for="jobalertcheck">Create Job Alert</label><br />
                 <a href="#" class="button">Get Job Recommendations</a>
         </form>
+
     </div><!-- close columns  -->
+
 </div><!-- close row -->
 
 <% end %><!-- close no results param-->
 
 <% if params[:auth] == "known" || params[:auth] === "authenticated" %>
 
-    <div class="small-12 large-6 columns">
+
+    <div class="small-12 medium-12 large-6 columns">
         <p>1,356 jobs found</p>
     </div><!--close column-->
+
 </div><!--close row-->
 
 <!--Recommendations preferences-->
 
 <div class="row">
-    <div class="large-3 columns show-for-large-only">
+
+    <div class="large-3 columns show-for-large-up">
             <h6> Recommendation Preferences</h6>
             <ul class="side-nav">
                 <li><label>Locations</label></li>
@@ -66,12 +82,12 @@
 <!--start right column sort and results-->
 
 <!--rec preferences button for mobile version-->
-    <div class="small-12 columns hide-for-large-only">
+    <div class="small-12 medium-12 columns hide-for-large-up">
         <a href="recprefs" class="button">Edit Recommendations</a>
     </div>
 
 <!--collapse sort to dropdown on mobile-->
-    <div class="large-6 small-6 hide-for-large-only">
+    <div class="small-6 medium-6 hide-for-large-up">
         <button href="#" data-dropdown="mobilesort" aria-controls="mobilesort" aria-expanded="false" class="button dropdown">Relevance</button><br>
             <ul id="mobilesort" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
                 <li><a href="#">Date</a></li>
@@ -80,8 +96,8 @@
     </div><!--end show for small only-->
 
 <!--start sort-->
-    <div class="medium-5 right columns show-for-large-only">
-        <dl class="sub-nav">
+    <div class="large-5 right columns show-for-large-up">
+        <dl class="sub-nav right">
             <dt>Sort By:</dt>
                 <dd class="active"><a href="#">Relevance</a></dd>
                 <dd><a href="#">Date</a></dd>
@@ -90,10 +106,9 @@
     </div><!--close columns-->
 
 <!--job result-->
-    <div class="small-9 columns">
+
         <%= render :partial => 'jobs/job_result' %>
-        <%= render :partial => 'jobs/job_result' %>
-    </div><!--close columns-->
+
 
 </div><!--close row for filters and result-->
 
