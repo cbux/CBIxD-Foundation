@@ -4,37 +4,67 @@
         <h1> Job Recommendations</h1>
     </div><!--close column-->
 
+<% if params[:auth] == "unknown" %>
+    <div class="row">
+        <div class="small-12 columns">
+            <p>To start getting recommendations, apply for a job or sign-in.</p>
+            <a href="#" class="button">Start a job search</a>
+        </div><!-- close columsn -->
+    </div><!-- close row -->
+    <%= render :partial => 'user/sign_in_form' %>
+<% end %>
+
+<% if params[:result] == 0 %>
+   <div class="small-12 large-6 columns">
+        <p>0 jobs found</p>
+    </div><!--close column-->
+</div><!--close row-->
+
+<div class="row">
+    <div class="small-12 columns">
+        <h2>What kind of recommendations would you like to see?</h2>
+        <p>You can always change these later in your recommendation preferences</p>
+
+        <form>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Desired Job Title
+                <input type="text" placeholder="" />
+              </label>
+                <label>Location
+                <input type="text" placeholder="" />
+              </label>
+                <input id="jobalertcheck" type="checkbox"><label for="jobalertcheck">Create Job Alert</label>
+                <a href="#" class="button">Get Job Recommendations</a>
+            </div>
+          </div>
+        </form>
+    </div><!-- close columns  -->
+</div><!-- close row -->
+
+<% end %><!-- close no results param-->
+
+<% if params[:auth] == "known" || params[:auth] === "authenticated" %>
+
     <div class="small-12 large-6 columns">
         <p>1,356 jobs found</p>
     </div><!--close column-->
 </div><!--close row-->
 
 <!--Recommendations preferences-->
+
 <div class="row">
-    <div class="large-2 columns show-for-large-only">
+    <div class="large-3 columns show-for-large-only">
             <h6> Recommendation Preferences</h6>
             <ul class="side-nav">
                 <li><label>Locations</label></li>
-                <li><a href="#">Atlanta, GA</a></li>
-                <li><a href="#">Dallas, TX</a></li>
+                <li><a href="#" class="small-9 columns">Atlanta, GA</a><a class="small-1 columns" href="#">X</a><hr /></li>
+                <li><a href="#" class="small-9 columns">Phoenix, AZ</a><a class="small-1 columns" href="#">X</a><hr /></li>
                 <li class="divider"></li>
                 <li><label>Desired Job Title</label></li>
-                <li><a href="#">Sales</a></li>
-                <li><a href="#">Client Advocate</a></li>
+                <li><a href="#" class="small-9 columns">Sales</a><a class="small-1 columns" href="#">X</a><hr /></li>
+                <li><a href="#" class="small-9 columns">Client Advocate</a><a class="small-1 columns" href="#">X</a><hr /></li>
             </ul>
-    </div><!--close column-->
-    <div class="large-1 columns">
-        <ul class="side-nav show-for-large-only">
-            <li class="divider"></li>
-            <li class="divider"></li>
-            <li class="divider"></li>
-            <li class="divider"></li>
-            <li><a href="#">X</a></li>
-            <li><a href="#">X</a></li>
-            <li class="divider"></li>
-            <li class="divider"></li>
-            <li><a href="#">X</a></li>
-        </ul>
     </div><!--close column-->
 
 <!--start right column sort and results-->
@@ -68,16 +98,9 @@
         <%= render :partial => 'jobs/job_result' %>
         <%= render :partial => 'jobs/job_result' %>
     </div><!--close columns-->
-    </div><!--close right column-->
 
 </div><!--close row for filters and result-->
 
-<!--pagination-->
-<div class="row">
-    <div class="small-12 large-4 large-offset-9 columns">
-        <a href="#" class="button secondary">Previous</a>
-        <a href="#" class="button secondary">Next</a>
-    </div><!--close column-->
-</div><!--close row-->
+<%= render :partial => 'jobs/pagination' %>
 
-
+<% end %><!--end query param for known and authenticated-->
