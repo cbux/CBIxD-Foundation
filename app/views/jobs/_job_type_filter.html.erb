@@ -1,0 +1,10 @@
+<div class="row">
+	<div class="column small-12">
+  	<label>Job Type</label>
+	</div>
+  <% @job_type_filters.each do |key, value| %>
+    <div class="column small-12">
+    	<%= render 'shared/checkbox_field', checkbox_id: key, checkbox_label: value %>
+  	</div>
+  <% end %>
+</div>

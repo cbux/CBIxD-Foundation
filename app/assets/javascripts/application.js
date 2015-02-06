@@ -113,3 +113,15 @@ function dropdownPageChange() {
 function checkboxChange(id){
 	$(id).submit();
 }
+
+$(document).ready(function() {
+	if ( $('.fullpage-home').length ) {
+    $.fn.fullpage({
+			sectionsColor : ['red', 'green'],
+    });
+  }
+  jQuery(function($) {
+    $("select[multiple]").bsmSelect();
+	});
+});
+
