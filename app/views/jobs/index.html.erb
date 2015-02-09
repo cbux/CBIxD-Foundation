@@ -13,16 +13,16 @@
 <!--start sort larger devices-->
 <div class="row">
   <div class="medium-5 right columns show-for-large-up">
-    <dl class="sub-nav">
+    <dl class="sub-nav right">
       <dt>Sort By:</dt>
         <dd class=<%= @sort_relevance %>>
-        	<%= link_to "Relevance", jobs_path(params.merge(:sort => "relevance").except(:action, :controller)) %>
+        	<%= link_to "Relevance", params.merge(:sort => "relevance").except(:action, :controller) %>
         </dd>
         <dd class=<%= @sort_date %>>
-        	<%= link_to "Date", jobs_path(params.merge(:sort => "date").except(:action, :controller)) %>
+        	<%= link_to "Date", params.merge(:sort => "date").except(:action, :controller) %>
         </dd>
         <dd class=<%= @sort_location %>>
-        	<%= link_to "Location", jobs_path(params.merge(:sort => "location").except(:action, :controller)) %>
+        	<%= link_to "Location", params.merge(:sort => "location").except(:action, :controller) %>
         </dd>
       </dl>
   </div>

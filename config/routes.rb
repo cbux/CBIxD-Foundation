@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get 'sink' => 'sink#index'
   get 'sign_in' => 'user#sign_in'
   get 'sign_up' => 'user#sign_up'
+  get 'jobs/after_apply' => 'jobs#after_apply'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

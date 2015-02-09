@@ -1,5 +1,23 @@
 class JobsController < ApplicationController
+	before_action :auto_jobs, :all_results
 	def index
+	end
+
+	def after_apply
+		render 'jobs/index'
+		
+		
+	end	
+  
+  private
+  def auto_jobs
+  # If results nil default to 25 results
+		if params[:results] == nil
+			params[:results] = "25"
+		end
+  end
+	
+	def all_results
 		# Hash for Job Type Filters
 		@job_type_filters = {
 			"full-time" => "Full Time",
@@ -79,21 +97,12 @@ class JobsController < ApplicationController
 		end
 
 		if params[:page] == "after_apply"
-			@success_message = "You have successfully applied for Practice Coordinator at Confidential in Atlanta, GA. 
-			Your resume has been sent via email to the employer. You will receive an email confirmation once it is received by the employer."
+			
 		end
 
 		if params[:page] == "account_information"
 			@info_message = " This job is expired. Sales | In-Store Sales Rep | Quick Advancement Potential
             We found these close matches instead."
 		end
-
-		# If results nil default to 25 results
-		if params[:results] == nil
-			params[:results] = "25"
-		end
 	end
-
-    def jdp_nonbranded
-    end
 end
