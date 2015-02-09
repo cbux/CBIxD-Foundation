@@ -2,13 +2,13 @@
     border: 2px dashed #ccc;
     border-radius: 5px;
     background: white;
-    height: 250px;
+    height: 313px;
 }
 
 
 .dropzone .dz-message{
 text-align: center;
-margin: 3.5em 0;
+margin: 5.5em 0;
 }
 
 
