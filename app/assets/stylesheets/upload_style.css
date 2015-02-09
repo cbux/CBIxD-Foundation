@@ -33,6 +33,7 @@ cursor: pointer;
   table-layout: fixed;
   width: 100%;
   color: #849397;
+  margin:15px 0 35px 0;
 }
 .progress_resume > li {
   position: relative;
