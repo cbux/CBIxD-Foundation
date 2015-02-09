@@ -367,7 +367,7 @@
     debugMode: false,                           // Debug mode keeps original select visible
 
     title: 'Select...',                         // Text used for the default select label
-    removeLabel: 'remove',                      // HTML used for the 'remove' link
+    removeLabel: 'x',                      // HTML used for the 'remove' link
     highlightAddedLabel: 'Added: ',             // Text that precedes highlight of added item
     highlightRemovedLabel: 'Removed: ',         // Text that precedes highlight of removed item
     extractLabel: function($o) { return $o.html(); },

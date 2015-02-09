@@ -15,7 +15,6 @@
 //= require foundation
 //= require turbolinks
 //= require_tree .
-
 $(document)
   .foundation(
   {
@@ -121,7 +120,9 @@ $(document).ready(function() {
     });
   }
   jQuery(function($) {
-    $("select[multiple]").bsmSelect();
+    $("select[multiple]").bsmSelect({
+    });
 	});
 });
+
 

@@ -1,101 +1,86 @@
 <!--header-->
 <div class="row">
-    <div class="small-12 large-7 columns">
-        <h1> Sales Representative Jobs in Atlanta, GA</h1>
-    </div><!--close column-->
+  <div class="small-12 large-7 columns">
+      <h1> Sales Representative Jobs in Atlanta, GA</h1>
+  </div><!--close column-->
+  <div class="small-12 large-2 columns">
+      <p>1,356 jobs found</p>
+  </div><!--close column-->
+  <div class="small-12 large-3 right columns hide-for-small-only">
+      <a href="#" class="button secondary">Create Job Alert</a>
+  </div>
+</div>
+<!--start sort larger devices-->
+<div class="row">
+  <div class="medium-5 right columns show-for-large-up">
+    <dl class="sub-nav">
+      <dt>Sort By:</dt>
+        <dd class=<%= @sort_relevance %>>
+        	<%= link_to "Relevance", jobs_path(params.merge(:sort => "relevance").except(:action, :controller)) %>
+        </dd>
+        <dd class=<%= @sort_date %>>
+        	<%= link_to "Date", jobs_path(params.merge(:sort => "date").except(:action, :controller)) %>
+        </dd>
+        <dd class=<%= @sort_location %>>
+        	<%= link_to "Location", jobs_path(params.merge(:sort => "location").except(:action, :controller)) %>
+        </dd>
+      </dl>
+  </div>
+</div>
 
-    <div class="small-12 large-2 columns">
-        <p>1,356 jobs found</p>
-    </div><!--close column-->
+<!--filter button for mobile only-->
+<div class="small-4 columns hide-for-large-up">
+  <a href="#" class="button secondary">Filter</a>
+</div>
 
-    <div class="small-12 large-3 right columns hide-for-small-only">
-        <a href="#" class="button secondary">Create Job Alert</a>
-    </div><!--close column-->
-</div><!--close row-->
+<!--start sort small devices-->
+<div class="small-10 hide-for-large-up">
+  <button href="#" data-dropdown="mobilesort" aria-controls="mobilesort" aria-expanded="false" class="button dropdown secondary">Relevance</button>
+  <br>
+  <ul id="mobilesort" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
+    <li><a href='#'>Relevance</a></li>
+    <li><a href="#">Date</a></li>
+    <li><a href="#">Location</a></li>
+  </ul>
+</div>
 
 <!--filters-->
 <div class="row">
   <div class="large-3 columns show-for-large-up">
+  	<h4>Refine By</h4>
     <!--Distance from you-->
-    <label>Distance from You</label>
-    <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="button dropdown secondary">with 25 miles</button>
-    <br>
-    <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
-      <li><a href="#">within 50 miles</a></li>
-      <li><a href="#">within 75 miles</a></li>
-      <li><a href="#">within 100 miles</a></li>
-    </ul>
+    <%= render 'distance_within_filter' %>
 		<!--Date Posted-->
     <!-- TODO Style this radio list to our tag/radio list-->
-    <label>Date Posted</label>
-    <ul class="side-nav">
-      <li><a href="#">24 Hours</a></li>
-      <li><a href="#">3 Days</a></li>
-      <li><a href="#">7 Days</a></li>
-      <li class="active"><a href="#">30 Days</a></li>
-    </ul>
+    <%= render 'date_posted_filter' %>
     <!--Job Type-->
 		<%= render 'job_type_filter' %>
 		<!--Salary-->
-		<div class="column small-12">
-    <label>Salary</label>
-    <input type="text" placeholder="Minimum Salary" />
-    <input type="text" placeholder="Maximum Salary" />
+		<div class="row">
+			<div class="column small-12">
+		    <label>Salary</label>
+		    <input type="text" placeholder="Minimum Salary" />
+		    <input type="text" placeholder="Maximum Salary" />
+			</div>
 		</div>
 		<!--Job Category-->
     <!-- TODO Multiselect-->
     <%= render 'shared/multiselect_field', multiselect_label: "Select a Category", multiselect_id: "job-category-filter", hash_for_options: @job_category_filters %>
 		<!--Degree Required-->
     <!-- TODO Multiselect-->
-    <label>Degree Required</label>
-    <button href="#" data-dropdown="drop3" aria-controls="drop3" aria-expanded="false" class="button dropdown secondary">Select a Degree</button>
-    <br>
-    <ul id="drop3" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
-      <li><a href="#">Associates</a></li>
-      <li><a href="#">Bachelors</a></li>
-      <li><a href="#">Master</a></li>
-    </ul>
+    <%= render 'degree_required_filter' %>
+    <%= render 'shared/multiselect_field', multiselect_label: "Degree Required", multiselect_id: "degree-required-filter", hash_for_options: @degree_requirements_filters %>
   </div>
-	<!--start right column sort and results-->
-	<!--filter button for mobile only-->
-  <div class="small-4 columns hide-for-large-up">
-    <a href="#" class="button secondary">Filter</a>
-	</div>
-
-	<!--start sort small devices-->
-  <div class="small-10 hide-for-large-up">
-	  <button href="#" data-dropdown="mobilesort" aria-controls="mobilesort" aria-expanded="false" class="button dropdown secondary">Relevance</button>
-	  <br>
-	  <ul id="mobilesort" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
-      <li><a href='#'>Relevance</a></li>
-      <li><a href="#">Date</a></li>
-      <li><a href="#">Location</a></li>
-	  </ul>
-	</div>
-
-	<!--start sort larger devices-->
-  <div class="medium-5 right columns show-for-large-up">
-    <dl class="sub-nav">
-      <dt>Sort By:</dt>
-        <dd class="active">
-        	<a href="#">Relevance</a>
-        </dd>
-        <dd>
-        	<a href="#">Date</a>
-        </dd>
-        <dd><a href="#">Location</a></dd>
-      </dl>
-  </div>
+	
 
 	<!--job result-->
-  <div class="small-9 columns">
+  <div class="small-12 large-9 columns">
   	<% if params[:results].to_i > 0 %>
   		<% params[:results].to_i.times do %>
   			<%= render 'job_result' %>
       <% end %>
     <% end %>
-  </div><!--close columns-->
-
-</div><!--close row for filters and result-->
+  </div>
+</div>
 
 <%= render 'pagination' %>

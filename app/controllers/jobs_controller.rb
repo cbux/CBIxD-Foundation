@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
 	def index
+		# Hash for Job Type Filters
 		@job_type_filters = {
 			"full-time" => "Full Time",
 			"part-time" => "Part Time",
@@ -7,6 +8,18 @@ class JobsController < ApplicationController
 			"intern" => "Intern",
 			"seasonal-temp" => "Seasonal/Temp",
 		}
+
+		# Hash for Degree Requirements
+		@degree_requirements_filters = {
+			"not-specified" =>  "Not Specified",
+			"none" => "None",
+			"high-school" => "High School",
+			"2-year-degree" => "2 Year Degree",
+			"4-year-degree" => "4 Year Degree",
+			"graduate-degree" => "Graduate Degree",
+		}
+		
+		# Hash for Category Filters
 		@job_category_filters = {
 			"Management (2345)" => "management",
 			"Sales (345)" => "sales",
@@ -49,6 +62,26 @@ class JobsController < ApplicationController
 			"Supply Chain (189)" => "supply chain",
 			"Legal (176)" => "legal",
 		}
+
+		# Change active sort
+		if params[:sort] == nil || params[:sort] == "relevance"
+			@sort_relevance = "active"
+			@sort_date = ""
+			@sort_location = ""
+		elsif params[:sort] == "date"
+			@sort_relevance = ""
+			@sort_date = "active"
+			@sort_location = ""
+		elsif params[:sort] == "location"
+			@sort_relevance = ""
+			@sort_date = ""
+			@sort_location = "active"
+		end
+		
+		# If results nil default to 25 results
+		if params[:results] == nil
+			params[:results] = "25"
+		end
 	end
 
     def jdp_nonbranded
