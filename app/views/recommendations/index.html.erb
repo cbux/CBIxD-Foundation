@@ -3,9 +3,32 @@
 
     <div class="small-12 medium-12 large-6 columns">
         <h1> Job Recommendations</h1>
-        <p>100 jobs found</p>
+        <p class="instructions">Quick Apply allows a one-click application using your resume [resume name]</p>
+        <input id="quickapplyon" type="checkbox"><label for="quickapplyon">Show only job with Quick Apply</label>
+
+    </div><!--close column-->
+
+<!--resume recommendations header-->
+<% if params[:action] == "resumerecs" %>
+
+    <div class="small-12 medium-12 large-6 columns">
+        <h1> Job Recommendations</h1>
+        <p>50 jobs found</p>
         <p class="instructions">Your recommendations are based on your resume, job applications, and/or location.</p>
     </div><!--close column-->
+
+<% end %>
+
+<!--similar job recs header-->
+<% if params[:action] == "similarjobs" %>
+
+    <div class="small-12 medium-12 large-6 columns">
+        <h1> Similar Job Recommendations</h1>
+        <p>50 jobs found</p>
+        <p class="instructions">Showing jobs similar to Senior Software Engineer / Core Java / 120-130K</p>
+    </div><!--close column-->
+
+<% end %>
 
 <% if params[:auth] == "unknown" %>
 
@@ -109,7 +132,7 @@
 
 <!--collapse sort to dropdown on mobile-->
     <div class="small-12 medium-12 hide-for-large-up">
-        <button href="#" data-dropdown="mobilesort" aria-controls="mobilesort" aria-expanded="false" class="button dropdown secondary right">Relevance</button><br>
+        <button href="#" data-dropdown="mobilesort" aria-controls="mobilesort" aria-expanded="false" class="button dropdown secondary right">Recommended</button><br>
             <ul id="mobilesort" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
                 <li><a href="#">Date</a></li>
                 <li><a href="#">Location</a></li>
@@ -120,7 +143,7 @@
     <div class="large-5 right columns right show-for-large-up">
         <dl class="sub-nav right">
             <dt>Sort By:</dt>
-                <dd class="active"><a href="#">Relevance</a></dd>
+                <dd class="active"><a href="#">Recommended</a></dd>
                 <dd><a href="#">Date</a></dd>
                 <dd><a href="#">Location</a></dd>
         </dl>
