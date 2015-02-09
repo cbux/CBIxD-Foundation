@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'jobs' => 'jobs#index'
   get 'jobs/jdp' => 'jobs#jdp'
   get 'recommendations' => 'recommendations#index'
+  
   get 'recprefs' => 'recommendations#recprefs'
   get 'recprefs_addlocation' => 'recommendations#recprefs_addlocation'
   get 'recprefs_addskills' => 'recommendations#recprefs_addskills'

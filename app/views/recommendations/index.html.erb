@@ -3,7 +3,32 @@
 
     <div class="small-12 medium-12 large-6 columns">
         <h1> Job Recommendations</h1>
+        <p class="instructions">Quick Apply allows a one-click application using your resume [resume name]</p>
+        <input id="quickapplyon" type="checkbox"><label for="quickapplyon">Show only job with Quick Apply</label>
+
     </div><!--close column-->
+
+<!--resume recommendations header-->
+<% if params[:action] == "resumerecs" %>
+
+    <div class="small-12 medium-12 large-6 columns">
+        <h1> Job Recommendations</h1>
+        <p>50 jobs found</p>
+        <p class="instructions">Your recommendations are based on your resume, job applications, and/or location.</p>
+    </div><!--close column-->
+
+<% end %>
+
+<!--similar job recs header-->
+<% if params[:action] == "similarjobs" %>
+
+    <div class="small-12 medium-12 large-6 columns">
+        <h1> Similar Job Recommendations</h1>
+        <p>50 jobs found</p>
+        <p class="instructions">Showing jobs similar to Senior Software Engineer / Core Java / 120-130K</p>
+    </div><!--close column-->
+
+<% end %>
 
 <% if params[:auth] == "unknown" %>
 
@@ -55,47 +80,42 @@
 
 <% if params[:auth] == "known" || params[:auth] === "authenticated" %>
 
-
-    <div class="small-12 medium-12 large-6 columns">
-        <p>1,356 jobs found</p>
-    </div><!--close column-->
-
 </div><!--close row-->
 
 <!--Recommendations preferences-->
 
 <div class="row">
 
-    <div class="large-3 columns show-for-large-up">
-            <h6> Recommendation Preferences</h6>
+    <div class="large-2 columns show-for-large-up">
+            <h5> Recommendation Preferences</h5>
             <ul class="side-nav">
                 <li><label>Desired Locations</label></li>
-                <li><a href="#" class="small-9 columns">Atlanta, GA</a><a class="small-1 columns" href="#">X</a><hr /></li>
-                <li><a href="#" class="small-9 columns">Phoenix, AZ</a><a class="small-1 columns" href="#">X</a><hr /></li>
-                <li><a href="recprefs_addlocation" class="button secondary expand">Add Locations</a></li>
+                <li class="row"><a href="#" class="small-9 columns">Atlanta, GA</a><a class="small-1 columns" href="#">X</a></li>
+                <li class="row"><a href="#" class="small-9 columns">Phoenix, AZ</a><a class="small-1 columns" href="#">X</a></li>
+                <li class="row"><a href="recprefs_addlocation" class="button secondary small expand">Add Locations</a></li>
                 <li class="divider"></li>
-                <li><label>Desired Job Title</label></li>
-                <li><a href="#" class="small-9 columns">Customer Service</a><a class="small-1 columns" href="#">X</a><hr /></li>
-                <li><a href="#" class="small-9 columns">Sales Associate</a><a class="small-1 columns" href="#">X</a><hr /></li>
-                <li><a href="#" class="small-9 columns">Sales Manager</a><a class="small-1 columns" href="#">X</a></li>
-                <li><a href="recprefs_addtitle" class="button secondary expand">Add Job Titles</a></li>
+                <li class="row"><label>Desired Job Title</label></li>
+                <li class="row"><a href="#" class="small-9 columns">Customer Service</a><a class="small-1 columns" href="#">X</a></li>
+                <li class="row"><a href="#" class="small-9 columns">Sales Associate</a><a class="small-1 columns" href="#">X</a></li>
+                <li class="row"><a href="#" class="small-9 columns">Sales Manager</a><a class="small-1 columns" href="#">X</a></li>
+                <li class="row"><a href="recprefs_addtitle" class="button secondary small expand">Add Job Titles</a></li>
                 <li class="divider"></li>
                 <li><label>Skills</label></li>
-                <li><a href="#" class="small-9 columns">Sales</a><a class="small-1 columns" href="#">X</a><hr /></li>
-                <li><a href="#" class="small-9 columns">Client Relations</a><a class="small-1 columns" href="#">X</a><hr /></li>
-                <li><a href="#" class="small-9 columns">Marketing</a><a class="small-1 columns" href="#">X</a><hr /></li>
-                <li><a href="#" class="small-9 columns">Excel</a><a class="small-1 columns" href="#">X</a><hr /></li>
-                <li><a href="#" class="small-9 columns">Salesforce</a><a class="small-1 columns" href="#">X</a><hr /></li>
-                <li><a href="#" class="small-9 columns">View 7 More</a><a class="small-1 columns" href="#">></a></li>
-                <li><a href="recprefs_addskills" class="button secondary expand">Add Skills</a></li>
+                <li class="row"><a href="#" class="small-9 columns">Sales</a><a class="small-1 columns" href="#">X</a></li>
+                <li class="row"><a href="#" class="small-9 columns">Client Relations</a><a class="small-1 columns" href="#">X</a></li>
+                <li class="row"><a href="#" class="small-9 columns">Marketing</a><a class="small-1 columns" href="#">X</a></li>
+                <li class="row"><a href="#" class="small-9 columns">Excel</a><a class="small-1 columns" href="#">X</a></li>
+                <li class="row"><a href="#" class="small-9 columns">Salesforce</a><a class="small-1 columns" href="#">X</a></li>
+                <li class="row"><a href="#" class="small-9 columns">View 7 More</a><a class="small-1 columns" href="#">></a></li>
+                <li><a href="recprefs_addskills" class="button secondary small expand">Add Skills</a></li>
                 <li class="divider"></li>
                 <li><label>Application History</label></li>
-                <li><a href="#" class="small-9 columns">Sales Associate</a><a class="small-1 columns" href="#">X</a><hr /></li>
-                <li><a href="#" class="small-9 columns">Client Relationship Manager</a><a class="small-1 columns" href="#">X</a><hr /></li>
-                <li><a href="#" class="small-9 columns">Marketing Analyst</a><a class="small-1 columns" href="#">X</a><hr /></li>
-                <li><a href="#" class="small-9 columns">Lead Generation</a><a class="small-1 columns" href="#">X</a><hr /></li>
-                <li><a href="#" class="small-9 columns">Salesforce Analyst</a><a class="small-1 columns" href="#">X</a><hr /></li>
-                <li><a href="#" class="small-9 columns">View 3 More</a><a class="small-1 columns" href="#">></a></li>
+                <li class="row"><a href="#" class="small-9 columns">Sales Associate</a><a class="small-1 columns" href="#">X</a></li>
+                <li class="row"><a href="#" class="small-9 columns">Client Relationship Manager</a><a class="small-1 columns" href="#">X</a></li>
+                <li class="row"><a href="#" class="small-9 columns">Marketing Analyst</a><a class="small-1 columns" href="#">X</a></li>
+                <li class="row"><a href="#" class="small-9 columns">Lead Generation</a><a class="small-1 columns" href="#">X</a></li>
+                <li class="row"><a href="#" class="small-9 columns">Salesforce Analyst</a><a class="small-1 columns" href="#">X</a></li>
+                <li class="row"><a href="#" class="small-9 columns">View 3 More</a><a class="small-1 columns" href="#">></a></li>
             </ul>
     </div><!--close column-->
 
@@ -107,12 +127,12 @@
     </div>
 
     <div class="medium-6 columns show-for-medium-only">
-        <a href="recprefs" class="button">Edit Recommendations</a>
+        <a href="recprefs" class="button ">Edit Recommendations</a>
     </div>
 
 <!--collapse sort to dropdown on mobile-->
     <div class="small-12 medium-12 hide-for-large-up">
-        <button href="#" data-dropdown="mobilesort" aria-controls="mobilesort" aria-expanded="false" class="button dropdown secondary right">Relevance</button><br>
+        <button href="#" data-dropdown="mobilesort" aria-controls="mobilesort" aria-expanded="false" class="button dropdown secondary right">Recommended</button><br>
             <ul id="mobilesort" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
                 <li><a href="#">Date</a></li>
                 <li><a href="#">Location</a></li>
@@ -123,7 +143,7 @@
     <div class="large-5 right columns right show-for-large-up">
         <dl class="sub-nav right">
             <dt>Sort By:</dt>
-                <dd class="active"><a href="#">Relevance</a></dd>
+                <dd class="active"><a href="#">Recommended</a></dd>
                 <dd><a href="#">Date</a></dd>
                 <dd><a href="#">Location</a></dd>
         </dl>
