@@ -5,8 +5,6 @@ class JobsController < ApplicationController
 
 	def after_apply
 		render 'jobs/index'
-		
-		
 	end	
   
   private
