@@ -77,7 +77,17 @@ class JobsController < ApplicationController
 			@sort_date = ""
 			@sort_location = "active"
 		end
-		
+
+		if params[:page] == "after_apply"
+			@success_message = "You have successfully applied for Practice Coordinator at Confidential in Atlanta, GA. 
+			Your resume has been sent via email to the employer. You will receive an email confirmation once it is received by the employer."
+		end
+
+		if params[:page] == "account_information"
+			@info_message = " This job is expired. Sales | In-Store Sales Rep | Quick Advancement Potential
+            We found these close matches instead."
+		end
+
 		# If results nil default to 25 results
 		if params[:results] == nil
 			params[:results] = "25"

@@ -69,26 +69,50 @@
     <div class="large-3 columns show-for-large-up">
             <h6> Recommendation Preferences</h6>
             <ul class="side-nav">
-                <li><label>Locations</label></li>
+                <li><label>Desired Locations</label></li>
                 <li><a href="#" class="small-9 columns">Atlanta, GA</a><a class="small-1 columns" href="#">X</a><hr /></li>
                 <li><a href="#" class="small-9 columns">Phoenix, AZ</a><a class="small-1 columns" href="#">X</a><hr /></li>
+                <li><a href="recprefs_addlocation" class="button secondary expand">Add Locations</a></li>
                 <li class="divider"></li>
                 <li><label>Desired Job Title</label></li>
+                <li><a href="#" class="small-9 columns">Customer Service</a><a class="small-1 columns" href="#">X</a><hr /></li>
+                <li><a href="#" class="small-9 columns">Sales Associate</a><a class="small-1 columns" href="#">X</a><hr /></li>
+                <li><a href="#" class="small-9 columns">Sales Manager</a><a class="small-1 columns" href="#">X</a></li>
+                <li><a href="recprefs_addtitle" class="button secondary expand">Add Job Titles</a></li>
+                <li class="divider"></li>
+                <li><label>Skills</label></li>
                 <li><a href="#" class="small-9 columns">Sales</a><a class="small-1 columns" href="#">X</a><hr /></li>
-                <li><a href="#" class="small-9 columns">Client Advocate</a><a class="small-1 columns" href="#">X</a><hr /></li>
+                <li><a href="#" class="small-9 columns">Client Relations</a><a class="small-1 columns" href="#">X</a><hr /></li>
+                <li><a href="#" class="small-9 columns">Marketing</a><a class="small-1 columns" href="#">X</a><hr /></li>
+                <li><a href="#" class="small-9 columns">Excel</a><a class="small-1 columns" href="#">X</a><hr /></li>
+                <li><a href="#" class="small-9 columns">Salesforce</a><a class="small-1 columns" href="#">X</a><hr /></li>
+                <li><a href="#" class="small-9 columns">View 7 More</a><a class="small-1 columns" href="#">></a></li>
+                <li><a href="recprefs_addskills" class="button secondary expand">Add Skills</a></li>
+                <li class="divider"></li>
+                <li><label>Application History</label></li>
+                <li><a href="#" class="small-9 columns">Sales Associate</a><a class="small-1 columns" href="#">X</a><hr /></li>
+                <li><a href="#" class="small-9 columns">Client Relationship Manager</a><a class="small-1 columns" href="#">X</a><hr /></li>
+                <li><a href="#" class="small-9 columns">Marketing Analyst</a><a class="small-1 columns" href="#">X</a><hr /></li>
+                <li><a href="#" class="small-9 columns">Lead Generation</a><a class="small-1 columns" href="#">X</a><hr /></li>
+                <li><a href="#" class="small-9 columns">Salesforce Analyst</a><a class="small-1 columns" href="#">X</a><hr /></li>
+                <li><a href="#" class="small-9 columns">View 3 More</a><a class="small-1 columns" href="#">></a></li>
             </ul>
     </div><!--close column-->
 
 <!--start right column sort and results-->
 
 <!--rec preferences button for mobile version-->
-    <div class="small-12 medium-12 columns hide-for-large-up">
+    <div class="small-12 columns hide-for-medium-up">
+        <a href="recprefs" class="button expand">Edit Recommendations</a>
+    </div>
+
+    <div class="medium-6 columns show-for-medium-only">
         <a href="recprefs" class="button">Edit Recommendations</a>
     </div>
 
 <!--collapse sort to dropdown on mobile-->
-    <div class="small-6 medium-6 hide-for-large-up">
-        <button href="#" data-dropdown="mobilesort" aria-controls="mobilesort" aria-expanded="false" class="button dropdown">Relevance</button><br>
+    <div class="small-12 medium-12 hide-for-large-up">
+        <button href="#" data-dropdown="mobilesort" aria-controls="mobilesort" aria-expanded="false" class="button dropdown secondary">Relevance</button><br>
             <ul id="mobilesort" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
                 <li><a href="#">Date</a></li>
                 <li><a href="#">Location</a></li>
@@ -96,7 +120,7 @@
     </div><!--end show for small only-->
 
 <!--start sort-->
-    <div class="large-5 right columns show-for-large-up">
+    <div class="large-5 right columns right show-for-large-up">
         <dl class="sub-nav right">
             <dt>Sort By:</dt>
                 <dd class="active"><a href="#">Relevance</a></dd>
@@ -105,10 +129,14 @@
         </dl>
     </div><!--close columns-->
 
-<!--job result-->
-
-        <%= render :partial => 'jobs/job_result' %>
-
+    <!--job result-->
+  <div class="small-12 medium-12 large-9 columns">
+    <% if params[:results].to_i > 0 %>
+        <% params[:results].to_i.times do %>
+            <%= render :partial => 'jobs/job_result' %>
+      <% end %>
+    <% end %>
+  </div><!--close columns-->
 
 </div><!--close row for filters and result-->
 
