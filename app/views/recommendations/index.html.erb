@@ -3,6 +3,7 @@
 
     <div class="small-12 medium-12 large-6 columns">
         <h1> Job Recommendations</h1>
+        <p>100 jobs found</p>
         <p class="instructions">Your recommendations are based on your resume, job applications, and/or location.</p>
     </div><!--close column-->
 
@@ -56,30 +57,25 @@
 
 <% if params[:auth] == "known" || params[:auth] === "authenticated" %>
 
-
-    <div class="small-12 medium-12 large-6 columns">
-        <p>100 jobs found</p>
-    </div><!--close column-->
-
 </div><!--close row-->
 
 <!--Recommendations preferences-->
 
 <div class="row">
 
-    <div class="large-3 columns show-for-large-up">
-            <h6> Recommendation Preferences</h6>
+    <div class="large-2 columns show-for-large-up">
+            <h5> Recommendation Preferences</h5>
             <ul class="side-nav">
                 <li><label>Desired Locations</label></li>
                 <li class="row"><a href="#" class="small-9 columns">Atlanta, GA</a><a class="small-1 columns" href="#">X</a></li>
                 <li class="row"><a href="#" class="small-9 columns">Phoenix, AZ</a><a class="small-1 columns" href="#">X</a></li>
-                <li class="row"><a href="recprefs_addlocation" class="button secondary expand">Add Locations</a></li>
+                <li class="row"><a href="recprefs_addlocation" class="button secondary small expand">Add Locations</a></li>
                 <li class="divider"></li>
                 <li class="row"><label>Desired Job Title</label></li>
                 <li class="row"><a href="#" class="small-9 columns">Customer Service</a><a class="small-1 columns" href="#">X</a></li>
                 <li class="row"><a href="#" class="small-9 columns">Sales Associate</a><a class="small-1 columns" href="#">X</a></li>
                 <li class="row"><a href="#" class="small-9 columns">Sales Manager</a><a class="small-1 columns" href="#">X</a></li>
-                <li class="row"><a href="recprefs_addtitle" class="button secondary expand">Add Job Titles</a></li>
+                <li class="row"><a href="recprefs_addtitle" class="button secondary small expand">Add Job Titles</a></li>
                 <li class="divider"></li>
                 <li><label>Skills</label></li>
                 <li class="row"><a href="#" class="small-9 columns">Sales</a><a class="small-1 columns" href="#">X</a></li>
@@ -88,7 +84,7 @@
                 <li class="row"><a href="#" class="small-9 columns">Excel</a><a class="small-1 columns" href="#">X</a></li>
                 <li class="row"><a href="#" class="small-9 columns">Salesforce</a><a class="small-1 columns" href="#">X</a></li>
                 <li class="row"><a href="#" class="small-9 columns">View 7 More</a><a class="small-1 columns" href="#">></a></li>
-                <li><a href="recprefs_addskills" class="button secondary expand">Add Skills</a></li>
+                <li><a href="recprefs_addskills" class="button secondary small expand">Add Skills</a></li>
                 <li class="divider"></li>
                 <li><label>Application History</label></li>
                 <li class="row"><a href="#" class="small-9 columns">Sales Associate</a><a class="small-1 columns" href="#">X</a></li>
@@ -108,7 +104,7 @@
     </div>
 
     <div class="medium-6 columns show-for-medium-only">
-        <a href="recprefs" class="button">Edit Recommendations</a>
+        <a href="recprefs" class="button ">Edit Recommendations</a>
     </div>
 
 <!--collapse sort to dropdown on mobile-->

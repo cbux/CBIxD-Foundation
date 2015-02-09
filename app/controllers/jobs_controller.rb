@@ -20,6 +20,7 @@ class JobsController < ApplicationController
 	def all_results
 		# Hash for Job Type Filters
 		@job_type_filters = {
+			"All Types" => "All Types",
 			"full-time" => "Full Time",
 			"part-time" => "Part Time",
 			"contractor" => "Contractor",
