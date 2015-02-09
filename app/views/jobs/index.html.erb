@@ -56,20 +56,13 @@
     <!--Job Type-->
 		<%= render 'job_type_filter' %>
 		<!--Salary-->
-		<div class="row">
-			<div class="column small-12">
-		    <label>Salary</label>
-		    <input type="text" placeholder="Minimum Salary" />
-		    <input type="text" placeholder="Maximum Salary" />
-			</div>
-		</div>
+		<%= render 'salary_range_filter' %>
 		<!--Job Category-->
     <!-- TODO Multiselect-->
-    <%= render 'shared/multiselect_field', multiselect_label: "Select a Category", multiselect_id: "job-category-filter", hash_for_options: @job_category_filters %>
+    <%= render 'shared/multiselect_field', multiselect_label: "Job Categories", multiselect_id: "job-category-filter", hash_for_options: @job_category_filters %>
 		<!--Degree Required-->
-    <!-- TODO Multiselect-->
-    <%= render 'degree_required_filter' %>
-    <%= render 'shared/multiselect_field', multiselect_label: "Degree Required", multiselect_id: "degree-required-filter", hash_for_options: @degree_requirements_filters %>
+    <% render 'degree_required_filter' %>
+    <% render 'shared/multiselect_field', multiselect_label: "Degree Required", multiselect_id: "degree-required-filter", hash_for_options: @degree_requirements_filters %>
   </div>
 	
 

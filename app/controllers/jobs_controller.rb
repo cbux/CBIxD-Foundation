@@ -11,12 +11,12 @@ class JobsController < ApplicationController
 
 		# Hash for Degree Requirements
 		@degree_requirements_filters = {
-			"not-specified" =>  "Not Specified",
-			"none" => "None",
-			"high-school" => "High School",
-			"2-year-degree" => "2 Year Degree",
-			"4-year-degree" => "4 Year Degree",
-			"graduate-degree" => "Graduate Degree",
+			"Not Specified" => "not-specified",
+			"None" => "none",
+			"High School or less" => "high-school",
+			"Associate's Degree or less" => "associate-degree",
+			"Bachelor's Degree or less" => "bachelor-degree",
+			"Graduate Degree or less" => "graduate-degree",
 		}
 		
 		# Hash for Category Filters
