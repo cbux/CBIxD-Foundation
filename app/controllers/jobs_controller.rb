@@ -11,19 +11,29 @@ class JobsController < ApplicationController
   def auto_jobs
   # If results nil default to 25 results
 		if params[:results] == nil
-			params[:results] = "25"
+			params[:results] = "50"
 		end
   end
 	
 	def all_results
+
+		# Hash for Skills
+		@location_filters = {
+			"Atlanta, GA" => "atlanta-ga",
+			"Alpharetta, GA" => "alpharetta-ga",
+			"Norcross, GA" => "norcross-ga",
+			"Dunwwody, GA" => "dunwoody-ga",
+			"Lawrenceville, GA" => "lawrenceville-ga",
+			"Smyrna, GA" => "smyrna-ga",
+		}
+
 		# Hash for Job Type Filters
 		@job_type_filters = {
-			"All Types" => "All Types",
-			"full-time" => "Full Time",
-			"part-time" => "Part Time",
-			"contractor" => "Contractor",
-			"intern" => "Intern",
-			"seasonal-temp" => "Seasonal/Temp",
+			"Full-time" => "full-time",
+			"Part-time" => "part-time",
+			"Contractor" => "contractor",
+			"Intern" => "intern",
+			"Seasonal/Temp" => "seasonal-temp",
 		}
 
 		# Hash for Degree Requirements
@@ -36,6 +46,18 @@ class JobsController < ApplicationController
 			"Graduate Degree or less" => "graduate-degree",
 		}
 		
+		# Hash for Job Level
+		@job_level_filters = {
+			"Entry-level" => "entry-level",
+			"Mid-Level" => "mid-level",
+			"Senior" => "senior",
+			"Associate" => "associate",
+			"Director" => "director",
+			"Executive" => 'executive',
+			"Not Applicable" => "not-applicable",
+		}
+
+
 		# Hash for Category Filters
 		@job_category_filters = {
 			"Management (2345)" => "management",
@@ -78,6 +100,14 @@ class JobsController < ApplicationController
 			"Hospitality - Hotel (194)" => "hospitality - hotel",
 			"Supply Chain (189)" => "supply chain",
 			"Legal (176)" => "legal",
+		}
+
+		# Hash for Skills
+		@skills_filters = {
+			"Sales" => "sales",
+			"Account Management" => "account-management",
+			"Accounting" => "accounting",
+			"Outside Sales" => "outside-sales",
 		}
 
 		# Change active sort

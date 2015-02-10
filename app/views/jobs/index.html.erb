@@ -52,15 +52,25 @@
     <!-- TODO Style this radio list to our tag/radio list-->
     <%= render 'date_posted_filter' %>
     <!--Job Type-->
-		<%= render 'job_type_filter' %>
+		<% render 'job_type_filter' %>
+    <%= render 'shared/multiselect_field', multiselect_label: "Job Type", multiselect_id: "job-type-filter", hash_for_options: @job_type_filters %>
 		<!--Salary-->
 		<%= render 'salary_range_filter' %>
+    <!--Location (City/State)-->
+    <%= render 'shared/multiselect_field', multiselect_label: "Location", multiselect_id: "location-filter", hash_for_options: @location_filters %>
 		<!--Job Category-->
-    <!-- TODO Multiselect-->
     <%= render 'shared/multiselect_field', multiselect_label: "Job Categories", multiselect_id: "job-category-filter", hash_for_options: @job_category_filters %>
+    <!--Job Level-->
+    <%= render 'shared/multiselect_field', multiselect_label: "Job Level", multiselect_id: "job-level-filter", hash_for_options: @job_level_filters %>
+    <!--Skills-->
+    <%= render 'shared/multiselect_field', multiselect_label: "Skills", multiselect_id: "skills-filter", hash_for_options: @skills_filters %>
 		<!--Degree Required-->
     <% render 'degree_required_filter' %>
     <% render 'shared/multiselect_field', multiselect_label: "Degree Required", multiselect_id: "degree-required-filter", hash_for_options: @degree_requirements_filters %>
+
+    <div class="hide-for-small-only">
+      <img src="http://placehold.it/160x600&text=Ad+160+x+600" alt="in-line ad">
+    </div>
   </div>
 	
 
@@ -71,6 +81,10 @@
   			<%= render 'job_result' %>
       <% end %>
     <% end %>
+    <div class="hide-for-small-only">
+      <img src="http://placehold.it/728x90&text=Ad+728+x+90" alt="in-line ad">
+    </div>
+  </div>
   </div>
 </div>
 

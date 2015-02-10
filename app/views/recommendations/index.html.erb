@@ -1,23 +1,26 @@
 <!--header-->
 <div class="row">
+<% #if params[:action] == "resumerecs" %>
+    <!-- <div class="small-12 medium-12 large-6 columns"> -->
+        <!-- <h1> Job Recommendations</h1> -->
+        <!-- <p class="instructions">Quick Apply allows a one-click application using your resume [resume name]</p> -->
+        <!-- <input id="quickapplyon" type="checkbox"><label for="quickapplyon">Show only job with Quick Apply</label> -->
 
-    <div class="small-12 medium-12 large-6 columns">
-        <h1> Job Recommendations</h1>
-        <p class="instructions">Quick Apply allows a one-click application using your resume [resume name]</p>
-        <input id="quickapplyon" type="checkbox"><label for="quickapplyon">Show only job with Quick Apply</label>
+    <!-- </div> -->
 
-    </div><!--close column-->
+    <% #end %>
 
-<!--resume recommendations header-->
-<% if params[:action] == "resumerecs" %>
+<!-- resume recommendations header -->
+
 
     <div class="small-12 medium-12 large-6 columns">
         <h1> Job Recommendations</h1>
         <p>50 jobs found</p>
         <p class="instructions">Your recommendations are based on your resume, job applications, and/or location.</p>
-    </div><!--close column-->
+    </div>
+</div>
 
-<% end %>
+
 
 <!--similar job recs header-->
 <% if params[:action] == "similarjobs" %>
