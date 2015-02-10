@@ -1,4 +1,5 @@
 class RecommendationsController < ApplicationController
+	before_action :debug
 	def index
         @results = params[:results]
 
@@ -10,4 +11,11 @@ class RecommendationsController < ApplicationController
             
         end
 	end
+
+	private
+	def debug
+  	if params[:action] == "index"
+  		@statuses = nil
+  	end
+  end
 end

@@ -1,0 +1,21 @@
+<div class="off-canvas-wrap" data-offcanvas>
+  <div class="inner-wrap">
+    <nav class="tab-bar debug">
+      <section class="left">
+        <a class="left-off-canvas-toggle" href="#"><i class="fa fa-info"></i><span>Page Info</span></a>
+      </section>
+      <section class="middle tab-bar-section">
+        <h1 class="title">GRRP Interaction Prototype</h1>
+      </section>
+    </nav>
+    <aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+        <li><label>Statuses</label></li>
+        <% if @statuses %>
+	        <% @statuses.each do |key, id| %>
+	        	<li><%= link_to key, id %></li>
+	        <% end %>
+        <% end %>
+      </ul>
+    </aside>
+    <section class="main-section">

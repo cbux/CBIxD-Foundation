@@ -139,6 +139,19 @@ label small.error {
 	background-color: $base;
 }
 
+.debug {
+	background-color: $black;
+}
+
+.debug.tab-bar a {
+	color: $white;
+	padding: 0 1em;
+}
+
+.debug.tab-bar a span {
+	margin-left: 10px;
+}
+
 // .green-back {
 // 	background-color: green;
 // }

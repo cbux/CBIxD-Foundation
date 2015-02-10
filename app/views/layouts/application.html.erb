@@ -11,6 +11,9 @@
   </head>
 
   <body>
+  	<% if params[:debug] == "true" %>
+  		<%= render 'shared/debug_menu_open' %>
+  	<% end %>
   	<%= render 'shared/global_alerts' %>
   	<% if params[:signed_out] == 'true' %>
   		<div data-alert class="alert-box success">
@@ -30,7 +33,6 @@
 					    <li class="name">
 					      <h1><%= link_to "Careerbuilder", root_path %></h1>
 					    </li>
-					     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
 					    <li class="toggle-topbar right">
 					    	<a href="">
 					    		<span><i class="fa fa-navicon"></i></span>
@@ -166,5 +168,6 @@
 				</div>
 			</div>
 		</footer>
+		<%= render 'shared/debug_menu_close' %>
   </body>
 </html>

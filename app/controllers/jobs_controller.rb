@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-	before_action :auto_jobs, :all_results
+	before_action :auto_jobs, :all_results, :debug
 	def index
 	end
 
@@ -104,4 +104,10 @@ class JobsController < ApplicationController
             We found these close matches instead."
 		end
 	end
+
+	def debug
+  	if params[:action] == "index"
+  		@statuses = nil
+  	end
+  end
 end

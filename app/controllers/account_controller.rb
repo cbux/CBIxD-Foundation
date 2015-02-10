@@ -1,5 +1,5 @@
 class AccountController < ApplicationController
-	before_action :render_page
+	before_action :render_page, :debug
 	def index
 		if params[:page] == nil || params[:page] == "account_information"
 			@info_selected = "selected" 
@@ -56,4 +56,10 @@ class AccountController < ApplicationController
 		@account_view = params[:page]
 		@account_view ||= 'account_information'
 	end
+
+  def debug
+  	if params[:action] == "index"
+  		@statuses = nil
+  	end
+  end
 end

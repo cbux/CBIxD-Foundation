@@ -114,11 +114,11 @@ function checkboxChange(id){
 }
 
 $(document).ready(function() {
-	if ( $('.fullpage-home').length ) {
-    $.fn.fullpage({
-			// sectionsColor : ['red', 'green'],
-    });
-  }
+//	if ( $('.fullpage-home').length ) {
+//    $.fn.fullpage({
+//			sectionsColor : ['red', 'green'],
+//    });
+//  }
   jQuery(function($) {
     $("select[multiple]").bsmSelect({
     });
