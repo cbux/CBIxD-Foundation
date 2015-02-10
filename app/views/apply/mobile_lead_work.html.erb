@@ -28,42 +28,34 @@
 <!-- Progress steps End-->
 
 <div class="row">
-	<div class="column small-12 medium-10 medium-centered">
-
-	<div class="row">
-		<div class="column small-12">
-			<h4>Work Experience</h4>
+	<div class="column medium-6 medium-centered">
+		<div class="row">
+			<div class="column small-12">
+				<h4>Work Experience</h4>
+			</div>
 		</div>
+		<%= render 'resumes/edit_work' %>		
 	</div>
 
-	<%= render 'resumes/edit_work' %>
 	
-
-	</div>
-		
-</div>
-
-<div class="row">
-	<div class="column small-12 medium-10 medium-centered">
-		<div class="button expand secondary">Add Position</div><hr/>
-	</div>
-</div>
-
+		<div class="column small-12 medium-6 medium-centered">
+			<div class="button expand secondary">Add Position</div><hr/>
+		</div>
 		<!-- Add Section button ends-->
 
+		<div class="column small-12 medium-6 medium-centered">
+	    	<%= link_to "Next", apply_mobile_lead_edu_path, class: "button  expand" %>
+	    </div>
 
-<div class="row">
-	<div class="column small-10 medium-10 medium-centered ">
-	
-    	<%= link_to "Next", apply_mobile_lead_edu_path, class: "button expand" %>
-    </div>
+	    <div class="column small-12 medium-6 medium-centered">
+	    	<%= link_to "Back", apply_mobile_lead_path, class: "button secondary  expand" %>
+	    </div>
 </div>
 
-<div class="row">
 
-    <div class="column small-12 medium-10 medium-centered ">
-    	<%= link_to "Back", apply_mobile_lead_path, class: "button secondary expand" %>
-    </div>
+
+<div class="row">
+	
 </div>
 
 

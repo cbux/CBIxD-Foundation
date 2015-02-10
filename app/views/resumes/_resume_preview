@@ -1,0 +1,150 @@
+<div class="row">
+	<div class="column medium-6 medium-centered" style="border:1px solid #eee; padding:20px;"> <!-- TO DO: Remove inline style-->
+
+		<div class="row">
+			<div class="column medium-11">
+				<h3>Paul Johnson</h3>
+				<p><strong>Assistant Project Manager</strong> <br/> Paul.Johnson@youremail.com | Atlanta, Ga. 30123</p>
+				<p> <strong>Public Resume</strong> Visible to employers searching resumes.</p>
+			</div>
+			<div class="column medium-1 text-right"> <a href="#">Edit</a></div>
+		</div>
+		<HR/>
+		<!-- End contact area-->
+		<div class="row">
+			<div class="column medium-12">
+				<h4>Work Experience</h4>
+			</div>
+		</div>
+<!-- End Section Title-->
+		<div class="row">
+
+		<div class="column medium-9">
+				<h5>Job Title</h5>
+				<p>Company Name </p>
+				<p> April 2007 to Present</p>
+				<ul>
+					<li>Reviewed architectural drawings and completed budget estimates with project manager.</li>
+					<li>Organize job site personnel for on schedule completion of the project.</li>
+					<li>Prepare closeout packages for the architect and engineer.</li>
+					<li>Project, First Niagara Bank expansion.</li>
+				</ul>
+			</div>
+			<div class="column medium-3 text-right"> <a href="#">Edit | Delete</a></div>
+		</div>
+		<HR/>
+		<!-- End Job 1 area-->
+		<div class="row">
+		<div class="column medium-9">
+				<h5>Job Title</h5>
+				<p>Company Name </p>
+				<p> June 2000 to April 2007</p>
+				<ul>
+					<li>Reviewed architectural drawings and completed budget estimates with project manager.</li>
+					<li>Organize job site personnel for on schedule completion of the project.</li>
+					<li>Prepare closeout packages for the architect and engineer.</li>
+					<li>Project, First Niagara Bank expansion.</li>
+				</ul>
+			</div>
+			<div class="column medium-3 text-right"> <a href="#">Edit | Delete</a></div>
+		</div>
+		<HR/>
+		<!-- End Job 2 area-->
+
+		<div class="row">
+		<div class="column medium-9">
+				<h5>Job Title</h5>
+				<!-- TO DO: Remove inline style-->
+				<p> CareerBuilder </p>
+				<p> April 1999 to  June 2000</p>
+				Reviewed architectural drawings and completed budget estimates with project manager.
+				Organize job site personnel for on schedule completion of the project.
+				Prepare closeout packages for the architect and engineer.
+				Project, First Niagara Bank expansion.
+				
+			</div>
+			<div class="column medium-3 text-right"> <a href="#">Edit | Delete</a></div>
+		</div>
+		<HR/>
+		<!-- End Job 3 area-->
+
+	
+
+		<div class="row">
+			<div class="column medium-12">
+				<h4>Education</h4>
+			</div>
+		</div>
+
+<!-- End Section Title-->
+
+		<div class="row">
+			<div class="column medium-9">
+					<h5>School Name</h5>
+					<p>Bachelor of Arts in Environmental Design<br/> June 2000</p>
+				</div>
+				<div class="column medium-3 text-right"> <a href="#">Edit | Delete</a></div>
+			</div>
+			<HR/>
+			<!-- End EDU 1 area-->
+
+	
+
+		<div class="row">
+			<div class="column medium-12">
+				<h4>Skills</h4>
+			</div>
+		</div>
+
+<!-- End Section Title-->
+
+		<div class="row">
+			<div class="column medium-11">
+				<ul class="tags green">
+				    <li><a href="#">Interface <span>4</span></a></li>
+				    <li><a href="#">Icon <span>8</span></a></li>
+				    <li><a href="#">Typography <span>15</span></a></li>
+				    <li><a href="#">Color <span>16</span></a></li>
+				 
+				    <li><a href="#">Design <span>23</span></a></li>
+				    <li><a href="#">Illustration <span>42</span></a></li>
+				    <li><a href="#">Component <span>108</span></a></li>
+				    <li><a href="#">Misc <span>12</span></a></li>
+			  
+			    <li><a href="#">Infrastructure <span>31</span></a></li>
+			    <li><a href="#">Application <span>33</span></a></li>
+			    <li><a href="#">Mobile <span>65</span></a></li>
+			    <li><a href="#">Desktop <span>160</span></a></li>
+			  </ul>
+
+			</div>
+				<div class="column medium-1 text-right"> <a href="#">Edit</a></div>
+		</div>
+			<HR/>
+			<!-- End EDU 1 area-->
+
+		<!-- Add Section button ends-->
+
+		<div class="row">
+			<div class="column medium-12">
+				<h4>Languages</h4>
+			</div>
+		</div>
+
+<!-- End Section Title-->
+
+		<div class="row">
+			<div class="column medium-9">
+				<h5>Engligh</h5>
+					<p>Native or Bilingual</p>
+				</div>
+				<div class="column medium-3 text-right"> <a href="#">Edit</a></div>
+			</div>
+			
+			<!-- End EDU 1 area-->
+
+		
+	</div>
+
+	
+</div>

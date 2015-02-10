@@ -6,7 +6,7 @@
 
 <!-- Progress steps-->
 <div class="row">
-	<div class="column small-12">
+	<div class="column small-12 medium-8 medium-centered">
 		<ol class="progress_resume">
 		  <li  data-step="1">
 		    Profile
@@ -26,34 +26,26 @@
 </div>
 
 <!-- Progress steps End-->
-
-<%= render 'resumes/edit_edu' %>
 <div class="row">
-	<div class="column small-12">
-	<hr/>
+	<div class="column medium-6 medium-centered">
+
+		<%= render 'resumes/edit_edu' %>
+
+		<%= render 'resumes/edit_edu' %>
+		
+		<div class="column">
+			<div class="button expand secondary">Add Education</div>
+		</div>
 	</div>
-</div>
-<%= render 'resumes/edit_edu' %>
-<div class="row">
-	<div class="column">
-		<div class="button expand secondary">Add Education</div>
-	</div>
-</div>
 
-		<!-- Add Section button ends-->
-
-
-<div class="row">
-	<div class="column small-12 ">
-	<hr/>
+	<div class="column small-12 medium-6 medium-centered">
+		<hr/>
     	<%= link_to "Next", apply_mobile_lead_preview_path, class: "button expand" %>
     </div>
-</div>
 
-<div class="row">
-    <div class="column small-12 ">
+    	<div class="column small-12 medium-6 medium-centered ">
     	<%= link_to "Back", apply_mobile_lead_work_path, class: "button secondary expand" %>
     </div>
+	
 </div>
-
 
