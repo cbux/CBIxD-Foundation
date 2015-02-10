@@ -1,0 +1,36 @@
+<% if params[:warning] == 'true' %>
+	<div data-alert class="alert-box true warning">
+		<div class="row">
+			<div class="column small-12 medium-12 large-12">
+				<%= @warning_message %>
+			</div>
+		</div>
+	</div>
+<% end %>
+<% if params[:error] == 'true' %>
+	<div data-alert class="alert-box true alert">
+		<div class="row">
+			<div class="column small-12 medium-12 large-12">
+				<%= @error_message %>
+			</div>
+		</div>
+	</div>
+<% end %>
+<% if params[:message] == 'true' %>
+	<div data-alert class="alert-box true">
+		<div class="row">
+			<div class="column small-12 medium-12 large-12">
+				<%= @message_message %>
+			</div>
+		</div>
+	</div>
+<% end %>
+<% if params[:success] == 'true' %>
+	<div data-alert class="alert-box success true">
+		<div class="row">
+			<div class="column small-12 medium-12 large-12">
+				<%= @success_message %>
+			</div>
+		</div>
+	</div>
+<% end %>

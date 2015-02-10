@@ -34,16 +34,20 @@ footer {
 	position: relative;
 }
 
-.top-bar .toggle-topbar-2 a {
+.top-bar .toggle-topbar-2 a, .top-bar .toggle-topbar a {
 	color: #FFFFFF;
 	text-transform: uppercase;
-	font-size: 0.8125rem;
-	font-weight: bold;
+	font-size: 1.25rem;
+	font-weight: normal;
 	position: relative;
 	display: block;
 	padding: 0 15px;
 	height: 45px;
 	line-height: 45px;
+}
+
+.top-bar .toggle-topbar.menu-icon {
+	margin-top: 6px;
 }
 
 // #search-toggle {

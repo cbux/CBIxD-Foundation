@@ -11,24 +11,7 @@
   </head>
 
   <body>
-  	<% if params[:message] == 'true' %>
-  		<div data-alert class="alert-box true">
-  			<div class="row">
-					<div class="column small-12 medium-12 large-12">
-						message here
-					</div>
-				</div>
-			</div>
-		<% end %>
-		<% if params[:success] == 'true' %>
-  		<div data-alert class="alert-box success true">
-  			<div class="row">
-					<div class="column small-12 medium-12 large-12">
-						<%= @success_message %>
-					</div>
-				</div>
-			</div>
-		<% end %>
+  	<%= render 'shared/global_alerts' %>
   	<% if params[:signed_out] == 'true' %>
   		<div data-alert class="alert-box success">
   			<div class="row">
@@ -47,16 +30,15 @@
 					    <li class="name">
 					      <h1><%= link_to "Careerbuilder", root_path %></h1>
 					    </li>
-					    
 					     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
 					    <li class="toggle-topbar right">
-					    	<a href="#">
-					    		<span>Menu</span>
+					    	<a href="">
+					    		<span><i class="fa fa-navicon"></i></span>
 					    	</a>
 					    </li>
 					    <li class="toggle-topbar-2 right">
 					    	<a href="#" id="search-toggle-button" onclick="toggle_visibility('search-toggle-button','search-toggle');">
-					    		<span>Search</span>
+					    		<span><i class="fa fa-search"></i></span>
 					    	</a>
 					    </li>
 					  </ul>
