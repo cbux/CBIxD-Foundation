@@ -129,6 +129,7 @@ class JobsController < ApplicationController
 			
 		end
 
+
 		if params[:page] == "account_information"
 			@info_message = " This job is expired. Sales | In-Store Sales Rep | Quick Advancement Potential
             We found these close matches instead."

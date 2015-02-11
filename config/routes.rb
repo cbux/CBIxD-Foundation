@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # Routes
   get 'account' => 'account#index'
+  get 'account/jobalerts' => 'account#jobalerts'
   get 'apply' => 'apply#index'
   get 'apply/mobile_lead' => 'apply#mobile_lead'
   get 'apply/mobile_lead_work' => 'apply#mobile_lead_work'

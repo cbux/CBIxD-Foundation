@@ -114,6 +114,9 @@ function checkboxChange(id){
 }
 
 $(document).ready(function() {
+    $("#job_alert_btn").click(function(){
+    $("#job_alert_btn").replaceWith( '<a href="#" class="job_alert_active">Job Alert Active</a>');
+    });
 //	if ( $('.fullpage-home').length ) {
 //    $.fn.fullpage({
 //			sectionsColor : ['red', 'green'],
@@ -122,7 +125,9 @@ $(document).ready(function() {
   jQuery(function($) {
     $("select[multiple]").bsmSelect({
     });
-	});
+    });
 });
+
+
 
 
