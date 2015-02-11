@@ -115,7 +115,7 @@ function checkboxChange(id){
 
 $(document).ready(function() {
     $("#job_alert_btn").click(function(){
-    $("#job_alert_btn").replaceWith( '<a href="account/jobalerts" class="job_alert_active">Job Alert Active</a>');
+    $("#job_alert_btn").replaceWith( '<a href="saved_searches" class="job_alert_active">Job Alert Active</a>');
     });
 //	if ( $('.fullpage-home').length ) {
 //    $.fn.fullpage({

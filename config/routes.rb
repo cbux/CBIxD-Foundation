@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   # Routes
   get 'account' => 'account#index'
-  get 'account/jobalerts' => 'account#jobalerts'
   get 'apply' => 'apply#index'
   get 'apply/mobile_lead' => 'apply#mobile_lead'
   get 'apply/mobile_lead_work' => 'apply#mobile_lead_work'
@@ -15,8 +14,9 @@ Rails.application.routes.draw do
   get 'apply/signin_guest' => 'apply#signin_guest'
   get 'jobs' => 'jobs#index'
   get 'jobs/jdp' => 'jobs#jdp'
+  get 'jobs/mobile_filters' => 'jobs#mobile_filters'
   get 'recommendations' => 'recommendations#index'
-  get 'recommendations_similarjobs' => 'recommendations#auth_known#result_25#action_similarjobs'
+  get 'recommendations/similarjobs' => 'recommendations#similarjobs'
   get 'recprefs' => 'recommendations#recprefs'
   get 'recprefs_addlocation' => 'recommendations#recprefs_addlocation'
   get 'recprefs_addskills' => 'recommendations#recprefs_addskills'
