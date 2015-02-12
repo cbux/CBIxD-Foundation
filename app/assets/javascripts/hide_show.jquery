@@ -1,3 +1,0 @@
-$("viewmore").click(function(){
-    $("p").toggle();
-});

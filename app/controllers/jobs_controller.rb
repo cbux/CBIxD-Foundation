@@ -7,6 +7,10 @@ class JobsController < ApplicationController
 		render 'jobs/index'
 	end	
   
+  	def mobile_filters
+	end
+
+
   private
   def auto_jobs
   # If results nil default to 25 results
@@ -129,7 +133,8 @@ class JobsController < ApplicationController
 			
 		end
 
-		if params[:page] == "account_information"
+
+		if params[:page] == "expired_job"
 			@info_message = " This job is expired. Sales | In-Store Sales Rep | Quick Advancement Potential
             We found these close matches instead."
 		end

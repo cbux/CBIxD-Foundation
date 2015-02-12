@@ -12,6 +12,14 @@ class RecommendationsController < ApplicationController
         end
 	end
 
+  def resumerecs
+    render 'recommendations/resumerecs'
+  end 
+
+  def similarjobs
+    render 'recommendations/similarjobs'
+  end 
+
 	private
 	def debug
   	if params[:action] == "index"

@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="large-3 columns show-for-large-up">
+    <h4>Refine By</h4>
+    <!--Distance from you-->
+    <%= render 'distance_within_filter' %>
+        <!--Date Posted-->
+    <!-- TODO Style this radio list to our tag/radio list-->
+    <%= render 'date_posted_filter' %>
+    <!--Job Type-->
+        <% render 'job_type_filter' %>
+    <%= render 'shared/multiselect_field', multiselect_label: "Job Type", multiselect_id: "job-type-filter", hash_for_options: @job_type_filters %>
+        <!--Salary-->
+        <%= render 'salary_range_filter' %>
+    <!--Location (City/State)-->
+    <%= render 'shared/multiselect_field', multiselect_label: "Location", multiselect_id: "location-filter", hash_for_options: @location_filters %>
+        <!--Job Category-->
+    <%= render 'shared/multiselect_field', multiselect_label: "Job Categories", multiselect_id: "job-category-filter", hash_for_options: @job_category_filters %>
+    <!--Job Level-->
+    <%= render 'shared/multiselect_field', multiselect_label: "Job Level", multiselect_id: "job-level-filter", hash_for_options: @job_level_filters %>
+    <!--Skills-->
+    <%= render 'shared/multiselect_field', multiselect_label: "Skills", multiselect_id: "skills-filter", hash_for_options: @skills_filters %>
+        <!--Degree Required-->
+    <% render 'degree_required_filter' %>
+    <% render 'shared/multiselect_field', multiselect_label: "Degree Required", multiselect_id: "degree-required-filter", hash_for_options: @degree_requirements_filters %>
