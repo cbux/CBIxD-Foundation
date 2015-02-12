@@ -1,0 +1,20 @@
+<% @path = resumes_path %>
+<% @create_or_post = "post" %>
+
+<% if params[:step] == "upload" || params[:step] == nil %>
+	<% @step_one_active = "is-active" %>
+	<% @step_two_active = "" %>
+	<% @step_three_active = "" %>
+	<%= render 'upload_resume' %>
+<% elsif params[:step] == "details" %>
+	<% @step_one_active = "" %>
+	<% @step_two_active = "is-active" %>
+	<% @step_three_active = "" %>
+	<%= render 'add_details' %>
+<% elsif params[:step] == "review" %>
+	<% @step_one_active = "" %>
+	<% @step_two_active = "" %>
+	<% @step_three_active = "is-active" %>
+	<%= render 'resume_preview' %>
+<% end %>
+

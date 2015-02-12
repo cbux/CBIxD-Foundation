@@ -8,7 +8,7 @@
 <div class="row">
 	<%= form_tag( @path, method: "get", id: "sign-in-form") do %>
 		<%= hidden_field_tag 'auth', 'authenticated' %>
-		<div class="column small-12 medium-6 large-6">
+		<div class="column small-12 medium-4 large-4 medium-offset-2">
 			<div class="row">
 				<div class="column small-12 large-centered medium-centered">
 					<!-- Email Field -->
@@ -35,15 +35,23 @@
 					<%= submit_tag "Sign In", class: "button expand" %>
 				</div>
 			</div>
-			<div class="row">
-				<div class="column small-12 large-centered medium-centered text-center">
-					<p> Don't have an account? <%= link_to "Sign Up Now", sign_up_path %></p>
+			<% if @create_or_post == nil || @create_or_post == "create" %>
+				<div class="row">
+					<div class="column small-12 large-centered medium-centered text-center">
+						<p> Don't have an account? <%= link_to "Sign Up Now", sign_up_path %></p>
+					</div>
 				</div>
-			</div>
+			<% elsif @create_or_post == "post" %>
+				<div class="row">
+					<div class="column small-12 large-centered medium-centered text-center">
+						<p> If you don't have an account we'll help you make one <%= link_to "Post and Sign Up", resumes_path(params.merge(step: "upload").except(:action, :controller, :message)) %></p>
+					</div>
+				</div>
+			<% end %>
 		</div>
 	<% end %>
 	<!-- Social Stuff-->
-	<div class="column small-12 medium-5 large-5">
+	<div class="column small-12 medium-4 large-4 end">
 		<div class="row">
 			<div class="column small-12 large-centered medium-centered text-center">
 				<p> or sign in with</p>
@@ -51,8 +59,14 @@
 		</div>
 		<div class="row">
 			<div class="column small-12 large-centered medium-centered">
-				<a href="#" class="button expand">Facebook </a>
-				<a href="#" class="button expand">Google Plus </a>
+				<a href="#" class="button expand secondary">
+					<i class="fa fa-facebook-official"></i>
+					Facebook
+				</a>
+				<a href="#" class="button expand secondary">
+					<i class="fa fa-google-plus-square"></i>
+					Google Plus
+				</a>
 			</div>
 		</div>	
 	</div>

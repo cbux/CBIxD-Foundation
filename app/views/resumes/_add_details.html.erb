@@ -1,0 +1,42 @@
+<!-- Progress steps-->
+<%= render 'resume_upload_steps' %>
+
+<div class="row">
+	<div class="column small-12 medium-12 large-12 ">
+		<h1>Resume Details</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="column large-8   small-12">
+		<label>
+			Desired Job Title
+			<span data-tooltip aria-haspopup="true" class="has-tip" title="This will be used to name your resume.">
+				?
+			</span>
+			<input type="text" placeholder="" />
+		</label>
+	</div>
+</div>
+<div class="row">
+	<div class="column large-8   small-12">
+		<label>Resume Privacy </label>
+		<label for="checkbox1">
+			<input id="checkbox1" type="checkbox">
+	 		<strong>Public Resume</strong>
+	 		Visible to employers searching resumes.
+		</label>
+	</div>
+</div>
+
+<% if session[:auth] == "unknown" %>
+
+<% end %>
+
+
+	<div class="row">
+		<div class="column large-4 medium-4  small-12">
+	      <%= link_to "View Resume", resumes_resume_preview_path, class: "button expand" %>
+	     </div>
+
+	</div>

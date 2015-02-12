@@ -94,11 +94,11 @@ function toggle_visibility(button, id) {
 // Password Show Hide Button State Change
 function toggle_password_text(id) {
 	var p = document.getElementById(id);
-	if(p.innerHTML == "Show") {
-		p.innerHTML = "Hide";
+	if(p.innerHTML == '<i class="fa fa-eye"></i> Show') {
+		p.innerHTML = '<i class="fa fa-eye-slash"></i> Hide';
 	}
 	else {
-		p.innerHTML = "Show";
+		p.innerHTML = '<i class="fa fa-eye"></i> Show';
 	}
 }
 

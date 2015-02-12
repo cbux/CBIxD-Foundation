@@ -1,0 +1,23 @@
+<% @path = resumes_path %>
+<% @create_or_post = "post" %>
+
+<% if params[:step] == "upload" %>
+	<% @step_one_active = "is-active" %>
+	<% @step_two_active = "" %>
+	<% @step_three_active = "" %>
+	<%= render 'upload_resume' %>
+<% elsif params[:step] == "details" %>
+	<% @step_one_active = "" %>
+	<% @step_two_active = "is-active" %>
+	<% @step_three_active = "" %>
+	<%= render 'add_details' %>
+<% elsif params[:step] == "review" %>
+	<% @step_one_active = "" %>
+	<% @step_two_active = "" %>
+	<% @step_three_active = "is-active" %>
+	<%= render 'resume_preview' %>
+<% else %>
+	<% params[:message] = "true" %>
+	<% @message_message = "You must be signed in or create an account to post resumes" %>
+	<%= render 'user/sign_in_form' %>
+<% end %>

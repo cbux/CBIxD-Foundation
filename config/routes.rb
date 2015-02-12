@@ -32,6 +32,8 @@ Rails.application.routes.draw do
   get 'sign_in' => 'user#sign_in'
   get 'sign_up' => 'user#sign_up'
   get 'jobs/after_apply' => 'jobs#after_apply'
+  get 'resumes/unknown' => 'resumes#resume_post_unknown'
+  get 'resumes/authenticated' => 'resumes#resume_post_authenticated'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
