@@ -8,8 +8,12 @@ class RecommendationsController < ApplicationController
             
         end
 
-        if params[:page] == "similarjobs"
+        if params[:page] == "similarrecs"
           render 'recommendations'
+          params[:results] = "50"
+            if params[:auth] == nil
+              params[:auth] = "known"
+            end
         end
 
         if params[:results] == nil
@@ -23,11 +27,23 @@ class RecommendationsController < ApplicationController
 	end
 
   def resumerecs
-    render 'recommendations/resumerecs'
+        if params[:results] == nil
+          params[:results] = "50"
+        end
+
+        if params[:auth] == nil
+          params[:auth] = "known"
+        end
   end 
 
-  def similarjobs
-    render 'recommendations/similarjobs'
+  def similarrecs
+        if params[:results] == nil
+          params[:results] = "50"
+        end
+
+        if params[:auth] == nil
+          params[:auth] = "known"
+        end
   end 
 
 	private
