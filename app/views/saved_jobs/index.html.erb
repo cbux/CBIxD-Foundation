@@ -1,0 +1,23 @@
+<% @search_bar = "no-search" %>
+
+<div class="row">
+    <div class="small-12 large-12 columns">
+            <h1>Saved Jobs</h1>
+            <h5>Manage saved searches by deleting searches and alerts or updating the desired alert frequency.</h5>
+            <hr />
+    </div><!--close column-->
+
+    <div class="small-2 large-2 columns">
+        <img class="placeholder delete_search" src="<%= image_path ('icon_placeholder.png') %>" alt="delete icon"/>
+    </div>
+
+    <div class="small-10 large-10 columns">
+            <h5>Interaction Designer Jobs in Atlanta, GA</h5>
+                    <p>Alert Frequency</p>
+                        <input type="radio" id="dailyfrequency"><label for="dailyfrequency">Daily</label>
+                        <input type="radio" id="weeklyfrequency"><label for="weeklyfrequency">Weekly</label>
+    </div>
+    <div class="small-12 large-12 columns">
+    <hr />
+    </div>
+</div><!--close row-->
