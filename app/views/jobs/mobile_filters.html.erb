@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="large-3 columns show-for-large-up">
-    <h4>Refine By</h4>
+  <div class="small-12 columns">
+    <h4>Filter By</h4>
     <!--Distance from you-->
     <%= render 'distance_within_filter' %>
         <!--Date Posted-->
@@ -22,3 +22,7 @@
         <!--Degree Required-->
     <% render 'degree_required_filter' %>
     <% render 'shared/multiselect_field', multiselect_label: "Degree Required", multiselect_id: "degree-required-filter", hash_for_options: @degree_requirements_filters %>
+        <input id="mobileapplyswitch" type="checkbox"><label for="mobileapplyswitch">Mobile Apply Only</label>
+
+    <a href="../jobs" class="button expand">Apply Filters</a>
+    <a href="../jobs" class="button expand secondary">Clear All</a>
