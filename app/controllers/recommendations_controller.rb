@@ -4,11 +4,21 @@ class RecommendationsController < ApplicationController
         @results = params[:results]
 
         if params[:page] == "resumerecs"
+          render 'recommendations'
             
         end
 
         if params[:page] == "similarjobs"
-            
+          render 'recommendations'
+        end
+
+        if params[:results] == nil
+          params[:results] = "50"
+        end
+
+
+        if params[:auth] == nil
+          params[:auth] = "known"
         end
 	end
 
@@ -21,6 +31,14 @@ class RecommendationsController < ApplicationController
   end 
 
 	private
+
+  def auto_recs
+  # If results nil default to 50 results
+    if params[:results] == nil
+      params[:results] = "50"
+    end
+  end
+
 	def debug
   	if params[:action] == "index"
   		@statuses = nil
