@@ -61,13 +61,11 @@
 
 </div><!--close row-->
 
-<!--Recommendations preferences-->
-
-<div class="row">
 
 <!--start right column sort and results-->
 
 <!--start sort-->
+<div class="row">
     <div class="large-5 right columns right show-for-large-up">
         <dl class="sub-nav right">
             <dt>Sort By:</dt>
@@ -76,9 +74,10 @@
                 <dd><a href="#">Location</a></dd>
         </dl>
     </div><!--close columns-->
+</div>
 
     <!--job result-->
-  <div class="small-12 medium-12 large-9 columns">
+  <div class="small-12 medium-12 large-12 columns">
     <% if params[:results].to_i > 0 %>
         <% params[:results].to_i.times do %>
             <%= render :partial => 'jobs/job_result' %>
@@ -86,7 +85,6 @@
     <% end %>
   </div><!--close columns-->
 
-</div><!--close row for filters and result-->
 
 <%= render :partial => 'jobs/pagination' %>
 
