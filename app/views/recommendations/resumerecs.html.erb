@@ -1,0 +1,91 @@
+<!--header-->
+<div class="row">
+
+
+    <div class="small-12 medium-12 large-12 columns">
+        <h1>Job Recommendations</h1>
+        <p>Quick Apply allows a one-click application using your resume <a href="#"> Test Resume</a>.</p>
+        <input id="quickapplycheckbox" type="checkbox"><label for="checkbox1">Show only jobs with Quick Apply</label>
+    </div>
+</div>
+
+<% if params[:auth] == "unknown" %>
+
+    <div class="row">
+
+        <div class="small-12 medium-12 large-12 columns">
+            <p>To start getting recommendations, apply for a job or sign-in.</p>
+            <a href="#" class="button">Start a job search</a>
+        </div><!-- close column -->
+
+    </div><!-- close row -->
+
+    <%= render :partial => 'user/sign_in_form' %>
+
+<% end %>
+
+<% if params[:result] == "zero" %>
+
+<div class="row">
+
+    <div class="small-12 medium-12 large-6 columns">
+        <p>0 jobs found</p>
+    </div><!--close column-->
+
+</div><!--close row-->
+
+<div class="row">
+
+    <div class="small-12 medium-12 large-6 columns">
+        <h2>What recommendations would you like to see?</h2>
+        <p>You can always change these later in your recommendation preferences</p>
+
+        <form>
+            <label>Desired Job Title
+                <input type="text" placeholder="" />
+            </label>
+            <label>Location
+                <input type="text" placeholder="" />
+            </label>
+                <input id="jobalertcheck" type="checkbox"><label for="jobalertcheck">Create Job Alert</label><br />
+                <a href="#" class="button">Get Job Recommendations</a>
+        </form>
+
+    </div><!-- close columns  -->
+
+</div><!-- close row -->
+
+<% end %><!-- close no results param-->
+
+<% if params[:auth] == "known" || params[:auth] === "authenticated" %>
+
+</div><!--close row-->
+
+
+<!--start right column sort and results-->
+
+<!--start sort-->
+<div class="row">
+    <div class="large-5 right columns right show-for-large-up">
+        <dl class="sub-nav right">
+            <dt>Sort By:</dt>
+                <dd class="active"><a href="#">Recommended</a></dd>
+                <dd><a href="#">Date</a></dd>
+                <dd><a href="#">Location</a></dd>
+        </dl>
+    </div><!--close columns-->
+</div>
+
+    <!--job result-->
+  <div class="small-12 medium-12 large-12 columns">
+    <% if params[:results].to_i > 0 %>
+        <% params[:results].to_i.times do %>
+            <%= render :partial => 'jobs/job_result' %>
+      <% end %>
+    <% end %>
+  </div><!--close columns-->
+
+
+<%= render :partial => 'jobs/pagination' %>
+
+<% end %><!--end query param for known and authenticated-->

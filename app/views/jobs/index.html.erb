@@ -26,13 +26,15 @@
   </div>
 </div>
 
+
 <!--filter button for mobile only-->
-<div class="small-4 columns hide-for-large-up">
-  <a href="jobs/mobile_filters" class="button secondary">Filter</a>
+<div class="row">
+<div class="small-4 medium-4 columns hide-for-large-up">
+  <a href="jobs/mobile_filters" class="button secondary expand">Filter</a>
 </div>
 
 <!--start sort small devices-->
-<div class="small-10 hide-for-large-up">
+<div class="small-4 medium-3 right hide-for-large-up">
   <button href="#" data-dropdown="mobilesort" aria-controls="mobilesort" aria-expanded="false" class="button dropdown secondary">Relevance</button>
   <br>
   <ul id="mobilesort" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
@@ -41,11 +43,12 @@
     <li><a href="#">Location</a></li>
   </ul>
 </div>
+</div>
 
 <!--filters-->
 <div class="row">
   <div class="large-3 columns show-for-large-up">
-  	<h4>Refine By</h4>
+  	<h4>Filter By</h4>
     <!--Distance from you-->
     <%= render 'distance_within_filter' %>
 		<!--Date Posted-->
@@ -71,7 +74,7 @@
     <div class="hide-for-small-only">
       <img src="http://placehold.it/160x600&text=Ad+160+x+600" alt="in-line ad">
     </div>
-  </div>
+</div>
 
 	
 
@@ -86,7 +89,8 @@
       <img src="http://placehold.it/728x90&text=Ad+728+x+90" alt="in-line ad">
     </div>
   </div>
-  </div>
-</div>
 
+  </div>
+  <div class="row">
 <%= render 'pagination' %>
+</div>

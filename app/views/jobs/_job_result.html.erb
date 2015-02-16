@@ -3,26 +3,37 @@
 	<% company_columns = "small-10 large-2 columns" %>
 	<% location_columns = "small-10 large-2 columns" %>
 	<% date_columns = "small-10 large-2 columns" %>
+<% elsif params[:action] == "resumerecs" %>
+  <% job_columns = "columns small-10 medium-5 large-5" %>
+  <% company_columns = "small-10 medium-2 large-2 columns" %>
+  <% location_columns = "small-10 medium-2 large-2 columns" %>
+  <% date_columns = "small-10 medium-1 large-1 columns" %>
 <% else %>
-	<% job_columns = "columns small-12 medium-12 large-6" %>
-	<% company_columns = "small-12 medium-12 large-2 columns" %>
-	<% location_columns = "small-10 medium-10 large-2 columns" %>
-	<% date_columns = "small-2 medium-2 large-2 columns" %>
+	<% job_columns = "columns small-12 medium-6 large-6" %>
+	<% company_columns = "small-12 medium-2 large-2 columns" %>
+	<% location_columns = "small-12 medium-2 large-2 columns" %>
+	<% date_columns = "small-12 medium-2 large-2 columns" %>
 <% end %>
 
-<div class="row">
 	<!-- QUICK APPLY FOR AFTER APPLY -->
 	<% if params[:action] == "after_apply" %>
-		<div class="small-2 medium-3 large-2 columns">
+		<div class="small-3 medium-2 large-2 columns">
 			<a href="#" class="button">Quick Apply</a>
 	  </div>
 	<% end %>
+
+  <!--QUICK APPLY FOR RESUME RECS -->
+  <% if params[:action] == "resumerecs" %>
+    <div class="small-3 medium-2 large-2 columns">
+      <a href="#" class="button">Quick Apply</a>
+    </div>
+  <% end %>
 
   <div class='<%= job_columns %>' >
     <h2><%= link_to "Commercial Property and Casualty Insurance Account Executive", jobs_jdp_path %></h2>
     <% if params[:action] != "after_apply" %>
 	    <p class="hide-for-small-only">Full-Time | Entry Level | $10/hr | Our client, a leader in the production of medical technology solutions has an immediate need for...</p>
-      <ul class="inline-list show-for-large-only">
+      <ul class="inline-list show-for-large-up">
         <li><a href="#">Save Job</a></li>
         <li><a href="#">Email Job</a></li>
       </ul>
@@ -43,4 +54,4 @@
     <p>1 Hour Ago</p>
   </div>
   <hr />
-</div>
+
