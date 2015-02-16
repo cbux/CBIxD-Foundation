@@ -1,4 +1,4 @@
-<script type="text/javascript">
+
 <!--
     function toggle_visibility(id) {
        var e = document.getElementById(id);
@@ -8,4 +8,3 @@
           e.style.display = 'block';
     }
 //-->
-</script>

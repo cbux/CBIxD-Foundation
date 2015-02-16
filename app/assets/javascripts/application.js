@@ -117,11 +117,6 @@ $(document).ready(function() {
     $("#job_alert_btn").click(function(){
     $("#job_alert_btn").replaceWith( '<a href="saved_searches" class="job_alert_active">Job Alert Active</a>');
     });
-//	if ( $('.fullpage-home').length ) {
-//    $.fn.fullpage({
-//			sectionsColor : ['red', 'green'],
-//    });
-//  }
   jQuery(function($) {
     $("select[multiple]").bsmSelect({
     });
