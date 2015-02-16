@@ -5,7 +5,13 @@ class JobsController < ApplicationController
 
 	def after_apply
 		render 'jobs/index'
-	end	
+	end
+
+	def expired_job
+		params[:warning]= "true"
+		@warning_message = 'This job is expired. Sales | In-Store Sales Rep | Quick Advancement Potential <br> We found these close matches instead.'
+		render 'jobs/index'
+	end
   
   	def mobile_filters
 	end

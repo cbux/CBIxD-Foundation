@@ -15,6 +15,8 @@
 	<% @step_one_active = "" %>
 	<% @step_two_active = "" %>
 	<% @step_three_active = "is-active" %>
+	<% params[:message] = "true" %>
+	<% @message_message = "We have automatically converted your document to an Resume Profile. Review to make sure everything is correct." %>
 	<%= render 'resume_preview' %>
 <% else %>
 	<% params[:message] = "true" %>

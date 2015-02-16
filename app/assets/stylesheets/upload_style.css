@@ -128,7 +128,7 @@ ul.tags {
 .tags li {
   position: relative;
   float: left;
-  margin: 0 0 8px 25px;
+  margin: 0 25px 8px 0;
 }
 
 .tags li:active {
@@ -136,7 +136,7 @@ ul.tags {
   margin-bottom: 7px;
 }
 
-.tags li:after {
+/*.tags li:after {
   content: '';
   z-index: 2;
   position: absolute;
@@ -149,7 +149,7 @@ ul.tags {
   border-radius: 3px 0 0 3px;
   -webkit-box-shadow: inset 1px 0 #99400e;
   box-shadow: inset 1px 0 #99400e;
-}
+}*/
 
 .tags a, .tags span {
   display: block;
@@ -167,10 +167,10 @@ ul.tags {
   text-decoration: none;
   text-shadow: 0 1px white;
   background: #fafafa;
-  border-width: 1px 0 1px 1px;
+  border-width: 1px;
   border-style: solid;
   border-color: #dadada #d2d2d2 #c5c5c5;
-  border-radius: 3px 0 0 3px;
+  border-radius: 3px;
   background-image: -webkit-linear-gradient(top, #fcfcfc, #f0f0f0);
   background-image: -moz-linear-gradient(top, #fcfcfc, #f0f0f0);
   background-image: -o-linear-gradient(top, #fcfcfc, #f0f0f0);

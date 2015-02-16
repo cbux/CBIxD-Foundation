@@ -152,6 +152,17 @@ label small.error {
 	margin-left: 10px;
 }
 
+.inline-list > li {
+	margin-left: 1rem;
+}
+
+ul.tags {
+	margin: 0;
+}
+
+h1, h2, h3, h4 {
+	font-weight: bold;
+}
 // .green-back {
 // 	background-color: green;
 // }

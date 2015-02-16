@@ -1,0 +1,38 @@
+<% @skills = ["Interface", "Icon", "Typography", "Color", "Design", "Illustration", "Component", "Misc", "Infrastructure", "Application", "Mobile", "Desktop"] %>
+
+<% @skills_list = @skills.to_s.gsub(/\"/, "").gsub(/\[/, "").gsub(/\]/, "") %>
+
+<div class="skills-show">
+	<div class="row">
+		<div class="column large-11">
+			<ul class="tags">
+				<% @skills.each do |skill| %>
+			    <li><a><%= skill %></a></li>
+			  <% end %>
+		  </ul>
+		</div>
+		<div class="column large-1 text-right">
+			<a onclick="$('.skills-show').toggleClass('hide');$('.skills-edit').toggleClass('hide');">Edit</a>
+		</div>
+	</div>
+</div>
+
+<div class="skills-edit hide">
+	<div class="row">
+	  <div class="small-12 columns">
+	    <textarea type="text"><%= @skills_list %></textarea>
+	  </div>
+	</div>
+	<div class="row">
+		<div class="column small-3 medium-2">
+			<a onclick="$('.skills-show').toggleClass('hide');$('.skills-edit').toggleClass('hide');" class="button small">
+				Save
+			</a>
+		</div>
+		<div class="column small-9 medium-10">
+			<a onclick="$('.skills-show').toggleClass('hide');$('.skills-edit').toggleClass('hide');" class="button small secondary">
+				Cancel
+			</a>
+		</div>
+	</div>
+</div>

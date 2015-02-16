@@ -2,7 +2,7 @@
 	<div data-alert class="alert-box true warning">
 		<div class="row">
 			<div class="column small-12 medium-12 large-12">
-				<%= @warning_message %>
+				<%= @warning_message.html_safe %>
 			</div>
 		</div>
 	</div>
@@ -11,7 +11,7 @@
 	<div data-alert class="alert-box true alert">
 		<div class="row">
 			<div class="column small-12 medium-12 large-12">
-				<%= @error_message %>
+				<%= @error_message.html_safe %>
 			</div>
 		</div>
 	</div>
@@ -20,7 +20,7 @@
 	<div data-alert class="alert-box true">
 		<div class="row">
 			<div class="column small-12 medium-12 large-12">
-				<%= @message_message %>
+				<%= @message_message.html_safe %>
 			</div>
 		</div>
 	</div>
@@ -29,7 +29,7 @@
 	<div data-alert class="alert-box success true">
 		<div class="row">
 			<div class="column small-12 medium-12 large-12">
-				<%= @success_message %>
+				<%= @success_message.html_safe %>
 			</div>
 		</div>
 	</div>

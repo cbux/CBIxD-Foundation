@@ -1,0 +1,73 @@
+<div class="edu-show-<%= @edu %>">
+	<div class="row">
+		<div class="column small-7 medium-9">
+			<h2>School Name</h2>
+			<p>
+				Bachelor of Arts in Environmental Design
+				<br>
+				June 2000
+			</p>
+		</div>
+		<div class="column small-5 medium-3">
+			<ul class="inline-list right">
+				<li>
+			 		<a onclick="$('.edu-show-<%= @edu %>').toggleClass('hide');$('.edu-edit-<%= @edu %>').toggleClass('hide');">Edit</a>
+			 	</li>
+			 	<li>
+			 		<a href="#">Delete</a>
+			 	</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="edu-edit-<%= @edu %> hide">
+	<div class="row">
+		<div class="column small-12">
+			<label>School
+		        <input type="text" placeholder="" value="UGA" />
+		     </label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="column small-12">
+			<label>Degree
+		    <input type="text" placeholder="" value="Bachelor of Arts in Environmental Design" />
+		  </label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="column small-12">
+			<label>Graduation Date</label>
+		</div>
+		<div class="column small-3">
+			<select>
+				<option value="husker">Jan</option>
+				<option value="starbuck">Feb</option>
+				<option value="hotdog">March</option>
+				<option value="apollo">April</option>
+			</select>	
+		</div>
+		<div class="column small-3">
+			<input type="text" placeholder="Year" value="" />
+		</div>
+		<div class="column small-12">
+			<h5>
+				<small>Current students: Enter expected graudation date.</small>
+			</h5>
+		</div>
+	</div>
+	<div class="row">
+		<div class="column small-3 medium-2">
+			<a onclick="$('.edu-show-<%= @edu %>').toggleClass('hide');$('.edu-edit-<%= @edu %>').toggleClass('hide');" class="button small">
+				Save
+			</a>
+		</div>
+		<div class="column small-9 medium-10">
+			<a onclick="$('.edu-show-<%= @edu %>').toggleClass('hide');$('.edu-edit-<%= @edu %>').toggleClass('hide');" class="button small secondary">
+				Cancel
+			</a>
+		</div>
+	</div>
+</div>
+

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'apply/signin_guest' => 'apply#signin_guest'
   get 'jobs' => 'jobs#index'
   get 'jobs/jdp' => 'jobs#jdp'
+  get 'jobs/expired_job' => 'jobs#expired_job'
   get 'jobs/mobile_filters' => 'jobs#mobile_filters'
   get 'jobs/companyprofile' => 'jobs#companyprofile'
   get 'jobs/find_jobs_searchstate' => 'jobs#find_jobs_searchstate'

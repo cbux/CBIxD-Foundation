@@ -2,41 +2,74 @@
 <%= render 'resume_upload_steps' %>
 
 <div class="row">
-	<div class="column small-12 medium-12 large-12 ">
+	<div class="column small-12 medium-12 large-9 large-centered ">
 		<h1>Resume Details</h1>
 	</div>
 </div>
-
-<div class="row">
-	<div class="column large-8   small-12">
-		<label>
-			Desired Job Title
-			<span data-tooltip aria-haspopup="true" class="has-tip" title="This will be used to name your resume.">
-				?
-			</span>
-			<input type="text" placeholder="" />
-		</label>
-	</div>
-</div>
-<div class="row">
-	<div class="column large-8   small-12">
-		<label>Resume Privacy </label>
-		<label for="checkbox1">
-			<input id="checkbox1" type="checkbox">
-	 		<strong>Public Resume</strong>
-	 		Visible to employers searching resumes.
-		</label>
-	</div>
-</div>
-
-<% if session[:auth] == "unknown" %>
-
-<% end %>
-
-
+<form data-abide>
 	<div class="row">
-		<div class="column large-4 medium-4  small-12">
-	      <%= link_to "View Resume", resumes_resume_preview_path, class: "button expand" %>
-	     </div>
-
+		<div class="column small-12 large-9 large-centered">
+			<% if session[:auth] == "unknown" %>
+			<div class="row">
+				<div class="column small-12">
+					<label>First Name
+						<input type="text" value="Paul" />
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column small-12">
+					<label>Last Name
+						<input type="text" value="Johnson" />
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column small-12">
+					<label>Email
+						<input type="email" value="paul.johnson@youremail.com" />
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column small-12">
+					<label>Zip
+						<input type="number" value="30123" />
+					</label>
+				</div>
+			</div>
+			<% end %>
+			<div class="row">
+				<div class="column small-12">
+					<label>
+						Desired Job Title
+						<span data-tooltip aria-haspopup="true" class="has-tip" title="This will be used to name your resume.">
+							?
+						</span>
+						<input type="text" value="Assistant Project Manager" />
+					</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column small-12">
+					<label>Resume Privacy </label>
+					<label for="checkbox1">
+						<input id="checkbox1" type="checkbox">
+				 		<strong>Public Resume</strong>
+				 		Visible to employers searching resumes.
+					</label>
+				</div>
+			</div>
+			<% if session[:auth] == "unknown" %>
+			<div class="row">
+				<%= render 'user/password_creation_field', password_create_label: "Password" %>
+			</div>
+			<% end %>
+			<div class="row bump">
+				<div class="column small-12" id="bump">
+		      <%= link_to "Post Resume", resumes_path(step: "review"), class: "button expand" %>
+		    </div>
+			</div>
+		</div>
 	</div>
+</form>
