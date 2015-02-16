@@ -45,9 +45,6 @@
 			      <li><%= link_to "Find Jobs", jobs_path %></li>
 			      <li><%= link_to "Recommendations", recommendations_path %></li>
 			      <li><%= link_to "Resumes", resumes_path %></li>
-			    <!-- Removed Resources for Now
-			      <li><a href="#">Resources</a></li>
-			    -->
 			    </ul>
 			  </section>
 			</div>
@@ -67,7 +64,7 @@
 			</label>
   	</div>
   	<div class="medium-2 small-12 columns end">
-  		<a class="button postfix" href="jobs">Search</a>
+  		<%= link_to "Search", jobs_path(results: "25"), class: "button postfix" %>
   	</div>
   </div>
 </section>	
