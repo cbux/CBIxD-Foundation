@@ -13,6 +13,8 @@
  *= require_self
  *= require main
  *= require upload_style
+ *= require base/font-awesome-sprockets
+ *= require base/font-awesome
  *= require base/jquery.fullPage
  *= require base/jquery.bsmselect
  */
