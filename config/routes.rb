@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'jobs' => 'jobs#index'
   get 'jobs/jdp' => 'jobs#jdp'
   get 'jobs/mobile_filters' => 'jobs#mobile_filters'
+  get 'jobs/companyprofile' => 'jobs#companyprofile'
   get 'jobs/find_jobs_searchstate' => 'jobs#find_jobs_searchstate'
   get 'jobs/find_jobs_jobtitles' => 'jobs#find_jobs_jobtitles'
   get 'jobs/find_jobs_company' => 'jobs#find_jobs_company'
