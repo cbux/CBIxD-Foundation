@@ -163,6 +163,24 @@ ul.tags {
 h1, h2, h3, h4 {
 	font-weight: bold;
 }
+
+.resume.row {
+	display: table;
+}
+
+.resume.row .column * {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.dz-preview {
+	display: none !important;
+}
+
+.dropzone .dz-message {
+	margin: 0;
+	padding: 5.5em 0;
+}
 // .green-back {
 // 	background-color: green;
 // }

@@ -11,9 +11,9 @@
  * file per style scope.
  *
  *= require_self
- *= require main
- *= require upload_style
  *= require font-awesome
+ *= require upload_style
+ *= require main
  *= require base/jquery.fullPage
  *= require base/jquery.bsmselect
  */

@@ -29,10 +29,10 @@
 			      	<li class=""><%= link_to "Sign In", sign_in_path %></li>
 			      <% elsif @auth == "authenticated" %>
 			      	<li class="has-dropdown">
-			      		<%= link_to "Hi, James" %>
+			      		<%= link_to "Hi, Paul" %>
 			      		<ul class="dropdown">
 			      			<li><%= link_to "My Account", account_path %></li>
-			      			<li><%= link_to "Sign Out", root_path(params.merge({:auth => "known"}).except(:action, :controller)) %></li>
+			      			<li><%= link_to "Sign Out", root_path(auth: "known", signed_out: true) %></li>
 			      		</ul>
 			      	</li>
 			      <% end %>

@@ -31,8 +31,8 @@ Rails.application.routes.draw do
   get 'recprefs_addskills' => 'recommendations#recprefs_addskills'
   get 'recprefs_addtitle' => 'recommendations#recprefs_addtitle'
   get 'resumes' => 'resumes#index'
-  get 'resumes/resume_preview' => 'resumes#resume_preview'
-  get 'resumes/resume_preview_edit' => 'resumes#resume_preview_edit'
+  get 'resumes/post' => 'resumes#post'
+  get 'resumes/preview' => 'resumes#resume_preview'
   get 'resumes/cover_letter' => 'resumes#cover_letter'
   get 'resumes/resume_selected' => 'resumes#resume_selected'
   get 'resumes/cover_letter_blank' => 'resumes#cover_letter_blank'
@@ -42,8 +42,7 @@ Rails.application.routes.draw do
   get 'sign_in' => 'user#sign_in'
   get 'sign_up' => 'user#sign_up'
   get 'jobs/after_apply' => 'jobs#after_apply'
-  get 'resumes/unknown' => 'resumes#resume_post_unknown'
-  get 'resumes/authenticated' => 'resumes#resume_post_authenticated'
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.

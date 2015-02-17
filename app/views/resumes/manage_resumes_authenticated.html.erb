@@ -1,0 +1,40 @@
+<% @path = resumes_path %>
+
+<div class="row">
+	<div class="column small-12 medium-9 medium-centered">
+		<div class="row">
+			<div class="column small-12">
+				<h1>Resumes</h1>
+			</div>
+		</div>
+		<% session[:resumes].to_i.times do %>
+			<div class="row" id="resume" data-equalizer>
+				<div class="column small-8" data-equalizer-watch>
+					<h2><%= link_to "Resume Name Here", resumes_preview_path %></h2>
+				</div>
+				<div class="column small-2">
+					<ul class="inline-list right">
+						<li>
+							<a data-equalizer-watch>
+								<i class="fa fa-pencil fa-lg"></i>
+							</a>
+						</li>
+						<li>
+							<a data-equalizer-watch>
+								<i class="fa fa-trash fa-lg"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="column small-2">
+					<h4 data-equalizer-watch>
+						<i class="fa fa-eye fa-2x green"> 3</i>
+					</h4>
+				</div>
+			</div>
+		<% end %>
+		<% if session[:resumes].to_i < 3 %>
+			<%= link_to "Post New Resume", resumes_post_path(step: "upload") %>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,33 @@
+<% @create_or_post = "post" %>
+
+<% if params[:step] == "upload" || params[:step] == nil %>
+	<% @step_one_active = "is-active" %>
+	<% @step_two_active = "" %>
+	<% @step_three_active = "" %>
+	<%= render 'resume_upload_steps' %>
+	<div class="row">
+		<div class="column large-9 large-centered">
+			<%= render 'upload_resume' %>
+		</div>
+	</div>
+<% elsif params[:step] == "details" %>
+	<% @step_one_active = "" %>
+	<% @step_two_active = "is-active" %>
+	<% @step_three_active = "" %>
+	<%= render 'resume_upload_steps' %>
+	<%= render 'add_details' %>
+<% elsif params[:step] == "review" %>
+	<% @step_two_active = "" %>
+	<% @step_three_active = "is-active" %>
+	<% params[:message] = "true" %>
+	<% @resume_count = session[:resumes].to_i + 1 %>
+	<% session[:resumes] = @resume_count %>
+	<% @message_message = "We have automatically converted your document to an Resume Profile. Review to make sure everything is correct." %>
+	<%= render 'resume_upload_steps' %>
+	<div class="row">
+		<div class="column large-9 large-centered">
+			<%= render 'resume_preview' %>
+		</div>
+	</div>
+<% end %>
+

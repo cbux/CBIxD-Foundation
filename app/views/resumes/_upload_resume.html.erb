@@ -1,12 +1,17 @@
 <div class="row">
 	<div class="column large-6 small-12 show-for-large-up">
 		<div id="dropzone">
-			<form action="http://www.torrentplease.com/dropzone.php" class="dropzone dz-clickable" id="demo-upload">
+			<%= form_tag(@path, method: "get", id: "demo-upload", class: "dropzone") do %>
+				<%= hidden_field_tag 'step', 'details' %>
 				 <div class="dz-message">
 		    	<h3>Drag  &amp; Drop</h3> or Click to browse for file<br>
-		    	<span class="note">We accept .DOCX, .DOC, .RTF, .TXT, .PDF up to 500 KB.</span>
+		    	<span class="note">
+		    		We accept .DOCX, .DOC, .RTF, .TXT, .PDF up to 500 KB.</span>
+		    		<div class="fallback">
+		    			<input type="file" name="file" />
+		    		</div>
 		  		</div>
-			</form>
+			<% end %>
 		</div>
 	</div>
 	<div class="column large-6 small-12 text-center">
@@ -32,7 +37,8 @@
 	<h2>Copy &amp; Paste Resume</h2>
 	<div class="column large-12">
 		<textarea placeholder=""></textarea>
-		<div onclick="$('#copy-paste-modal').foundation('reveal', 'close');" class="button large-4 small-12 medium-4">Save</div>
+		<%= link_to 'Save', url_for(step: "details"), onclick: "$('#copy-paste-modal').foundation('reveal', 'close');", class: "button" 
+  %>
 	</div>
 	<a class="close-reveal-modal">&#215;</a>
 </div>
@@ -43,7 +49,7 @@
   <p>
   	<a target="_blank" href="https://www.dropbox.com/developers/dropins/chooser/js">Dropbox Chooser</a>
   </p>
-  <%= link_to 'Continue', resumes_path(step: "details"), :onclick => "$('#dropbox-modal').foundation('reveal', 'close');", class: "button" 
+  <%= link_to 'Continue', url_for(step: "details"), :onclick => "$('#dropbox-modal').foundation('reveal', 'close');", class: "button" 
   %>
   <a class="close-reveal-modal">&#215;</a>
 </div>
@@ -52,7 +58,7 @@
   <h2>Google Drive File Picker Flow</h2>
   <p>The Google Drive file picker interface will be revealed. Documentation can be seen here</p>
   <p><a target="_blank" href="https://developers.google.com/picker/">Google Drive Picker</a></p>
-  <%= link_to 'Continue', resumes_path(step: "details"),
+  <%= link_to 'Continue', url_for(step: "details"),
         :onclick => "$('#drive-modal').foundation('reveal', 'close');", class: "button" %>
   <a class="close-reveal-modal">&#215;</a>
 </div>

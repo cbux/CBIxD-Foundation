@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-	before_action :auth, :delete_account, :success
+	before_action :auth, :delete_account, :success, :resumes
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -13,6 +13,13 @@ class ApplicationController < ActionController::Base
   	end
   	@auth = session[:auth]
   	@auth ||= "unknown"
+  end
+
+  def resumes
+  	if params[:resumes]
+  		session[:resumes] = params[:resumes]
+  	end
+  	session[:resumes] ||= 0
   end
 
   def success

@@ -123,6 +123,10 @@ $(document).ready(function() {
     });
 });
 
-
+Dropzone.options.demoUpload = {
+	init: function() {
+    this.on("addedfile", function(file){document.getElementById("demo-upload").submit();});
+  }
+};
 
 

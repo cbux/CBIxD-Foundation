@@ -11,6 +11,7 @@
   </head>
 
   <body>
+  	<%= session[:resumes] %>
   	<% if params[:debug] == "true" %>
   		<%= render 'shared/debug_menu_open' %>
   	<% end %>
