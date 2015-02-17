@@ -117,6 +117,9 @@ $(document).ready(function() {
     $("#job_alert_btn").click(function(){
     $("#job_alert_btn").replaceWith( '<a href="saved_searches" class="job_alert_active">Job Alert Active</a>');
     });
+    $("#job_save_btn").click(function(){
+    $("#job_save_btn").replaceWith( '<p><a href="saved_jobs" class="job_alert_active">Job Saved</a></p>');
+    });
   jQuery(function($) {
     $("select[multiple]").bsmSelect({
     });
