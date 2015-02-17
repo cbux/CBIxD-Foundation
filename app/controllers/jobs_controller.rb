@@ -119,7 +119,7 @@ class JobsController < ApplicationController
 			"Associate" => "associate",
 			"Director" => "director",
 			"Executive" => 'executive',
-			"Not Applicable" => "not-applicable",
+			# "Not Applicable" => "not-applicable",
 		}
 
 
