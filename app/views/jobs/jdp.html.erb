@@ -17,7 +17,6 @@
 
 
 <div class="row">
-
     <!--icon bar job snapshot-->
     <div class="show-for-medium-up">
         <div class="icon-bar four-up">
@@ -140,14 +139,12 @@
 
 <!--apply button bar-->
 <div class="row">
-    <div class="left large-12 columns button-bar">
-        <ul class="button-group">
-            <li><%= link_to "Apply Now", apply_path, class: "button small" %></li>
-            <li><a href="#" class="small button secondary">Email Job</a></li>
-            <li><a href="#" class="small button secondary">Save Job</a></li>
-            <li><a href="#">Report Job</a></li>
-        </ul>
+    <div class="left small-12 medium-3 large-2 columns button-bar">
+            <%= link_to "Apply Now", apply_path, class: "button" %>
     </div><!--close button bar columns-->
+    <div class="small-12 medium-9 large-10 columns">
+        <a href="#">Report Job</a>
+    </div>
 </div><!--close row-->
 
 <div class="row hide-for-small-only">
