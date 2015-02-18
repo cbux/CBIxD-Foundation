@@ -121,8 +121,8 @@ $(document).ready(function() {
     $("#job_alert_active").click(function(){
     $("#job_alert_active").replaceWith( '<a href="#" class="button secondary small" id="job_alert_btn">Create Job Alert</a>');
     });
-    $("#job_save_btn").click(function(){
-    $("#job_save_btn").replaceWith( '<a class="job_save_active">Job Saved</a>');
+    $("#job_saved_btn").click(function(){
+    $("#job_saved_btn").replaceWith( '<a class="job_save_active">Job Saved</a>');
     });
     // $("#emailopen").click(function(){
     // $("#emailopened").toggle('fast');

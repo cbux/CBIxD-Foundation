@@ -33,6 +33,11 @@ class ApplicationController < ActionController::Base
       @success_message = "You have successfully applied for Practice Coordinator at Confidential in Atlanta, GA. Your resume has been sent via email to the employer. You will receive an email confirmation once it is received by the employer."
     end
 
+    if params[:action] == "job_emailed"
+      params[:success] == "true"
+      @success_message = "Your email to [email name] has been sent!"
+    end
+
   end
 
   def delete_account

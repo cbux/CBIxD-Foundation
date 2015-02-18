@@ -1,11 +1,9 @@
  $(".email-drawer-link").on("click", function(e) {
-  e.preventDefault();
   var drawer = $(this).parent('li').find('.email-drawer');
   drawer.slideDown(1000);
 });
 
 $(".closedrawer").on("click", function(e) {
-  e.preventDefault();
   var drawer = $(this).parent().parent().parent().find('.email-drawer');
   drawer.slideUp(1000);
 });

@@ -7,6 +7,18 @@ class JobsController < ApplicationController
 		render 'jobs/index'
 	end
 
+	def job_emailed
+			params[:success]= "true"
+			@success_message = "Your email to [email name] has been sent!"
+			render 'jobs/index'
+	end
+
+	def job_saved
+			params[:success]= "true"
+			@success_message = "[Job Name] has been saved"
+			render 'jobs/index'
+	end
+
 	def expired_job
 		params[:warning]= "true"
 		@warning_message = 'This job is expired. Sales | In-Store Sales Rep | Quick Advancement Potential <br> We found these close matches instead.'
@@ -199,6 +211,14 @@ class JobsController < ApplicationController
 
 		if params[:page] == "after_apply"
 			
+		end
+
+		if params[:page]="job_emailed"
+
+		end
+
+		if params[:page]="job_saved"
+				
 		end
 
 

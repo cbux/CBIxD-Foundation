@@ -4,13 +4,39 @@
       <h1> Sales Representative Jobs in Atlanta, GA</h1>
         <p>100 jobs found</p>
   </div><!--close column-->
-  <div class="small-12 large-2 right columns hide-for-small-only">
-      <a href="#" class="button secondary small" id="job_alert_btn">Create Job Alert</a>
-  </div>
+
+  <!--job alert-->
+      <% if params[:auth] == "authenticated" %>
+      <div class="small-12 large-2 right columns hide-for-small-only">
+      <a href="#" class="button secondary small" id="job_alert_btn" class="job-alert-drawer-link">Create Job Alert</a>
+      </div>
+      <% end %>
+
+      <% if params[:auth] == "known" %>
+      <div class="small-12 large-2 right columns hide-for-small-only">
+      <a href="#" class="button secondary small" id="job_alert_btn" class="job-alert-drawer-link">Create Job Alert</a>
+      </div>
+      <% end %>
+
+       <% if params[:auth] == "unknown" %>
+         <div class="large-4 right columns hide-for-small-only">
+                    <p>Get Job Alerts for Customer Service Jobs in Alpharetta, GA</p>
+                            <div class="row collapse">
+                              <div class="small-8 large-9 columns">
+                                <input type="text" placeholder="">
+                              </div>
+                              <div class="small-4 large-3 columns">
+                              <a href="#" class="button postfix">Create Alert</a>
+                               </div>
+                            </div>
+                      </div>
+          </div>
+      <% end %>
 </div>
+
 <!--start sort larger devices-->
 <div class="row">
-  <div class="medium-5 right columns show-for-large-up">
+  <div class="medium-8 right columns show-for-medium-up">
     <dl class="sub-nav right">
       <dt>Sort By:</dt>
         <dd class=<%= @sort_relevance %>>
@@ -24,25 +50,21 @@
         </dd>
       </dl>
   </div>
-</div>
 
 
 <!--filter button for mobile only-->
-<div class="row">
-<div class="small-4 medium-4 columns hide-for-large-up">
-  <a href="jobs/mobile_filters" class="button secondary expand">Filter</a>
-</div>
+  <div class="small-4 medium-2 columns hide-for-large-up">
+    <a href="jobs/mobile_filters" class="button secondary expand">Filter</a>
+  </div>
 
-<!--start sort small devices-->
-<div class="small-4 medium-3 right hide-for-large-up">
-  <button href="#" data-dropdown="mobilesort" aria-controls="mobilesort" aria-expanded="false" class="button dropdown secondary">Relevance</button>
-  <br>
-  <ul id="mobilesort" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
-    <li><a href='#'>Relevance</a></li>
-    <li><a href="#">Date</a></li>
-    <li><a href="#">Location</a></li>
-  </ul>
-</div>
+  <!--start sort small devices-->
+  <div class="small-5 medium-3 right hide-for-medium-up">
+        <select>
+          <option checked value="husker">Relevance</option>
+          <option value="starbuck">Date</option>
+          <option value="hotdog">Location</option>
+        </select>
+  </div>
 </div>
 
 <!--filters-->

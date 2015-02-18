@@ -43,6 +43,8 @@ Rails.application.routes.draw do
   get 'sign_in' => 'user#sign_in'
   get 'sign_up' => 'user#sign_up'
   get 'jobs/after_apply' => 'jobs#after_apply'
+  get 'jobs/job_emailed' => 'jobs#job_emailed'
+  get 'jobs/job_saved' => 'jobs#job_saved'
   get 'dashboard' => 'home#dashboard'
   
 

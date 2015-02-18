@@ -35,9 +35,14 @@
 	    <p class="hide-for-small-only">Full-Time | Entry Level | $10/hr | Our client, a leader in the production of medical technology solutions has an immediate need for...</p>
       <ul class="inline-list show-for-large-up">
         <% if @auth == "authenticated" %>
-        <li><a href="#">Save Job</a></li>
+        <li>
+          <% if params[:action] != "job_saved" %>
+          <a href="jobs/job_saved" id="job_saved_btn">Save Job</a></li>
+          <% elsif %>
+          <a id="job_saved_btn">Job Saved</a></li>
+          <% end %>
         <% end %>
-        <li><a href="" class='email-drawer-link'>Email Job</a>
+        <li><a class='email-drawer-link'>Email Job</a>
                   <div class="hidden email-drawer">
                       <div class="small-12 medium-12 large-12 columns">
                         <label>From (Your Email Address)
@@ -53,7 +58,7 @@
                         <textarea placeholder=""></textarea>
                         </label>
                         <p>140 Characters Left</p>
-                        <a href="#" class="button closedrawer">Send Email</a>
+                        <a href="jobs/job_emailed" class="button small closedrawer">Send Email</a>
                         <a href="#" class="button secondary small closedrawer">Cancel</a>
                       </div>
                   </div>
