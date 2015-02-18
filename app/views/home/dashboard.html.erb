@@ -1,0 +1,92 @@
+<div class="row">
+	<div class="column small-2">
+		<h1>My Career</h1>
+		<ul class="side-nav">
+		  <li><a>Recommendations</a></li>
+		  <li><a>Saved Jobs</a></li>
+		  <li><a>Job Alerts</a></li>
+		  <li><a>Account Settings</a></li>
+		</ul>
+	</div>
+	<div class="column small-7">
+		<!-- RECCOMMENDATIONS -->
+		<h2>50 Recommendations</h2>
+		<div class="row">
+			<% 10.times do %>
+				<%= render 'jobs/job_result' %>
+			<% end %>
+		</div>
+		<a class="button">See All Recommendations</a>
+		
+		<!-- SAVED JOBS -->
+		<h2>30 Saved Jobs & Applications</h2>
+		<div class="row">
+			<% 5.times do %>
+				<div class="column small-12">
+					<h5>Interaction Designer</h5>
+					<p>ABC Consulting Group | Atlanta, GA</p>
+					<p><b>Expires 7/1/15</b></p>
+					<hr />
+	        <!--TODO add progress bar-->
+	        <p>Progress Bar Placeholder</p>
+	        <a href="#" class="button">Next Step: Apply</a>
+	        <p>Add Notes</p>
+	        <a href="../recommendations/similarrecs">See Similar Jobs</a>
+	        <hr />
+	    	</div>
+			<% end %>
+		</div>
+		<a class="button">See All Saved Jobs & Applications</a>
+
+		<!-- JOB ALERTS -->
+		<h2>5 Job Alerts</h2>
+		<div class="row">
+			<% 5.times do %>
+				<div class="small-12 columns">
+					<h5>Interaction Designer Jobs in Atlanta, GA</h5>
+					<p>Alert Frequency</p>
+					<label for="dailyfrequency">
+						<input type="radio" id="dailyfrequency">
+						Daily
+					</label>
+					<label for="weeklyfrequency">
+						<input type="radio" id="weeklyfrequency">
+						Weekly
+					</label>
+	    	</div>
+			<% end %>
+		</div>
+		<a class="button">See All Job Alerts</a>
+	</div>
+	
+	<div class="column small-3">
+		<!-- RESUMES -->
+		<h2>Resumes</h2>
+		<div class="row">
+			<% 3.times do %>
+				<ul class="inline-list">
+					<li>Resume Name Here</li>
+					<li><i class="fa fa-copy"></i></li>
+					<li><i class="fa fa-pencil"></i></li>
+					<li><i class="fa fa-trash"></i></li>
+				</ul>
+			<% end %>
+		</div>
+		<a class="button expand">Upload Resume</a>
+
+		<!-- COVER LETTERS -->
+		<h2>Cover Letters</h2>
+		<div class="row">
+			<% 2.times do %>
+				<ul class="inline-list">
+					<li>Cover Letter Name Here</li>
+					<li><i class="fa fa-copy"></i></li>
+					<li><i class="fa fa-pencil"></i></li>
+					<li><i class="fa fa-trash"></i></li>
+				</ul>
+			<% end %>
+		</div>
+		<a class="button expand">Upload Cover Letter</a>
+
+	</div>
+</div>
