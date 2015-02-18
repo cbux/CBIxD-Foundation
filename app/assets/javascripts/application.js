@@ -133,3 +133,5 @@ Dropzone.options.demoUpload = {
 };
 
 
+
+$(function(){ $(document).foundation(); });
