@@ -79,16 +79,21 @@
 	
 
 	<!--job result-->
-  <div class="small-12 large-9 columns">
+  <div class="small-12 large-9 columns refresh">
+    <%= render 'job_result' %>
+    <%= render 'job_result' %>
+    <%= render 'job_result' %>
+    <%= render 'job_result' %>
+    <div class="hide-for-small-only">
+      <img src="http://placehold.it/728x90&text=Ad+728+x+90" alt="in-line ad">
+      <hr />
+    </div>
   	<% if params[:results].to_i > 0 %>
   		<% params[:results].to_i.times do %>
   			<%= render 'job_result' %>
       <% end %>
     <% end %>
     <%= render 'company_search_result' %>
-    <div class="hide-for-small-only">
-      <img src="http://placehold.it/728x90&text=Ad+728+x+90" alt="in-line ad">
-    </div>
   </div>
 
   </div>

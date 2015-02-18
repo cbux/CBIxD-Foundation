@@ -83,7 +83,7 @@ class JobsController < ApplicationController
   def auto_jobs
   # If results nil default to 25 results
 		if params[:results] == nil
-			params[:results] = "50"
+			params[:results] = "46"
 		end
   end
 	
