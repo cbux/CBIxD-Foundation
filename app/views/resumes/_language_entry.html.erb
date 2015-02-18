@@ -1,0 +1,47 @@
+<div class="lang-show">
+	<div class="row">
+		<div class="column small-7 medium-9">
+			<ul class="tags lang">
+				<li>
+					<a>
+						<p class="no-bottom-margin"><strong>English</strong></h5>
+						<p>Native or Bilingual</p>
+					</a>
+				</li>
+				<li>
+					<a>
+						<p class="no-bottom-margin"><strong>Spanish</strong></h5>
+						<p>Elementary</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="column small-5 medium-3">
+			<ul class="inline-list right">
+				<li>
+			 		<a onclick="$('.lang-show').toggleClass('hide');$('.lang-edit').toggleClass('hide');">Edit</a>
+			 	</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="lang-edit hide">
+	<div class="row" data-equalizer>
+		<div class="column small-6 medium-9" data-equalizer-watch>
+			<%= render 'language_proficiency_field', selected_lang: "English", selected_lang_prof: "Native or bilingual proficiency" %>
+			<%= render 'language_proficiency_field', selected_lang: "Spanish", selected_lang_prof: "Elementary proficiency" %>
+		</div>
+		<div class="column small-5 medium-3">
+			<ul class="inline-list right">
+				<li>
+			 		<a onclick="$('.lang-show').toggleClass('hide');$('.lang-edit').toggleClass('hide');">Save</a>
+			 	</li>
+			 	<li>
+			 		<a onclick="$('.lang-show').toggleClass('hide');$('.lang-edit').toggleClass('hide');">Cancel</a>
+			 	</li>
+			</ul>
+		</div>
+	</div>
+</div>
+	

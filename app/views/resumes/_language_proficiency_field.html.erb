@@ -1,0 +1,16 @@
+<div class="row" data-equalizer>
+	<div class="column small-11" data-equalizer-watch>
+		<div class="row">
+			<div class="column small-6">
+				<%= select_tag "langs", options_for_select(@languages, selected_lang) %>
+			</div>
+			<div class="column small-6">
+				<%= select_tag "lang-prof", options_for_select(@language_proficiency, selected_lang_prof) %>
+			</div>
+		</div>
+	</div>
+	<div class="column small-1" data-equalizer-watch>
+		<a><i class="fa fa-trash fa-lg"></i>
+		</a>
+	</div>
+</div>

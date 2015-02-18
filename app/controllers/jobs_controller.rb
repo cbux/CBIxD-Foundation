@@ -12,6 +12,13 @@ class JobsController < ApplicationController
 		@warning_message = 'This job is expired. Sales | In-Store Sales Rep | Quick Advancement Potential <br> We found these close matches instead.'
 		render 'jobs/index'
 	end
+
+	def jdp
+		if params[:branding]
+		else
+			params[:branding] = "unbranded"
+		end
+	end
   
   	def mobile_filters
 	end
