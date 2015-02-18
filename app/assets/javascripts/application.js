@@ -126,7 +126,6 @@ $(document).ready(function() {
     });
     // $("#emailopen").click(function(){
     // $("#emailopened").toggle('fast');
-    //uncheck all when others are checked in filters
     $('#location-filter input[type="checkbox"]').change(function() {
 			if($(this).attr("name") != "all") {
 				$('#location-filter .filter-all').prop('checked', false);
@@ -135,28 +134,7 @@ $(document).ready(function() {
 				$('#location-filter .filter').prop('checked', false);
 			}
     });
-
-
-    $('#job-type-filter input[type="checkbox"]').change(function() {
-            if($(this).attr("name") != "all") {
-                $('#job-type-filter .filter-all').prop('checked', false);
-            }
-            if($(this).attr("name") == "all") {
-                $('#job-type-filter .filter').prop('checked', false);
-            }
-    });
-
-
-    $('#job-level-filter input[type="checkbox"]').change(function() {
-            if($(this).attr("name") != "all") {
-                $('#job-level-filter .filter-all').prop('checked', false);
-            }
-            if($(this).attr("name") == "all") {
-                $('#job-level-filter .filter').prop('checked', false);
-            }
-    });
 });
-
   jQuery(function($) {
     $("select[multiple]").bsmSelect({
     });

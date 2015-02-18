@@ -7,22 +7,20 @@
     <!-- TODO Style this radio list to our tag/radio list-->
     <%= render 'date_posted_filter' %>
     <!--Job Type-->
-        <%= render 'job_type_filter' %>
+    <% render 'job_type_filter' %>
+    <%= render 'shared/multiselect_field', multiselect_label: "Job Type", multiselect_id: "job-type-filter", hash_for_options: @job_type_filters %>
         <!--Salary-->
         <%= render 'salary_range_filter' %>
     <!--Location (City/State)-->
-    <%= render 'location_filter' %>
-    <!--Job Level-->
-    <%= render 'job_level_filters' %>
+    <%= render 'shared/multiselect_field', multiselect_label: "Location", multiselect_id: "location-filter", hash_for_options: @location_filters %>
         <!--Job Category-->
     <%= render 'shared/multiselect_field', multiselect_label: "Job Categories", multiselect_id: "job-category-filter", hash_for_options: @job_category_filters %>
-    <!--Skills-->
-    <%= render 'shared/multiselect_field', multiselect_label: "Skills", multiselect_id: "skills-filter", hash_for_options: @skills_filters %>
+    <!--Job Level-->
+    <%= render 'shared/multiselect_field', multiselect_label: "Job Level", multiselect_id: "job-level-filter", hash_for_options: @job_level_filters %>
         <!--Degree Required-->
     <% render 'degree_required_filter' %>
     <% render 'shared/multiselect_field', multiselect_label: "Degree Required", multiselect_id: "degree-required-filter", hash_for_options: @degree_requirements_filters %>
         <input id="mobileapplyswitch" type="checkbox"><label for="mobileapplyswitch">Mobile Apply Only</label>
-<div id="fixed-whitebg">
-    <a href="../jobs" class="button" id="mobile-filters-fixed-apply">Apply Filters</a>
-    <a href="../jobs" class="button secondary" id="mobile-filters-fixed-clear">Clear All</a>
-</div>
+
+    <a href="../jobs" class="button expand">Apply Filters</a>
+    <a href="../jobs" class="button expand secondary">Clear All</a>

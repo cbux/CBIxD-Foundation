@@ -21,8 +21,9 @@
 				   <li class="toggle-topbar-2 right">
 				    	<a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">
 				    		<span class="fa-stack">
-				    			<i class="fa fa-circle green fa-lg fa-stack-1x fa-stack-1-5x"></i>
-				    			<i class="fa fa-bell fa-stack-1x"></i>
+				    			<i class="fa fa-circle red fa-lg fa-stack-1x fa-stack-1-5x"></i>
+				    			<strong class="fa-stack-1x fa-stack-text fa-inverse">1</strong>
+				    			<!-- <i class="fa fa-bell fa-stack-1x"></i> -->
 				    		</span>
 				    	</a>
 				    </li>
@@ -35,18 +36,19 @@
 			      <% elsif @auth == "known" %>
 			      	<li class=""><%= link_to "Sign In", sign_in_path %></li>
 			      <% elsif @auth == "authenticated" %>
-			      	<li class="has-dropdown">
+			      	<li class="has-dropdown hide-for-small-only">
 			      		<%= link_to "Hi, Paul" %>
 			      		<ul class="dropdown">
 			      			<li><%= link_to "My Account", account_path %></li>
 			      			<li><%= link_to "Sign Out", root_path(auth: "known", signed_out: true) %></li>
 			      		</ul>
 			      	</li>
-			      	<li class="toggle-topbar-3">
+			      	<li class="toggle-topbar-3 show-for-medium-up">
 					    	<a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">
 					    		<span class="fa-stack">
 					    			<i class="fa fa-circle red fa-lg fa-stack-1x fa-stack-1-5x"></i>
-					    			<i class="fa fa-bell fa-stack-1x"></i>
+					    			<strong class="fa-stack-1x fa-stack-text fa-inverse">1</strong>
+					    			<!-- <i class="fa fa-bell fa-stack-1x"></i> -->
 					    		</span>
 					    	</a>
 					    </li>
@@ -56,10 +58,14 @@
 
 			    <!-- Left Nav Section -->
 			    <ul class="left">
-			      <li><%= link_to "My Careerbuilder", root_path %></li>
+			      <li><%= link_to "My Careerbuilder", dashboard_path %></li>
 			      <li><%= link_to "Find Jobs", jobs_find_jobs_searchstate_path %></li>
 			      <li><%= link_to "Recommendations", recommendations_path %></li>
 			      <li><%= link_to "Resumes", resumes_path %></li>
+			      <% if @auth == "authenticated" %>
+			      	<li class="show-for-small-only"><%= link_to "My Account", account_path %></li>
+			      	<li class="show-for-small-only"><%= link_to "Sign Out", root_path(auth: "known", signed_out: true) %></li>
+			      <% end %>
 			    </ul>
 			  </section>
 			</div>

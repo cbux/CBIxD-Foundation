@@ -165,6 +165,10 @@ label small.error {
 	margin-left: 1rem;
 }
 
+.inline-list > li:first-of-type {
+	margin-left: 0;
+}
+
 ul.tags {
 	margin: 0;
 }
@@ -200,6 +204,10 @@ h1, h2, h3, h4 {
 	margin-left: 0rem;
 	margin-right: 1.5rem;
 	margin-bottom: 0;
+}
+
+.inline-list > li > .fa {
+	display: inline-block;
 }
 
 .no-bottom-margin {
@@ -246,7 +254,18 @@ nav .fa-stack {
 	background-color: $info-color;
 } 
 
+[data-magellan-expedition], [data-magellan-expedition-clone] {
+	padding: 0px;
+}
 
+[data-magellan-expedition] .sub-nav dd, [data-magellan-expedition-clone] .sub-nav dd {
+	width: 100%;
+	margin-left: 0;
+}
+
+[data-magellan-expedition] .sub-nav a.close, [data-magellan-expedition-clone] .sub-nav a.close {
+	line-height: 0;
+}
 
 // .green-back {
 // 	background-color: green;
