@@ -21,6 +21,7 @@
     <% render 'degree_required_filter' %>
     <% render 'shared/multiselect_field', multiselect_label: "Degree Required", multiselect_id: "degree-required-filter", hash_for_options: @degree_requirements_filters %>
         <input id="mobileapplyswitch" type="checkbox"><label for="mobileapplyswitch">Mobile Apply Only</label>
-
-    <a href="../jobs" class="button expand">Apply Filters</a>
-    <a href="../jobs" class="button expand secondary">Clear All</a>
+<div class="mobile-filters-whitespace"
+    <a href="../jobs" class="button" id="mobile-apply-fixed">Apply Filters</a>
+    <a href="../jobs" class="button secondary" id="mobile-apply-clear">Clear All</a>
+</div>
