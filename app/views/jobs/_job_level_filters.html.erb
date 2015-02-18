@@ -1,13 +1,14 @@
-<div class="row">
+<div class="row" id="job-level-filter">
     <div class="column small-12">
     <label>Job Level</label>
-    </div>
-  <% @job_level_filters.each do |key, value| %>
-    <div class="column small-12">
-        <label>
-            <input type="checkbox" name="<%= value %>">
-            <%= key %>
-        </label>
-    </div>
-  <% end %>
+  <label>
+    <input type="checkbox" class="filter-all" checked name="all">
+    All
+  </label>
+    <% @job_level_filters.each do |key, value| %>
+    <label>
+        <input type="checkbox" class="filter" name="<%= value %>">
+        <%= key %>
+    </label>
+    <% end %>
 </div>

@@ -1,13 +1,14 @@
-<div class="row">
+<div class="row" id="job-type-filter">
 	<div class="column small-12">
   	<label>Job Type</label>
-	</div>
+  <label>
+    <input type="checkbox" class="filter-all" checked name="all">
+    All
+  </label>
   <% @job_type_filters.each do |key, value| %>
-    <div class="column small-12">
-    	<label>
-    		<input type="checkbox" name="<%= value %>">
-    		<%= key %>
-    	</label>
-  	</div>
+    <label>
+        <input type="checkbox" class="filter" name="<%= value %>">
+        <%= key %>
+    </label>
   <% end %>
 </div>

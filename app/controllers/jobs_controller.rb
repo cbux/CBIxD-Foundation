@@ -91,7 +91,6 @@ class JobsController < ApplicationController
 
 		# Hash for Skills
 		@location_filters = {
-			"All" => "all",
 			"Atlanta, GA" => "atlanta-ga",
 			"Alpharetta, GA" => "alpharetta-ga",
 			"Norcross, GA" => "norcross-ga",
@@ -102,7 +101,6 @@ class JobsController < ApplicationController
 
 		# Hash for Job Type Filters
 		@job_type_filters = {
-			"All" => "all",
 			"Full-time" => "full-time",
 			"Part-time" => "part-time",
 			"Contractor" => "contractor",
@@ -122,7 +120,6 @@ class JobsController < ApplicationController
 		
 		# Hash for Job Level
 		@job_level_filters = {
-			"All" => "all",
 			"Entry-level" => "entry-level",
 			"Mid-Level" => "mid-level",
 			"Senior" => "senior",
