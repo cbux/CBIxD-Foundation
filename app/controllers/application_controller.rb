@@ -40,4 +40,9 @@ class ApplicationController < ActionController::Base
   		@success_message = "You're Careerbuilder Account has been deleted"
   	end
   end
+
+  def job_collapse
+    @jobcollapse = params[:jobcollapse]
+  end
+
 end

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'apply/parsed_unknown' => 'apply#parsed_unknown'
   get 'apply/signin_guest' => 'apply#signin_guest'
   get 'jobs' => 'jobs#index'
+  get 'job_collapse' => 'jobs#job_collapse'
   get 'jobs/jdp' => 'jobs#jdp'
   get 'jobs/expired_job' => 'jobs#expired_job'
   get 'jobs/mobile_filters' => 'jobs#mobile_filters'
