@@ -55,8 +55,7 @@
     <!-- TODO Style this radio list to our tag/radio list-->
     <%= render 'date_posted_filter' %>
     <!--Job Type-->
-		<% render 'job_type_filter' %>
-    <%= render 'shared/multiselect_field', multiselect_label: "Job Type", multiselect_id: "job-type-filter", hash_for_options: @job_type_filters %>
+		<%= render 'job_type_filter' %>
 		<!--Salary-->
 		<%= render 'salary_range_filter' %>
     <!--Location (City/State)-->

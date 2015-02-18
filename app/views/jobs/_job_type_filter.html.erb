@@ -4,7 +4,10 @@
 	</div>
   <% @job_type_filters.each do |key, value| %>
     <div class="column small-12">
-    	<%= render 'shared/checkbox_field', checkbox_id: key, checkbox_label: value %>
+    	<label>
+    		<input type="checkbox" name="<%= value %>">
+    		<%= key %>
+    	</label>
   	</div>
   <% end %>
 </div>
