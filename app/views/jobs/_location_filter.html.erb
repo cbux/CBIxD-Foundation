@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="column small-12">
+    <label>Location</label>
+    </div>
+  <% @location_filters.each do |key, value| %>
+    <div class="column small-12">
+        <label>
+            <input type="checkbox" name="<%= value %>">
+            <%= key %>
+        </label>
+    </div>
+  <% end %>
+</div>
