@@ -1,13 +1,14 @@
-<div class="row">
-    <div class="column small-12">
-    <label>Location</label>
-    </div>
-  <% @location_filters.each do |key, value| %>
-    <div class="column small-12">
-        <label>
-            <input type="checkbox" name="<%= value %>">
-            <%= key %>
-        </label>
-    </div>
-  <% end %>
+<div class="row" id="location-filter">
+  <div class="column small-12">
+  <label>Location</label>
+  <label>
+  	<input type="checkbox" class="filter-all" checked name="all">
+  	All
+  </label>
+	<% @location_filters.each do |key, value| %>
+    <label>
+        <input type="checkbox" class="filter" name="<%= value %>">
+        <%= key %>
+    </label>
+	<% end %>
 </div>

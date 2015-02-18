@@ -126,6 +126,14 @@ $(document).ready(function() {
     });
     // $("#emailopen").click(function(){
     // $("#emailopened").toggle('fast');
+    $('#location-filter input[type="checkbox"]').change(function() {
+			if($(this).attr("name") != "all") {
+				$('#location-filter .filter-all').prop('checked', false);
+			}
+			if($(this).attr("name") == "all") {
+				$('#location-filter .filter').prop('checked', false);
+			}
+    });
 });
   jQuery(function($) {
     $("select[multiple]").bsmSelect({
