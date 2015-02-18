@@ -19,7 +19,7 @@
 				    </li>
 				   <% end %>
 				   <li class="toggle-topbar-2 right">
-				    	<a>
+				    	<a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">
 				    		<span class="fa-stack">
 				    			<i class="fa fa-circle green fa-lg fa-stack-1x fa-stack-1-5x"></i>
 				    			<i class="fa fa-bell fa-stack-1x"></i>
@@ -27,7 +27,6 @@
 				    	</a>
 				    </li>
 			  </ul>
-
 			  <section class="top-bar-section">
 			    <!-- Right Nav Section -->
 			    <ul class="right">
@@ -44,9 +43,9 @@
 			      		</ul>
 			      	</li>
 			      	<li class="toggle-topbar-3">
-					    	<a>
+					    	<a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">
 					    		<span class="fa-stack">
-					    			<i class="fa fa-circle green fa-lg fa-stack-1x fa-stack-1-5x"></i>
+					    			<i class="fa fa-circle red fa-lg fa-stack-1x fa-stack-1-5x"></i>
 					    			<i class="fa fa-bell fa-stack-1x"></i>
 					    		</span>
 					    	</a>
@@ -83,4 +82,25 @@
   		<%= link_to "Search", jobs_path(results: "25"), class: "button postfix" %>
   	</div>
   </div>
-</section>	
+</section>
+
+<ul id="drop1" data-dropdown-content class="f-dropdown notifications" aria-hidden="true" tabindex="-1">
+	<li class="new-notification">
+		<a href="#">
+			<h3 class="no-bottom-margin">Careerbuilder</h3>
+			has viewed your resume
+		</a>
+	</li>
+	<li>
+		<a href="#">
+			<h3 class="no-bottom-margin">Careerbuilder</h3>
+			has viewed your resume
+		</a>
+	</li>
+	<li>
+		<a href="#">
+			<h3 class="no-bottom-margin">Careerbuilder</h3>
+			has viewed your resume
+		</a>
+	</li>
+</ul>	

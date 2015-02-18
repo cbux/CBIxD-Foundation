@@ -30,7 +30,7 @@ footer {
 }
 
 .top-bar
-	.name, .toggle-topbar, .toggle-topbar-2, .toggle-topbar-3{
+	.name, .toggle-topbar, .toggle-topbar-2{
 		display: inline-block;
 }
 
@@ -93,6 +93,10 @@ label small.error {
   .top-bar .toggle-topbar-2 {
     display: none;
   }
+
+  .f-dropdown {
+		max-width: 250px;
+	}
 
   .global-search {
     transition: none 0 0;
@@ -229,6 +233,20 @@ nav .fa-stack {
 .toggle-topbar-3 .fa-stack {
 	font-size: .8125em;
 }
+
+.notifications li {
+	border-bottom: 1px solid #CCCCCC;
+}
+
+.notifications li:last-of-type {
+	border-bottom: none;
+}
+
+.notifications li.new-notification {
+	background-color: $info-color;
+} 
+
+
 
 // .green-back {
 // 	background-color: green;
