@@ -15,6 +15,7 @@
 //= require foundation
 //= require turbolinks
 //= require_tree .
+//= require emailjobshowhide
 $(document)
   .foundation(
   {
@@ -115,14 +116,16 @@ function checkboxChange(id){
 
 $(document).ready(function() {
     $("#job_alert_btn").click(function(){
-    $("#job_alert_btn").replaceWith( '<a href="saved_searches" class="job_alert_active">Job Alert Active</a>');
+    $("#job_alert_btn").replaceWith( '<p class="job_alert_active">Job Alert Active</p>');
     });
     $("#job_save_btn").click(function(){
-    $("#job_save_btn").replaceWith( '<p><a href="saved_jobs" class="job_alert_active">Job Saved</a></p>');
+    $("#job_save_btn").replaceWith( '<p class="job_alert_active">Job Saved</p>');
     });
+    // $("#emailopen").click(function(){
+    // $("#emailopened").toggle('fast');
+});
   jQuery(function($) {
     $("select[multiple]").bsmSelect({
-    });
     });
 });
 

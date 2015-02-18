@@ -1,1 +1,1 @@
-$('.refresh').load(document.URL +  ' .refresh');
+// $('.refresh').load(document.URL +  ' .refresh');
