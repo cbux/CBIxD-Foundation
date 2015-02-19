@@ -28,24 +28,27 @@ li .email-drawer {
     display:none;
 }
 
-#mobile-filters-whitespace{
-    background-color: #fff;
-    width:100%;
-    height:300px;
-    position: fixed;
-}
 
 
 #mobile-apply-fixed{
     position: fixed;
     left:10px;
-    top:480px;
-    width:380px;
+    top:440px;
+    width:300px;
 }
 
 #mobile-apply-clear{
     position: fixed;
     left:10px;
-    top:480px;
-    width:380px;
+    top:505px;
+    width:300px;
+}
+
+.mobile-filters-whitespace{
+    background-color: #ffffff;
+    width: 360px;
+    height: 130px;
+    position: fixed;
+    top: 440px;
+    left: 0px;
 }
