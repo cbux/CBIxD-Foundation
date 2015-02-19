@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'jobs/expired_job' => 'jobs#expired_job'
   get 'jobs/mobile_filters' => 'jobs#mobile_filters'
   get 'jobs/companyprofile' => 'jobs#companyprofile'
+  get 'jobs/find_jobs_landing' => 'jobs#find_jobs_landing'
   get 'jobs/find_jobs_searchstate' => 'jobs#find_jobs_searchstate'
   get 'jobs/find_jobs_jobtitles' => 'jobs#find_jobs_jobtitles'
   get 'jobs/find_jobs_company' => 'jobs#find_jobs_company'
