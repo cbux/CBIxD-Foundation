@@ -139,6 +139,12 @@ $(document).ready(function() {
     $(".closedrawerjdp").click(function(){
     $(".email-drawer-jdp").hide();
     });
+    $(".moresnapshot").click(function(){
+    $("#jobsnapshot").show();
+    });
+    $(".lesssnapshot").click(function(){
+    $("#jobsnapshot").hide();
+    });
 });
     // $("#emailopen").click(function(){
     // $("#emailopened").toggle('fast');
