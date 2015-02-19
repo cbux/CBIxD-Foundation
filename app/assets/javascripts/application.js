@@ -198,6 +198,28 @@ $(document).ready(function() {
     $(".new-skill-row").show();
     $(".skill-replace").hide();
     });
+    //viewmore rec prefs skills
+    $(".view-more-prefs1").click(function(){
+    $(".add-more-skill").show();
+    $(".view-more-prefs1").hide();
+    $(".view-less-prefs1").show();
+    });
+    $(".view-less-prefs1").click(function(){
+    $(".add-more-skill").hide();
+    $(".view-more-prefs1").show();
+    $(".view-less-prefs1").hide();
+    });
+    //viewmore rec prefs history
+    $(".view-more-prefs2").click(function(){
+    $(".add-more-history").show();
+    $(".view-more-prefs2").hide();
+    $(".view-less-prefs2").show();
+    });
+    $(".view-less-prefs2").click(function(){
+    $(".add-more-history").hide();
+    $(".view-more-prefs2").show();
+    $(".view-less-prefs2").hide();
+    });
 });
     // $("#emailopen").click(function(){
     // $("#emailopened").toggle('fast');
