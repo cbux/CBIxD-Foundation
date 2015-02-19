@@ -22,9 +22,9 @@
 					<ul class="inline-list">
 						<li><a>Resume Name Here <%= i %></a></li>
 						<li class="right">
-							<a onclick="$(this).parent().parent().remove();">
+							<%= link_to url_for(success: "true", status: "resume_deleted"), onclick: "$(this).parent().parent().remove();" do %>
 								<i class="fa fa-trash fa-lg"></i>
-							</a>
+							<% end %>
 						</li>
 						<li class="right">
 							<%= link_to resumes_preview_path do %>
@@ -46,9 +46,9 @@
 					<ul class="inline-list">
 						<li><a>Cover Letter Name <%= i %></a></li>
 						<li class="right">
-							<a onclick="$(this).parent().parent().remove();">
+							<%= link_to url_for(success: "true", status: "cover_letter_deleted"), onclick: "$(this).parent().parent().remove();" do %>
 								<i class="fa fa-trash fa-lg"></i>
-							</a>
+							<% end %>
 						</li>
 						<li class="right">
 							<%= link_to resumes_cover_letter_path do %>
