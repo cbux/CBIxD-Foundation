@@ -133,6 +133,13 @@ $(document).ready(function() {
     $("#job-report-cancel").click(function(){
     $("#jobreport").hide();
     });
+    $(".email-drawer-link-jdp").click(function(){
+    $(".email-drawer-jdp").show();
+    });
+    $(".closedrawerjdp").click(function(){
+    $(".email-drawer-jdp").hide();
+    });
+});
     // $("#emailopen").click(function(){
     // $("#emailopened").toggle('fast');
     $('#location-filter input[type="checkbox"]').change(function() {
@@ -159,7 +166,7 @@ $(document).ready(function() {
             $('#job-level-filter .filter').prop('checked', false);
         }
     });
-});
+// });
   jQuery(function($) {
     $("select[multiple]").bsmSelect({
     });
