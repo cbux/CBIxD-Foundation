@@ -10,11 +10,17 @@
 		</div>
 		<div class="column small-5 medium-3">
 			<ul class="inline-list right">
-				<li>
-			 		<a onclick="$('.exp-show-<%= @exp %>').toggleClass('hide');$('.exp-edit-<%= @exp %>').toggleClass('hide');">Edit</a>
-			 	</li>
+				
 			 	<li>
-			 		<a href="#">Delete</a>
+				 	<a data-equalizer-watch onclick="$('.exp-show-<%= @exp %>').toggleClass('hide');$('.exp-edit-<%= @exp %>').toggleClass('hide');">
+						<i class="fa fa-pencil fa-lg"></i>
+					</a>
+				</li>
+
+			 	<li>
+			 		<a data-equalizer-watch>
+						<i class="fa fa-trash fa-lg"></i>
+					</a>
 			 	</li>
 			</ul>
 		</div>
@@ -50,6 +56,7 @@
 			</label>	
 		</div>
 	</div>
+	<%= render 'shared/salary_job' %>
 	<%= render 'shared/time_start_end_fields' %>
 	<div class="row">
 		<div class="column small-3 medium-2">

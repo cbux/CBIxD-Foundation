@@ -34,7 +34,7 @@
 			</div>
 		<% end %>
 		<% if session[:resumes].to_i < 3 %>
-			<%= link_to "Post New Resume", resumes_post_path(step: "upload") %>
+			<%= link_to "Post New Resume", resumes_post_path(step: "upload")  %>
 		<% end %>
 	</div>
 </div>
