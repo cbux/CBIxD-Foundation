@@ -3,16 +3,74 @@
 <div class="row">
 	<div class="column small-12 medium-9 medium-centered">
 		<div class="row">
-			<div class="column small-12">
+			<div class="column small-9">
 				<h1>Resumes</h1>
 			</div>
+
+			<!-- <div class="column small-3 right">
+				<%= link_to "Add Resume", resumes_post_path(step: "upload"), class: "button small"  %>
+			</div> -->
+
 		</div>
+
 		<% session[:resumes].to_i.times do %>
 			<div class="row" id="resume" data-equalizer>
-				<div class="column small-8" data-equalizer-watch>
-					<h2><%= link_to "Resume Name Here", resumes_preview_path %></h2>
-				</div>
-				<div class="column small-2">
+				
+				<!-- 	<div class="column small-2">	
+						<img src="http://placehold.it/32x32"> 
+					</div> -->
+
+					<div class="column small-6">
+						<h2><%= link_to "Very Long Resume Name Here", resumes_preview_path %></h2>
+						 2 days ago   <span class="label [radius round]" style="margin-left:10px;">Public Resume</span> 
+					</div>
+
+					
+						<div class="column small-3 ">
+							<ul class="inline-list">
+								<li>
+									<h1 style="font-size: 2.25rem;">12,698</h1>
+								</li>
+								<li class="text-center">
+									<i class="fa fa-eye fa-lg no-bottom-margin"></i>
+									<p class="no-bottom-margin">views</p>
+								</li>
+							</ul>
+						</div>
+					
+						<div class="column small-3 ">
+							<ul class="inline-list">
+								<li>
+									<h1 style="font-size: 2.25rem;">13,467</h1>
+								</li>
+								<li class="text-center">
+									<i class="fa fa-search fa-lg no-bottom-margin"></i>
+									<p class="no-bottom-margin">searches</p>
+								</li>
+							</ul>
+						</div>
+		
+				<!-- <div class="column small-2">
+					<h4 data-equalizer-watch>
+						<i class="fa fa-eye fa-2x green"> 3</i>
+					</h4>
+				</div> -->
+
+				<hr/>
+				
+			</div>
+		<% end %>
+		<% if session[:resumes].to_i < 3 %>
+			<%= link_to "Add Resume", resumes_post_path(step: "upload"), class: "button small expand"  %>
+		<% end %>
+	</div>
+</div>
+
+
+
+
+
+	<!-- 	<div class="column small-2">
 					<ul class="inline-list right">
 						<li>
 							<a data-equalizer-watch>
@@ -25,16 +83,4 @@
 							</a>
 						</li>
 					</ul>
-				</div>
-				<div class="column small-2">
-					<h4 data-equalizer-watch>
-						<i class="fa fa-eye fa-2x green"> 3</i>
-					</h4>
-				</div>
-			</div>
-		<% end %>
-		<% if session[:resumes].to_i < 3 %>
-			<%= link_to "Post New Resume", resumes_post_path(step: "upload")  %>
-		<% end %>
-	</div>
-</div>
+				</div> -->
