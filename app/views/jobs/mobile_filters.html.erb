@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="small-12 columns">
+    <div class="small-12 medium-12 columns">
         <h4>Filter By</h4>
         <!--Distance from you-->
         <%= render 'distance_within_filter' %>
@@ -22,9 +22,13 @@
         <% render 'degree_required_filter' %>
         <% render 'shared/multiselect_field', multiselect_label: "Degree Required", multiselect_id: "degree-required-filter", hash_for_options: @degree_requirements_filters %>
 
-        <div class="mobile-filters-whitespace">
+        <div class="mobile-filters-whitespace show-for-small-only">
             <a href="../jobs" class="button expand" id="mobile-apply-fixed">Apply Filters</a>
             <a href="../jobs" class="button secondary expand" id="mobile-apply-clear">Clear All</a>
+        </div>
+        <div class="show-for-medium-only">
+            <a href="../jobs" class="button expand">Apply Filters</a>
+            <a href="../jobs" class="button secondary expand">Clear All</a>
         </div>
     </div>
 </div>
