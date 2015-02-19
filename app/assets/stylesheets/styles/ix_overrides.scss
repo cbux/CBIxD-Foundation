@@ -1,4 +1,4 @@
-.row, #bump {
+.row, #bump, .row .row {
 	margin-top: .5em;
 }
 
@@ -269,6 +269,23 @@ nav .fa-stack {
 
 [data-magellan-expedition] .sub-nav a.close, [data-magellan-expedition-clone] .sub-nav a.close {
 	line-height: 0;
+}
+
+#resume_accordion_button {
+	background-color: #008CBA;
+	border-color: #007095;
+	color: #FFFFFF;
+}
+
+input[type="radio"] {
+	margin-left: 1px;
+}
+
+.inline-list > li > input {
+	display: inline-block;
+}
+.accordion .accordion-navigation > .content.active {
+	padding-bottom: 0;
 }
 
 // .green-back {
