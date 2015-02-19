@@ -134,6 +134,22 @@ $(document).ready(function() {
 				$('#location-filter .filter').prop('checked', false);
 			}
     });
+    $('#job-type-filter input[type="checkbox"]').change(function() {
+        if($(this).attr("name") != "all") {
+            $('#job-type-filter .filter-all').prop('checked', false);
+        }
+        if($(this).attr("name") == "all") {
+            $('#job-type-filter .filter').prop('checked', false);
+        }
+    });
+    $('#job-level-filter input[type="checkbox"]').change(function() {
+        if($(this).attr("name") != "all") {
+            $('#job-level-filter .filter-all').prop('checked', false);
+        }
+        if($(this).attr("name") == "all") {
+            $('#job-level-filter .filter').prop('checked', false);
+        }
+    });
 });
   jQuery(function($) {
     $("select[multiple]").bsmSelect({
