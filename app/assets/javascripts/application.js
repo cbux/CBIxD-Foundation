@@ -151,6 +151,9 @@ $(document).ready(function() {
     $(".delete-rec2").click(function(){
     $(".rec-row2").hide();
     });
+    $(".delete-rec3").click(function(){
+    $(".rec-row3").hide();
+    });
     //rec prefs add location desktop
     $(".add-location").click(function(){
     $(".add-location-view").show();
