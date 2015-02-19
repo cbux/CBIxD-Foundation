@@ -22,8 +22,8 @@ $(document)
     bindings:'events',
     abide : {
 			// patterns: {
-			// cbpassword: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{8,15}$/
-			// }
+			// 	cbpassword: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{8,15}$/
+			// },
 			validators: {
         passwordcb: function(el, required, parent) {
 					var a = el.value;

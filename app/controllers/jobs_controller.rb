@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-	before_action :auto_jobs, :all_results, :debug
+	before_action :auto_jobs, :all_results, :debug, :statuses
 	def index
 	end
 
@@ -114,6 +114,12 @@ class JobsController < ApplicationController
 		if params[:results] == nil
 			params[:results] = "46"
 		end
+  end
+
+  def statuses
+  	if params[:status] == "email_sent"
+  		@success_message = "Your email to [email name] has been sent!"
+  	end
   end
 	
 	def all_results
