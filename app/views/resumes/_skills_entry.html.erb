@@ -14,7 +14,9 @@
 		<div class="column small-5 medium-3">
 			<ul class="inline-list right">
 				<li>
-					<a onclick="$('.skills-show').toggleClass('hide');$('.skills-edit').toggleClass('hide');">Edit</a>
+					<a data-equalizer-watch onclick="$('.skills-show').toggleClass('hide');$('.skills-edit').toggleClass('hide');">
+						<i class="fa fa-pencil fa-lg"></i>
+					</a>
 				</li>
 			</ul>
 		</div>
@@ -23,18 +25,23 @@
 
 <div class="skills-edit hide">
 	<div class="row">
-	  <div class="column small-7 medium-9">
+	  <div class="column small-12 medium-12">
 	    <textarea type="text"><%= @skills_list %></textarea>
 	  </div>
-		<div class="column small-5 medium-3">
-			<ul class="inline-list right">
-				<li>
-					<a onclick="$('.skills-show').toggleClass('hide');$('.skills-edit').toggleClass('hide');">Save</a>
-				</li>
-				<li>
-					<a onclick="$('.skills-show').toggleClass('hide');$('.skills-edit').toggleClass('hide');">Cancel</a>
-				</li>
-			</ul>
+	 </div>
+
+
+	  	<div class="row">
+			<div class="column small-3 medium-2">
+				<a onclick="$('.skills-show').toggleClass('hide');$('.skills-edit').toggleClass('hide');" class="button small">
+					Save
+				</a>
+			</div>
+			<div class="column small-9 medium-10">
+				<a onclick="$('.skills-show').toggleClass('hide');$('.skills-edit').toggleClass('hide');" class="button small secondary">
+					Cancel
+				</a>
+			</div>
 		</div>
-	</div>
+	
 </div>

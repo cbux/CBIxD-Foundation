@@ -48,14 +48,8 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="column small-12">
-					<label>Resume Privacy </label>
-					<label for="checkbox1">
-						<input id="checkbox1" type="checkbox">
-				 		<strong>Public Resume</strong>
-				 		Visible to employers searching resumes.
-					</label>
-				</div>
+				
+				<%= render 'shared/resume_privacy' %>
 			</div>
 			<% if session[:auth] == "unknown" %>
 			<div class="row">
