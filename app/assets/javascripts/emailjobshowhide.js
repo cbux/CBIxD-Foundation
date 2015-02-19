@@ -1,5 +1,15 @@
- $(".email-drawer-link").on("click", function(e) {
+$(".email-drawer-link").on("click", function(e) {
   var drawer = $(this).parent('li').find('.email-drawer');
+  drawer.slideDown(1000);
+});
+
+$(".closedrawer").on("click", function(e) {
+  var drawer = $(this).parent().parent().parent().find('.email-drawer');
+  drawer.slideUp(1000);
+});
+
+$(".email-drawer-link-jdp").on("click", function(e) {
+  var drawer = $(this).find('.email-drawer');
   drawer.slideDown(1000);
 });
 

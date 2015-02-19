@@ -3,6 +3,10 @@ class JobsController < ApplicationController
 	def index
 	end
 
+	def job_count
+		@jobcount = 1
+	end
+
 	def after_apply
 		render 'jobs/index'
 	end
@@ -37,6 +41,13 @@ class JobsController < ApplicationController
 			@success_message = "[Job Name] has been saved"
 			render 'jobs/jdp'
 	end
+
+	def job_emailed_jdp
+			params[:success]= "true"
+			@success_message = "Your email to [email name] has been sent!"
+			render 'jobs/jdp'
+	end
+
   
   	def mobile_filters
 	end
