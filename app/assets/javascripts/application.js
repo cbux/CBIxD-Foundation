@@ -124,6 +124,15 @@ $(document).ready(function() {
     $("#job_saved_btn").click(function(){
     $("#job_saved_btn").replaceWith( '<a class="job_save_active">Job Saved</a>');
     });
+    $("#report-job-link").click(function(){
+    $("#jobreport").toggle();
+    });
+    $("#job-report-submit").click(function(){
+    $("#jobreport").hide();
+    });
+    $("#job-report-cancel").click(function(){
+    $("#jobreport").hide();
+    });
     // $("#emailopen").click(function(){
     // $("#emailopened").toggle('fast');
     $('#location-filter input[type="checkbox"]').change(function() {
