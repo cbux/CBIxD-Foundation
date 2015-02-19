@@ -145,6 +145,49 @@ $(document).ready(function() {
     $(".lesssnapshot").click(function(){
     $("#jobsnapshot").hide();
     });
+    $(".delete-rec1").click(function(){
+    $(".rec-row1").hide();
+    });
+    $(".delete-rec2").click(function(){
+    $(".rec-row2").hide();
+    });
+    //rec prefs add location desktop
+    $(".add-location").click(function(){
+    $(".add-location-view").show();
+    });
+    $(".add-location").click(function(){
+    $(".add-location").toggle();
+    });
+    $(".save-location").click(function(){
+    $(".add-location-view").hide();
+    $(".add-location").show();
+    $(".new-location-row").show();
+    });
+    //rec prefs add title desktop
+    $(".add-title").click(function(){
+    $(".add-title-view").show();
+    });
+    $(".add-title").click(function(){
+    $(".add-title").toggle();
+    });
+    $(".save-title").click(function(){
+    $(".add-title-view").hide();
+    $(".add-title").show();
+    $(".new-title-row").show();
+    });
+    //rec prefs add skills desktop
+    $(".add-skill").click(function(){
+    $(".add-skill-view").show();
+    });
+    $(".add-skill").click(function(){
+    $(".add-skill").toggle();
+    });
+    $(".save-skill").click(function(){
+    $(".add-skill-view").hide();
+    $(".add-skill").show();
+    $(".new-skill-row").show();
+    $(".skill-replace").hide();
+    });
 });
     // $("#emailopen").click(function(){
     // $("#emailopened").toggle('fast');
