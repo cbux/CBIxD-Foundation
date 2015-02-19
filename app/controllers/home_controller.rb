@@ -19,7 +19,14 @@ class HomeController < ApplicationController
 	end
   def debug
   	if params[:action] == "index"
-  		@statuses = {"sign out" => {:signed_out => "true"}, "account deleted" => {:deleted_account => "true"}}
+  		@statuses = {
+  			"sign out" => {
+  				:signed_out => "true"
+  			}, 
+  			"account deleted" => {
+  				:deleted_account => "true"
+  			}
+  		}
   	end
   end
 end

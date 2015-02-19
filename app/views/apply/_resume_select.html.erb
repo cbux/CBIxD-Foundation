@@ -8,7 +8,35 @@
 			</div>
 		</div>
 
-		<%= render 'resumes/upload_resume' %>
+		<div class="row">
+			<ul class="resume accordion" data-accordion>
+				<li class="accordion-navigation">
+					<a href="#panel1a"><h2>Used a Saved Resume</h2></a>
+					<div id="panel1a" class="content active">
+						<% 2.times do |i| %>
+							<ul class="inline-list">
+								<li>
+									<input type="radio" id="radio-<%= i %>" name="saved_res" />
+									<label for="radio-<%= i %>"><h3>
+										Resume Name Here
+									</h3></label>
+								</li>
+								<li class="right small">
+									modified 1/1/15
+								</li>
+							</ul>
+						<% end %>
+					</div>
+				</li>
+				<li class="accordion-navigation">
+					<a href="#panel2a"><h2>Upload a New Resume</h2></a>
+					<div id="panel2a" class="content">
+						<%= render 'resumes/upload_resume' %>
+					</div>
+				</li>
+			</ul>
+    </div>
+
 
 		<!-- Saved Cover Letter List-->
 

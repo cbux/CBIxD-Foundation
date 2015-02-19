@@ -1,5 +1,6 @@
 <% @search_bar = "no-search" %>
 <% @footer_bar = "no-footer" %>
+
 <div class="row"> 
 	<div class="column small-12 text-center">
 		<img src="http://www.placehold.it/300x90&amp;text=careerbuilder"/>
@@ -83,8 +84,8 @@
 								<div class="column small-12">
 									<p>
 										If you don't have an account we'll help you make one 
-										<%= link_to "Post and Sign Up", resumes_path(params.merge(step: "upload").except(:action, :controller, :message)) %>
 									</p>
+									<%= link_to "Post and Sign Up", resumes_path(step: "upload"), class: "button expand" %>
 								</div>
 							</div>
 						<% elsif @sign_up_type == "apply" %>

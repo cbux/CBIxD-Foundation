@@ -1,8 +1,6 @@
 <% @search_bar = "no-search" %>
 
-<% if params[:step] == "select" %>
-	<%= render 'resume_select' %>
-<% elsif params[:step] == "upload" %>
+<% if params[:step] == "upload" %>
 	<%= render 'resume_upload' %>
 <% elsif params[:step] == "mobile-lead" %>
 	<%= render 'mobile_lead' %>
