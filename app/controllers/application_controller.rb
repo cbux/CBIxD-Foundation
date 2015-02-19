@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-	before_action :auth, :delete_account, :success, :resumes
+	before_action :auth, :delete_account, :success, :resumes, :lang_list, :lang_prof
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -49,5 +49,13 @@ class ApplicationController < ActionController::Base
   def job_collapse
     @jobcollapse = params[:jobcollapse]
   end
+
+  def lang_list
+		@languages = [ "English", "Chinese-Mandarin", "Czech", "Danish", "Dutch", "Estonian", "Finnish", "French", "German", "Greek", "Hebrew", "Hungarian", "Icelandic", "Italian", "Japanese", "Korean", "Latvian", "Lithuanian", "Norwegian", "Polish", "Portuguese", "Romanian", "Russian", "Spanish", "Swedish", "Arabic", "Bengali", "Chinese-Cantonese", "Chinese-Taiwanese", "Hindi", "Urdu", "Armenian", "Assamese", "Farsi", "Gujarati", "Kannada", "Kashmiri", "Malayalam", "Oriya", "Pashto", "Punjabi", "Sanskrit", "Sindhi", "Tamil", "Telugu", "Turkish", "Uzbek", "Indonesian", "Catalán", "Euskera", "Vasco", "Bulgarian", "Croatian", "Macedonian", "Serbian", "Albanian", "Cambodian", "Chinese-Chinois", "Ukrainian", "Vietnamese", "Tagalog", "Thai", "Malay", "Others" ]
+	end
+
+	def lang_prof
+		@language_proficiency = [ "No proficiency", "Elementary proficiency", "Limited working proficiency", "Professional working proficiency", "Full professional proficiency", "Native or bilingual proficiency"]
+	end
 
 end

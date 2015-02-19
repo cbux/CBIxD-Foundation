@@ -1,12 +1,14 @@
+<% @show_show = "" %>
+<% @edit_show = "hide" %>
 <div class="row">
-	<div class="column small-12">
+	<div class="column small-12 medium-9 medium-centered">
 		<h1>Create Resume</h1>
 	</div>
 </div>
 
 <!-- Progress steps-->
 <div class="row">
-	<div class="column small-12 medium-8 medium-centered">
+	<div class="column small-12 medium-10 medium-centered">
 		<ol class="progress_resume">
 		  <li  data-step="1">
 		    Profile
@@ -24,9 +26,11 @@
 
 	</div>
 </div>
-
-
-<%= render 'resumes/resume_preview' %>
+<div class="row">
+	<div class="column small-12 medium-9 medium-centered">
+		<%= render 'resumes/resume_preview' %>
+	</div>
+</div>
 
 
 		<!-- Save Section button -->
@@ -34,7 +38,13 @@
 
 <div class="row">
 	<div class="column small-8 medium-6 medium-centered ">
+		<% if params[:controller] == "resumes" %>
     	<div class="button expand"> Save Resume</div>
+    <% elsif params[:controller] == "apply" && @has_screener == "false" %>
+    	<div class="button expand">Send Application</div>
+    <% elsif params[:controller] == "apply" && @has_screener == "true" %>
+    	<div class="button expand">Continue to Screener</div>
+    <% end %>
     </div>
 </div>
 

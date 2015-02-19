@@ -27,23 +27,22 @@
 
 <!-- Progress steps End-->
 <div class="row">
-	<div class="column medium-6 medium-centered">
+	<div class="column medium-9 medium-centered">
 
-		<%= render 'resumes/edit_edu' %>
-
-		<%= render 'resumes/edit_edu' %>
-		
+		<% @show_show = "hide" %>
+		<% @edit_show = "" %>
+		<%= render 'resumes/education_entry' %>
 		<div class="column">
 			<div class="button expand secondary">Add Education</div>
 		</div>
 	</div>
 
-	<div class="column small-12 medium-6 medium-centered">
+	<div class="column small-12 medium-9 medium-centered">
 		<hr/>
-    	<%= link_to "Next", apply_mobile_lead_preview_path, class: "button expand" %>
+    	<%= link_to "Next", url_for(step: "mobile-lead-preview"), class: "button  expand" %>
     </div>
 
-    	<div class="column small-12 medium-6 medium-centered ">
+    	<div class="column small-12 medium-9 medium-centered ">
     	<%= link_to "Back", apply_mobile_lead_work_path, class: "button secondary expand" %>
     </div>
 	

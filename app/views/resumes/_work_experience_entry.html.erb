@@ -1,4 +1,6 @@
-<div class="exp-show-<%= @exp %>">
+<% @show_show ||= "" %>
+<% @edit_show ||= "hide" %>
+<div class="exp-show-<%= @exp %> <%= @show_show %>">
 	<div class="row">
 		<div class="column small-7 medium-9">
 			<h2>Job Title</h2>
@@ -34,7 +36,7 @@
 		</div>
 	</div>
 </div>
-<div class="exp-edit-<%= @exp %> hide">
+<div class="exp-edit-<%= @exp %> <%= @edit_show %>">
 	<div class="row">
 		<div class="column small-12">
 			<label>Job Title

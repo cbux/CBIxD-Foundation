@@ -1,4 +1,3 @@
-<% @search_bar = "no-search" %>
 <div class="row">
 	<div class="column small-12 medium-9 medium-centered">
 		<div class="row">
@@ -96,26 +95,30 @@
 			<% end %>
 		</div>
 
-		<!-- Collect password-->
-		<hr/>
-
-		<div class="row">
-			<div class="column small-8 ">
-			
-				<h2>Create a password (optional)</h2>
-				<p> Save your resume and use again next time.</p>
+		<% if session[:auth] != "authenticated" %>
+			<!-- Collect password-->
+			<hr/>
+			<div class="row">
+				<div class="column small-8 ">
+					<h2>Create a password (optional)</h2>
+					<p> Save your resume and use again next time.</p>
+				</div>
 			</div>
-		</div>
-		<!-- Password Area-->
-		<div class="row">
-			<form data-abide>
-				<%= render "user/password_creation_field", password_create_label: "Password" %>
-			</form>
-		</div>	
+			<!-- Password Area-->
+			<div class="row">
+				<form data-abide>
+					<%= render "user/password_creation_field", password_create_label: "Password" %>
+				</form>
+			</div>
+		<% end %>
 		<!-- End Password Area-->
 		<div class="row" id="double-bump">
 			<div class="column small-12" >
-				<div class="button expand">Send Application</div> 
+				<% if @has_screener == "true" %>
+					<%= link_to "Send Application", url_for(step: "screener"), class: "button expand" %>
+				<% else %>
+					<%= link_to "Send Application", jobs_after_apply_path, class: "button expand" %>
+				<% end %>
 			</div> 
 		</div>
 	</div>

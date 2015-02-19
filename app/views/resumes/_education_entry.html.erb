@@ -1,4 +1,6 @@
-<div class="edu-show-<%= @edu %>">
+<% @show_show ||= "" %>
+<% @edit_show ||= "hide" %>
+<div class="edu-show-<%= @edu %> <%= @show_show %>">
 	<div class="row">
 		<div class="column small-7 medium-9">
 			<h2>School Name</h2>
@@ -21,7 +23,7 @@
 	</div>
 </div>
 
-<div class="edu-edit-<%= @edu %> hide">
+<div class="edu-edit-<%= @edu %> <%= @edit_show %>">
 	<div class="row">
 		<div class="column small-12">
 			<label>School

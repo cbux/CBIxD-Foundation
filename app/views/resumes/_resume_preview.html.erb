@@ -28,11 +28,11 @@
 </div>
 <% @exp = 0 %>
 <% 2.times do %>
-	<%= render 'work_experience_entry' %>
+	<%= render 'resumes/work_experience_entry' %>
 	<% @exp += 1 %>
 	<hr/>
 <% end %>
-<%= render 'work_experience_entry' %>
+<%= render 'resumes/work_experience_entry' %>
 <div class="row">
 	<div class="column small-12">
 		<div class="button expand secondary">Add Position</div>
@@ -48,7 +48,7 @@
 	</div>
 </div>
 <% @edu = 0 %>
-<%= render 'education_entry' %>
+<%= render 'resumes/education_entry' %>
 <div class="row">
 	<div class="column small-12">
 		<div class="button expand secondary">Add Education</div>
@@ -62,7 +62,7 @@
 		<h3>Skills</h3>
 	</div>
 </div>
-<%= render 'skills_entry' %>
+<%= render 'resumes/skills_entry' %>
 
 <hr/>
 
@@ -72,7 +72,7 @@
 	</div>
 </div>
 
-<%= render 'language_entry' %>
+<%= render 'resumes/language_entry' %>
 
 
 <hr/>

@@ -1,4 +1,6 @@
-<div class="lang-show">
+<% @show_show ||= "" %>
+<% @edit_show ||= "hide" %>
+<div class="lang-show <%= @show_show %>">
 	<div class="row">
 		<div class="column small-7 medium-9">
 			<ul class="tags lang">
@@ -26,11 +28,11 @@
 	</div>
 </div>
 
-<div class="lang-edit hide">
+<div class="lang-edit <%= @edit_show %>">
 	<div class="row" data-equalizer>
 		<div class="column small-6 medium-9" data-equalizer-watch>
-			<%= render 'language_proficiency_field', selected_lang: "English", selected_lang_prof: "Native or bilingual proficiency" %>
-			<%= render 'language_proficiency_field', selected_lang: "Spanish", selected_lang_prof: "Elementary proficiency" %>
+			<%= render 'resumes/language_proficiency_field', selected_lang: "English", selected_lang_prof: "Native or bilingual proficiency" %>
+			<%= render 'resumes/language_proficiency_field', selected_lang: "Spanish", selected_lang_prof: "Elementary proficiency" %>
 		</div>
 		<div class="column small-5 medium-3">
 			<ul class="inline-list right">
