@@ -3,6 +3,8 @@ class RecommendationsController < ApplicationController
 	def index
         @results = params[:results]
 
+        params[:page] = "recommendations"
+
         if params[:page] == "resumerecs"
           render 'recommendations'
             

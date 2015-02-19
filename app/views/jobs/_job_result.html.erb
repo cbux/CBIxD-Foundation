@@ -80,8 +80,10 @@
   <div class='<%= location_columns %>'>
     <p>GA-Atlanta
     	<% if params[:action] != "after_apply" %>
+      <% if params[:page] != "recommendations" %>
         <br /><a href="job_collapse"> + View 2 more</a>
     	<% end %>
+      <% end %>
     </p>
   </div>
   <div class='<%= date_columns %>'>
