@@ -1,7 +1,9 @@
 <% @search_bar = "no-search" %>
 
-<% if params[:step] == "upload" %>
+<% if params[:step] == "select" %>
 	<%= render 'resume_select' %>
+<% elsif params[:step] == "upload" %>
+	<%= render 'resume_upload' %>
 <% elsif params[:step] == "mobile-lead" %>
 	<%= render 'mobile_lead' %>
 <% elsif params[:step] == "mobile-lead-work" %>
@@ -13,5 +15,6 @@
 <% elsif params[:step] == "screener" %>
 	<%= render 'apply_screener' %>
 <% else %>
+	<% @sign_up_type = "apply" %>
 	<%= render 'signin_guest' %>
 <% end %>

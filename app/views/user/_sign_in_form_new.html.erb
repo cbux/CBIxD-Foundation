@@ -1,0 +1,127 @@
+<% @search_bar = "no-search" %>
+<% @footer_bar = "no-footer" %>
+<div class="row"> 
+	<div class="column small-12 text-center">
+		<img src="http://www.placehold.it/300x90&amp;text=careerbuilder"/>
+	</div>
+</div>
+<div class="row" id="double-bump">
+	<div class="column small-12 medium-9 medium-centered">
+		<ul class="small-block-grid-1 medium-block-grid-2">
+			<li>
+				<%= form_tag( @path, method: "get", id: "sign-in-form") do %>
+					<%= hidden_field_tag 'auth', 'authenticated' %>
+					<div class="row">
+						<div class="column small-12 medium-11">
+							<h2>Sign In</h2>
+							<div class="row">
+								<div class="column small-12 large-centered medium-centered">
+									<%= render 'user/email_field', required: "" %>
+								</div>
+							</div>
+							<div class="row">
+								<div class="column small-12 large-centered mshow_hide_id: "showhidecreation"edium-centered">
+									<%= render 'user/password_field', show_hide_id: "showhide", password_id: "password", password_label: "password", data_abide_validator: "" %>
+								</div>
+							</div>
+							<div class="row">
+								<div class="column small-12">
+									<ul class="inline-list">
+										<li>
+											<label for="checkbox1">
+												<input id="checkbox1" type="checkbox">
+												Remember Me
+											</label>
+										</li>
+										<li class="right">
+											<a href="#" data-reveal-id="myModal">Forgot Password</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="row">
+								<div class="column small-12 large-centered medium-centered">
+									<%= submit_tag "Sign In", class: "button expand" %>
+								</div>
+							</div>
+							<div class="row">
+								<div class="column small-12">
+									<ul class="stack button-group">
+										<li>
+											<a href="#" class="button expand secondary">
+												<i class="fa fa-facebook-official"></i>
+												Sign In with Facebook
+											</a>
+										</li>
+										<li>
+											<a href="#" class="button expand secondary">
+												<i class="fa fa-google-plus-square"></i>
+												Sign In with Google
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			</li>
+			<li>
+				<div class="row">
+					<div class="column small-12 medium-11 right">
+						<% if @sign_up_type == nil || @sign_up_type == "create" %>
+							<h2>Sign Up</h2>
+							<div class="row">
+								<div class="column small-12">
+									<p>Don't have an account?</p> 
+								</div>
+							</div>
+							<%= render 'user/sign_up_form' %>
+						<% elsif @sign_up_type == "post" %>
+							<h2>Sign Up</h2>
+							<div class="row">
+								<div class="column small-12">
+									<p>
+										If you don't have an account we'll help you make one 
+										<%= link_to "Post and Sign Up", resumes_path(params.merge(step: "upload").except(:action, :controller, :message)) %>
+									</p>
+								</div>
+							</div>
+						<% elsif @sign_up_type == "apply" %>
+							<h2>Guests</h2>
+							<div class="row">
+								<div class="column small-12">
+									<p>You will have the opportunity to create an account after applying to this job.</p>
+									<%= link_to "Apply as Guest", url_for(step: "upload_resume"), class: "button expand" %>
+								</div>
+							</div>
+						<% end %>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
+<div id="myModal" class="reveal-modal" data-reveal>
+	<div class="row">
+		<div class="small-12 columns">
+			<h2>Forgot Password</h2>
+			<p class="lead">Some text about what to do here.</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="small-12 columns">
+			<label>Email Address
+				<input type="text" placeholder="Email Address" />
+			</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="column small-12">
+			<a href="#" class="button expand">Send Password</a>
+		</div>
+	</div>
+	<a class="close-reveal-modal">&#215;</a>
+</div>

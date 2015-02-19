@@ -1,4 +1,4 @@
-<% @create_or_post = "post" %>
+<% @sign_up_type = "post" %>
 
 <% if params[:step] == "upload" %>
 	<% @step_one_active = "is-active" %>
@@ -30,5 +30,5 @@
 <% else %>
 	<% params[:message] = "true" %>
 	<% @message_message = "You must be signed in or create an account to post and manage resumes" %>
-	<%= render 'user/sign_in_form' %>
+	<%= render 'user/sign_in_form_new' %>
 <% end %>
