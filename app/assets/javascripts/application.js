@@ -116,10 +116,10 @@ function checkboxChange(id){
 
 $(document).ready(function() {
     $("#job_alert_btn").click(function(){
-    $("#job_alert_btn").replaceWith( '<p class="job_alert_active">Job Alert Active</p>');
+    $("#job_alert_btn").replaceWith( '<a href="#" class="job_alert_active">Job Alert On</a>');
     });
-    $("#job_alert_active").click(function(){
-    $("#job_alert_active").replaceWith( '<a href="#" class="button secondary small" id="job_alert_btn">Create Job Alert</a>');
+    $(".job_alert_active").click(function(){
+    $(".job_alert_active").replaceWith( '<a href="#" class="button secondary small" id="job_alert_btn">Create Job Alert</a>');
     });
     $("#job_saved_btn").click(function(){
     $("#job_saved_btn").replaceWith( '<a class="job_save_active">Job Saved</a>');

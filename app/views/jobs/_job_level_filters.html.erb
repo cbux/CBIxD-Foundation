@@ -5,13 +5,11 @@
         <input type="checkbox" class="filter-all" checked name="all">
         All
     </label>
-    </div>
   <% @job_level_filters.each do |key, value| %>
-    <div class="column small-12">
         <label>
             <input type="checkbox" class="filter" name="<%= value %>">
             <%= key %>
         </label>
-    </div>
   <% end %>
+</div>
 </div>
