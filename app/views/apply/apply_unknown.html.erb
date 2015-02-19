@@ -1,7 +1,7 @@
 <% @search_bar = "no-search" %>
 
-<% if params[:step] == "upload" %>
-	<%= render 'resume_upload' %>
+<% if params[:step] == "upload_resume" %>
+	<%= render 'resume_select' %>
 <% elsif params[:step] == "mobile-lead" %>
 	<%= render 'mobile_lead' %>
 <% elsif params[:step] == "mobile-lead-work" %>
@@ -10,6 +10,8 @@
 	<%= render 'mobile_lead_edu' %>
 <% elsif params[:step] == "mobile-lead-preview" %>
 	<%= render 'mobile_lead_preview' %>
+<% elsif params[:step] == "details" %>
+	<%= render 'resumes/add_details' %>
 <% elsif params[:step] == "screener" %>
 	<%= render 'apply_screener' %>
 <% else %>

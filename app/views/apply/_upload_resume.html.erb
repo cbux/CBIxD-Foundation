@@ -11,38 +11,9 @@
 			<div class="column small-12">
 				<h2>Attach a resume</h2>
 			</div>
-			<% if session[:resumes].to_i > 0 && session[:auth] == "authenticated" %>
-				<ul class="resume accordion" data-accordion>
-					<li class="accordion-navigation">
-						<a href="#panel1a">Used a Saved Resume</a>
-						<div id="panel1a" class="content active">
-							<% session[:resumes].to_i.times do |i| %>
-								<ul class="inline-list">
-									<li>
-										<input type="radio" id="radio-<%= i %>" name="saved_res" />
-										<label for="radio-<%= i %>"><h3>
-											Resume Name Here
-										</h3></label>
-									</li>
-									<li class="right small">
-										modified 1/1/15
-									</li>
-								</ul>
-							<% end %>
-						</div>
-					</li>
-					<li class="accordion-navigation">
-						<a href="#panel2a">Upload a New Resume</a>
-						<div id="panel2a" class="content">
-							<%= render 'resumes/upload_resume' %>
-						</div>
-					</li>
-				</ul>
-			<% else %>
-				<div class="column small-12">
-					<%= render 'resumes/upload_resume' %>
-				</div>
-			<% end %>
+			<div class="column small-12">
+				<%= render 'resumes/upload_resume' %>
+			</div>
     </div>
 
     <hr/>
@@ -114,18 +85,10 @@
 		<!-- End Password Area-->
 		<div class="row" id="double-bump">
 			<div class="column small-12" >
-				<% if session[:auth] == "authenticated" %>
-					<% if @has_screener == "true" %>
-						<%= link_to "Continue to Screener", url_for(step: "screener"), class: "button expand" %>
-					<% else %>
-						<%= link_to "Send Application", jobs_after_apply_path, class: "button expand" %>
-					<% end %>
+				<% if @has_screener == "true" %>
+					<%= link_to "Send Application", url_for(step: "screener"), class: "button expand" %>
 				<% else %>
-					<% if @has_screener == "true" %>
-						<%= link_to "Continue to Screener", url_for(step: "screener"), class: "button expand" %>
-					<% else %>
-						<%= link_to "Continue", url_for(step: "details"), class: "button expand" %>
-					<% end %>
+					<%= link_to "Send Application", jobs_after_apply_path, class: "button expand" %>
 				<% end %>
 			</div> 
 		</div>

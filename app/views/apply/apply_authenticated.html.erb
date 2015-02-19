@@ -11,6 +11,8 @@
 	<%= render 'mobile_lead_edu' %>
 <% elsif params[:step] == "mobile-lead-preview" %>
 	<%= render 'mobile_lead_preview' %>
+<% elsif params[:step] == "details" %>
+	<%= render 'resumes/add_details' %>
 <% elsif params[:step] == "screener" %>
 	<%= render 'apply_screener' %>
 <% end %>

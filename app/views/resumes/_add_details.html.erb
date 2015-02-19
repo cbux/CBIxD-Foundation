@@ -7,64 +7,78 @@
 	<div class="row">
 		<div class="column small-12 large-9 large-centered">
 			<% if session[:auth] == "unknown" %>
-			<div class="row">
-				<div class="column small-12">
-					<label>First Name
-						<input type="text" value="Paul" />
-					</label>
+				<div class="row">
+					<div class="column small-12">
+						<label>First Name
+							<input type="text" value="Paul" />
+						</label>
+					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="column small-12">
-					<label>Last Name
-						<input type="text" value="Johnson" />
-					</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column small-12">
-					<label>Email
-						<input type="email" value="paul.johnson@youremail.com" />
-					</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column small-12">
-					<label>Zip
-						<input type="number" value="30123" />
-					</label>
-				</div>
-			</div>
 			<% end %>
-			<div class="row">
-				<div class="column small-12">
-					<label>
-						Desired Job Title
-						<span data-tooltip aria-haspopup="true" class="has-tip" title="This will be used to name your resume.">
-							?
-						</span>
-						<input type="text" value="Assistant Project Manager" />
-					</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column small-12">
-					<label>Resume Privacy </label>
-					<label for="checkbox1">
-						<input id="checkbox1" type="checkbox">
-				 		<strong>Public Resume</strong>
-				 		Visible to employers searching resumes.
-					</label>
-				</div>
-			</div>
 			<% if session[:auth] == "unknown" %>
+				<div class="row">
+					<div class="column small-12">
+						<label>Last Name
+							<input type="text" value="Johnson" />
+						</label>
+					</div>
+				</div>
+			<% end %>
+			<% if session[:auth] == "unknown" %>
+				<div class="row">
+					<div class="column small-12">
+						<label>Email
+							<input type="email" value="paul.johnson@youremail.com" />
+						</label>
+					</div>
+				</div>
+			<% end %>
+			<% if session[:auth] == "unknown" && params[:controller] == "resumes" || params[:apply_sign_up] == "true" %>
+				<div class="row">
+					<div class="column small-12">
+						<label>Zip
+							<input type="number" value="30123" />
+						</label>
+					</div>
+				</div>
+			<% end %>
+			<% if params[:controller] == "resumes" ||  params[:apply_sign_up] == "true" || params[:apply_save_resume] == "true" %>
+				<div class="row">
+					<div class="column small-12">
+						<label>
+							Desired Job Title
+							<span data-tooltip aria-haspopup="true" class="has-tip" title="This will be used to name your resume.">
+								?
+							</span>
+							<input type="text" value="Assistant Project Manager" />
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="column small-12">
+						<label>Resume Privacy </label>
+						<label for="checkbox1">
+							<input id="checkbox1" type="checkbox">
+					 		<strong>Public Resume</strong>
+					 		Visible to employers searching resumes.
+						</label>
+					</div>
+				</div>
+			<% end %>
+			<% if session[:auth] == "unknown" && params[:controller] != "apply" %>
 			<div class="row">
 				<%= render 'user/password_creation_field', password_create_label: "Password" %>
 			</div>
 			<% end %>
 			<div class="row bump">
 				<div class="column small-12" id="bump">
-		      <%= link_to "Post Resume", url_for(step: "review"), class: "button expand" %>
+					<% if params[:controller] == "resumes" %>
+		      	<%= link_to "Post Resume", url_for(step: "review"), class: "button expand" %>
+		      <% elsif params[:controller] == "apply" && @has_screener == "true" %>
+		      	<%= link_to "Continue to Screener", url_for(step: "screener"), class: "button expand" %>
+		      <% elsif params[:controller] == "apply" && @has_screener == "false" %>
+		      	<%= link_to "Send Application", jobs_after_apply_path, class: "button expand" %>
+		      <% end %>
 		    </div>
 			</div>
 		</div>
