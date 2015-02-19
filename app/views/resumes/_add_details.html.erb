@@ -54,30 +54,14 @@
 						</label>
 					</div>
 				</div>
-<<<<<<< HEAD
 				<div class="row">
-					<div class="column small-12">
-						<label>Resume Privacy </label>
-						<label for="checkbox1">
-							<input id="checkbox1" type="checkbox">
-					 		<strong>Public Resume</strong>
-					 		Visible to employers searching resumes.
-						</label>
-					</div>
+					<%= render 'shared/resume_privacy' %>
 				</div>
 			<% end %>
 			<% if session[:auth] == "unknown" && params[:controller] != "apply" %>
-=======
-			</div>
-			<div class="row">
-				
-				<%= render 'shared/resume_privacy' %>
-			</div>
-			<% if session[:auth] == "unknown" %>
->>>>>>> d4810f62f29fc0e0e58cadf25149b51f15fc8d19
-			<div class="row">
-				<%= render 'user/password_creation_field', password_create_label: "Password" %>
-			</div>
+				<div class="row">
+					<%= render 'user/password_creation_field', password_create_label: "Password" %>
+				</div>
 			<% end %>
 			<div class="row bump">
 				<div class="column small-12" id="bump">
