@@ -4,11 +4,15 @@
 
     <!--ad-->
     <% if params[:branding] == "nonbranded" %>
+        <div class="row">
         <%= render 'jdp_ad' %>
+        </div>
     <% end %>
 
     <!--branding-->
+    <div class="row">
     <%= render 'top_banner' %>
+    </div>
 
 
 
@@ -139,12 +143,38 @@
 
 <!--apply button bar-->
 <div class="row">
-    <div class="left small-12 medium-3 large-2 columns button-bar">
+    <div class="left small-12 medium-3 large-2 columns">
             <%= link_to "Apply Now", apply_path, class: "button" %>
     </div><!--close button bar columns-->
-    <div class="small-12 medium-9 large-10 columns">
-        <a href="#">Report Job</a>
+    <div class="small-12 medium-9 large-2 columns">
+        <a id="report-job-link">Report Job</a>
     </div>
+    <div class="small-12 medium-3 large-7 columns">
+            <a href="#" class="button secondary">Join Our Talent Network</a>
+    </div><!--close button bar columns-->
+        <div class="hidden" id="jobreport">
+            <div class="small-12 medium-8 large-8 columns">
+            <p>Please help us monitor our job postings by providing us feedback on this job. If you feel this job is miscategorized or some type of spam please let us know. Once a job has been reported to us, we will investigate it further and make the appropriate adjustments. If you require a response please submit your question or concern to our <a href="#">Trust and Site Security Team</a>.</p>
+                <label>Select a Report Type:
+                <select>
+                    <option>Fee or Investment Required</option>
+                    <option>Cannot Apply/Broken Link</option>
+                    <option>Possible Scam</option>
+                    <option>Multiple Positions in one posting</option>
+                    <option>Miscategorized</option>
+                    <option>Company not identified</option>
+                    <option>Irrelevant keywords</option>
+                    <option>Offensive Content</option>
+                    <option>Other</option>
+                </select>
+                </label>
+                <label>Comments
+                <textarea placeholder=""></textarea>
+                </label>
+                <a id="job-report-submit" class="button small">Submit</a>
+                <a id="job-report-cancel" class="button secondary small">Cancel</a>
+            </div>
+        </div>
 </div><!--close row-->
 
 <div class="row hide-for-small-only">
