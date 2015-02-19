@@ -1,0 +1,20 @@
+<form class="custom" data-abide>
+	<div class="row">
+		<div class="column small-12">
+			<%= render 'user/text_field', text_label: "First Name", required:"required" %>
+		</div>
+		<div class="column small-12">
+			<%= render 'user/text_field', text_label: "Last Name", required:"required" %>
+		</div>
+		<div class="column small-12">
+			<%= render 'user/email_field', required:"required" %>
+		</div>
+		<div class="column small-12">
+			<%= render 'user/zip_field', required:"required" %>
+		</div>
+		<%= render 'user/password_creation_field', password_create_label: "Password" %>
+		<div class="column small-12">
+			<%= link_to "Sign Up", root_path(auth: "authenticated"), class: "button expand" %>
+		</div>
+	</div>
+</form>
