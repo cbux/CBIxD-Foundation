@@ -1,6 +1,6 @@
 <% @search_bar = "no-search" %>
 
-<% if params[:step] == "upload" %>
+<% if params[:step] == "upload" || params[:step] == nil %>
 	<%= render 'resume_select' %>
 <% elsif params[:step] == "mobile-lead" %>
 	<%= render 'mobile_lead' %>
@@ -12,6 +12,4 @@
 	<%= render 'mobile_lead_preview' %>
 <% elsif params[:step] == "screener" %>
 	<%= render 'apply_screener' %>
-<% else %>
-	<%= render 'signin_guest' %>
 <% end %>

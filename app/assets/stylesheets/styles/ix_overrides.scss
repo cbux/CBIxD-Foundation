@@ -125,6 +125,8 @@ label small.error {
 	border: 2px dashed #0087F7;
 	border-radius: 5px;
 	background: white;
+	display: table;
+	width: 100%;
 }
 
 .alert-box {
@@ -192,7 +194,9 @@ h1, h2, h3, h4 {
 
 .dropzone .dz-message {
 	margin: 0;
-	padding: 4em 0;
+	display: table-cell;
+	height: 100%;
+	vertical-align: middle;
 }
 
 .inline-list.lang {

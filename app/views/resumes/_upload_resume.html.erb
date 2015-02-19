@@ -1,37 +1,28 @@
-<div class="row">
-	<div class="column large-6 small-12 show-for-large-up">
-		<div id="dropzone">
-			<%= form_tag(@path, method: "get", id: "demo-upload", class: "dropzone") do %>
+<div class="row" data-equalizer>
+	<div class="column small-12 large-6 text-center" >
+		<div class="show-for-large-up" id="dropzone" >
+			<%= form_tag(@path, method: "get", id: "demo-upload", class: "dropzone", :data => {:equalizer_watch => {}}) do %>
 				<%= hidden_field_tag 'step', 'details' %>
-				 <div class="dz-message">
-		    	<h3>Drag  &amp; Drop</h3> or Click to browse for file<br>
-		    	<span class="note">
-		    		We accept .DOCX, .DOC, .RTF, .TXT, .PDF up to 500 KB.</span>
-		    		<div class="fallback">
-		    			<input type="file" name="file" />
-		    		</div>
-		  		</div>
+				<div class="dz-message">
+					<h3>Drag  &amp; Drop</h3> or Click to browse for file<br>
+					<span class="note">
+						We accept .DOCX, .DOC, .RTF, .TXT, .PDF up to 500 KB.
+					</span>
+					<div class="fallback">
+						<input type="file" name="file" />
+					</div>
+				</div>
 			<% end %>
 		</div>
 	</div>
-	<div class="column large-6 small-12 text-center">
-		<p class="show-for-large-up">Addtional upload options</p>
-		<ul class="accordion stack button-group" data-accordion>
+	<div class="column small-12 large-6 text-center" data-equalizer-watch>
+		<p class="show-for-large-up" id="double-bump">Additional upload options</p>
+		<ul class="stack button-group">
 			<li>
 				<a href="#" data-reveal-id="copy-paste-modal" class="button expand">
+					<i class="fa fa-clipboard fa-lg"></i>
 					Copy &amp; Paste Resume
 				</a>
-			</li>
-  		<li class="accordion-navigation">
-				<a href="#panel1a" class="button">
-					Copy &amp; Paste Resume
-				</a>
-				<div id="panel1a" class="content">
-					<label class="text-left">Copy and Paste Here
-						<textarea placeholder=""></textarea>
-					</label>
-					<%= link_to 'Save', url_for(step: "details"), class: "button" %>
-				</div>
 			</li>
 			<li>
 				<a href="" class="button expand hide-for-large-up">
@@ -40,16 +31,21 @@
 			</li>
 			<li>
 				<a href="#" data-reveal-id="dropbox-modal" class="button expand">
+					<i class="fa fa-dropbox fa-lg"></i>
 					Dropbox
 				</a>
 			</li>
 			<li>
 				<a href="#" data-reveal-id="drive-modal" class="button expand">
+					<i class="fa fa-google fa-lg"></i>
 					Google Drive
 				</a>
 			</li>
 			<li>
-				<%= link_to "Create Resume", apply_mobile_lead_path, class: "button expand" %>
+				<%= link_to url_for(step: "mobile-lead"), class: "button expand" do %>
+					<i class="fa fa-file-text fa-lg"></i>
+					 Create Resume
+				<% end %>
 			</li>
 		</ul>
 	</div>

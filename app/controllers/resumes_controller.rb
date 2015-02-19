@@ -3,7 +3,11 @@ class ResumesController < ApplicationController
 
 	def index
 		@path = resumes_path
-		if session[:auth] == "authenticated" && session[:resumes].to_i > 0
+		if session[:auth] == "authenticated" && session[:resumes].to_i > 3
+			params[:warning] = "true"
+			@warning_message = "you got too many damn resumes"
+			render 'manage_resumes_authenticated'
+		elsif session[:auth] == "authenticated" && session[:resumes].to_i > 0
 			render 'manage_resumes_authenticated'
 		elsif session[:auth] == "authenticated"
 			render 'resumes_post_authenticated'
