@@ -4,11 +4,15 @@
 
     <!--ad-->
     <% if params[:branding] == "nonbranded" %>
+        <div class="row">
         <%= render 'jdp_ad' %>
+        </div>
     <% end %>
 
     <!--branding-->
+    <div class="row">
     <%= render 'top_banner' %>
+    </div>
 
 
 
@@ -139,12 +143,15 @@
 
 <!--apply button bar-->
 <div class="row">
-    <div class="left small-12 medium-3 large-2 columns button-bar">
+    <div class="left small-12 medium-3 large-2 columns">
             <%= link_to "Apply Now", apply_path, class: "button" %>
     </div><!--close button bar columns-->
-    <div class="small-12 medium-9 large-10 columns">
+    <div class="small-12 medium-9 large-2 columns">
         <a href="#">Report Job</a>
     </div>
+    <div class="small-12 medium-3 large-7 columns">
+            <a href="#" class="button secondary">Join Our Talent Network</a>
+    </div><!--close button bar columns-->
 </div><!--close row-->
 
 <div class="row hide-for-small-only">

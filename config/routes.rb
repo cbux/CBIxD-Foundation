@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'jobs' => 'jobs#index'
   get 'job_collapse' => 'jobs#job_collapse'
   get 'jobs/jdp' => 'jobs#jdp'
+  get 'jobs/job_saved_jdp' => 'jobs#job_saved_jdp'
   get 'jobs/expired_job' => 'jobs#expired_job'
   get 'jobs/mobile_filters' => 'jobs#mobile_filters'
   get 'jobs/companyprofile' => 'jobs#companyprofile'

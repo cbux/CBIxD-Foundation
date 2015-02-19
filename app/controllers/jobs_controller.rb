@@ -31,6 +31,12 @@ class JobsController < ApplicationController
 			params[:branding] = "unbranded"
 		end
 	end
+
+	def job_saved_jdp
+			params[:success]= "true"
+			@success_message = "[Job Name] has been saved"
+			render 'jobs/jdp'
+	end
   
   	def mobile_filters
 	end
