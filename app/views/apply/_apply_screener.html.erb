@@ -1,21 +1,52 @@
 <div class="row">
-<div class="column small-12 medium-9 medium-centered">
-<h1>Screener HERE</h1>
-<p>All information is optional</p>
-<form>
-	<label>Self Identification of Gender</label>
-		<input type="radio" id="male" name="gender"><label for="male">Male</label>
-		<br>
-		<input type="radio" id="female" name="gender"><label for="female">Female</label></input>
-		<br>
-		<input type="radio" id="not-disclosed" name="gender"><label for="not-disclosed"> I prefer not to disclose this information
-	</label>
-	<label>Self Identification of Ethnicity</label>
-	<select>
-		<option>American Indian or Alaska Native (Not Hispanic or Latino)</option>
-		<option>Asian (Not Hispanic or Latino)</option>
-	</select>
-</form>
-</label>
-</div>
+	<div class="column small-12 medium-9 medium-centered">
+		<h1>Screener HERE</h1>
+		<p>All information is optional</p>
+		<form>
+			<label>Self Identification of Gender</label>
+				<input type="radio" id="male" name="gender"><label for="male">Male</label>
+				<br>
+				<input type="radio" id="female" name="gender"><label for="female">Female</label></input>
+				<br>
+				<input type="radio" id="not-disclosed" name="gender"><label for="not-disclosed"> I prefer not to disclose this information
+			</label>
+			<label>Self Identification of Ethnicity</label>
+			<select>
+				<option>American Indian or Alaska Native (Not Hispanic or Latino)</option>
+				<option>Asian (Not Hispanic or Latino)</option>
+				<option>Black or African American (Not Hispanic or Latino)</option>
+				<option>Hispanic or Latino</option>
+				<option>Native Hawaiian/Other Pacific Islander (Not Hispanic or Latino)</option>
+				<option>White (Not Hispanic or Latino)</option>
+				<option>Two or More Races (Not Hispanic or Latino)</option>
+				<option>African American (Not Hispanic or Latino)</option>
+			</select>
+			<label>Self-Identification of Veteran</label>
+			<p>
+				This company is a federal contractor subject to the Vietnam Era Veterans’ Readjustment Assistance Act of 1974, as amended by the Jobs for Veterans Act of 2002, 38 U.S.C. 4212 (“VEVRAA”), which requires contractors to take affirmative action to employ and advance in employment:
+				<ol>
+					<li>disabled veterans</li>
+					<li>recently separated veterans</li>
+					<li>active duty wartime or campaign badge veterans</li>
+					<li>Armed Forces service medal veterans</li>
+				</ol>
+				If you believe you belong to any of the categories of protected veterans listed above, please indicate by checking the appropriate box below.
+			</p>
+			<input type="radio" id="one-or-more" name="veteran">
+			<label for="one-or-more">
+				I identify as one or more of the classifications of protected veteran listed above
+			</label>
+			<br>
+			<input type="radio" id="not-verteran" name="veteran">
+			<label for="not-verteran">
+				 I am not a protected veteran
+			</label>
+			<br>
+			<input type="radio" id="not-identify" name="veteran">
+			<label for="not-identify">
+				I choose not to self identify
+			</label>
+		</form>
+		<%= link_to "Submit Application", jobs_after_apply_path, class: "button expand" %>
+	</div>
 </div>
