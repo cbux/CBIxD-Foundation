@@ -9,75 +9,113 @@
 		</div>
 
 		<div class="row">
-			<ul class="resume accordion" data-accordion>
-				<li class="accordion-navigation">
-					<a href="#panel1a"><h2>Used a Saved Resume</h2></a>
-					<div id="panel1a" class="content active">
-						<% 2.times do |i| %>
-							<ul class="inline-list">
-								<li>
-									<input type="radio" id="radio-<%= i %>" name="saved_res" />
-									<label for="radio-<%= i %>"><h3>
-										Resume Name Here
-									</h3></label>
-								</li>
-								<li class="right small">
-									modified 1/1/15
-								</li>
-							</ul>
-						<% end %>
-					</div>
-				</li>
-				<li class="accordion-navigation">
-					<a href="#panel2a"><h2>Upload a New Resume</h2></a>
-					<div id="panel2a" class="content">
-						<%= render 'resumes/upload_resume' %>
-					</div>
-				</li>
-			</ul>
+			<div class="column small-12">
+				<h2>Attach a resume</h2>
+			</div>
+			<% if session[:resumes].to_i > 0 && session[:auth] == "authenticated" %>
+				<ul class="resume accordion" data-accordion>
+					<li class="accordion-navigation">
+						<a href="#panel1a">Used a Saved Resume</a>
+						<div id="panel1a" class="content active">
+							<% session[:resumes].to_i.times do |i| %>
+								<ul class="inline-list">
+									<li>
+										<input type="radio" id="radio-<%= i %>" name="saved_res" />
+										<label for="radio-<%= i %>"><h3>
+											Resume Name Here
+										</h3></label>
+									</li>
+									<li class="right small">
+										modified 1/1/15
+									</li>
+								</ul>
+							<% end %>
+						</div>
+					</li>
+					<li class="accordion-navigation">
+						<a href="#panel2a">Upload a New Resume</a>
+						<div id="panel2a" class="content">
+							<%= render 'resumes/upload_resume' %>
+						</div>
+					</li>
+				</ul>
+			<% else %>
+				<div class="column small-12">
+					<%= render 'resumes/upload_resume' %>
+				</div>
+			<% end %>
     </div>
 
+    <hr/>
 
 		<!-- Saved Cover Letter List-->
 
-		<div class="row">
-			<div class="column small-12 ">
-				<h4>Include Cover Letter (Optional)</h4>
-			</div>
-		</div>
-		<div class="row">
+		<div class="row" id="double-bump">
 			<div class="column small-12">
-				 <textarea placeholder="" rows="4"></textarea>
+				<h2>Include a Cover Letter (optional)</h2>
 			</div>
+			<% if session[:cover_letters].to_i > 0 && session[:auth] == "authenticated" %>
+				<ul class="resume accordion" data-accordion>
+					<li class="accordion-navigation">
+						<a href="#panel1b">Used a Saved Cover Letter</a>
+						<div id="panel1b" class="content active">
+							<% 2.times do |i| %>
+								<ul class="inline-list">
+									<li>
+										<input type="radio" id="radio-<%= i %>" name="saved_res" />
+										<label for="radio-<%= i %>"><h3>
+											Cover Letter Name Here
+										</h3></label>
+									</li>
+									<li class="right small">
+										modified 1/1/15
+									</li>
+								</ul>
+							<% end %>
+						</div>
+					</li>
+					<li class="accordion-navigation">
+						<a href="#panel2b">Create a New Cover Letter</a>
+						<div id="panel2b" class="content">
+							<div class="row">
+   							<div class="column small-12">
+							   <label>Cover Letter
+							        <textarea placeholder=""></textarea>
+							      </label>
+							    </div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			<% else %>
+				<div class="column small-12">
+					<label>Cover Letter
+		        <textarea placeholder=""></textarea>
+		      </label>
+		    </div>
+			<% end %>
 		</div>
-
-
 
 		<!-- Collect password-->
+		<hr/>
 
 		<div class="row">
 			<div class="column small-8 ">
-			<hr/>
-				<h3>Create a password</h3>
+			
+				<h2>Create a password (optional)</h2>
 				<p> Save your resume and use again next time.</p>
 			</div>
 		</div>
-
 		<!-- Password Area-->
 		<div class="row">
-		<form data-abide>
-			<%= render "user/password_creation_field", password_create_label: "Password" %>
-		</form>
+			<form data-abide>
+				<%= render "user/password_creation_field", password_create_label: "Password" %>
+			</form>
 		</div>	
-
-
 		<!-- End Password Area-->
-
-
-		<div class="row">
-			<div class="column small-12 medium-4 large-4">
-				<div class="button">Send Application</div> 
-
+		<div class="row" id="double-bump">
+			<div class="column small-12" >
+				<div class="button expand">Send Application</div> 
 			</div> 
 		</div>
 	</div>

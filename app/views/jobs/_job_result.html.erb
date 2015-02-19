@@ -64,6 +64,7 @@
                         <textarea placeholder=""></textarea>
                         </label>
                         <p>140 Characters Left</p>
+                        <%= link_to "Send Email", url_for(status: "email_sent", success: "true"), class: "button small closedrawer" %>
                         <a href="jobs/job_emailed" class="button small closedrawer">Send Email</a>
                         <a href="#" class="button secondary small closedrawer">Cancel</a>
                       </div>
