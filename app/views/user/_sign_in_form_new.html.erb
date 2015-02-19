@@ -9,7 +9,7 @@
 	<div class="column small-12 medium-9 medium-centered">
 		<ul class="small-block-grid-1 medium-block-grid-2">
 			<li>
-				<%= form_tag( @path, method: "get", id: "sign-in-form") do %>
+				<%= form_tag(@path, method: "get", id: "sign-in-form") do %>
 					<%= hidden_field_tag 'auth', 'authenticated' %>
 					<div class="row">
 						<div class="column small-12 medium-11">
@@ -48,16 +48,16 @@
 								<div class="column small-12">
 									<ul class="stack button-group">
 										<li>
-											<a href="#" class="button expand secondary">
+											<%= link_to "#", class: "button expand secondary", onclick: "$('#sign-in-form').submit()" do %>
 												<i class="fa fa-facebook-official"></i>
 												Sign In with Facebook
-											</a>
+											<% end %>
 										</li>
 										<li>
-											<a href="#" class="button expand secondary">
+											<%= link_to "#", class: "button expand secondary", onclick: "$('#sign-in-form').submit()" do %>
 												<i class="fa fa-google-plus-square"></i>
 												Sign In with Google
-											</a>
+											<% end %>
 										</li>
 									</ul>
 								</div>
