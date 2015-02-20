@@ -1,3 +1,4 @@
+<% @work_add = "resumes/work_experience_entry" %>
 <div class="row">
 	<div class="column small-2 medium-1 right">
 		<a data-equalizer-watch>
@@ -32,9 +33,17 @@
 	<hr/>
 <% end %>
 <%= render 'resumes/work_experience_entry' %>
+<% @show_show = "hide" %>
+<% @edit_show = "" %>
+<% @exp += 1 %>
+<div id="hidden_work" style="display: none">
+	<%= render 'resumes/work_experience_entry' %>
+</div>
+<% @show_show = "" %>
+<% @edit_show = "hide" %>
 <div class="row">
 	<div class="column small-12">
-		<div class="button expand secondary" id="add-work">Add Position</div>
+		<a data-1="#hidden_work" class="button expand secondary hide_show">Add Position</a>
 	</div>
 </div>
 <hr>
@@ -47,9 +56,17 @@
 </div>
 <% @edu = 0 %>
 <%= render 'resumes/education_entry' %>
+<% @show_show = "hide" %>
+<% @edit_show = "" %>
+<% @edu += 1 %>
+<div id="hidden_edu" style="display: none">
+	<%= render 'resumes/education_entry' %>
+</div>
+<% @show_show = "" %>
+<% @edit_show = "hide" %>
 <div class="row">
 	<div class="column small-12">
-		<div class="button expand secondary" id="add-education">Add Education</div>
+		<div data-1="#hidden_edu" class="button expand secondary hide_show" id="add-education">Add Education</div>
 	</div>
 </div>
 <hr>
