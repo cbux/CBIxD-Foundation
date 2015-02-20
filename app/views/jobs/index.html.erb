@@ -2,21 +2,27 @@
 <div class="row">
   <div class="small-12 large-7 columns">
       <h1> Sales Representative Jobs in Atlanta, GA</h1>
-        <p>100 jobs found</p>
+        <p>100 jobs found&nbsp;&nbsp;&nbsp;&nbsp;<a>Save Search</a></p>
   </div><!--close column-->
 
   <!--job alert-->
   <% if params[:action] != "after_apply" %>
       <% if params[:auth] == "unknown" %>
-         <div class="medium-4 large-4 right columns hide-for-small-only">
-                    <p>Get Job Alerts for Customer Service Jobs in Alpharetta, GA</p>
+         <div class="medium-6 large-4 right columns hide-for-small-only">
+                    <p class="emailalerttext"><i class="fa fa-envelope-o">&nbsp;&nbsp;</i>Email Jobs like this to me</p>
                             <div class="row collapse">
-                              <div class="small-8 medium-9 large-9 columns">
+                              <div class="alertinputwrap">
+                              <div class="small-8 medium-7 large-8 columns">
+                                <label>Your Email
                                 <input type="text" placeholder="">
+                              </label>
                               </div>
-                              <div class="small-4 medium-3 large-3 columns">
-                              <a href="#" class="button postfix">Create Alert</a>
+                              <div class="small-4 medium-5 large-4 columns">
+                                <label>
+                              <a href="#" class="button postfix unauthalertbtn">Create Alert</a>
+                            </label>
                                </div>
+                               </div
                             </div>
                       </div>
           </div>
