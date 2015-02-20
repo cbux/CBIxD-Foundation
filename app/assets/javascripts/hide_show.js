@@ -10,7 +10,6 @@ $('.hide_show').click(function() {
     $(id1).toggle();
     $(id2).toggle();
 });
-
 // HOW TO USE
 //
 // Create your first link with the attribute data-1 with it's id name in it

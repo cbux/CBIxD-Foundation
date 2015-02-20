@@ -199,9 +199,9 @@
 
     <!--job result-->
   <div class="small-12 medium-12 large-9 columns">
-    <% if params[:results].to_i > 0 %>
-        <% params[:results].to_i.times do %>
-            <%= render :partial => 'jobs/job_result' %>
+    <% if params[:results].to_i > 0  %>
+        <% params[:results].to_i.times do |i| %>
+            <%= render 'jobs/job_result', count: i %>
       <% end %>
     <% end %>
   </div><!--close columns-->
