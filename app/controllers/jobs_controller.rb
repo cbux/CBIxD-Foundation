@@ -253,7 +253,11 @@ class JobsController < ApplicationController
 
 	def debug
   	if params[:action] == "index"
-  		@statuses = nil
+  		@statuses = {
+  			"Zero Results" => {
+  				:results => "0"
+  			}
+  		}
   	end
   end
 end
