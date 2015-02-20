@@ -18,20 +18,27 @@
 		<h2 id="resumes">Resumes</h2>
 		<div class="row">
 			<div class="column small-12">
-				<% 3.times do |i| %>
-					<ul class="inline-list">
-						<li><a>Resume Name Here <%= i %></a></li>
-						<li class="right">
-							<%= link_to url_for(success: "true", status: "resume_deleted"), onclick: "$(this).parent().parent().remove();" do %>
-								<i class="fa fa-trash fa-lg"></i>
-							<% end %>
-						</li>
-						<li class="right">
-							<%= link_to resumes_preview_path do %>
-								<i class="fa fa-pencil fa-lg"></i>
-							<% end %>
-						</li>
-					</ul>
+				<% if session[:resumes].to_i > 0 %>
+					<% session[:resumes].times do |i| %>
+						<ul class="inline-list">
+							<li><a>Resume Name Here <%= i %></a></li>
+							<li class="right">
+								<%= link_to url_for(success: "true", status: "resume_deleted"), onclick: "$(this).parent().parent().remove();" do %>
+									<i class="fa fa-trash fa-lg"></i>
+								<% end %>
+							</li>
+							<li class="right">
+								<%= link_to resumes_preview_path do %>
+									<i class="fa fa-pencil fa-lg"></i>
+								<% end %>
+							</li>
+						</ul>
+					<% end %>
+				<% else %>
+					<div class="panel">
+						<p>You have no saved resumes</p>
+						<p>Uploading a resume will allow you to easily apply to jobs and have employers find you</p>
+					</div>
 				<% end %>
 			</div>
 		</div>
@@ -42,20 +49,26 @@
 		<h2 id="cover-letters">Cover Letters</h2>
 		<div class="row">
 			<div class="column small-12">
-				<% 2.times do |i| %>
-					<ul class="inline-list">
-						<li><a>Cover Letter Name <%= i %></a></li>
-						<li class="right">
-							<%= link_to url_for(success: "true", status: "cover_letter_deleted"), onclick: "$(this).parent().parent().remove();" do %>
-								<i class="fa fa-trash fa-lg"></i>
-							<% end %>
-						</li>
-						<li class="right">
-							<%= link_to resumes_cover_letter_path do %>
-							<i class="fa fa-pencil fa-lg"></i>
-							<% end %>
-						</li>
-					</ul>
+				<% if session[:cover_letters].to_i > 0 %>
+					<% session[:cover_letters].times do |i| %>
+						<ul class="inline-list">
+							<li><a>Cover Letter Name <%= i %></a></li>
+							<li class="right">
+								<%= link_to url_for(success: "true", status: "cover_letter_deleted"), onclick: "$(this).parent().parent().remove();" do %>
+									<i class="fa fa-trash fa-lg"></i>
+								<% end %>
+							</li>
+							<li class="right">
+								<%= link_to resumes_cover_letter_path do %>
+								<i class="fa fa-pencil fa-lg"></i>
+								<% end %>
+							</li>
+						</ul>
+					<% end %>
+				<% else %>
+					<div class="panel">
+						<p>You have no cover letters resumes</p>
+					</div>
 				<% end %>
 			</div>
 		</div>
