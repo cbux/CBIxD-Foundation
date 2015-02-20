@@ -6,70 +6,63 @@
 
 <!-- Progress steps-->
 <div class="row">
-	<div class="column small-12 large-11 small-centered">
+	<div class="column small-12 medium-11 medium-centered">
 		<ol class="progress_resume">
-		  <li class="is-active" data-step="1">
-		    Profile
-		  </li>
-		  <li  data-step="2">
-		    Work History
-		  </li>
-		  <li   data-step="3" >
-		    Education
-  		  </li>
-  		   <li  data-step="4" class="progress_resume_last">
-		    Preview
-  		  </li>
+			<li data-step="1" class="is-active">
+				Profile
+			</li>
+			<li data-step="2">
+				Work History
+			</li>
+			<li data-step="3" >
+				Education
+			</li>
+			<li data-step="4" class="progress_resume_last">
+				Preview
+			</li>
 		</ol>
 	</div>
 </div>
-
 <!-- Progress steps End-->
 
 <div class="row">
 	<div class="column small-12 large-9 large-centered">
 		<div class="row">
-
 			<div class="column small-12">
-				<label>First Name
-		        <input type="text" />
-		      </label>
+				<label>
+					First Name
+					<input type="text" />
+				</label>
 			</div>
-
 			<div class="column small-12">
 				<label>Last Name
-		        <input type="text" />
-		      </label>
+		    	<input type="text" />
+		    </label>
 			</div>
-
 			<div class="column small-12">
 				<label>Email Address
-		        <input type="text" />
-		      </label>
+		      <input type="text" />
+		    </label>
 			</div>
-
-
 			<div class="column small-12">
 				<label>Phone Number
-		        <input type="text" />
-		      </label>
+		      <input type="text" />
+		    </label>
 			</div>
-
 			<div class="column small-12">
 				<label>City,State or Zipcode
-		        <input type="text" />
-		      </label>
+		      <input type="text" />
+		    </label>
 			</div>
-
 			<div class="column small-12">
 				<label>Work Status
-			        <select>
-			          <option value="husker">Select One</option>
-			          <option value="starbuck">Employment Authorization Document</option>
-			          <option value="hotdog">US Citizen</option>
-			          <option value="apollo">Green Card Holder</option>
-			        </select>
-			    </label>
+					<select>
+						<option value="husker">Select One</option>
+			      <option value="starbuck">Employment Authorization Document</option>
+			      <option value="hotdog">US Citizen</option>
+			      <option value="apollo">Green Card Holder</option>
+			    </select>
+			  </label>
 			</div>
 		</div>
 	</div>	
@@ -78,12 +71,11 @@
 <div class="row">
 	<div class="column small-12 large-9 large-centered">
 		<div class="row">
-			<div class="column small-12 medium-12 ">
-	    	<%= link_to "Next", url_for(step: "mobile-lead-work"), class: "button  expand" %>
+			<div class="column small-12">
+	    	<%= link_to "Next", url_for(step: "mobile-lead-work"), class: "button expand" %>
 	    </div>
-
-	    <div class="column small-12 medium-12 ">
-	    	<div class="button secondary  expand"> Cancel</div>
+	    <div class="column small-12">
+	    	<%= link_to "Cancel", url_for(step: "upload"), class: "button secondary expand" %>
 	    </div>
 	  </div>
 	</div>

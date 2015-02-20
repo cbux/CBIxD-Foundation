@@ -1,5 +1,3 @@
-<% @show_show = "" %>
-<% @edit_show = "hide" %>
 <div class="row">
 	<div class="column small-12 medium-9 medium-centered">
 		<h1>Create Resume</h1>
@@ -10,42 +8,41 @@
 <div class="row">
 	<div class="column small-12 medium-10 medium-centered">
 		<ol class="progress_resume">
-		  <li  data-step="1">
-		    Profile
-		  </li>
-		  <li data-step="2">
-		    Work History
-		  </li>
-		  <li   data-step="3" >
-		    Education
-  		  </li>
-  		   <li  data-step="4" class="progress_resume_last is-active">
-		    Preview
-  		  </li>
+			<li data-step="1">
+				Profile
+			</li>
+			<li data-step="2">
+				Work History
+			</li>
+			<li data-step="3">
+				Education
+			</li>
+			<li data-step="4" class="progress_resume_last is-active">
+				Preview
+			</li>
 		</ol>
-
 	</div>
 </div>
+<!-- Progress steps End-->
+
 <div class="row">
 	<div class="column small-12 medium-9 medium-centered">
+		<% @show_show = "" %>
+		<% @edit_show = "hide" %>
 		<%= render 'resumes/resume_preview' %>
 	</div>
 </div>
 
-
-		<!-- Save Section button -->
-
-
 <div class="row">
-	<div class="column small-8 medium-6 medium-centered ">
+	<div class="column small-12 large-9 large-centered">
 		<% if params[:controller] == "resumes" %>
-    	<div class="button expand"> Save Resume</div>
+    	<%= link_to "Save Resume", "#", class: "button expand" %>
     <% elsif params[:controller] == "apply" && @has_screener == "false" %>
-    	<div class="button expand">Send Application</div>
+    	<%= link_to "Send Application", jobs_after_apply_path, class: "button expand" %>
     <% elsif params[:controller] == "apply" && @has_screener == "true" %>
-    	<div class="button expand">Continue to Screener</div>
+    	<%= link_to "Attach Resume", url_for(step: "upload",resume: "attached"), class: "button expand" %>
     <% end %>
-    </div>
+  </div>
 </div>
 
 
