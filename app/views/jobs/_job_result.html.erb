@@ -34,42 +34,48 @@
     <% if params[:action] != "after_apply" %>
 	    <p class="hide-for-small-only">Full-Time | Entry Level | $10/hr | Our client, a leader in the production of medical technology solutions has an immediate need for...</p>
       <ul class="inline-list show-for-large-up">
-        <% if @auth == "authenticated" %>
-        <li>
-          <% if params[:action] != "job_saved" %>
-          <a href="jobs/job_saved" id="job_saved_btn">Save Job</a></li>
-          <% elsif %>
-          <a id="job_saved_btn">Job Saved</a></li>
-          <% end %>
+        <% if session[:auth] == "authenticated" %>
+          <li>
+            <a class="hide_show" data-1="#job_saved_btn-<%= count %>" data-2="#job_saved_msg-<%= count %>" id="job_saved_btn-<%= count %>">Save Job</a>
+            <a  class="hide_show" data-1="#job_saved_btn-<%= count %>" data-2="#job_saved_msg-<%= count %>"  id="job_saved_msg-<%= count %>" style="display:none">Job Saved</a>
+          </li>
         <% end %>
-        <li><a class='email-drawer-link'>Email Job</a>
-                  <div class="hidden email-drawer">
-                      <div class="small-12 medium-12 large-12 columns">
-                        <% if session[:auth] == "authenticated" %>
-                        <label>From (Your Email Address)
-                        <input type="text" placeholder="prepopulatedemail@gmail.com" />
-                        </label>
-                        <% else %>
-                        <label>From (Your Email Address)
-                        <input type="text" placeholder="" />
-                        </label>
-                        <% end %>
-                        <label>To (Recipients Email Address)
-                        <input type="text" placeholder="" />
-                        </label>
-                        <label>Your Name
-                        <input type="text" placeholder="" />
-                        </label>
-                        <label>Notes
-                        <textarea placeholder=""></textarea>
-                        </label>
-                        <p>140 Characters Left</p>
-                        <%= link_to "Send Email", url_for(status: "email_sent", success: "true"), class: "button small closedrawer" %>
-                        <a href="jobs/job_emailed" class="button small closedrawer">Send Email</a>
-                        <a href="#" class="button secondary small closedrawer">Cancel</a>
-                      </div>
+        <li><a href="" data-dropdown="emaildrop-<%= count %>" aria-controls="emaildrop-<%= count %>" aria-expanded="false">Email Job</a><li>
+            <div class="show-for-medium-up">
+              <div id="emaildrop-<%= count %>" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
+                  <div class="medium-12 columns">
+                          <% if session[:auth] == "authenticated" %>
+                          <h4>Email This Job</h4>
+                          <label>From (Your Email Address)
+                          <input type="text" placeholder="prepopulatedemail@gmail.com" />
+                          </label>
+                          <% else %>
+                          <label>From (Your Email Address)
+                          <input type="text" placeholder="" />
+                          </label>
+                          <% end %>
+                          <label>To (Recipients Email Address)
+                          <input type="text" placeholder="" />
+                          </label>
+                          <% if session[:auth] == "authenticated" %>
+                          <label>Your Name
+                          <input type="text" placeholder="Prepopulated Name" />
+                          </label>
+                          <% else %>
+                          <label>Your Name
+                          <input type="text" placeholder="" />
+                          </label>
+                          <% end %>
+                          <label>Notes
+                          <textarea placeholder=""></textarea>
+                          </label>
+                          <p>140 Characters Left</p>
+                          <%= link_to "Send Email", url_for(status: "email_sent", success: "true"), class: "button expand" %>
+                          <a class="button secondary expand">Cancel</a>
                   </div>
-            </li>
+              </div>
+            </div>
+      </li>
       </ul>
     <% end %>
   </div>
