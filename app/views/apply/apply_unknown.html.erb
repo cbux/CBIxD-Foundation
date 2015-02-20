@@ -12,6 +12,11 @@
 <% elsif params[:step] == "mobile-lead-preview" %>
 	<%= render 'mobile_lead_preview' %>
 <% elsif params[:step] == "details" %>
+	<% if params[:password] != "" && params[:password] != nil %>
+		<% @resume_count = session[:resumes].to_i %>
+		<% @resume_count += 1 %>
+		<% session[:resumes]= @resume_count %>
+	<% end %>
 	<%= render 'resumes/add_details' %>
 <% elsif params[:step] == "screener" %>
 	<%= render 'apply_screener' %>
