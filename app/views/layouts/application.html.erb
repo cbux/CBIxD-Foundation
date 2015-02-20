@@ -11,7 +11,7 @@
   </head>
 
   <body>
-  	<% if params[:debug] == "true" %>
+  	<% if session[:debug] == "true" %>
   		<%= render 'shared/debug_menu_open' %>
   	<% end %>
   	<%= render 'shared/global_alerts' %>

@@ -24,9 +24,11 @@
 								<ul class="inline-list">
 									<li>
 										<input type="radio" id="radio-<%= i %>" name="saved_res" />
-										<label for="radio-<%= i %>"><h3>
-											Resume Name Here
-										</h3></label>
+										<label for="radio-<%= i %>">
+											<h3>
+												Resume Name Here
+											</h3>
+										</label>
 									</li>
 									<li class="right small">
 										modified 1/1/15
@@ -52,82 +54,101 @@
     <hr/>
 
 		<!-- Saved Cover Letter List-->
-
-		<div class="row" id="double-bump">
-			<div class="column small-12">
-				<h2>Include a Cover Letter (optional)</h2>
-			</div>
-			<% if session[:cover_letters].to_i > 0 && session[:auth] == "authenticated" %>
-				<ul class="resume accordion" data-accordion>
-					<li class="accordion-navigation">
-						<a href="#panel1b">Used a Saved Cover Letter</a>
-						<div id="panel1b" class="content active">
-							<% 2.times do |i| %>
-								<ul class="inline-list">
-									<li>
-										<input type="radio" id="radio-<%= i %>" name="saved_res" />
-										<label for="radio-<%= i %>"><h3>
-											Cover Letter Name Here
-										</h3></label>
-									</li>
-									<li class="right small">
-										modified 1/1/15
-									</li>
-								</ul>
-							<% end %>
-						</div>
-					</li>
-					<li class="accordion-navigation">
-						<a href="#panel2b">Create a New Cover Letter</a>
-						<div id="panel2b" class="content">
-							<div class="row">
-   							<div class="column small-12">
-							   <label>Cover Letter
-							        <textarea placeholder=""></textarea>
-							      </label>
-							    </div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			<% else %>
+		<%= form_tag(url_for, method: "get") do %>
+			<%= hidden_field_tag 'step', 'details' %>
+			<div class="row" id="double-bump">
 				<div class="column small-12">
-					<label>Cover Letter
-		        <textarea placeholder=""></textarea>
-		      </label>
-		    </div>
-			<% end %>
-		</div>
-
-		<% if session[:auth] != "authenticated" %>
-			<!-- Collect password-->
-			<hr/>
-			<div class="row">
-				<div class="column small-8 ">
-					<h2>Create a password (optional)</h2>
-					<p> Save your resume and use again next time.</p>
+					<h2>Include a Cover Letter (optional)</h2>
 				</div>
+				<% if session[:cover_letters].to_i > 0 && session[:auth] == "authenticated" %>
+					<ul class="resume accordion" data-accordion>
+						<li class="accordion-navigation">
+							<a href="#panel1b">Used a Saved Cover Letter</a>
+							<div id="panel1b" class="content active">
+								<% 2.times do |i| %>
+									<ul class="inline-list">
+										<li>
+											<input type="radio" id="radio-<%= i %>" name="saved_res" />
+											<label for="radio-<%= i %>">
+												<h3>
+													Cover Letter Name Here
+												</h3>
+											</label>
+										</li>
+										<li class="right small">
+											modified 1/1/15
+										</li>
+									</ul>
+								<% end %>
+							</div>
+						</li>
+						<li class="accordion-navigation">
+							<a href="#panel2b">Create a New Cover Letter</a>
+							<div id="panel2b" class="content">
+								<div class="row">
+	   							<div class="column small-12">
+								   <label>Cover Letter
+								        <textarea placeholder=""></textarea>
+								      </label>
+								    </div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				<% else %>
+					<div class="column small-12">
+						<label>Cover Letter
+			        <textarea placeholder=""></textarea>
+			      </label>
+			    </div>
+				<% end %>
 			</div>
-			<!-- Password Area-->
-			<div class="row">
-				<form data-abide>
+			<% if session[:auth] == "authenticated" && params[:resume] == "attached" %>
+				<hr>
+				<div class="row">
+					<div class="column small-12 ">
+						<h2>
+							Save this Resume
+  					</h2>
+  					<p class="left">Save your resume and use again next time.</p>
+						<div class="switch round small right">
+							<input class="hide_show" data-1="#continue" data-2="#save" id="apply_save_resume" type="checkbox" name="apply_save_resume">
+							<label for="apply_save_resume"></label>
+						</div>
+					</div>
+				</div>
+			<% end %>
+
+			<% if session[:auth] == "unknown" %>
+				<!-- Collect password-->
+				<hr/>
+				<div class="row">
+					<div class="column small-8 ">
+						<h2>Create a password (optional)</h2>
+						<p> Save your resume and use again next time.</p>
+					</div>
+				</div>
+				<!-- Password Area-->
+				<div class="row">
 					<%= render "user/password_creation_field", password_create_label: "Password" %>
-				</form>
+				</div>
+				<!-- End Password Area-->
+			<% end %>
+			<div class="row" id="double-bump">
+				<div class="column small-12" >
+					<% if session[:auth] == "authenticated" %>
+						<% if @has_screener == "true" %>
+							<%= link_to "Continue to Screener", url_for(step: "screener"), class: "button expand", id: "continue" %>
+							<%= link_to "Save Resume", url_for(step: "details", apply_save_resume: "true"), class: "button expand", id: "save", style: "display: none;" %>
+						<% else %>
+							<%= link_to "Send Application", jobs_after_apply_path, class: "button expand", id: "continue" %>
+							<%= link_to "Save Resume", url_for(step: "details", apply_save_resume: "true"), class: "button expand", id: "save", style: "display: none;" %>
+						<% end %>
+					<% else %>
+						<%= submit_tag "Continue", class: "button expand" %>
+					<% end %>
+				</div> 
 			</div>
 		<% end %>
-		<!-- End Password Area-->
-		<div class="row" id="double-bump">
-			<div class="column small-12" >
-				<% if session[:auth] == "authenticated" %>
-					<% if @has_screener == "true" %>
-						<%= link_to "Continue to Screener", url_for(step: "screener"), class: "button expand" %>
-					<% else %>
-						<%= link_to "Send Application", jobs_after_apply_path, class: "button expand" %>
-					<% end %>
-				<% else %>
-					<%= link_to "Continue", url_for(step: "details"), class: "button expand" %>
-				<% end %>
-			</div> 
-		</div>
 	</div>
 </div>
