@@ -9,14 +9,14 @@
 		<h2>Paul Johnson</h2>
 		<p>
 			<strong>Assistant Project Manager</strong>
-			<br>
+			<br/>
 			Paul.Johnson@youremail.com 
 			<br/>
 			Atlanta, Ga. 30123
 		</p>
 	</div>
-	
 </div>
+
 <%= render 'shared/resume_privacy' %>	
 <hr/>
 
@@ -30,9 +30,7 @@
 <% 2.times do %>
 	<%= render 'resumes/work_experience_entry' %>
 	<% @exp += 1 %>
-	<hr/>
 <% end %>
-<%= render 'resumes/work_experience_entry' %>
 <% @show_show = "hide" %>
 <% @edit_show = "" %>
 <% @exp += 1 %>
@@ -66,7 +64,9 @@
 <% @edit_show = "hide" %>
 <div class="row">
 	<div class="column small-12">
-		<div data-1="#hidden_edu" class="button expand secondary hide_show" id="add-education">Add Education</div>
+		<div data-1="#hidden_edu" class="button expand secondary hide_show" id="add-education">
+			Add Education
+		</div>
 	</div>
 </div>
 <hr>
