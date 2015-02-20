@@ -254,7 +254,38 @@ $(document).ready(function() {
   jQuery(function($) {
     $("select[multiple]").bsmSelect({
     });
+
+    $('.side-nav li, #job-type-filter label, #location-filter label, #job-level-filter label').click(function() {
+        $('#spinner').toggle();
+        $('#gs-job-results').toggle();
+        setTimeout(function() {
+            $('#spinner').toggle();
+            $('#gs-job-results').toggle();
+        }, 500);
+    });    
+
+    $('.sub-nav dd a').click(function(e) {
+        $('#spinner').toggle();
+        $('#gs-job-results').toggle();
+        setTimeout(function() {
+            $('#spinner').toggle();
+            $('#gs-job-results').toggle();
+        }, 500);
+       // e.preventDefault();
+    });    
+
+    $('#gs-language-picker').click(function(e) {
+        $('#gs-language-picker-submenu').slideToggle();
+        e.preventDefault();
+    });    
+
+    $('#job-type-filter label').click(function(e) {
+       console.log("Here I maasnd as,d");
+    });
+
 });
+
+
 
 Dropzone.options.demoUpload = {
 	init: function() {
