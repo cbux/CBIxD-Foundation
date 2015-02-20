@@ -4,7 +4,7 @@
 
     <div class="small-12 medium-12 large-12 columns">
         <h1>Job Recommendations</h1>
-        <p>Quick Apply allows a one-click application using your resume <a href="#"> Test Resume</a>.</p>
+        <p>Quick Apply allows a one-click application using your resume &nbsp;&nbsp;<i class="fa fa-2x fa-file-text-o"></i><a href="#"> Test Resume</a>.</p>
         <input id="quickapplycheckbox" type="checkbox"><label for="checkbox1">Show only jobs with Quick Apply</label>
     </div>
 </div>
@@ -66,17 +66,24 @@
 
 <!--start sort-->
 <div class="row">
-    <div class="large-5 right columns right show-for-large-up">
-        <dl class="sub-nav right">
-            <dt>Sort By:</dt>
-                <dd class="active"><a href="#">Recommended</a></dd>
-                <dd><a href="#">Date</a></dd>
-                <dd><a href="#">Location</a></dd>
-        </dl>
-    </div><!--close columns-->
+  <div class="medium-8 right columns show-for-medium-up">
+    <dl class="sub-nav right">
+      <dt>Sort By:</dt>
+        <dd class=<%= @sort_relevance %>>
+            <%= link_to "Relevance", params.merge(:sort => "relevance").except(:action, :controller) %>
+        </dd>
+        <dd class=<%= @sort_date %>>
+            <%= link_to "Date", params.merge(:sort => "date").except(:action, :controller) %>
+        </dd>
+        <dd class=<%= @sort_location %>>
+            <%= link_to "Location", params.merge(:sort => "location").except(:action, :controller) %>
+        </dd>
+      </dl>
+  </div>
 </div>
 
     <!--job result-->
+<div class="row">
   <div class="small-12 medium-12 large-12 columns">
     <% if params[:results].to_i > 0 %>
         <% params[:results].to_i.times do %>
@@ -84,8 +91,10 @@
       <% end %>
     <% end %>
   </div><!--close columns-->
+</div>
 
-
+<div class="row">
 <%= render :partial => 'jobs/pagination' %>
+</div>
 
 <% end %><!--end query param for known and authenticated-->

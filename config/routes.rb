@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get 'jobs/find_jobs_company' => 'jobs#find_jobs_company'
   get 'jobs/find_jobs_category' => 'jobs#find_jobs_category'
   get 'jobs/find_jobs_accounting' => 'jobs#find_jobs_accounting'
+  get 'jobs/find_jobs_accounting_state' => 'jobs#find_jobs_accounting_state'
+  get 'jobs/find_jobs_accounting_alabama_city' => 'jobs#find_jobs_accounting_alabama_city'
   get 'jobs/find_jobs_alabama' => 'jobs#find_jobs_alabama'
   get 'recommendations' => 'recommendations#index'
   get 'recommendations/similarrecs' => 'recommendations#similarrecs'
