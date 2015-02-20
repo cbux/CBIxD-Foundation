@@ -10,10 +10,12 @@
 						<%= hidden_field_tag 'resume', 'attached' %>
 					<% end %>
 					<div class="dz-message">
-						<h3>Drag  &amp; Drop</h3> or Click to browse for file<br>
-						<span class="note">
-							We accept .DOCX, .DOC, .RTF, .TXT, .PDF up to 500 KB.
-						</span>
+					<i class="fa fa-cloud-upload fa-4x"></i>
+						<h1>DRAG &amp; DROP</h2>
+						<h3 class="subheader"> your file here or browse</h1>
+						
+							<h3> <small>We accept .DOCX, .DOC, .RTF, .TXT, .PDF up to 500 KB.</small></h3>
+						
 						<div class="fallback">
 							<input type="file" name="file" />
 						</div>
@@ -27,30 +29,30 @@
 				<li>
 					<a href="#" data-reveal-id="copy-paste-modal" class="button expand">
 						<i class="fa fa-clipboard fa-lg"></i>
-						Copy &amp; Paste Resume
+						 Copy &amp; Paste Resume
 					</a>
 				</li>
 				<li>
 					<a href="" class="button expand hide-for-large-up">
-						Browse for file
+						 Browse for file
 					</a>
 				</li>
 				<li>
 					<a href="#" data-reveal-id="dropbox-modal" class="button expand">
 						<i class="fa fa-dropbox fa-lg"></i>
-						Dropbox
+						 Dropbox
 					</a>
 				</li>
 				<li>
 					<a href="#" data-reveal-id="drive-modal" class="button expand">
 						<i class="fa fa-google fa-lg"></i>
-						Google Drive
+						 Google Drive
 					</a>
 				</li>
 				<li>
 					<%= link_to url_for(step: "mobile-lead"), class: "button expand" do %>
 						<i class="fa fa-file-text fa-lg"></i>
-						 Create Resume
+						  Create Resume
 					<% end %>
 				</li>
 			</ul>
