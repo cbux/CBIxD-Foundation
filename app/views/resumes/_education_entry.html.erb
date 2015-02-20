@@ -12,12 +12,19 @@
 		</div>
 		<div class="column small-5 medium-3">
 			<ul class="inline-list right">
-				<li>
-			 		<a onclick="$('.edu-show-<%= @edu %>').toggleClass('hide');$('.edu-edit-<%= @edu %>').toggleClass('hide');">Edit</a>
-			 	</li>
+
+			<li>
+				 	<a data-equalizer-watch onclick="$('.edu-show-<%= @edu %>').toggleClass('hide');$('.edu-edit-<%= @edu %>').toggleClass('hide');">
+						<i class="fa fa-pencil fa-lg"></i>
+					</a>
+				</li>
+
 			 	<li>
-			 		<a href="#">Delete</a>
+			 		<a data-equalizer-watch>
+						<i class="fa fa-trash fa-lg"></i>
+					</a>
 			 	</li>
+			
 			</ul>
 		</div>
 	</div>
