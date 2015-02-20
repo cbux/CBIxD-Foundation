@@ -11,7 +11,11 @@
 			<div class="column small-12">
 				<h2>Attach a resume</h2>
 			</div>
-			<% if session[:resumes].to_i > 0 && session[:auth] == "authenticated" %>
+			<% if params[:resume] == "attached" %>
+				<div class="column small-12">
+					<%= render 'resumes/upload_resume' %>
+				</div>
+			<% elsif session[:resumes].to_i > 0 && session[:auth] == "authenticated" %>
 				<ul class="resume accordion" data-accordion>
 					<li class="accordion-navigation">
 						<a href="#panel1a">Used a Saved Resume</a>
@@ -121,11 +125,7 @@
 						<%= link_to "Send Application", jobs_after_apply_path, class: "button expand" %>
 					<% end %>
 				<% else %>
-					<% if @has_screener == "true" %>
-						<%= link_to "Continue to Screener", url_for(step: "screener"), class: "button expand" %>
-					<% else %>
-						<%= link_to "Continue", url_for(step: "details"), class: "button expand" %>
-					<% end %>
+					<%= link_to "Continue", url_for(step: "details"), class: "button expand" %>
 				<% end %>
 			</div> 
 		</div>
