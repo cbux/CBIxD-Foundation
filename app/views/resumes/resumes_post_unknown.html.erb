@@ -2,19 +2,20 @@
 
 <% if params[:step] == "upload" %>
 	<% @step_one_active = "is-active" %>
-	<% @step_two_active = "" %>
-	<% @step_three_active = "" %>
 	<%= render 'resume_upload_steps' %>
-	<%= render 'upload_resume' %>
+	<div class="row">
+		<div class="column small-12 medium-9 medium-centered">
+			<%= render 'upload_resume' %>
+			<br>
+		</div>
+	</div>
+
 <% elsif params[:step] == "details" %>
-	<% @step_one_active = "" %>
 	<% @step_two_active = "is-active" %>
-	<% @step_three_active = "" %>
 	<%= render 'resume_upload_steps' %>
 	<%= render 'add_details' %>
+
 <% elsif params[:step] == "review" %>
-	<% @step_one_active = "" %>
-	<% @step_two_active = "" %>
 	<% @step_three_active = "is-active" %>
 	<% params[:message] = "true" %>
 	<% params[:auth] = "authenticated" %>
@@ -27,6 +28,7 @@
 			<%= render 'resume_preview' %>
 		</div>
 	</div>
+
 <% else %>
 	<% params[:message] = "true" %>
 	<% @message_message = "You must be signed in or create an account to post and manage resumes" %>
