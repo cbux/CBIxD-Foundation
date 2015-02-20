@@ -280,8 +280,25 @@ $(document).ready(function() {
     });    
 
     $('#job-type-filter label').click(function(e) {
-       console.log("Here I maasnd as,d");
+     //  console.log("Here I maasnd as,d");
     });
+    var count=1;
+    $('#count-up').click(function(e) {
+        count=count+1;
+        if (count>=1){
+            $("#current").html(count);
+            e.preventDefault();
+        }
+    });
+
+    $('#count-down').click(function(e) {
+        count=count-1;
+        if (count>=1){
+        $("#current").html(count);
+        e.preventDefault();
+        }
+    });
+
 
 });
 
