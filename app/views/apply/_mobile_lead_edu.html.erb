@@ -1,55 +1,31 @@
 <div class="row">
-	<div class="column small-12">
+	<div class="column small-12 medium-9 medium-centered">
 		<h1>Create Resume</h1>
 	</div>
 </div>
 
-<!-- Progress steps-->
-<div class="row">
-	<div class="column small-12 medium-10 medium-centered">
-		<ol class="progress_resume">
-			<li data-step="1">
-				Profile
-			</li>
-			<li data-step="2">
-				Work History
-			</li>
-			<li data-step="3" class="is-active">
-				Education
-			</li>
-			<li data-step="4" class="progress_resume_last">
-				Preview
-			</li>
-		</ol>
-	</div>
-</div>
-<!-- Progress steps End-->
+<!-- MOBILE LEAD PROGRESS STEPS -->
+<% @step_three = "is-active" %>
+<%= render 'apply/mobile_lead_steps' %>
+<!-- END MOBILE LEAD PROGRESS STEPS -->
 
 <div class="row">
 	<div class="column small-12 medium-9 medium-centered">
-		<div class="row">
-			<div class="column small-12">
-				<% @edit_show = "" %>
-				<% @show_show = "hide" %>
-				<%= render 'resumes/education_entry' %>
-			</div>
-			<div class="column small-12">
-				<%= link_to "Add Education", "#", class: "button secondary expand" %>
-				<hr/>
-			</div>
-		</div>
-	</div>
-</div>
 
-<div class="row">
-	<div class="column small-12 large-9 large-centered">
-		<div class="row">
-			<div class="column small-12">
-	    	<%= link_to "Next", url_for(step: "mobile-lead-preview"), class: "button expand" %>
-	    </div>
-	    <div class="column small-12">
-	    	<%= link_to "Cancel", url_for(step: "mobile-lead-work"), class: "button secondary expand" %>
-	    </div>
-	  </div>
+		<!-- Make sure the preview is in show mode and edit is hidden -->
+		<% @edit_show = "" %>
+		<% @show_show = "hide" %>
+
+		<!-- Show the education entry partial -->
+		<%= render 'resumes/education_entry' %>
+
+		<!-- Add education button -->
+		<%= link_to "Add Education", "#", class: "button secondary expand" %>
+		
+		<hr/>
+
+		<%= link_to "Next", url_for(step: "mobile-lead-preview"), class: "button expand" %>
+		<%= link_to "Cancel", url_for(step: "mobile-lead-work"), class: "button secondary expand" %>
+	 
 	</div>
 </div>
