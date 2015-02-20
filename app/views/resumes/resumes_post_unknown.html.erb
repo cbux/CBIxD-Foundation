@@ -14,8 +14,6 @@
 	<% @step_two_active = "is-active" %>
 	<%= render 'resume_upload_steps' %>
 	<%= render 'add_details' %>
-
-
 <% elsif params[:step] == "mobile-lead" %>
 	<%= render 'apply/mobile_lead' %>
 <% elsif params[:step] == "mobile-lead-work" %>
@@ -29,7 +27,8 @@
 	<% @step_three_active = "is-active" %>
 	<% params[:message] = "true" %>
 	<% params[:auth] = "authenticated" %>
-	<% @resume_count = session[:resumes].to_i + 1 %>
+	<% @resume_count = session[:resumes] %>
+	<% @resume_count.to_i += 1 %>
 	<% session[:resumes] = @resume_count %>
 	<% @message_message = "We have automatically converted your document to an Resume Profile. Review to make sure everything is correct." %>
 	<%= render 'resume_upload_steps' %>
