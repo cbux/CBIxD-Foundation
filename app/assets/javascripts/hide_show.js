@@ -11,6 +11,9 @@ $('.hide_show').click(function() {
     $(id2).toggle();
 });
 
+$('#add-work').click(function() {
+	$(this).parent().insertBefore(<%= escape_javascript(render :partial => 'resumes/work_experience_entry').html_safe %>);
+});
 // HOW TO USE
 //
 // Create your first link with the attribute data-1 with it's id name in it
