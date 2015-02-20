@@ -15,6 +15,16 @@
 	<%= render 'resume_upload_steps' %>
 	<%= render 'add_details' %>
 
+
+<% elsif params[:step] == "mobile-lead" %>
+	<%= render 'apply/mobile_lead' %>
+<% elsif params[:step] == "mobile-lead-work" %>
+	<%= render 'apply/mobile_lead_work' %>
+<% elsif params[:step] == "mobile-lead-edu" %>
+	<%= render 'apply/mobile_lead_edu' %>
+<% elsif params[:step] == "mobile-lead-preview" %>
+	<%= render 'apply/mobile_lead_preview' %>
+
 <% elsif params[:step] == "review" %>
 	<% @step_three_active = "is-active" %>
 	<% params[:message] = "true" %>

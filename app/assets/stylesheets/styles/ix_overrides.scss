@@ -271,6 +271,10 @@ nav .fa-stack {
 	line-height: 0;
 }
 
+div[data-magellan-expedition="fixed"] .sub-nav {
+	overflow: visible;
+}
+
 #resume_accordion_button {
 	background-color: #008CBA;
 	border-color: #007095;

@@ -6,7 +6,7 @@
 <form data-abide>
 	<div class="row">
 		<div class="column small-12 large-9 large-centered">
-			<% if session[:auth] == "unknown" %>
+			<% if session[:auth] != "authenticated" %>
 				<div class="row">
 					<div class="column small-12">
 						<label>First Name
@@ -15,7 +15,7 @@
 					</div>
 				</div>
 			<% end %>
-			<% if session[:auth] == "unknown" %>
+			<% if session[:auth] != "authenticated" %>
 				<div class="row">
 					<div class="column small-12">
 						<label>Last Name
@@ -24,7 +24,7 @@
 					</div>
 				</div>
 			<% end %>
-			<% if session[:auth] == "unknown" %>
+			<% if session[:auth] != "authenticated" %>
 				<div class="row">
 					<div class="column small-12">
 						<label>Email
@@ -33,7 +33,7 @@
 					</div>
 				</div>
 			<% end %>
-			<% if session[:auth] == "unknown" && params[:controller] == "resumes" || params[:apply_sign_up] == "true" %>
+			<% if session[:auth] == "unknown" && params[:controller] == "resumes" ||  params[:password] != "" && params[:password] != nil %>
 				<div class="row">
 					<div class="column small-12">
 						<label>Zip
@@ -42,7 +42,7 @@
 					</div>
 				</div>
 			<% end %>
-			<% if params[:controller] == "resumes" ||  params[:apply_sign_up] == "true" || params[:apply_save_resume] == "true" %>
+			<% if params[:controller] == "resumes" ||  params[:password] != "" || params[:apply_save_resume] == "true" %>
 				<div class="row">
 					<div class="column small-12">
 						<label>
@@ -54,9 +54,7 @@
 						</label>
 					</div>
 				</div>
-				<div class="row">
-					<%= render 'shared/resume_privacy' %>
-				</div>
+				<%= render 'shared/resume_privacy' %>
 			<% end %>
 			<% if session[:auth] == "unknown" && params[:controller] != "apply" %>
 				<div class="row">
@@ -68,9 +66,17 @@
 					<% if params[:controller] == "resumes" %>
 		      	<%= link_to "Post Resume", url_for(step: "review"), class: "button expand" %>
 		      <% elsif params[:controller] == "apply" && @has_screener == "true" %>
-		      	<%= link_to "Continue to Screener", url_for(step: "screener"), class: "button expand" %>
+		      	<% if params[:password] != "" %>
+		      		<%= link_to "Continue to Screener", url_for(step: "screener", auth: "authenticated"), class: "button expand" %>
+		      	<% else %>
+		      		<%= link_to "Continue to Screener", url_for(step: "screener"), class: "button expand" %>
+		      	<% end %>
 		      <% elsif params[:controller] == "apply" && @has_screener == "false" %>
-		      	<%= link_to "Send Application", jobs_after_apply_path, class: "button expand" %>
+		      	<% if params[:password] != "" %>
+		      		<%= link_to "Send Application", jobs_after_apply_path(auth: "authenticated"), class: "button expand" %>
+		      	<% else %>
+		      		<%= link_to "Send Application", jobs_after_apply_path, class: "button expand" %>
+		      	<% end %>
 		      <% end %>
 		    </div>
 			</div>

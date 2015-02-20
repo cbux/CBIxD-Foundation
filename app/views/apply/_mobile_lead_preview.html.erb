@@ -22,7 +22,7 @@
 		
 		<!-- IF on the resumes page link to Add Details -->
 		<% if params[:controller] == "resumes" %>
-    	<%= link_to "Save Resume", "#", class: "button expand" %>
+    	<%= link_to "Save Resume", url_for(step: "details"), class: "button expand" %>
     
     <!-- IF on the apply page link to Upload and show attached resume -->
     <% elsif params[:controller] == "apply" %>
