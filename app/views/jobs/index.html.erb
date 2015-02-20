@@ -95,6 +95,9 @@
 
 	<!--job result-->
   <div class="small-12 large-9 columns refresh">
+    <p id="spinner"><span class="fa fa-spinner fa-spin" style="font-sie: 60px;"></span></p>
+    <div id="gs-job-results">
+
     <%= render 'job_result' %>
     <%= render 'job_result' %>
     <%= render 'job_result' %>
@@ -143,6 +146,7 @@
   <% end %>
 
   </div>
+</div>
   <div class="row">
 <%= render 'pagination' %>
 </div>

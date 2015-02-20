@@ -30,74 +30,7 @@
     <%= yield %>
     <%= javascript_include_tag "application" %>
 
-    <footer class=<%= @footer_bar %>>
-    	<div class="help-center">
-	    	<div class="row help-center">
-	    		<div class="column small-12 text-center">
-	    			<h5>Help Center</h5>
-	    		</div>
-	    	</div>
-	    </div>
-    	<div class="row">
-    		<div class="column small-12">
-    			<ul class="large-block-grid-5">
-    				<li>
-    					<b>Job Seeker</b>
-    					<ul class="no-bullet">
-    						<li>Find Jobs
-								<li>Top Categories</li>
-								<li>Top locations</li>
-								<li>Top-Term</li>
-								<li>Partner Network</li>
-								<li>Career Advice</li>
-								<li>Site</li>
-							</ul>
-						</li>
-						<li>
-    					<b>Employer</b>
-    					<ul class="no-bullet">
-								<li>Search Resumes</li>
-								<li>Jobs Items</li>
-								<li>Talent Networks</li>
-								<li>Advertising</li>
-								<li>Our Network</li>
-							</ul>
-						</li>
-						<li>
-    					<b>Social</b>
-    					<ul class="no-bullet">
-								<li>Facebook</li>
-								<li>Google</li>
-							</ul>
-							<br>
-							<b>Legal</b>
-    					<ul class="no-bullet">
-								<li>Fraud</li>
-								<li>Privacy Policy</li>
-							</ul>
-						</li>
-						<li>
-    					<b>Careerbuilder</b>
-    					<ul class="no-bullet">
-    						<li>About Us</li>
-								<li>Work at CareerBuilder</li>
-								<li><br></li>
-								<li>200 N. LaSalle St</li>
-								<li>Suite 1100</li>
-								<li>Chicago, IL 60601</li>
-							</ul>
-						</li>
-						<li>
-    					<b>Language</b>
-    					<select>
-    						<option value="english">English</option>
-    						<option value="spanish">Spanish</option>
-    					</select>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</footer>
+  	<%= render 'shared/footer' %>
 		<%= render 'shared/debug_menu_close' %>
   </body>
 </html>
