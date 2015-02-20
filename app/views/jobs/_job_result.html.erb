@@ -45,7 +45,7 @@
         <li><a class='email-drawer-link'>Email Job</a>
                   <div class="hidden email-drawer">
                       <div class="small-12 medium-12 large-12 columns">
-                        <% if params[:auth] == "authenticated" %>
+                        <% if session[:auth] == "authenticated" %>
                         <label>From (Your Email Address)
                         <input type="text" placeholder="prepopulatedemail@gmail.com" />
                         </label>

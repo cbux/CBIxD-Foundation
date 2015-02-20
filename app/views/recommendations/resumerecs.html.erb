@@ -9,7 +9,7 @@
     </div>
 </div>
 
-<% if params[:auth] == "unknown" %>
+<% if session[:auth] == "unknown" %>
 
     <div class="row">
 
@@ -57,7 +57,7 @@
 
 <% end %><!-- close no results param-->
 
-<% if params[:auth] == "known" || params[:auth] === "authenticated" %>
+<% if session[:auth] == "known" || session[:auth] === "authenticated" %>
 
 </div><!--close row-->
 
