@@ -10,6 +10,12 @@
     </nav>
     <aside class="left-off-canvas-menu">
       <ul class="off-canvas-list">
+      	<li><label>Authentication</label></li>
+        <% if @authentication %>
+	        <% @authentication.each do |key, id| %>
+	        	<li><%= link_to key, id %></li>
+	        <% end %>
+        <% end %>
         <li><label>Statuses</label></li>
         <% if @statuses %>
 	        <% @statuses.each do |key, id| %>
