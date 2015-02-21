@@ -1,28 +1,81 @@
 <% @search_bar = "no-search" %>
 <div class="fullpage-home">
-	<div class="section">
-		<div class="search">
-			<div class="row">
-				<div class="column small-12">
-					<h1>
-						Find the right job. Right now.
-					</h1>
+	<div class="section search">
+		<div class="row no-top-margin">
+			<div class="column small-12 medium-10 medium-centered text-center">
+				<h1>
+					Find the right job. Right now.
+				</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="column small-12 medium-9 medium-centered">
+				<div class="row collapse">
+					<div class="column small-12 medium-4">
+						<label>Keyword
+							<input type="text" placeholder="" style="height: 50px; font-size: 2em;" />
+						</label>
+					</div>
+					<div class="column small-12 medium-4">
+						<label>Location
+							<input type="text" placeholder="" style="height: 50px; font-size: 2em;" />
+						</label>
+					</div>
+					<div class="column small-12 medium-4">
+						<%= link_to "Search", jobs_path(results: "25"), style: "height: 50px; font-size: 1.5em; line-height: 50px;", class: "button postfix" %>
+					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="medium-4 medium-offset-1 small-12 columns">
-					<label>Keyword
-						<input type="text" placeholder="" />
-					</label>
+		</div>
+	</div>
+	<div class="section">
+		<div class="row">
+			<div class="column small-12 medium-10 medium-centered medium-offset-1">
+				<h1>
+					Let our network of employers find you
+				</h1>
+			</div>
+			<div class="column small-10 medium-3 medium-offset-1">
+				<div class="row">
+					<div class="column small-12">
+						<div class="row">
+							<div class="column small-2">
+								<i class="fa fa-search fa-2x"></i>
+							</div>
+							<div class="column small-10">
+								<h3>Know when a company finds your resume.</h3>
+							</div>
+						</div>
+						<div class="row">
+							<div class="column small-2">
+								<i class="fa fa-file-text fa-2x"></i>
+							</div>
+							<div class="column small-10">
+								<h3>Save up to 5 resumes to quickly apply to jobs.</h3>
+							</div>
+						</div>
+						<div class="row">
+							<div class="column small-2">
+								<i class="fa fa-eye fa-2x"></i>
+							</div>
+							<div class="column small-10">
+								<h3>Be notified when your application is viewed. </h3>
+							</div>
+						</div>
+						<div class="row">
+							<div class="column small-2">
+								<i class="fa fa-group fa-2x"></i>
+							</div>
+							<div class="column small-10">
+								<h3>View the competition when applying to jobs.</h3>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="medium-4 small-12 columns">
-					<label>Location
-						<input type="text" placeholder="" />
-					</label>
-				</div>
-				<div class="medium-2 small-12 columns end">
-					<%= link_to "Search", jobs_path(results: "25"), class: "button postfix" %>
-				</div>
+			</div>
+			<div class="column small-12 medium-7 end">
+				<% @path = resumes_path(step: "details") %>
+				<%= render 'resumes/upload_resume' %>
 			</div>
 		</div>
 	</div>

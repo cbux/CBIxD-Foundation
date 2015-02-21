@@ -3,7 +3,7 @@
 		<div class="column small-12 large-6 text-center" >
 			<div class="show-for-large-up" id="dropzone" >
 				<%= form_tag(@path, method: "get", id: "demo-upload", class: "dropzone", :data => {:equalizer_watch => {}}) do %>
-					<% if params[:controller] == "resumes" %>
+					<% if params[:controller] == "resumes" || params[:controller] == "home" %>
 						<%= hidden_field_tag 'step', 'details' %>
 					<% elsif params[:controller] == "apply" %>
 						<%= hidden_field_tag 'step', 'upload' %>
