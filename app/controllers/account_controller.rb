@@ -59,7 +59,11 @@ class AccountController < ApplicationController
 
   def debug
   	if params[:action] == "index"
-  		@statuses = nil
+  		@statuses = {
+  			"Unknown"				=>	{:auth => "unknown"},
+  			"Known" 				=>	{:auth => "known"},
+  			"Authenticated"	=>	{:auth => "authenticated"},
+  		}
   	end
   end
 end
