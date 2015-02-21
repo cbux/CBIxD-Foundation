@@ -10,6 +10,13 @@ $('.hide_show').click(function() {
     $(id1).toggle();
     $(id2).toggle();
 });
+
+$('.emailJob').click(function () {
+    $('div.flip').find('.card').addClass('flipped').click(function (button) {
+        $(this).removeClass('flipped');
+    });
+    return false;
+});
 // HOW TO USE
 //
 // Create your first link with the attribute data-1 with it's id name in it

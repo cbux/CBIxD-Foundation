@@ -1,6 +1,9 @@
 class JobsController < ApplicationController
 	before_action :auto_jobs, :all_results, :debug, :statuses
 	def index
+		if params[:experiment] == "true"
+			render 'jobs/index2'
+		end
 	end
 
 	def job_count
