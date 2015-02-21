@@ -6,6 +6,6 @@
 <% text_label ||= "TEXT LABEL" %>
 
 <label><%= text_label %>
-	<input type="text" value="<% text_populated %>" <%= required %> />
+	<input type="text" value="<% text_populated %>" <%= is_required %> />
 	<small class="error">This field is required</small>
 </label>

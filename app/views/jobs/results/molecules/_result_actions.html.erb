@@ -4,13 +4,13 @@
 	<% if session[:auth] == "authenticated" %>
 	<!-- Show the save job button -->
 	<li>
-		<%= render 'jobs/results/molecules/atoms/save_job_button' %>
+		<%= render 'jobs/results/molecules/atoms/save_job_button', count: count %>
 	</li>
 <% end %>
 	<!-- End Save Jobs Button -->
 	
 	<li>
-	<%= render 'jobs/results/molecules/atoms/email_job_button' %>
+	<%= render 'jobs/results/molecules/atoms/email_job_button', count: count %>
 	</li>
 </ul>
 
@@ -41,7 +41,7 @@
 		<% end %>
 		<!-- End From from Name Field -->
 
-		<%= render 'shared_molecules/form_fields/text_area_field', text_label: "Notes" %>
+		<%= render 'shared_molecules/form_fields/textarea_field', text_label: "Notes" %>
 		<p>140 Characters Left</p>
 
 		<%= link_to "Send Email", url_for(status: "email_sent", success: "true"), class: "button expand" %>
