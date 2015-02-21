@@ -24,17 +24,6 @@ class HomeController < ApplicationController
 		end
 	end
   def debug
-  	@authentication = {
-  		"Unknown" => {
-  			:auth => "unknown"
-  		},
-  		"Known" => {
-  			:auth => "known"
-  		},
-  		"Authenticated" => {
-  			:auth => "authenticated"
-  		},
-  	}
   	@statuses = {
   		"sign out" => {
   			:signed_out => "true"

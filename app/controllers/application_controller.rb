@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-	before_action :auth, :delete_account, :success, :resumes, :lang_list, :lang_prof, :debug_mode, :cover_letters, :debug
+	before_action :auth, :debug_global, :delete_account, :success, :resumes, :lang_list, :lang_prof, :debug_mode, :cover_letters
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   	@debug ||= "unknown"
   end
 
-  def debug
+  def debug_global
   	@authentication = {
   		"Unknown" => {
   			:auth => "unknown"
@@ -66,7 +66,6 @@ class ApplicationController < ActionController::Base
       params[:success] == "true"
       @success_message = "Your email to [email name] has been sent!"
     end
-
   end
 
   def delete_account
