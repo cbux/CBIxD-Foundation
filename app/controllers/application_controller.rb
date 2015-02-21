@@ -86,4 +86,8 @@ class ApplicationController < ActionController::Base
 		@language_proficiency = [ "No proficiency", "Elementary proficiency", "Limited working proficiency", "Professional working proficiency", "Full professional proficiency", "Native or bilingual proficiency"]
 	end
 
+	def months
+		@months = ["January",	"February", "March",	"April",	"May",	"June", "July", "August", "September",	"October",	"November", "December"]
+		@months_short = ["Jan",	"Feb", "Mar",	"Apr",	"May",	"Jun", "Jul", "Aug", "Sept",	"Oct",	"Nov", "Dec"]
+	end
 end

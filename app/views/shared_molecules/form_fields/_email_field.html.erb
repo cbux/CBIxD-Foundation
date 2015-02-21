@@ -1,0 +1,12 @@
+<!--
+	Fall back if attributes are not give
+-->
+<% is_required ||= "" %>
+<% email_populated ||= "" %>
+<% email_label ||= "Email" %>
+
+<label>
+	<%= email_label %>
+  <input type="email" value="<% email_populated %>" <%= is_required %> />
+  <small class="error">A valid email address is required</small>
+</label>

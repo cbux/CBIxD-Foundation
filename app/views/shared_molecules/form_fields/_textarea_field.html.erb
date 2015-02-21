@@ -1,0 +1,11 @@
+<!--
+	Fall back if attributes are not give
+-->
+<% text_populated ||= "" %>
+<% text_label ||= "TEXT AREA LABEL" %>
+<% row_height ||= "5" %>
+
+<label>
+	<%= text_label %>
+	<textarea value="<%= text_populated %>" row="<%= row_height %>"></textarea>
+</label>

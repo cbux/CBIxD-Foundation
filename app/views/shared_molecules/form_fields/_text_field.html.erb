@@ -1,0 +1,11 @@
+<!--
+	Fall back if attributes are not give
+-->
+<% is_required ||= "" %>
+<% text_populated ||= "" %>
+<% text_label ||= "TEXT LABEL" %>
+
+<label><%= text_label %>
+	<input type="text" value="<% text_populated %>" <%= required %> />
+	<small class="error">This field is required</small>
+</label>
