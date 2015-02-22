@@ -18,28 +18,33 @@
 	<!-- QUICK APPLY FOR AFTER APPLY -->
 	<% if params[:action] == "after_apply" %>
 		<div class="small-3 medium-2 large-2 columns">
-			<a href="#" class="button">Quick Apply</a>
+			<a class="button" id="quickapplybtn">Quick Apply</a>
+      <a id="quickapplied" class="hidden inline-success">Applied</a>
 	  </div>
 	<% end %>
 
   <!--QUICK APPLY FOR RESUME RECS -->
   <% if params[:action] == "resumerecs" %>
     <div class="small-3 medium-2 large-2 columns">
-      <a href="#" class="button">Quick Apply</a>
+      <a class="button" id="quickapplybtn">Quick Apply</a>
+      <a id="quickapplied" class="hidden inline-success">Applied</a>
     </div>
   <% end %>
 
   <div class='<%= job_columns %>' >
     <h2><%= link_to "Commercial Property and Casualty Insurance Account Executive", jobs_jdp_path %></h2>
+      <% if params[:action] != "applied" %>
+      <span class="applied-tag">Applied</span>
+      <% end %>
     <% if params[:action] != "after_apply" %>
 	    <p class="hide-for-small-only">Full-Time | Entry Level | $10/hr | Our client, a leader in the production of medical technology solutions has an immediate need for...</p>
+      <% end %>
       <ul class="inline-list show-for-large-up">
         <% if session[:auth] == "authenticated" %>
           <li>
             <a class="hide_show" data-1="#job_saved_btn-<%= count %>" data-2="#job_saved_msg-<%= count %>" id="job_saved_btn-<%= count %>">Save Job</a>
             <a  class="hide_show" data-1="#job_saved_btn-<%= count %>" data-2="#job_saved_msg-<%= count %>"  id="job_saved_msg-<%= count %>" style="display:none">Job Saved</a>
           </li>
-        <% end %>
         <li><a href="" data-dropdown="emaildrop-<%= count %>" aria-controls="emaildrop-<%= count %>" aria-expanded="false">Email Job</a><li>
             <div class="show-for-medium-up">
               <div id="emaildrop-<%= count %>" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
@@ -87,7 +92,7 @@
     <p>GA-Atlanta
     	<% if params[:action] != "after_apply" %>
       <% if params[:page] != "recommendations" %>
-        <br /><a href="job_collapse"> + View 2 more</a>
+        <br /><a href="/jobs/job_collapse"> + View 2 more</a>
     	<% end %>
       <% end %>
     </p>
