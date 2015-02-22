@@ -18,19 +18,24 @@
 	<!-- QUICK APPLY FOR AFTER APPLY -->
 	<% if params[:action] == "after_apply" %>
 		<div class="small-3 medium-2 large-2 columns">
-			<a href="#" class="button">Quick Apply</a>
+			<a class="button" id="quickapplybtn">Quick Apply</a>
+      <a id="quickapplied" class="hidden inline-success">Applied</a>
 	  </div>
 	<% end %>
 
   <!--QUICK APPLY FOR RESUME RECS -->
   <% if params[:action] == "resumerecs" %>
     <div class="small-3 medium-2 large-2 columns">
-      <a href="#" class="button">Quick Apply</a>
+      <a class="button" id="quickapplybtn">Quick Apply</a>
+      <a id="quickapplied" class="hidden inline-success">Applied</a>
     </div>
   <% end %>
 
   <div class='<%= job_columns %>' >
     <h2><%= link_to "Commercial Property and Casualty Insurance Account Executive", jobs_jdp_path %></h2>
+      <% if params[:action] != "applied" %>
+      <span class="applied-tag">Applied</span>
+      <% end %>
     <% if params[:action] != "after_apply" %>
 	    <p class="hide-for-small-only">Full-Time | Entry Level | $10/hr | Our client, a leader in the production of medical technology solutions has an immediate need for...</p>
       <ul class="inline-list show-for-large-up">
@@ -87,7 +92,7 @@
     <p>GA-Atlanta
     	<% if params[:action] != "after_apply" %>
       <% if params[:page] != "recommendations" %>
-        <br /><a href="job_collapse"> + View 2 more</a>
+        <br /><a href="/jobs/job_collapse"> + View 2 more</a>
     	<% end %>
       <% end %>
     </p>

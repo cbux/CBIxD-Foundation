@@ -13,50 +13,77 @@
 
 <div class="row">
 
-    <div class="small-12 columns">
-
-       <label>Desired Location</label>
-       <ul class="side-nav">
-          <li class="rec-row1"><a href="#" class="small-11 columns pref">Atlanta, GA</a><a class="small-1 columns delete-rec1" href="#"><i class="fa fa-times"></i></a><hr /></li>
-          <li><a href="#" class="small-11 columns pref">Phoenix, AZ</a><a class="small-1 columns" href="#"><i class="fa fa-times"></i></a></li>
-          <li><a href="recprefs_addlocation" class="button secondary expand">Add Locations</a></li>
-        </ul>
-
-       <label>Desired Job Title</label>
+    <div class="small-11 small-centered columns">
         <ul class="side-nav">
-            <li class="rec-row2"><a href="#" class="small-11 columns">Customer Service Rep</a><a class="small-1 columns delete-rec2" href="#"><i class="fa fa-times"></i></a><hr /></li>
-            <li><a href="#" class="small-11 columns">Sales Associate</a><a class="small-1 columns" href="#"><i class="fa fa-times"></i></a><hr /></li>
-            <li><a href="#" class="small-11 columns">Sales Manager</a><a class="small-1 columns" href="#"><i class="fa fa-times"></i></a></li>
-            <li><a href="recprefs_addtitle" class="button secondary expand">Add Job Titles</a></li>
-        </ul>
+                <li><label>Desired Locations</label></li>
+                <li class="row new-location-row hidden"><a class="small-9 columns">NewLocation, USA</a><a class="small-1 columns"><i class="fa fa-times"></i></a></li>
+                <li class="row rec-row1"><a class="small-9 columns">Atlanta, GA</a><a class="small-1 columns delete-rec1"><i class="fa fa-times"></i></a></li>
+                <li class="row"><a class="small-9 columns">Phoenix, AZ</a><a class="small-1 columns"><i class="fa fa-times"></i></a></li>
+                    <li class="row">
+                          <div class="row collapse">
+                            <div class="small-9 columns">
+                              <input type="text" placeholder="Enter Desired Location">
+                            </div>
+                            <div class="small-3 columns">
+                              <a class="button postfix save-location">Save</a>
+                            </div>
+                          </div>
+                    </li><!--close row-->
+                <li class="divider"></li>
+                <!--desired job title section-->
+                <li class="row"><label>Desired Job Title</label></li>
+                <li class="row new-title-row hidden"><a class="small-9 columns">New Job Title</a><a class="small-1 columns"><i class="fa fa-times"></i></a></li>
+                <li class="row rec-row2"><a class="small-9 columns">Customer Service</a><a class="small-1 columns delete-rec2"><i class="fa fa-times"></i></a></li>
+                <li class="row"><a class="small-9 columns">Sales Associate</a><a class="small-1 columns"><i class="fa fa-times"></i></a></li>
+                <li class="row"><a class="small-9 columns">Sales Manager</a><a class="small-1 columns"><i class="fa fa-times"></i></a></li>
+                    <li class="row">
+                          <div class="row collapse">
+                            <div class="small-9 columns">
+                              <input type="text" placeholder="Enter Desired Job Title">
+                            </div>
+                            <div class="small-3 columns">
+                              <a class="button postfix save-title">Save</a>
+                            </div>
+                          </div>
+                    </li><!--close row-->
+                <li class="divider"></li>
 
-        <label>Skills</label>
-        <ul class="side-nav">
-            <li class="rec-row3"><a href="#" class="small-11 columns">Sales</a><a class="small-1 columns delete-rec3" href=""><i class="fa fa-times"></i></a><hr /></li>
-            <li><a href="#" class="small-11 columns">Client Relations</a><a class="small-1 columns" href="#"><i class="fa fa-times"></i></a><hr /></li>
-            <li><a href="#" class="small-11 columns">Marketing</a><a class="small-1 columns" href="#"><i class="fa fa-times"></i></a><hr /></li>
-            <li><a href="#" class="small-11 columns">Excel</a><a class="small-1 columns" href="#"><i class="fa fa-times"></i></a><hr /></li>
-            <li><a href="#" class="small-11 columns">Salesforce</a><a class="small-1 columns" href="#"><i class="fa fa-times"></i></a><hr /></li>
-            <li class="view-more-prefs1"><a class="small-11 columns">View 3 More</a><a class="small-1 columns" href=""><i class="fa fa-chevron-down"></i></a></li>
-            <li class="hidden add-more-skill"><a href="#" class="small-11 columns">Word</a><a class="small-1 columns" href="#"><i class="fa fa-times"></i></a><hr /></li>
-            <li class="hidden add-more-skill"><a href="#" class="small-11 columns">Inside Sales</a><a class="small-1 columns" href="#"><i class="fa fa-times"></i></a><hr /></li>
-            <li class="hidden add-more-skill"><a href="#" class="small-11 columns">Marketing</a><a class="small-1 columns" href="#"><i class="fa fa-times"></i></a><hr /></li>
-            <li class="hidden view-less-prefs1"><a class="small-11 columns">Show Less Skills</a><a class="small-1 columns" href="#"><i class="fa fa-chevron-up"></i></a></li>
-            <li><a href="recprefs_addskills" class="button secondary expand">Add Skills</a></li>
-        </ul>
+                <li><label>Skills</label></li>
+                <li class="row new-skill-row hidden"><a class="small-9 columns">New Skill</a><a class="small-1 columns"><i class="fa fa-times"></i></a></li>
+                <li class="row"><a class="small-9 columns">Sales</a><a class="small-1 columns"><i class="fa fa-times"></i></a></li>
+                <li class="row"><a class="small-9 columns">Client Relations</a><a class="small-1 columns"><i class="fa fa-times"></i></a></li>
+                <li class="row"><a class="small-9 columns">Marketing</a><a class="small-1 columns"><i class="fa fa-times"></i></a></li>
+                <li class="row"><a class="small-9 columns">Excel</a><a class="small-1 columns"><i class="fa fa-times"></i></a></li>
+                <li class="row skill-replace"><a class="small-9 columns">Salesforce</a><a class="small-1 columns"><i class="fa fa-times"></i></a></li>
+                <li class="row view-more-prefs1"><a class="small-9 columns">View 3 More</a><a class="small-1 columns"><i class="fa fa-chevron-down"></i></i></a></li>
+                <li class="row hidden add-more-skill"><a class="small-9 columns">Word</a><a class="small-1 columns"><i class="fa fa-times"></i></a></li>
+                <li class="row hidden add-more-skill"><a class="small-9 columns">Inside Sales</a><a class="small-1 columns"><i class="fa fa-times"></i></a></li>
+                <li class="row hidden add-more-skill"><a class="small-9 columns">Marketing</a><a class="small-1 columns"><i class="fa fa-times"></i></a></li>
+                <li class="row hidden view-less-prefs1"><a class="small-9 columns">Show Less Skills</a><a class="small-1 columns"><i class="fa fa-chevron-up"></i></a></li>
+                    <li class="row">
+                          <div class="row collapse">
+                            <div class="small-9 columns">
+                              <input type="text" placeholder="Enter Skill">
+                            </div>
+                            <div class="small-3 columns">
+                              <a class="button postfix save-skill">Save</a>
+                            </div>
+                          </div>
+                    </li><!--close row-->
+                <li class="divider"></li>
 
-        <label>Application History</label>
-        <ul class="side-nav">
-            <li><a href="#" class="small-11 columns">Sales Associate</a><a class="small-1 columns" href="#"><i class="fa fa-times"></i></a><hr /></li>
-            <li><a href="#" class="small-11 columns">Client Relationship Manager</a><a class="small-1 columns" href="#"><i class="fa fa-times"></i></a><hr /></li>
-            <li><a href="#" class="small-11 columns">Marketing Analyst</a><a class="small-1 columns" href="#"><i class="fa fa-times"></i></a><hr /></li>
-            <li><a href="#" class="small-11 columns">Lead Generation</a><a class="small-1 columns" href="#"><i class="fa fa-times"></i></a><hr /></li>
-            <li><a href="#" class="small-11 columns">Salesforce Analyst</a><a class="small-1 columns" href="#"><i class="fa fa-times"></i></a><hr /></li>
-            <li class="view-more-prefs2"><a class="small-11 columns">View 3 More</a><a class="small-1 columns" href="#"><i class="fa fa-chevron-down"></i></a><hr /></li>
-            <li class="hidden add-more-history"><a href="#" class="small-11 columns">Client Advocate</a><a class="small-1 columns" href="#"><i class="fa fa-times"></i></a><hr /></li>
-            <li class="hidden add-more-history"><a href="#" class="small-11 columns">Technical Support</a><a class="small-1 columns" href="#"><i class="fa fa-times"></i></a><hr /></li>
-            <li class="hidden add-more-history"><a href="#" class="small-11 columns">Marketing Trainer</a><a class="small-1 columns" href="#"><i class="fa fa-times"></i></a><hr /></li>
-            <li class="hidden view-less-prefs2"><a class="small-11 columns">Show Less History</a><a class="small-1 columns" href="#"><i class="fa fa-chevron-up"></i></a><hr /></li>
+                <li><label>Application History</label></li>
+                <li class="row"><a class="small-9 columns">Sales Associate</a><a class="small-1 columns"><i class="fa fa-times"></i></a></li>
+                <li class="row"><a class="small-9 columns">Client Relationship Manager</a><a class="small-1 columns"><i class="fa fa-times"></i></a></li>
+                <li class="row"><a class="small-9 columns">Marketing Analyst</a><a class="small-1 columns"><i class="fa fa-times"></i></a></li>
+                <li class="row"><a class="small-9 columns">Lead Generation</a><a class="small-1 columns" ><i class="fa fa-times"></i></a></li>
+                <li class="row"><a class="small-9 columns">Salesforce Analyst</a><a class="small-1 columns"><i class="fa fa-times"></i></a></li>
+                <li class="row view-more-prefs2"><a class="small-9 columns">View 3 More</a><a class="small-1 columns"><i class="fa fa-chevron-down"></i></i></a></li>
+                <li class="row hidden add-more-history"><a class="small-9 columns">Client Advocate</a><a class="small-1 columns"><i class="fa fa-times"></i></a></li>
+                <li class="row hidden add-more-history"><a class="small-9 columns">Technical Support</a><a class="small-1 columns"><i class="fa fa-times"></i></a></li>
+                <li class="row hidden add-more-history"><a class="small-9 columns">Marketing Trainer</a><a class="small-1 columns"><i class="fa fa-times"></i></a></li>
+                <li class="row hidden view-less-prefs2"><a class="small-9 columns">Show Less History</a><a class="small-1 columns"><i class="fa fa-chevron-up"></i></a></li>
+            </ul>
         </ul>
 
     </div><!--close columns-->

@@ -5,9 +5,6 @@
         <p>2 jobs found</p>
         <a href="../jobs">< Show all results
   </div><!--close column-->
-  <div class="small-12 large-2 right columns hide-for-small-only">
-      <a href="#" class="button secondary small" id="job_alert_btn">Create Job Alert</a>
-  </div>
 </div>
 <!--start sort larger devices-->
 <div class="row">
@@ -49,6 +46,30 @@
 <!--filters-->
 <div class="row">
   <div class="large-3 columns show-for-large-up">
+
+      <div class="show-for-medium-up">
+      <button href="#" data-dropdown="jobalertdrop" aria-controls="jobalertdrop" aria-expanded="false" id="job-alert-btn" class="button secondary">Create Job Alert</button><br>
+      <div id="jobalertdrop" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
+          <div class="medium-12 columns">
+          <p class="emailalerttext"><i class="fa fa-envelope-o">&nbsp;&nbsp;</i>Be the first to hear about new jobs like these</p>
+          <p>Sales Representative Jobs in Atlanta, GA</a>
+                      <% if session[:auth] == "authenticated" %>
+                          <label>Your Email
+                          <input type="text" placeholder="prepopulatedemail@gmail.com">
+                          </label>
+                        <% else %>
+                          <label>Your Email
+                          <input type="text" placeholder="">
+                          </label>
+                        <% end %>
+                          <label>
+                            <a class="button postfix unauthalertbtn" id="job_alert_btn create-alert-dropdown">Create Job Alert</a>
+                          </label>
+                  <p>You can cancel job alerts anytime</p>
+          </div>
+      </div>
+      </div>
+
     <h4>Filter By</h4>
     <!--Distance from you-->
     <%= render 'distance_within_filter' %>
@@ -78,102 +99,180 @@
 </div>
 
     
+<!--job result columns-->
+  <% job_columns = "columns small-12 medium-6 large-5" %>
+  <% company_columns = "small-12 medium-2 large-2 columns" %>
+  <% location_columns = "small-12 medium-2 large-1 columns" %>
+  <% date_columns = "small-12 medium-2 large-1 columns" %>
 
-    <!--job result-->
-  <div class="small-12 large-9 columns">
-    <div class='columns small-12 medium-6 large-6' >
-      <h2><%= link_to "Commercial Property and Casualty Insurance Account Executive", jobs_jdp_path %></h2>
-          <% if params[:action] != "after_apply" %>
-          <p class="hide-for-small-only">Full-Time | Entry Level | $10/hr | Our client, a leader in the production of medical technology solutions has an immediate need for...</p>
-          <ul class="inline-list show-for-large-up">
-              <% if @auth == "authenticated" %>
-                <li><a href="#">Save Job</a></li>
-              <% end %>
-                <li><a href="" class='email-drawer-link'>Email Job</a>
-                  <div class="hidden email-drawer">
-                      <div class="small-12 medium-12 large-12 columns">
-                        <label>From (Your Email Address)
-                        <input type="text" placeholder="" />
-                        </label>
-                        <label>To (Recipients Email Address)
-                        <input type="text" placeholder="" />
-                        </label>
-                        <label>Your Name
-                        <input type="text" placeholder="" />
-                        </label>
-                        <label>Notes
-                        <textarea placeholder=""></textarea>
-                        </label>
-                        <p>140 Characters Left</p>
-                        <a href="#" class="button closedrawer">Send Email</a>
-                        <a href="#" class="button secondary small closedrawer">Cancel</a>
-                      </div><!--close column-->
-                  </div><!--close email drawer-->
-            </li>
-      </ul>
-    <% end %>
-  </div>
-    <div class='small-12 medium-2 large-2 columns'>
-    <a href="jobs/companyprofile">Account Control Technology Inc.</a>
-  </div><!--close column-->
-  <div class='small-12 medium-2 large-2 columns'>
-    <p>GA-Atlanta
-    </p>
-  </div>
-  <div class='small-12 medium-2 large-2 columns'>
-    <p>1 Hour Ago</p>
-  </div>
-  <hr />
-  </div>
-  
-
-      <!--job result-->
-  <div class="small-12 large-9 columns">
-    <div class='columns small-12 medium-6 large-6' >
-      <h2><%= link_to "Commercial Property and Casualty Insurance Account Executive", jobs_jdp_path %></h2>
-          <% if params[:action] != "after_apply" %>
-          <p class="hide-for-small-only">Full-Time | Entry Level | $10/hr | Our client, a leader in the production of medical technology solutions has an immediate need for...</p>
-          <ul class="inline-list show-for-large-up">
-              <% if @auth == "authenticated" %>
-                <li><a href="#">Save Job</a></li>
-              <% end %>
-                <li><a href="" class='email-drawer-link'>Email Job</a>
-                  <div class="hidden email-drawer">
-                      <div class="small-12 medium-12 large-12 columns">
-                        <label>From (Your Email Address)
-                        <input type="text" placeholder="" />
-                        </label>
-                        <label>To (Recipients Email Address)
-                        <input type="text" placeholder="" />
-                        </label>
-                        <label>Your Name
-                        <input type="text" placeholder="" />
-                        </label>
-                        <label>Notes
-                        <textarea placeholder=""></textarea>
-                        </label>
-                        <p>140 Characters Left</p>
-                        <a href="#" class="button closedrawer">Send Email</a>
-                        <a href="#" class="button secondary small closedrawer">Cancel</a>
-                      </div>
+<!--job results 1 -->
+  <div class='<%= job_columns %>' >
+    <h2><%= link_to "Commercial Property and Casualty Insurance Account Executive", jobs_jdp_path %></h2>
+    <% if params[:action] != "after_apply" %>
+      <p class="hide-for-small-only">Full-Time | Entry Level | $10/hr | Our client, a leader in the production of medical technology solutions has an immediate need for...</p>
+      <ul class="inline-list show-for-large-up">
+        <% if session[:auth] == "authenticated" %>
+          <li>
+            <% count = "1" %>
+            <a class="hide_show" data-1="#job_saved_btn-<%= count %>" data-2="#job_saved_msg-<%= count %>" id="job_saved_btn-<%= count %>">Save Job</a>
+            <a  class="hide_show" data-1="#job_saved_btn-<%= count %>" data-2="#job_saved_msg-<%= count %>"  id="job_saved_msg-<%= count %>" style="display:none">Job Saved</a>
+          </li>
+        <% end %>
+        <li><a href="" data-dropdown="emaildrop-<%= count %>" aria-controls="emaildrop-<%= count %>" aria-expanded="false">Email Job</a><li>
+            <div class="show-for-medium-up">
+              <div id="emaildrop-<%= count %>" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
+                  <div class="medium-12 columns">
+                          <% if session[:auth] == "authenticated" %>
+                          <h4>Email This Job</h4>
+                          <label>From (Your Email Address)
+                          <input type="text" placeholder="prepopulatedemail@gmail.com" />
+                          </label>
+                          <% else %>
+                          <label>From (Your Email Address)
+                          <input type="text" placeholder="" />
+                          </label>
+                          <% end %>
+                          <label>To (Recipients Email Address)
+                          <input type="text" placeholder="" />
+                          </label>
+                          <% if session[:auth] == "authenticated" %>
+                          <label>Your Name
+                          <input type="text" placeholder="Prepopulated Name" />
+                          </label>
+                          <% else %>
+                          <label>Your Name
+                          <input type="text" placeholder="" />
+                          </label>
+                          <% end %>
+                          <label>Notes
+                          <textarea placeholder=""></textarea>
+                          </label>
+                          <p>140 Characters Left</p>
+                          <%= link_to "Send Email", url_for(status: "email_sent", success: "true"), class: "button expand" %>
+                          <a class="button secondary expand">Cancel</a>
                   </div>
-            </li>
+              </div>
+            </div>
+      </li>
       </ul>
     <% end %>
-</div>
+  </div>
 
-  <div class='small-12 medium-2 large-2 columns'>
+  <div class='<%= company_columns %>'>
     <a href="jobs/companyprofile">Account Control Technology Inc.</a>
   </div><!--close column-->
-  <div class='small-12 medium-2 large-2 columns'>
+  <div class='<%= location_columns %>'>
     <p>GA-Atlanta
+      <% if params[:action] != "after_apply" %>
+      <% if params[:page] != "recommendations" %>
+      <% end %>
+      <% end %>
     </p>
   </div>
-  <div class='small-12 medium-2 large-2 columns'>
+  <div class='<%= date_columns %>'>
     <p>1 Hour Ago</p>
   </div>
   <hr />
+ <!--end job result-->
+ <!-- job result 2-->
+  <div class='<%= job_columns %>' >
+    <h2><%= link_to "Commercial Property and Casualty Insurance Account Executive", jobs_jdp_path %></h2>
+    <% if params[:action] != "after_apply" %>
+      <p class="hide-for-small-only">Full-Time | Entry Level | $10/hr | Our client, a leader in the production of medical technology solutions has an immediate need for...</p>
+      <ul class="inline-list show-for-large-up">
+        <% if session[:auth] == "authenticated" %>
+          <li>
+            <% count = "1" %>
+            <a class="hide_show" data-1="#job_saved_btn-<%= count %>" data-2="#job_saved_msg-<%= count %>" id="job_saved_btn-<%= count %>">Save Job</a>
+            <a  class="hide_show" data-1="#job_saved_btn-<%= count %>" data-2="#job_saved_msg-<%= count %>"  id="job_saved_msg-<%= count %>" style="display:none">Job Saved</a>
+          </li>
+        <% end %>
+        <li><a href="" data-dropdown="emaildrop-<%= count %>" aria-controls="emaildrop-<%= count %>" aria-expanded="false">Email Job</a><li>
+            <div class="show-for-medium-up">
+              <div id="emaildrop-<%= count %>" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
+                  <div class="medium-12 columns">
+                          <% if session[:auth] == "authenticated" %>
+                          <h4>Email This Job</h4>
+                          <label>From (Your Email Address)
+                          <input type="text" placeholder="prepopulatedemail@gmail.com" />
+                          </label>
+                          <% else %>
+                          <label>From (Your Email Address)
+                          <input type="text" placeholder="" />
+                          </label>
+                          <% end %>
+                          <label>To (Recipients Email Address)
+                          <input type="text" placeholder="" />
+                          </label>
+                          <% if session[:auth] == "authenticated" %>
+                          <label>Your Name
+                          <input type="text" placeholder="Prepopulated Name" />
+                          </label>
+                          <% else %>
+                          <label>Your Name
+                          <input type="text" placeholder="" />
+                          </label>
+                          <% end %>
+                          <label>Notes
+                          <textarea placeholder=""></textarea>
+                          </label>
+                          <p>140 Characters Left</p>
+                          <%= link_to "Send Email", url_for(status: "email_sent", success: "true"), class: "button expand" %>
+                          <a class="button secondary expand">Cancel</a>
+                  </div>
+              </div>
+            </div>
+      </li>
+      </ul>
+    <% end %>
   </div>
+
+  <div class='<%= company_columns %>'>
+    <a href="jobs/companyprofile">Account Control Technology Inc.</a>
+  </div><!--close column-->
+  <div class='<%= location_columns %>'>
+    <p>GA-Atlanta
+      <% if params[:action] != "after_apply" %>
+      <% if params[:page] != "recommendations" %>
+      <% end %>
+      <% end %>
+    </p>
+  </div>
+  <div class='<%= date_columns %>'>
+    <p>1 Hour Ago</p>
+  </div>
+  <hr />
+ <!--end job result-->
+
+
+        <div class="medium-12 large-9 large-centered right columns hide-for-small-only panel">
+          <p class="emailalerttext"><i class="fa fa-envelope-o">&nbsp;&nbsp;</i>Be the first to hear about new jobs like these</p>
+          <p>Sales Representative Jobs in Atlanta, GA</a>
+                  <div class="row">
+                      <% if session[:auth] == "authenticated" %>
+                      <div class="small-8 medium-6 large-5 columns">
+                          <label>Your Email
+                          <input type="text" placeholder="prepopulatedemail@gmail.com">
+                          </label>
+                        </div>
+                        <% else %>
+                          <div class="small-8 medium-6 large-5 columns">
+                            <label>Your Email
+                            <input type="text" placeholder="">
+                            </label>
+                          </div>
+                        <% end %>
+                      <div class="small-4 medium-5 large-3 columns">
+                          <label>
+                            <a class="button postfix unauthalertbtn" id="job_alert_btn">Create Job Alert</a>
+                          </label>
+                       </div>
+                       <div class ="small-2 medium-2 large-2 columns">
+                       </div>
+                    </div>
+                  <p>You can cancel job alerts anytime</p>
+                </div>
+        </div>
 
   </div><!--close row-->
   <div class="row">

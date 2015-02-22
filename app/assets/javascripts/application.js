@@ -151,7 +151,7 @@ $(document).ready(function() {
     $(".email-drawer-jdp").hide();
     });
     $(".moresnapshot").click(function(){
-    $("#jobsnapshot").show();
+    $("#jobsnapshot").toggle();
     });
     $(".lesssnapshot").click(function(){
     $("#jobsnapshot").hide();
@@ -173,7 +173,6 @@ $(document).ready(function() {
     $(".add-location").toggle();
     });
     $(".save-location").click(function(){
-    $(".add-location-view").hide();
     $(".add-location").show();
     $(".new-location-row").show();
     });
@@ -185,7 +184,6 @@ $(document).ready(function() {
     $(".add-title").toggle();
     });
     $(".save-title").click(function(){
-    $(".add-title-view").hide();
     $(".add-title").show();
     $(".new-title-row").show();
     });
@@ -197,7 +195,6 @@ $(document).ready(function() {
     $(".add-skill").toggle();
     });
     $(".save-skill").click(function(){
-    $(".add-skill-view").hide();
     $(".add-skill").show();
     $(".new-skill-row").show();
     $(".skill-replace").hide();
@@ -223,6 +220,10 @@ $(document).ready(function() {
     $(".add-more-history").hide();
     $(".view-more-prefs2").show();
     $(".view-less-prefs2").hide();
+    });
+    $("#quickapplybtn").click(function(){
+    $("#quickapplybtn").hide();
+    $("#quickapplied").show();
     });
 });
     // $("#emailopen").click(function(){
