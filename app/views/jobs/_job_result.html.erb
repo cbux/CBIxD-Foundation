@@ -38,13 +38,13 @@
       <% end %>
     <% if params[:action] != "after_apply" %>
 	    <p class="hide-for-small-only">Full-Time | Entry Level | $10/hr | Our client, a leader in the production of medical technology solutions has an immediate need for...</p>
+      <% end %>
       <ul class="inline-list show-for-large-up">
         <% if session[:auth] == "authenticated" %>
           <li>
             <a class="hide_show" data-1="#job_saved_btn-<%= count %>" data-2="#job_saved_msg-<%= count %>" id="job_saved_btn-<%= count %>">Save Job</a>
             <a  class="hide_show" data-1="#job_saved_btn-<%= count %>" data-2="#job_saved_msg-<%= count %>"  id="job_saved_msg-<%= count %>" style="display:none">Job Saved</a>
           </li>
-        <% end %>
         <li><a href="" data-dropdown="emaildrop-<%= count %>" aria-controls="emaildrop-<%= count %>" aria-expanded="false">Email Job</a><li>
             <div class="show-for-medium-up">
               <div id="emaildrop-<%= count %>" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
