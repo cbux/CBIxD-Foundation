@@ -88,6 +88,9 @@
 	  		<%= submit_tag "Search", class: "button postfix" %>
 	  	</div>
 	  <% end %>
+	  <% if params[:controller] == "home" %>
+	  	<%= render 'home/recent_searches' %>
+	  <% end %>
   </div>
 </section>
 

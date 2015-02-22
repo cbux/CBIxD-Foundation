@@ -1,6 +1,35 @@
 <!-- TODO
 	* Recent Searches
 -->
+<% @search_bar = "no-search" %>
+	<div class="section search">
+		<div class="row no-top-margin">
+			<div class="column small-12 medium-10 medium-centered text-center">
+			</div>
+		</div>
+		<div class="row">
+			<div class="column small-12 medium-9 medium-centered">
+				<%= form_tag(jobs_path, method: "get") do %>
+					<div class="row collapse"> 
+				  	<div class="column small-12 medium-4">
+				  		<label>Keyword
+				  			<input type="text" name="keyword" placeholder="" />
+							</label>
+				  	</div>
+				  	<div class="column small-12 medium-4">
+				  		<label>Location
+				  			<input type="text" name="location" placeholder="" />
+							</label>
+				  	</div>
+				  	<div class="column small-12 medium-4 end">
+				  		<%= submit_tag "Search", class: "button postfix", name: "" %>
+				  	</div>
+					</div>
+				<% end %>
+				<%= render 'home/recent_searches' %>
+			</div>
+		</div>
+	</div>
 
 <div class="row">
 	<div class="column small-12 large-2">

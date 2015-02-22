@@ -38,10 +38,7 @@ class ApplicationController < ActionController::Base
   end
 
   def recent_searches
-  	if params[:clear_recent] == "true"
-  		session[:recent_searches] = []
-  	end
-  	if params[:controller] == "jobs" && params[:action] == "index"
+  	if params[:controller] == "jobs" && params[:action] == "index" && params[:recent] != "true"
   		@recent_searches ||= []
   		@recent_searches = session[:recent_searches]
   		@keyword = params[:keyword]
@@ -54,10 +51,13 @@ class ApplicationController < ActionController::Base
   		end
   		@new_search = [@keyword, @location]
   		@recent_searches << @new_search
-  		if @recent_searches.count > 2
+  		if @recent_searches.count > 3
   			@recent_searches.shift
   		end
   		session[:recent_searches]  = @recent_searches
+  	end
+  	if params[:clear_recent] == "true"
+  		session[:recent_searches] = []
   	end
   end  
 

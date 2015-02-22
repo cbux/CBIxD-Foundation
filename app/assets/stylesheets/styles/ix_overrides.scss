@@ -115,6 +115,9 @@ label small.error {
 	.hero {
 		padding: 10em 0;
 	}
+	.recent li {
+		display: inline-block;
+	}
 }
 
 .toggle-topbar-2.expanded {
@@ -215,11 +218,20 @@ h1, h2, h3, h4 {
 }
 
 .no-bottom-margin {
-	margin-bottom: 0;
+	margin-bottom: 0 !important;
 }
 
 .no-top-margin {
-	margin-top: 0;
+	margin-bottom: 0 !important;
+}
+
+.row.no-bottom-padding {
+	padding-top: 0 !important;
+}
+
+
+.no-top-margin {
+	margin-top: 0 !important;
 }
 
 .lang > li p {
@@ -299,6 +311,18 @@ input[type="radio"] {
 .fullpage-home .section {
 	padding: 5em 0;
 }
+
+.recent {
+	display: inline-block;
+}
+
+// .recent li ul li {
+// 	display: inline-block;
+// }
+
+// .recent li ul {
+// 	display: inline-block;
+// }
 
 // .green-back {
 // 	background-color: green;
