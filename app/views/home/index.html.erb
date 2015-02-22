@@ -27,10 +27,14 @@
 				  	</div>
 					</div>
 				<% end %>
-				<%= render 'home/recent_searches' %>
 			</div>
 		</div>
 	</div>
+	<% if session[:recent_searches].count > 0 %>
+		<div class="section">
+			<%= render 'home/recent_searches' %>
+		</div>
+	<% end %>
 	<div class="section">
 		<div class="row">
 			<div class="column small-12 medium-10 medium-centered">

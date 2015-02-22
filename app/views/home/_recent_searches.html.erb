@@ -4,17 +4,17 @@
 			<h2>Your Recent Searches</h2>
 		</div>
 		<div class="column small-12 text-center">
-			<div class="row no-top-margin">
+			<div class="row no-bottom-padding no-top-padding">
 				<div class="column">
 					<% session[:recent_searches].each_with_index do |item, index| %>
-						<ul class="inline-list recent">
+						<ul class="inline-list recent no-bottom-margin">
 							<li>
 							</li>
 							<li>
-								<h3><%= link_to "#{item[0]}, #{item[1]}", jobs_path(keyword: item[0], location: item[1], recent: "true") %></h3>
+								<h3><%= link_to "#{item[0].capitalize}, #{item[1].capitalize}", jobs_path(keyword: item[0], location: item[1], recent: "true") %></h3>
 							</li>
 							<li>
-								<h3><%= link_to "(100 new)", jobs_path(keyword: item[0], location: item[1], recent: "true", sort: "date"), style: "color: #f7CD41;" %></h3>
+								<h3><%= link_to "(100 new)", jobs_path(keyword: item[0], location: item[1], recent: "true", sort: "date"), class: "recent_new" %></h3>
 							</li>
 							<li>
 							</ul>

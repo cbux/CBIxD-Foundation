@@ -150,7 +150,7 @@ label small.error {
 }
 
 .global-search, .search {
-	background-color: $base;
+	background-color: $silver;
 }
 
 .debug {
@@ -224,9 +224,12 @@ h1, h2, h3, h4 {
 .no-top-margin {
 	margin-bottom: 0 !important;
 }
+.no-top-padding {
+	padding-top: 0 !important;
+}
 
 .row.no-bottom-padding {
-	padding-top: 0 !important;
+	padding-bottom: 0 !important;
 }
 
 
@@ -314,6 +317,15 @@ input[type="radio"] {
 
 .recent {
 	display: inline-block;
+}
+
+.recent_new {
+	color: $warning-color;
+}
+
+.section:nth-child(odd) {
+	background-color: $silver;
+
 }
 
 // .recent li ul li {
