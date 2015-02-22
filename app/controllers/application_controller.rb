@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-	before_action :auth, :debug_global, :delete_account, :success, :resumes, :lang_list, :lang_prof, :debug_mode, :cover_letters
+	before_action :auth, :debug_global, :delete_account, :success, :resumes, :lang_list, :lang_prof, :debug_mode, :cover_letters, :recent_searches
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -36,6 +36,30 @@ class ApplicationController < ActionController::Base
   		},
   	}
   end
+
+  def recent_searches
+  	if params[:clear_recent] == "true"
+  		session[:recent_searches] = []
+  	end
+  	if params[:controller] == "jobs" && params[:action] == "index"
+  		@recent_searches ||= []
+  		@recent_searches = session[:recent_searches]
+  		@keyword = params[:keyword]
+  		@location = params[:location]
+  		if @keyword == "" || @keyword == nil
+  			@keyword = "All Jobs"
+  		end
+  		if @location == "" || @location == nil
+  			@location = "Nationwide"
+  		end
+  		@new_search = [@keyword, @location]
+  		@recent_searches << @new_search
+  		if @recent_searches.count > 2
+  			@recent_searches.shift
+  		end
+  		session[:recent_searches]  = @recent_searches
+  	end
+  end  
 
   def resumes
   	if params[:resumes]
