@@ -2,6 +2,10 @@ $(document).ready(function(){
     $("#viewmore").click(function(){
         $("p").toggle();
     });
+    if(window.location.href.indexOf("resume=attached") > -1) {
+			$('#upload-form').fadeOut(1000);
+			$('#attached').delay(1000).fadeIn(1000);
+		}
 });
 
 $('.hide_show').click(function() {
@@ -17,6 +21,8 @@ $('.emailJob').click(function () {
     });
     return false;
 });
+
+
 // HOW TO USE
 //
 // Create your first link with the attribute data-1 with it's id name in it
