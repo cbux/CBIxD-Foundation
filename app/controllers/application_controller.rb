@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
 
   def recent_searches
   	if params[:controller] == "jobs" && params[:action] == "index" && params[:recent] != "true"
-  		@recent_searches ||= []
+  		@recent_searches ||= Array.new 
   		@recent_searches = session[:recent_searches]
   		@keyword = params[:keyword]
   		@location = params[:location]
@@ -50,7 +50,7 @@ class ApplicationController < ActionController::Base
   			@location = "Nationwide"
   		end
   		@new_search = [@keyword, @location]
-  		@recent_searches << @new_search
+  		@recent_searches.push(@new_search)
   		if @recent_searches.count > 3
   			@recent_searches.shift
   		end
