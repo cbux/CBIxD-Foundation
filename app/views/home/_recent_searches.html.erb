@@ -17,8 +17,27 @@
 								<h3><%= link_to "(100 new)", jobs_path(keyword: item[0], location: item[1], recent: "true", sort: "date"), class: "recent_new" %></h3>
 							</li>
 							<li>
-							</ul>
+							</li>
 						</ul>
+						<% if index == 0 && session[:auth] == "unknown" %>
+						<div class="row text-left">
+							<div class="panel column small-12 medium-7 medium-centered" >
+								<div class="row">
+									<div class="column small-12 text-center">
+										<h3>Be the first to hear when <%= "#{item[0].capitalize}, #{item[1].capitalize}" %> are posted</h3>
+									</div>
+								</div>
+								<div class="row collapse" id="bump">
+									<div class="column small-12 medium-6 medium-offset-1">
+										<%= render 'shared_molecules/form_fields/email_field', email_label: "Your Email" %>
+									</div>
+									<div class="column small-12 medium-4 end">
+										<a class="button postfix" id="double-half-bump">Create Job Alert</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<% end %>
 					<% end %>
 				</div>
 			</div>

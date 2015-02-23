@@ -1,7 +1,9 @@
 class HomeController < ApplicationController
 	before_action :debug, :statuses
 	def index
-		if session[:auth] == "authenticated"
+		if session[:auth] == "authenticated" && params[:experiment] == "true"
+			render 'dashboard_experiment'
+		elsif session[:auth] == "authenticated"
 			if params[:status] == "resume_deleted"
 				session[:resumes] -= 1
 			end

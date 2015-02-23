@@ -6,6 +6,10 @@
 	margin-top: 1em;
 }
 
+#double-half-bump {
+	margin-top: 1.5em;
+}
+
 nav .row {
 	margin-top: 0;
 }
@@ -168,6 +172,10 @@ label small.error {
 
 .inline-list > li {
 	margin-left: 1rem;
+}
+
+.inline-list {
+	margin-bottom: .5em;
 }
 
 .inline-list > li:first-of-type {
@@ -343,8 +351,6 @@ input[type="radio"] {
 // .red-back {
 // 	background-color: red;
 // }
-
-
 
 .flip {
     -webkit-perspective: 800;

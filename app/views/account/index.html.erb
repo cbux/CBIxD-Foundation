@@ -2,7 +2,7 @@
 <% @path = account_path %>
 <% if @auth == "authenticated" %>
 	<div class="row">
-		<div class="column small-12">
+		<div class="column small-12 medium-9 medium-centered">
 			<h1>My Account</h1>
 		</div>
 	</div>
@@ -25,27 +25,33 @@
 		</div>
 	</div>
 	<div class="row">
-	<!-- only show side nav on medium and up -->
-		<div class="column large-3 medium-4">
-			<ul class="side-nav show-for-medium-up">
-				  <li  class=<%= @info_active %>>
-				  	<%= link_to "Account Information", account_path(params.merge(page: "account_information").except(:action, :controller, :success, :error, :message)) %>
-				  </li>
-				  <li class=<%= @security_active %>>
-				  	<%= link_to "Account Security", account_path(params.merge(page: "security").except(:action, :controller, :success, :error, :message)) %>
-				  </li>
-				  <li class=<%= @email_active %>>
-				  	<%= link_to "Manage Email Settings", account_path(params.merge(page: "manage_email").except(:action, :controller, :success, :error, :message)) %>
-				  </li>
-				  <li class=<%= @delete_active %>>
-				  	<%= link_to "Delete Account", account_path(params.merge(page: "delete_account").except(:action, :controller, :success, :error, :message)) %>
-				  </li>
-			</ul>
-		</div>
-		<div class="column small-12 medium-8 large-9">
-			<%= render @account_view %>
+		<div class="column small-12 medium-9 medium-centered">
+
+			<div class="row">
+			<!-- only show side nav on medium and up -->
+				<div class="column large-3 medium-4">
+					<ul class="side-nav show-for-medium-up">
+						  <li  class=<%= @info_active %>>
+						  	<%= link_to "Account Information", account_path(params.merge(page: "account_information").except(:action, :controller, :success, :error, :message)) %>
+						  </li>
+						  <li class=<%= @security_active %>>
+						  	<%= link_to "Account Security", account_path(params.merge(page: "security").except(:action, :controller, :success, :error, :message)) %>
+						  </li>
+						  <li class=<%= @email_active %>>
+						  	<%= link_to "Manage Email Settings", account_path(params.merge(page: "manage_email").except(:action, :controller, :success, :error, :message)) %>
+						  </li>
+						  <li class=<%= @delete_active %>>
+						  	<%= link_to "Delete Account", account_path(params.merge(page: "delete_account").except(:action, :controller, :success, :error, :message)) %>
+						  </li>
+					</ul>
+				</div>
+				<div class="column small-12 medium-8 large-9">
+					<%= render @account_view %>
+				</div>
+			</div>
 		</div>
 	</div>
+
 <% else %>
 	<%= render :partial => "user/sign_in_form_new" %>
 <% end %>
