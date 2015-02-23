@@ -30,7 +30,7 @@
 			</div>
 		</div>
 	</div>
-	<% if session[:recent_searches].count > 0 %>
+	<% if session[:recent_searches].to_a.count > 0 %>
 		<div class="section">
 			<%= render 'home/recent_searches' %>
 		</div>
