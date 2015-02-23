@@ -10,6 +10,12 @@
     </nav>
     <aside class="left-off-canvas-menu">
       <ul class="off-canvas-list">
+      	<li><label>Session</label></li>
+      	<% if @session %>
+	        <% @session.each do |key, id| %>
+	        	<li><%= link_to key, id %></li>
+	        <% end %>
+        <% end %>
       	<li><label>Authentication</label></li>
         <% if @authentication %>
 	        <% @authentication.each do |key, id| %>

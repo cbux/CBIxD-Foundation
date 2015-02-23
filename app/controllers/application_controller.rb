@@ -35,9 +35,17 @@ class ApplicationController < ActionController::Base
   			:auth => "authenticated"
   		},
   	}
+  	@session = {
+  		"Wipe Session" => {
+  			:resumes => 0,
+  			:clear_recent => "true",
+  			:auth => "unknown"
+  		}
+  	}
   end
 
   def recent_searches
+  	session[:recent_searches] ||= Array.new
   	if params[:controller] == "jobs" && params[:action] == "index" && params[:recent] != "true"
   		@recent_searches ||= Array.new 
   		@recent_searches = session[:recent_searches]
