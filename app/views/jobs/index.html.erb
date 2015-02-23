@@ -13,11 +13,11 @@
         <dd class=<%= @sort_relevance %>>
         	<%= link_to "Relevance", params.merge(:sort => "relevance").except(:action, :controller) %>
         </dd>
+          <dd class=<%= @sort_location %>>
+          <%= link_to "Location", params.merge(:sort => "location").except(:action, :controller) %>
+        </dd>
         <dd class=<%= @sort_date %>>
         	<%= link_to "Date", params.merge(:sort => "date").except(:action, :controller) %>
-        </dd>
-        <dd class=<%= @sort_location %>>
-        	<%= link_to "Location", params.merge(:sort => "location").except(:action, :controller) %>
         </dd>
       </dl>
   </div>
