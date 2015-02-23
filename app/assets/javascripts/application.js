@@ -279,7 +279,7 @@ $(document).ready(function() {
     $('#gs-language-picker').click(function(e) {
         $('#gs-language-picker-submenu').slideToggle();
         e.preventDefault();
-    });    
+    });   
 
     $('#job-type-filter label').click(function(e) {
      //  console.log("Here I maasnd as,d");
@@ -300,8 +300,11 @@ $(document).ready(function() {
         e.preventDefault();
         }
     });
-
-
+    $('.button.postfix#double-half-bump').click(function() {
+			skill = $('#skills_entry').val();
+			tag_append = '<li><a>' + skill + '</a></li>';
+			$('#skills.tags').append(tag_append);
+    });
 });
 
 

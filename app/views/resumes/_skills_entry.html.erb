@@ -5,13 +5,13 @@
 <div class="skills-show">
 	<div class="row">
 		<div class="column small-10 medium-9">
-			<ul class="tags">
+			<ul class="tags" id="skills">
 				<% @skills.each do |skill| %>
 			    <li><a><%= skill %></a></li>
 			  <% end %>
 		  </ul>
 		</div>
-		<div class="column small-2 medium-3">
+		<!-- <div class="column small-2 medium-3">
 			<ul class="inline-list right">
 				<li>
 					<a data-equalizer-watch onclick="$('.skills-show').toggleClass('hide');$('.skills-edit').toggleClass('hide');">
@@ -19,6 +19,16 @@
 					</a>
 				</li>
 			</ul>
+		</div> -->
+	</div>
+	<div class="row collapse" id="skill_form">
+		<div class="column small-8">
+			<label>Add New Skills
+				<input type="text" id="skills_entry"/>
+			</label>
+		</div>
+		<div class="column small-4">
+			<a class="button postfix" id="double-half-bump">Add</a>
 		</div>
 	</div>
 </div>
@@ -29,6 +39,7 @@
 	    <textarea type="text"><%= @skills_list %></textarea>
 	  </div>
 	 </div>
+
 
 
 	  	<div class="row">
