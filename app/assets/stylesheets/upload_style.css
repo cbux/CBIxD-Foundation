@@ -216,7 +216,7 @@ ul.tags {
   transition-property: padding, max-width;
 }
 
-.green li:after {
+/*.green li:after {
   background: #65bb34;
   -webkit-box-shadow: inset 1px 0 #3a6b1e;
   box-shadow: inset 1px 0 #3a6b1e;
@@ -244,9 +244,11 @@ ul.tags {
   background-image: -moz-linear-gradient(top, #6aaeda, #4298d0);
   background-image: -o-linear-gradient(top, #6aaeda, #4298d0);
   background-image: linear-gradient(to bottom, #6aaeda, #4298d0);
-}
+}*/
 
-
+#companyContent {display: none; }
+.show:focus + .hide {display: inline; }
+.show:focus + .hide + #companyContent {display: block;}
 
 /***Resume Stats****/
 
@@ -313,7 +315,7 @@ ul.tags {
 }
 
 .stats--main .stats__amount {
-  font-size: 3.375em;
+  font-size: 2.25em;
 }
 
 

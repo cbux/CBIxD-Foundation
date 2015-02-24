@@ -1,0 +1,50 @@
+<% @skills = ["Interface", "Icon", "Typography", "Color", "Design", "Illustration", "Component", "Misc", "Infrastructure", "Application", "Mobile", "Desktop"] %>
+
+<% @skills_list = @skills.to_s.gsub(/\"/, "").gsub(/\[/, "").gsub(/\]/, "") %>
+
+<div class="skills-show">
+	<div class="row">
+		<div class="column small-10 medium-9">
+			<div class="tags">
+				<% @skills.each do |skill| %>
+				 <span class="tag"><span class="close">&times;</span><%= skill %></span>
+			  <% end %>
+			  <input id="tag-typer" type="text" placeholder="Add tag..."/>
+		  </div>
+		</div>
+		<div class="column small-2 medium-3">
+			<ul class="inline-list right">
+				<li>
+					<a data-equalizer-watch onclick="$('.skills-show').toggleClass('hide');$('.skills-edit').toggleClass('hide');">
+						<i class="fa fa-pencil fa-lg"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="skills-edit hide">
+	<div class="row">
+	  <div class="column small-12 medium-12">
+	    <textarea type="text"><%= @skills_list %></textarea>
+	  </div>
+	 </div>
+
+
+	  	<div class="row">
+			<div class="column small-3 medium-2">
+				<a onclick="$('.skills-show').toggleClass('hide');$('.skills-edit').toggleClass('hide');" class="button small">
+					Save
+				</a>
+			</div>
+			<div class="column small-9 medium-10">
+				<a onclick="$('.skills-show').toggleClass('hide');$('.skills-edit').toggleClass('hide');" class="button small secondary">
+					Cancel
+				</a>
+			</div>
+		</div>
+	
+</div>
+
+
