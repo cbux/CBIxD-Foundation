@@ -1,6 +1,7 @@
 
+
 <% if params[:resume] != "attached" %>
-	<div class="row" data-equalizer>
+	<div class="row" id="upload-form" data-equalizer>
 		<div class="column small-12 large-6 text-center" >
 			<div class="show-for-large-up" id="dropzone" >
 				<%= form_tag(@path, method: "get", id: "demo-upload", class: "dropzone", :data => {:equalizer_watch => {}}) do %>
@@ -10,20 +11,31 @@
 						<%= hidden_field_tag 'step', 'upload' %>
 						<%= hidden_field_tag 'resume', 'attached' %>
 					<% end %>
+					<div class="dz-message">
+					<i class="fa fa-cloud-upload fa-4x"></i>
+						<h1>DRAG &amp; DROP</h2>
+						<h3 class="subheader"> your file here or click to browse</h1>
+						
+							<h3> <small>We accept .DOCX, .DOC, .RTF, .TXT, .PDF up to 1 MB.</small></h3>
+						
+						<div class="fallback">
+							<input type="file" name="file" />
+						</div>
+					</div>
+
 				<% end %>
-				<!-- <div class="dz-message">
+		<!-- 		<div class="dz-message">
 				<i class="fa fa-cloud-upload fa-4x"></i>
-					<h2>DRAG &amp; DROP</h2>
+					<h1>DRAG &amp; DROP</h2>
 					<h3 class="subheader"> your file here or click to browse</h3>
 					
-					<h3> <small>We accept .DOCX, .DOC, .RTF, .TXT, .PDF up to 1 MB.</small></h3>
+						<h3> <small>We accept .DOCX, .DOC, .RTF, .TXT, .PDF up to 500 KB.</small></h3>
 					
 					<div class="fallback">
 						<input type="file" name="file" />
 					</div>
-				</div> -->
-
-			<% end %>
+				</div>-->
+			<% end %> 
 		</div>
 	</div>
 	<div class="column small-12 large-6 text-center" data-equalizer-watch>
