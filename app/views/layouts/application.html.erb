@@ -42,7 +42,9 @@
 								</div>
 							</div>
 						<% end %>
-				  	<%= render 'shared/global_header' %>
+						<% if @nav_bar != "no-nav" %>
+				  		<%= render 'shared/global_header' %>
+				  	<% end %>
 				  	<!-- <div class="main clearfix">
 							<div id="st-trigger-effects" class="column">
 				  			<button data-effect="st-effect-7">3D rotate in</button>
@@ -51,8 +53,9 @@
 
 				    <%= yield %>
 				    <%= javascript_include_tag "application" %>
-
-				  	<%= render 'shared/footer' %>
+				    <% if @footer_bar != "no-footer" %>
+				  		<%= render 'shared/footer' %>
+				  	<% end %>
 				  <!-- Objects for menu rotate in
 				  </div>
 				</div>
