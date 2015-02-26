@@ -31,7 +31,6 @@
 					<div class="st-content-inner">
 
 					-->
-				  	<%= render 'shared/global_alerts' %>
 				  	<% if params[:signed_out] == 'true' %>
 				  		<div data-alert class="alert-box success">
 				  			<div class="row">
@@ -45,6 +44,7 @@
 						<% if @nav_bar != "no-nav" %>
 				  		<%= render 'shared/global_header' %>
 				  	<% end %>
+				  	<%= render 'shared/global_alerts' %>
 				  	<!-- <div class="main clearfix">
 							<div id="st-trigger-effects" class="column">
 				  			<button data-effect="st-effect-7">3D rotate in</button>
