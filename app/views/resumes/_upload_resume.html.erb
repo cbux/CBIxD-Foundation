@@ -84,6 +84,8 @@
   	<%= link_to 'Continue', url_for(step: "details"), :onclick => "$('#drive-modal').foundation('reveal', 'close');", class: "button" %>
 	<% elsif params[:controller] == "apply" %>
 		<%= link_to 'Continue', url_for(step: "upload", resume: "attached"), :onclick => "$('#drive-modal').foundation('reveal', 'close');", class: "button" %>
+	<% elsif params[:controller] == "home" %>
+		<%= link_to 'Continue', resumes_path(step: "upload", resume: "attached"), :onclick => "$('#drive-modal').foundation('reveal', 'close');", class: "button" %>
 	<% end %>
 	<a class="close-reveal-modal">&#215;</a>
 </div>
@@ -98,6 +100,8 @@
   	<%= link_to 'Continue', url_for(step: "details"), :onclick => "$('#drive-modal').foundation('reveal', 'close');", class: "button" %>
 	<% elsif params[:controller] == "apply" %>
 		<%= link_to 'Continue', url_for(step: "upload", resume: "attached"), :onclick => "$('#drive-modal').foundation('reveal', 'close');", class: "button" %>
+	<% elsif params[:controller] == "home" %>
+		<%= link_to 'Continue', resumes_path(step: "upload", resume: "attached"), :onclick => "$('#drive-modal').foundation('reveal', 'close');", class: "button" %>
 	<% end %>
   <a class="close-reveal-modal">&#215;</a>
 </div>
@@ -110,6 +114,8 @@
   	<%= link_to 'Continue', url_for(step: "details"), :onclick => "$('#drive-modal').foundation('reveal', 'close');", class: "button" %>
 	<% elsif params[:controller] == "apply" %>
 		<%= link_to 'Continue', url_for(step: "upload", resume: "attached"), :onclick => "$('#drive-modal').foundation('reveal', 'close');", class: "button" %>
+	<% elsif params[:controller] == "home" %>
+		<%= link_to 'Continue', resumes_path(step: "upload", resume: "attached"), :onclick => "$('#drive-modal').foundation('reveal', 'close');", class: "button" %>
 	<% end %>
   <a class="close-reveal-modal">&#215;</a>
 </div>
