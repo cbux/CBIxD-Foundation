@@ -326,7 +326,7 @@ $(document).ready(function() {
 			tag_append = '<li><a>' + skill + '</a></li>';
 			$('#skills.tags').append(tag_append);
     });
-
+/*
     $('#scroll-spy-bar').scrollspy({
         min: $('#scroll-spy-bar').offset().top,
         max: $(document).height(),
@@ -337,6 +337,75 @@ $(document).ready(function() {
             $("#scroll-spy-bar").removeClass('fixed');
         }
     });
+*/
+    $('#add-new-position').click(function(e) {
+        $('.work-experience-add').removeClass("hide");
+    });  
+
+    $('#save-new-position').click(function(e) {
+        $('.work-experience-add').addClass("hide");
+        $('.work-experience ').children().clone().appendTo("#experience");
+    });    
+    $('#cancel-new-position').click(function(e) {
+        $('.work-experience-add').addClass("hide");
+    });
+
+
+    $(document).on('click', '.delete-experience', function(){ 
+        $(this).parents().eq(3).remove(); 
+    });
+
+    $(document).on('click', '.edit-experience', function(){ 
+        var shell =$(this).parents().eq(3);
+        shell.after($(".work-experience-edit").clone().removeClass("hide"));
+        shell.addClass("hide"); 
+    });
+
+    $(document).on('click', '#save-edit-position', function(){ 
+        var shell =$(this).parents().eq(2);
+        shell.prev().removeClass("hide");
+        shell.remove();
+    });    
+    $(document).on('click', '#cancel-edit-position', function(){ 
+        var shell =$(this).parents().eq(2);
+        shell.prev().removeClass("hide");
+        shell.remove();
+    }); 
+//---------Sholastic Achievements
+
+    $('#add-new-scholastic-achievement').click(function(e) {
+        $('.scholastic-achievement-add').removeClass("hide");
+    });  
+
+    $('#save-new-sholastic-achievement').click(function(e) {
+        $('.scholastic-achievement-add').addClass("hide");
+        $('.scholastic-achievement').children().clone().appendTo("#scholastic-highlights");
+    });    
+    $('#cancel-new-sholastic-achievement').click(function(e) {
+        $('.scholastic-achievement-add').addClass("hide");
+    });
+
+
+    $(document).on('click', '.delete-sholastic-achievement', function(){ 
+        $(this).parents().eq(3).remove(); 
+    });
+
+    $(document).on('click', '.edit-sholastic-achievement', function(){ 
+        var shell =$(this).parents().eq(3);
+        shell.after($(".scholastic-achievement-edit").clone().removeClass("hide"));
+        shell.addClass("hide"); 
+    });
+
+    $(document).on('click', '#save-edit-sholastic-achievement', function(){ 
+        var shell =$(this).parents().eq(2);
+        shell.prev().removeClass("hide");
+        shell.remove();
+    });    
+    $(document).on('click', '#cancel-edit-sholastic-achievement', function(){ 
+        var shell =$(this).parents().eq(2);
+        shell.prev().removeClass("hide");
+        shell.remove();
+    }); 
 
 });
 
@@ -395,6 +464,7 @@ $("#skills").autocomplete({
     source: skills
 });
 
+ 
 
 
 $(function(){ $(document).foundation(); });
