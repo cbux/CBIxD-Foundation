@@ -1,7 +1,9 @@
 <% @nav_bar = "no-nav" %>
 <div class="home-exp-2">
 	<div class="banner">
-		<%= video_tag("stock-video.mp4", :autoplay =>{}) %>
+		<video autoplay loop poster="polina.jpg" id="bgvid">
+			<source src="<%= asset_path('videos/stock-video.mp4') %>" type="video/mp4">
+		</video>
 		<div class="row logo">
 			<div class="column small-12">
 				<h2 class="subheader left">careerbuilder</h2>
