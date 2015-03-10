@@ -1,21 +1,99 @@
+		<div id="basic-details" class="widget">
+			<div class="row border-box">
+				<div class="column small-2 medium-1 right">
+				 	<a data-equalizer-watch onclick="$('#basic-details').toggleClass('hide');$('#basic-details-edit').toggleClass('hide');">
+						<i class="fa fa-pencil fa-lg"></i>
+					</a>
+				</div>
+				<div class="column small-10 medium-11">
+					<h2>Paul Johnson</h2>
+					<p>
+						<strong>Assistant Project Manager</strong>
+						<br/>
+						Paul.Johnson@youremail.com 
+						<br/>
+						Atlanta, Ga. 30123
+					</p>
+				</div>
+			</div>
+
+
+			<ul class="row resume-stats">
+				<li class="column small-6">	
+					<h2><span class="fa fa-circle"> 2,547</span><span class="stats-desc">Resume <br/>views</span></h2>
+				</li>				
+				<li class="column small-6">	
+					<h2><span class="fa fa-circle"> 3,254</span><span class="stats-desc">Appeared in <br/>search results</span></h2>
+				</li>
+			</ul>
+		</div><!--Closure of widget-->
+		<div id="basic-details-edit" class="hide">
+			<div class="row">
+				<div class="column small-12">
+					<label>Name</label>	
+					<input type="text" placeholder="John Doe" value="">
+					<label>Desired Title</label>	
+					<input type="text" placeholder="Assistant project Manager" value="">
+					<label>Email</label>	
+					<input type="text" placeholder="John.Doe@doemail.com" value="">
+					<label>Location</label>	
+					<input type="text" placeholder="Mystic Falls" value="">
+			
+					<div class="row">
+						<div class="column small-3 medium-2">
+							<a onclick="$('#basic-details').toggleClass('hide');$('#basic-details-edit').toggleClass('hide');" class="button small">
+								Save
+							</a>
+						</div>
+						<div class="column small-9 medium-10">
+							<a onclick="$('#basic-details').toggleClass('hide');$('#basic-details-edit').toggleClass('hide');" class="button small secondary">
+								Cancel
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+ 
+		<div id="summary" class="widget">
+			<div class="row border-box">
+				<div class="column small-2 medium-1 right">
+				 	<a data-equalizer-watch onclick="$('#summary').toggleClass('hide');$('#summary-edit').toggleClass('hide');">
+						<i class="fa fa-pencil fa-lg"></i>
+					</a>
+				</div>
+				<div class="column small-10 medium-11">
+					<h2><span class="fa fa-circle"></span> Summary/Objective</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.</p>
+				</div>
+			</div>
+		</div><!--Closure of widget-->
+
+		<div id="summary-edit" class="hide">
+			<div class="row">
+				<div class="column small-12">
+					<label>Summary / Objective</label>	
+					<textarea type="text" rows="10" placeholder="Craft a brief Summary / Objective here" value=""></textarea>
+					
+					<div class="row">
+						<div class="column small-3 medium-2">
+							<a onclick="$('#summary').toggleClass('hide');$('#summary-edit').toggleClass('hide');" class="button small">
+								Save
+							</a>
+						</div>
+						<div class="column small-9 medium-10">
+							<a onclick="$('#summary').toggleClass('hide');$('#summary-edit').toggleClass('hide');" class="button small secondary">
+								Cancel
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
 <% @work_add = "resumes/work_experience_entry" %>
-<div class="row">
-	<div class="column small-2 medium-1 right">
-		<a data-equalizer-watch>
-			<i class="fa fa-pencil fa-lg"></i>
-		</a>
-	</div>
-	<div class="column small-10 medium-11">
-		<h2>Paul Johnson</h2>
-		<p>
-			<strong>Assistant Project Manager</strong>
-			<br/>
-			Paul.Johnson@youremail.com 
-			<br/>
-			Atlanta, Ga. 30123
-		</p>
-	</div>
-</div>
+
 
 <%= render 'shared/resume_privacy' %>	
 <hr/>

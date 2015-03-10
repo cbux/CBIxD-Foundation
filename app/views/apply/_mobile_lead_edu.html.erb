@@ -13,14 +13,135 @@
 	<div class="column small-12 medium-9 medium-centered">
 
 		<!-- Make sure the preview is in show mode and edit is hidden -->
-		<% @edit_show = "" %>
-		<% @show_show = "hide" %>
+ 
+<div id ="scholastic-highlights"></div>
 
 		<!-- Show the education entry partial -->
-		<%= render 'resumes/education_entry' %>
+ 
+<div class ="scholastic-achievement hide">>
+	<div class="row">
+		<div class="column small-7 medium-9">
+			<h2>School Name</h2>
+			<p>
+				Bachelor of Arts in Environmental Design
+				<br>
+				June 2000
+			</p>
+		</div>
+		<div class="column small-5 medium-3">
+			<ul class="inline-list right">
+
+			<li>
+				 	<a data-equalizer-watch class="edit-sholastic-achievement">
+						<i class="fa fa-pencil fa-lg"></i>
+					</a>
+				</li>
+
+			 	<li>
+			 		<a data-equalizer-watch class="delete-sholastic-achievement">
+						<i class="fa fa-trash fa-lg"></i>
+					</a>
+			 	</li>
+			
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="scholastic-achievement-add">
+	<div class="row">
+		<div class="column small-12">
+			<label>School
+		        <input type="text" placeholder="" value="UGA" />
+		     </label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="column small-12">
+			<label>Degree
+		    <input type="text" placeholder="" value="Bachelor of Arts in Environmental Design" />
+		  </label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="column small-12">
+			<label>Graduation Date</label>
+		</div>
+		<div class="column small-3">
+			<select>
+				<option value="husker">Jan</option>
+				<option value="starbuck">Feb</option>
+				<option value="hotdog">March</option>
+				<option value="apollo">April</option>
+			</select>	
+		</div>
+		<div class="column small-3">
+			<input type="text" placeholder="Year" value="" />
+		</div>
+		<div class="column small-12">
+			<h5>
+				<small>Current students: Enter expected graudation date.</small>
+			</h5>
+		</div>
+	</div>
+	<div class="row">
+		<div class="column small-3 medium-2">
+			<a id="save-new-sholastic-achievement" class="button small">Save</a>
+		</div>
+		<div class="column small-9 medium-10">
+			<a id="cancel-new-sholastic-achievement" class="button small secondary">Cancel</a>
+		</div>
+	</div>
+</div>
+
+<div class="scholastic-achievement-edit hide">
+	<div class="row">
+		<div class="column small-12">
+			<label>School
+		        <input type="text" placeholder="" value="UGA" />
+		     </label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="column small-12">
+			<label>Degree
+		    <input type="text" placeholder="" value="Bachelor of Arts in Environmental Design" />
+		  </label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="column small-12">
+			<label>Graduation Date</label>
+		</div>
+		<div class="column small-3">
+			<select>
+				<option value="husker">Jan</option>
+				<option value="starbuck">Feb</option>
+				<option value="hotdog">March</option>
+				<option value="apollo">April</option>
+			</select>	
+		</div>
+		<div class="column small-3">
+			<input type="text" placeholder="Year" value="" />
+		</div>
+		<div class="column small-12">
+			<h5>
+				<small>Current students: Enter expected graudation date.</small>
+			</h5>
+		</div>
+	</div>
+	<div class="row">
+		<div class="column small-3 medium-2">
+			<a id="save-edit-sholastic-achievement" class="button small">Save</a>
+		</div>
+		<div class="column small-9 medium-10">
+			<a id="cancel-edit-sholastic-achievement" class="button small secondary">Cancel</a>
+		</div>
+	</div>
+</div>
 
 		<!-- Add education button -->
-		<%= link_to "Add Education", "#", class: "button secondary expand" %>
+		<a  id="add-new-scholastic-achievement" class="button secondary expand" href="#">Add Education</a>
 		
 		<hr/>
 

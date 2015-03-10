@@ -1,66 +1,66 @@
-<div class="row">
+<div id="scroll-spy-bar" class="row">
 
-<% if params[:branding] == "premium" || params[:branding] == "standard" || params[:branding] == "basic" %>
+  <% if params[:branding] == "premium" || params[:branding] == "standard" || params[:branding] == "basic" %>
 
-	<div class="columns medium-4 large-3 hide-for-small-only">
+	<div  class="columns medium-4 large-3 hide-for-small-only scrollspy-premium-logo">
 		<img src="http://placehold.it/180x180">
 	</div><!--close column-->
-
-	<div class="columns small-12 medium-8 large-9 columns">
+	<div class="columns small-12 medium-8 large-9 columns scrollspy-premium-container">
 
 <% else %>
 
 	<div class="small-12 medium-12 large-12 columns ">
 
 <% end %>
-
     <h1>Account Manager</h1>
     <p>1 Hour Ago</p>
-    <p>ABC Company</p>
-    <p>GA-Atlanta</p>
+    <p class="scrollspy-noshow">ABC Company</p>
+    <p class="scrollspy-noshow">GA-Atlanta</p>
+    <p class="scrollspy-button-toggle">  <%= link_to "Apply Now", apply_path, class: "button" %>
+   </p>
 
-<div class="row">
+  <div class="row scrollspy-noshow">
     <div class="small-12 medium-8 large-4 columns">
-    <ul class="button-group">
-        <li><a class="small button secondary email-drawer-link-jdp">Email Job</a></li>
-        <% if @auth == "authenticated" %>
-          <% if params[:action] != "job_saved_jdp" %>
-          <li><a href="job_saved_jdp" class="small button secondary" id="job_saved_btn">Save Job</a></li>
-          <% elsif %>
-          <a id="job_saved_btn">Job Saved</a></li>
+      <ul class="button-group">
+          <li class="scrollspy-noshow"><a class="small button secondary email-drawer-link-jdp">Email Job</a></li>
+          <% if @auth == "authenticated" %>
+            <% if params[:action] != "job_saved_jdp" %>
+            <li><a href="job_saved_jdp" class="small button secondary" id="job_saved_btn">Save Job</a></li>
+            <% elsif %>
+            <a id="job_saved_btn">Job Saved</a></li>
+            <% end %>
           <% end %>
-        <% end %>
-    </ul>
-                  <div class="hidden email-drawer-jdp">
-                      <div class="small-12 medium-12 large-12 columns">
-                        <% if session[:auth] == "authenticated" %>
-                        <label>From (Your Email Address)
-                        <input type="text" placeholder="prepopulatedemail@gmail.com" />
-                        </label>
-                        <% else %>
-                        <label>From (Your Email Address)
-                        <input type="text" placeholder="" />
-                        </label>
-                        <% end %>
-                        <label>To (Recipients Email Address)
-                        <input type="text" placeholder="" />
-                        </label>
-                        <label>Your Name
-                        <input type="text" placeholder="" />
-                        </label>
-                        <label>Notes
-                        <textarea placeholder=""></textarea>
-                        </label>
-                        <p>140 Characters Left</p>
-                        <a href="job_emailed_jdp" class="button small closedrawerjdp">Send Email</a>
-                        <a href="#" class="button secondary small closedrawerjdp">Cancel</a>
-                      </div>
-                  </div>
+      </ul>
+      <div class="hidden email-drawer-jdp">
+          <div class="small-12 medium-12 large-12 columns">
+            <% if session[:auth] == "authenticated" %>
+            <label>From (Your Email Address)
+            <input type="text" placeholder="prepopulatedemail@gmail.com" />
+            </label>
+            <% else %>
+            <label>From (Your Email Address)
+            <input type="text" placeholder="" />
+            </label>
+            <% end %>
+            <label>To (Recipients Email Address)
+            <input type="text" placeholder="" />
+            </label>
+            <label>Your Name
+            <input type="text" placeholder="" />
+            </label>
+            <label>Notes
+            <textarea placeholder=""></textarea>
+            </label>
+            <p>140 Characters Left</p>
+            <a href="job_emailed_jdp" class="button small closedrawerjdp">Send Email</a>
+            <a href="#" class="button secondary small closedrawerjdp">Cancel</a>
+          </div>
+      </div>
     </div>
 
-  <div class="small-12 medium-4 large-2 large-offset-4 right columns">
-        <%= link_to "Apply Now", apply_path, class: "button expand" %>
+    <div class="small-12 medium-4 large-2 large-offset-4 right columns">
+      <%= link_to "Apply Now", apply_path, class: "button expand" %>
     </div><!--close column-->
+  </div>
 </div>
-
 </div><!--close row-->

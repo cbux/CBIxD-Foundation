@@ -129,36 +129,36 @@ class JobsController < ApplicationController
 
 		# Hash for Skills
 		@location_filters = {
-			"Atlanta, GA" => "atlanta-ga",
-			"Alpharetta, GA" => "alpharetta-ga",
-			"Norcross, GA" => "norcross-ga",
-			"Dunwwody, GA" => "dunwoody-ga",
-			"Lawrenceville, GA" => "lawrenceville-ga",
-			"Smyrna, GA" => "smyrna-ga",
+			"Atlanta, GA (945)" => "atlanta-ga",
+			"Alpharetta, GA (323)" => "alpharetta-ga",
+			"Norcross, GA (345)" => "norcross-ga",
+			"Dunwwody, GA (356)" => "dunwoody-ga",
+			"Lawrenceville, GA (401)" => "lawrenceville-ga",
+			"Smyrna, GA (412)" => "smyrna-ga",
 		}
 
 		# Hash for Job Type Filters
 		@job_type_filters = {
-			"Full-time" => "full-time",
-			"Part-time" => "part-time",
-			"Contractor" => "contractor",
-			"Intern" => "intern",
-			"Seasonal/Temp" => "seasonal-temp",
+			"Full-time (5,678)" => "full-time",
+			"Part-time (2,013)" => "part-time",
+			"Contractor (1,456)" => "contractor",
+			"Intern (876)" => "intern",
+			"Seasonal/Temp (234)" => "seasonal-temp",
 		}
 
 		# Hash for Degree Requirements
 		@degree_requirements_filters = {
-			"Not Specified" => "not-specified",
-			"None" => "none",
-			"High School or less" => "high-school",
-			"Associate's Degree or less" => "associate-degree",
-			"Bachelor's Degree or less" => "bachelor-degree",
-			"Graduate Degree or less" => "graduate-degree",
+			# "Not Specified" => "not-specified",
+			"None (1,345)" => "none",
+			"High School or less (67)" => "high-school",
+			"Associate's Degree or less (234)" => "associate-degree",
+			"Bachelor's Degree or less (256)" => "bachelor-degree",
+			"Graduate Degree or less (23)" => "graduate-degree",
 		}
 		
 		# Hash for Job Level
 		@job_level_filters = {
-			"Entry-level" => "entry-level",
+			"Entry-level (" => "entry-level",
 			"Mid-Level" => "mid-level",
 			"Senior" => "senior",
 			"Associate" => "associate",

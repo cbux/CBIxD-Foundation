@@ -172,10 +172,7 @@ $(document).ready(function() {
     $(".add-location").click(function(){
     $(".add-location").toggle();
     });
-    $(".save-location").click(function(){
-    $(".add-location").show();
-    $(".new-location-row").show();
-    });
+
     //rec prefs add title desktop
     $(".add-title").click(function(){
     $(".add-title-view").show();
@@ -225,6 +222,30 @@ $(document).ready(function() {
     $("#quickapplybtn").hide();
     $("#quickapplied").show();
     });
+
+
+ 
+ 
+    $("#cityStates").click(function(){
+     $(".duplicate").remove();
+
+    });
+
+    $(".save-location").click(function(){
+
+        var city = $("#cityStates").val();
+         if("Phoenix, AZ" == city)
+            $("#dynamic-add").append("<p class=\"duplicate\">Duplicate entry</p>");
+         else if(city != "")
+            $("#desiredLocations dt" ).append("<dd class=\"row rec-row1\"><a href=\"#\" class=\"location small-9 columns\">" +$("#cityStates").val() + "</a><a class=\"remove small-1 columns delete-rec1\"><i class=\"fa fa-times\"></i></a></dd>");
+        else 
+            $("#dynamic-add").append("<p class=\"duplicate\">Null entry</p>");
+        $("#cityStates").val("") ;
+    });
+
+ 
+
+
 });
     // $("#emailopen").click(function(){
     // $("#emailopened").toggle('fast');
@@ -305,6 +326,87 @@ $(document).ready(function() {
 			tag_append = '<li><a>' + skill + '</a></li>';
 			$('#skills.tags').append(tag_append);
     });
+/*
+    $('#scroll-spy-bar').scrollspy({
+        min: $('#scroll-spy-bar').offset().top,
+        max: $(document).height(),
+        onEnter: function(element, position) {
+            $("#scroll-spy-bar").addClass('fixed');
+        },
+        onLeave: function(element, position) {
+            $("#scroll-spy-bar").removeClass('fixed');
+        }
+    });
+*/
+    $('#add-new-position').click(function(e) {
+        $('.work-experience-add').removeClass("hide");
+    });  
+
+    $('#save-new-position').click(function(e) {
+        $('.work-experience-add').addClass("hide");
+        $('.work-experience ').children().clone().appendTo("#experience");
+    });    
+    $('#cancel-new-position').click(function(e) {
+        $('.work-experience-add').addClass("hide");
+    });
+
+
+    $(document).on('click', '.delete-experience', function(){ 
+        $(this).parents().eq(3).remove(); 
+    });
+
+    $(document).on('click', '.edit-experience', function(){ 
+        var shell =$(this).parents().eq(3);
+        shell.after($(".work-experience-edit").clone().removeClass("hide"));
+        shell.addClass("hide"); 
+    });
+
+    $(document).on('click', '#save-edit-position', function(){ 
+        var shell =$(this).parents().eq(2);
+        shell.prev().removeClass("hide");
+        shell.remove();
+    });    
+    $(document).on('click', '#cancel-edit-position', function(){ 
+        var shell =$(this).parents().eq(2);
+        shell.prev().removeClass("hide");
+        shell.remove();
+    }); 
+//---------Sholastic Achievements
+
+    $('#add-new-scholastic-achievement').click(function(e) {
+        $('.scholastic-achievement-add').removeClass("hide");
+    });  
+
+    $('#save-new-sholastic-achievement').click(function(e) {
+        $('.scholastic-achievement-add').addClass("hide");
+        $('.scholastic-achievement').children().clone().appendTo("#scholastic-highlights");
+    });    
+    $('#cancel-new-sholastic-achievement').click(function(e) {
+        $('.scholastic-achievement-add').addClass("hide");
+    });
+
+
+    $(document).on('click', '.delete-sholastic-achievement', function(){ 
+        $(this).parents().eq(3).remove(); 
+    });
+
+    $(document).on('click', '.edit-sholastic-achievement', function(){ 
+        var shell =$(this).parents().eq(3);
+        shell.after($(".scholastic-achievement-edit").clone().removeClass("hide"));
+        shell.addClass("hide"); 
+    });
+
+    $(document).on('click', '#save-edit-sholastic-achievement', function(){ 
+        var shell =$(this).parents().eq(2);
+        shell.prev().removeClass("hide");
+        shell.remove();
+    });    
+    $(document).on('click', '#cancel-edit-sholastic-achievement', function(){ 
+        var shell =$(this).parents().eq(2);
+        shell.prev().removeClass("hide");
+        shell.remove();
+    }); 
+
 });
 
 
@@ -315,6 +417,54 @@ Dropzone.options.demoUpload = {
   }
 };
 
+
+
+
+var cityStates = [
+    "Atlanta, GA",
+    "Phoenix, AZ",
+    "Chicago, IL",
+    "Houston, TX",
+    "Philadelphia, PA",
+    "San Antonio, TX",
+    "San Diego, CA",
+    "Dallas, TX",
+    "San Jose, CA",
+    "Austin, TX"
+];
+
+var desiredTitle = [
+    "Customer Service",
+    "Sales Excecutive",
+    "Sales Associate",
+    "Industrial Engineer",
+    "Financial Officer",
+    "Industrial Designer"
+];
+
+var skills = [
+    "Sales",
+    "Design",
+    "Java",
+    "HTML",
+    "CSS",
+    "Oracle"
+];
+
+
+$("#cityStates").autocomplete({
+     source: cityStates
+});
+
+$("#desiredTitle").autocomplete({
+    source: desiredTitle
+});
+
+$("#skills").autocomplete({
+    source: skills
+});
+
+ 
 
 
 $(function(){ $(document).foundation(); });

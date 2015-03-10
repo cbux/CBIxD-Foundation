@@ -7,3 +7,145 @@
 #fluid{
 	max-width: 100%;
 }
+
+
+  #scroll-spy-bar{
+    //width: 100%;
+   
+    p{
+	    margin-bottom: 8px;
+	    line-height: 1;
+    }
+    .scrollspy-button-toggle{
+    display: none;
+    }
+  }
+ #scroll-spy-bar{
+  &.fixed{
+  background: #d4d4d4;
+   margin : 0px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    opacity: .98;
+
+    box-shadow: 0 4px 8px -6px #000;
+    .scrollspy-premium-logo{
+   		display: none !important;
+    }
+    .scrollspy-premium-container{
+    width: 100%;
+    max-width: 100%;
+    }
+     .scrollspy-noshow{
+     display: none;
+     }
+     .scrollspy-button-toggle{
+     display: block;
+     	position: absolute;
+     	top: 0px;
+     	right: 15px;
+    	text-align: right;
+    	padding: 10px 0 0 0;
+     }
+  }
+}
+
+@media only screen and (max-width: 980px){
+	
+ #scroll-spy-bar{
+  &.fixed{
+   
+     .scrollspy-button-toggle{
+    		position: relative;
+     	 
+    	text-align: right;
+    	padding: 10px 0 0 0;
+    	right: 0px;
+
+    	a{
+    	width: 100%;
+
+
+    	}
+     }
+  }
+}
+
+}
+
+  #scroll-spy-bar.fixed + * {
+    padding-top: 70px;
+  }
+.ui-autocomplete {
+  background: #fefefe;
+  border: solid 1px #eee;
+}
+
+
+.ui-autocomplete li{
+    border-bottom: dotted 1px #eee;
+    padding: 5px !important;
+    color: #888;
+}
+.duplicate{
+  background:red;
+  color: white;
+  margin: -20px 0 0 0;
+  padding: 0 0 0 10px;
+  line-height: 0px;
+  height: 30px;
+}
+/*******************/
+.widget{
+  padding: 15px;
+}
+.module-container{
+  .module-header{
+
+  }
+  .module-body{
+    padding: 15px;
+
+  }
+  .module-footer{
+
+  }
+}
+.border-box{
+  border: solid 1px gray;
+}
+.resume-stats{
+  list-style-type: none;
+  margin-top: 0px !important; 
+  border:solid 1px gray; 
+  border-top:none;
+
+
+  li{
+    padding: 10px 5%;
+    width: 50%;
+    h2{
+      span{
+        float: left;
+        &.stats-desc{
+          font-size: 11px;
+          margin: 0 0 0 10px;
+          display: inline-block;
+          color: #333;
+
+        }
+        &.fa{
+          font-size: 30px;
+          color: #333;
+
+        }
+      }
+    }
+    &:last-child{
+    border-left: solid 1px gray;
+    }
+  }
+}
+ 
