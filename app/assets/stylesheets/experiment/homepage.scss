@@ -85,3 +85,109 @@
 		background-color: #FD9923;
 	}
 }
+
+.home-exp-2 {
+	margin-top: -10px;
+	margin-bottom: -10px;
+	background-color: #fff;
+	padding-bottom: 0px;
+	.columns.no-padding {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.button {
+		line-height: 45px;
+		padding-top:0;
+		padding-bottom: 0;
+	}
+	.banner {
+		// background: image-url('experiment/meeting-room.png') no-repeat top center;
+		background: rgba(0, 72, 106, .8);
+		background-size: cover;
+		padding:.5em 0 11em 0;
+		overflow: hidden;
+		position:relative;
+		video {
+			width: 100%;
+			position:absolute;
+			top:-100px;
+			opacity: 0.6;
+		}
+		.logo {
+			margin-bottom: 8em;
+			h2 {
+				color: #fff;
+				text-shadow: 0 0 3px rgba(0,0,0,0.25);
+			}
+			a {
+				line-height: 3em;
+				color: #fff;
+				text-shadow: 0 0 3px rgba(0,0,0,0.25);
+			}
+		}
+	}
+	.searchBox {
+		background: rgba(0, 72, 106, .8);
+		padding: 24px;
+		color: #fff;
+		.clear-input {
+			top: 19px;
+			right: -5px;
+		}
+		h1 {
+			color: #fff;
+			font-size: 32px;
+			margin-bottom: 21px;
+		}
+		label {
+			font-weight: normal;
+			color: #fff;
+		}
+		input {
+			height: 45px;
+    }
+    .button {
+      margin-top: 21px;
+    }
+  }
+  .large-block-grid-4 {
+	  i {
+	  	&.fa {
+	  		text-align:center;
+	  		display:block;
+	  	}
+	  }
+	}
+  .major-bump {
+    margin-top: 72px;
+  }
+  .double-bump {
+    margin-top: 24px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 21px;
+  }
+  .button.secondary {
+    background-color: #EEEEEE;
+    border: #CCCCCC 1px solid;
+    color: #2d52a2;
+  }
+
+  .band {
+    background-color: #EEEEEE;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    &.popular-search {
+	  	padding-bottom: 4em;
+	  }
+  }
+  li.columns.no-padding:nth-of-type(1) .small-12 a.button.secondary {
+    border-radius: 8px 0px 0px 8px;
+  }
+  li.columns.no-padding:nth-of-type(3) .small-12 a.button.secondary {
+    border-radius: 0 8px 8px 0;
+  }
+}
