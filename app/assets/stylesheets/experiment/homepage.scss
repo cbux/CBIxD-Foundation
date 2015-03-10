@@ -1,0 +1,87 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+.home-ex-1 {
+	* {
+		font-family: 'Open Sans', sans-serif;
+	}
+	i {
+		font-family: FontAwesome;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: 600;
+	}
+	nav {
+		height: 3em;
+		background-color: rgba(0,255,255, 0.0);
+		margin-bottom: 3em;
+		.button {
+			height: 3em;
+			margin-bottom: 0;
+		}
+		a {
+			color: #fff;
+		}
+		h2 {
+			line-height: 2.1818em;
+			margin: 0;
+			color: #fff;
+			font-weight: normal;
+		}
+	}
+	.hero {
+		padding: 1em 0 0 0;
+		background-image: linear-gradient(rgba(20,74,122, 0.74),rgba(20,74,122, 0.74)), image-url('experiment/atlanta-hero.png');
+		background-position: 0 -150px;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		overflow: hidden;
+		background-repeat-y: repeat;
+		.banner {
+			background-color: rgba(53,103,154,0.75);
+			padding: 1em 1.875em;
+			color: #fff;
+			margin: 0 -.9375em;
+			display: inline-block;
+			float:right;
+			margin-top: .5em;
+		}
+	}
+	h1 {
+		margin-bottom: .5em;
+	}
+	.top-companies {
+		background-color: #35679A;
+		margin-top:-.625em;
+		padding-top: 2em;
+		h2 {
+			font-size:1.875em;
+			color: #fff;
+		}
+		img {
+			opacity: 0.6;
+			&:hover {
+				filter: invert(100%);
+				-webkit-filter: invert(100%);
+				opacity: 1;
+			}
+		}
+	}
+	.registration {
+		padding-top: 2em;
+		padding-bottom: 4em;
+		h2 {
+			font-size: 1.875em;
+		}
+		h3 {
+			font-size: 1.25em;
+		}
+	}
+	strong {
+		font-weight: 600;
+	}
+	.subheader {
+		font-weight: 300;
+	}
+	.button {
+		background-color: #FD9923;
+	}
+}

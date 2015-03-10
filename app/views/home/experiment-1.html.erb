@@ -1,0 +1,170 @@
+<% @nav_bar = "no-nav" %>
+<% @footer_help = "no_help" %>
+
+<div class="home-ex-1">
+	<div class="hero">
+		<nav>
+			<div class="row">
+				<div class="column small-12 xl-12">
+					<div class="left">
+						<h2>Careerbuilder</h2>
+					</div>
+					<div class="right">
+						<ul class="inline-list">
+							<li>
+								<a class="button">
+									Sign In
+								</a>
+							</li>
+							<li>
+								<a style="line-height:3em;">
+									Sign Up
+								</a>
+							</li>
+							<li>
+								<a style="line-height:3em;">
+									Employers
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<div class="row">
+			<div class="column small-12 medium-6 large-5">
+				<h1 style="font-size: 3.5em; line-height: 1.125; color: #fff">A BETTER <br> JOB AWAITS</h1>
+				<%= form_tag(jobs_path, method: "get") do %>
+		  			<input type="text" class="no-bottom-margin" name="keyword" placeholder="Keyword" style="height: 50px; font-size: 1.125em;" />
+		  			<input type="text" id="ipfill" name="location" placeholder="Location" style="height: 50px; margin-top:-1px; font-size: 1.125em;" />
+		  		<%= submit_tag "Search", class: "button", name: "", style: "background-color: #FD9923; padding: .25em 2em; font-size: 1.5em; line-height: 1.25em;" %>
+				<% end %>
+			</div>
+		</div>
+		<div class="column small-12 medium-4 right">
+			<div class="banner text-right">
+				72,245 applications viewed today &nbsp;&nbsp;<i class="fa fa-info-circle fa-lg"></i>
+			</div>
+			<div class="banner text-right">
+				112,504 new jobs posted today &nbsp;&nbsp;<i class="fa fa-info-circle fa-lg"></i>
+			</div>
+		</div>
+	</div>
+	<div class="registration">
+		<div class="row">
+			<div class="column small-12">
+				<h2 class="text-center subheader">
+					Job searching is hard.<br>Let us make it <strong>easier</strong> for you.
+				</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="column small-12 medium-10 medium-centered">
+				<div class="row">
+					<div class="column small-12 medium-6 large-6">
+						<div class="row">
+							<div class="column small-3">
+								<%= image_tag "http://placehold.it/80x80" %>
+							</div>
+							<div class="column small-8 end">
+								<h3>
+									Apply Quickly
+									<br>
+									<small class="clearfix">
+										With your own account you’ll be able to save your resume and apply to jobs with single click.<br> <br>
+									</small>
+								</h3>
+							</div>
+						</div>
+						<div class="row">
+							<div class="column small-3">
+								<%= image_tag "http://placehold.it/80x80" %>
+							</div>
+							<div class="column small-8 end">
+								<h3>
+									Gain Insights
+									<br>
+									<small class="clearfix">
+										See who you’re competing with for each job. Improve your chances of being discovered by applying to jobs you’re a good fit for.
+									</small>
+								</h3>
+							</div>
+						</div>
+						<div class="row">
+							<div class="column small-3">
+								<%= image_tag "http://placehold.it/80x80" %>
+							</div>
+							<div class="column small-8 end">
+								<h3>
+									Be Discovered
+									<br>
+									<small class="clearfix">
+										Make your resume available to empoyers when the time is right and let them reach out to you with opportunities.
+									</small>
+								</h3>
+							</div>
+						</div>
+					</div>
+					<div class="column small-12 medium-6 large-6">
+						<label>First Name
+							<input type="text">
+						</label>
+						<label>Last Name
+							<input type="text">
+						</label>
+						<label>Email Name
+							<input type="email">
+						</label>
+						<label>Zip Name
+							<input type="number">
+						</label>
+						<label>Password
+							<input type="password">
+						</label>
+						<a class="button expand" href="">Sign Up</a>
+					</div>
+				</div>
+			</div>
+			<!-- REGISTRATION TO GO HERE -->
+		</div>
+	</div>
+
+	<div class="top-companies">
+		<div class="row">
+			<div class="column small-12">
+				<h2 class="text-center subheader">Job from <strong>Top Employers<strong></h2>
+				<div class="row">
+					<div class="column small-12 medium-10 small-centered">
+						<ul class="small-block-grid-1 medium-block-grid-5" data-equalizer>
+							<li data-equalizer-watch>
+								<a>
+									<%= image_tag "experiment/macys-logo.png", style: "width: 90%; display:inline-block; vertical-align: middle;" %>
+								</a>
+							</li>
+							<li data-equalizer-watch>
+								<a>
+									<%= image_tag "experiment/chipotle-logo.png", style: "width: 90%; display:inline-block; vertical-align: middle;" %>
+								</a>
+							</li>
+							<li data-equalizer-watch>
+								<a>
+									<%= image_tag "experiment/robert-half-logo.png", style: "width: 90%; display:inline-block; vertical-align: middle;" %>
+								</a>
+							</li>
+							<li data-equalizer-watch>
+								<a>
+									<%= image_tag "experiment/aerotek-logo.png", style: "width: 90%; display:inline-block; vertical-align: middle;" %>
+								</a>
+							</li>
+							<li data-equalizer-watch>
+								<a>
+									<%= image_tag "experiment/unitedhealth-logo.png", style: "width: 90%; display:inline-block; vertical-align: middle;" %>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
