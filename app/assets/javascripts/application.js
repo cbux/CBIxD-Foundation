@@ -122,7 +122,7 @@ function checkboxChange(id){
 	$(id).submit();
 }
 
-$("#stick_1").stick_in_parent({offset_top:-484})
+$("#stick_1").stick_in_parent({offset_top:-500})
 	.on("sticky_kit:stick", function(e) {
 		
 		$('#stick_1_message').slideToggle();
@@ -132,7 +132,7 @@ $("#stick_1").stick_in_parent({offset_top:-484})
 		$('#stick_1_message').toggle();
 	});
 
-$("#stick_2").stick_in_parent({bottoming:false, offset_top:-760})
+$("#stick_2").stick_in_parent({bottoming:false, offset_top:-776})
 	.on("sticky_kit:stick", function(e) {
 		
 		$('#stick_2_message').slideToggle();
@@ -158,6 +158,23 @@ $('#discovered_icon').hover(function() {
 	$('#apply-banner').fadeOut();
 	$('#insights-banner').fadeOut();
 	$('#discovered-banner').delay(250).fadeIn();
+});
+
+$('#search-btn').click(function() {
+	var key = $('#search-key').val();
+	if($('#search-loc').val()) {
+		loc = $('#search-loc').val();
+	}
+	else {
+		loc = "";
+	}
+	if($('#ipfill').val()) {
+		loc2 = $('#ipfill').val();
+	}
+	else {
+		loc2 = "";
+	}
+	window.location.href = "http://www.careerbuilder.com/jobseeker/jobs/jobresults.aspx?s_rawwords=" + key + "&s_freeloc=" + loc + loc2;
 });
 
 $(document).ready(function() {

@@ -50,7 +50,7 @@
 	}
 	.top-companies {
 		background-color: #35679A;
-		margin-top:-.625em;
+		
 		padding-top: 2em;
 		h2 {
 			font-size:1.875em;
@@ -84,6 +84,12 @@
 	.button {
 		background-color: #FD9923;
 	}
+	.sob-story {
+		p {
+			font-size: 1em;
+			line-height: 1.75;
+		}
+	}
 }
 
 .home-exp-2 {
@@ -108,7 +114,8 @@
 	}
 	.banner {
 		// background: image-url('experiment/meeting-room.png') no-repeat top center;
-		background: rgba(0, 72, 106, .8);
+		background: rgba(0, 72, 106, .7);
+		// background: rgba(120, 120, 120, .8);
 		background-size: cover;
 		padding:.5em 0 11em 0;
 		overflow: hidden;
@@ -118,6 +125,7 @@
 			position:absolute;
 			top:-100px;
 			opacity: 0.6;
+			-webkit-filter: saturate(2.5) contrast(1.2) brightness(0.8) grayscale(0.8);
 		}
 		.logo {
 			margin-bottom: 8em;
@@ -234,9 +242,8 @@
 		}
 		#stick_1_message {
 			overflow:hidden;
-			height:92px;
 			nav{
-				padding-top: 1.625em;
+				padding-top: 1.25em;
 
 			}
 		}
@@ -247,7 +254,7 @@
 			z-index: 999999;
 		}
 		.register_banner {
-			padding:1em 0;
+			padding:.75em 0;
 			background-color: #fff;
 		}
 	}

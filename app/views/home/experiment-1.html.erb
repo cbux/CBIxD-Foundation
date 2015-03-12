@@ -7,22 +7,22 @@
 			<div class="row">
 				<div class="column small-12 xl-12">
 					<div class="left">
-						<h2>Careerbuilder</h2>
+						<h2><a style="margin-top: 0; line-height:inherit;" href="../home-one">careerbuilder</a></h2>
 					</div>
 					<div class="right">
 						<ul class="inline-list">
 							<li>
-								<a class="button">
+								<a class="button" href="https://www.careerbuilder.com/share/login.aspx" style="line-height:2.5em; padding: 0 1.25em; height: inherit; background-color: #1B7CB2;">
 									Sign In
 								</a>
 							</li>
 							<li>
-								<a style="line-height:3em;">
+								<a href="https://www.careerbuilder.com/share/register.aspx" style="line-height:2.5em;">
 									Sign Up
 								</a>
 							</li>
 							<li>
-								<a style="line-height:3em;">
+								<a href="http://www.careerbuilderforemployers.com/" style="line-height:2.5em;">
 									Employers
 								</a>
 							</li>
@@ -34,11 +34,9 @@
 		<div class="row">
 			<div class="column small-12 medium-6 large-5">
 				<h1 style="font-size: 3.5em; line-height: 1.125; color: #fff">A BETTER <br> JOB AWAITS</h1>
-				<%= form_tag(jobs_path, method: "get") do %>
-		  			<input type="text" class="no-bottom-margin" name="keyword" placeholder="Keyword" style="height: 50px; font-size: 1.125em;" />
-		  			<input type="text" id="ipfill" name="location" placeholder="Location" style="height: 50px; margin-top:-1px; font-size: 1.125em;" />
-		  		<%= submit_tag "Search", class: "button", name: "", style: "background-color: #FD9923; padding: .25em 2em; font-size: 1.5em; line-height: 1.25em;" %>
-				<% end %>
+				<input type="text" class="no-bottom-margin" name="keyword" id="search-key" placeholder="Keyword" style="height: 50px; font-size: 1.125em;" />
+		  	<input type="text" id="ipfill" name="location" placeholder="Location" style="height: 50px; margin-top:-1px; font-size: 1.125em;" />
+		  	<a class="button" id="search-btn" style: "background-color: #FD9923; padding: .25em 2em; font-size: 1.5em; line-height: 1.25em;">Search</a>
 			</div>
 		</div>
 		<div class="column small-12 medium-4 right">
@@ -121,11 +119,24 @@
 						<label>Password
 							<input type="password">
 						</label>
-						<a class="button expand" href="">Sign Up</a>
+						<a class="button expand" style="background-color: #1B7CB2;" href="">Sign Up</a>
 					</div>
 				</div>
 			</div>
 			<!-- REGISTRATION TO GO HERE -->
+		</div>
+	</div>
+
+	<div class="sob-story" style="background-color: #f5f5f5; padding: 1em 0 0;">
+		<div class="row">
+			<div class="column small-12 medium-6 medium-offset-1" style="padding-top: 1.75em;">
+				<h2 class="subheader">Steve's <strong>Story</strong></h2>
+				<p class="subheader">“In 2010, I lost my job due to our company being acquired.  After looking for a new job for several months, I finally made the decision to use CareerBuilder.  Within 2 days I had 3 interviews lined up.  One of those changed my life forever.  I’m now working in my dream job as a  Sr. Engineer at Sony and I have CareerBuider to thank.”</p>
+				<a class="button secondary small" style="background-color: #e7e7e7;">Share Your Story</a>
+			</div>
+			<div class="column small-12 medium-4 end">
+				<%= image_tag "experiment/douche.png" %>
+			</div>
 		</div>
 	</div>
 
