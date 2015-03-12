@@ -179,7 +179,9 @@ $('#search-btn').click(function() {
 
 $(document).ready(function() {
 
-	
+	$('#fullpage').fullpage({
+		normalScrollElements: '#scroll',
+	});
 
     $("#job_alert_btn").click(function(){
     $("#job_alert_btn").replaceWith( '<a class="job_alert_active">Job Alert Created</a>');

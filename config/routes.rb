@@ -48,6 +48,7 @@ Rails.application.routes.draw do
   get 'home-one' => 'home#experiment-1'
   get 'home-two' => 'home#experiment-2'
   get 'home-three' => 'home#experiment-3'
+  get 'home-four' => 'home#experiment-4'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
