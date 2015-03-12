@@ -132,7 +132,7 @@ $("#stick_1").stick_in_parent({offset_top:-484})
 		$('#stick_1_message').toggle();
 	});
 
-$("#stick_2").stick_in_parent({bottoming:false, offset_top:-753})
+$("#stick_2").stick_in_parent({bottoming:false, offset_top:-760})
 	.on("sticky_kit:stick", function(e) {
 		
 		$('#stick_2_message').slideToggle();

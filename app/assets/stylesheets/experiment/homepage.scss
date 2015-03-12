@@ -242,6 +242,9 @@
 	}
 	#stick_2 {
 		z-index: 99998;
+		#stick_2_message {
+			z-index: 999999;
+		}
 		.register_banner {
 			padding:1em 0;
 			background-color: #fff;
