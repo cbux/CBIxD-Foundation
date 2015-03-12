@@ -238,7 +238,9 @@
 			margin-bottom:0;
 		}
 		#stick_1_content {
-			background-image: linear-gradient(rgba(2,53,88, 0.60),rgba(2,53,88, 0.60)), image-url('experiment/welder.png');
+			background-image: linear-gradient(rgba(2,53,88, 0.60),rgba(2,53,88, 0.60)), image-url('experiment/atlanta-hero.png');
+			background-size: cover;
+			background-position: 0 -100px;
 		}
 		#stick_1_message {
 			overflow:hidden;
