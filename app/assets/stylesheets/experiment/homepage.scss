@@ -91,6 +91,12 @@
 	margin-bottom: -10px;
 	background-color: #fff;
 	padding-bottom: 0px;
+	* {
+		font-family: 'Open Sans', sans-serif;
+	}
+	i {
+		font-family: FontAwesome;
+	}
 	.columns.no-padding {
 		padding-left: 0;
 		padding-right: 0;
@@ -190,4 +196,95 @@
   li.columns.no-padding:nth-of-type(3) .small-12 a.button.secondary {
     border-radius: 0 8px 8px 0;
   }
+}
+
+.home-exp-3 {
+	* {
+		font-family: 'Open Sans', sans-serif;
+	}
+	i {
+		font-family: FontAwesome;
+	}
+	nav {
+		height: 3em;
+		background-color: rgba(0,255,255, 0.0);
+		margin-bottom: 3em;
+		.button {
+			height: 3em;
+			margin-bottom: 0;
+		}
+		a {
+			color: #fff;
+		}
+		h2 {
+			line-height: 2.1818em;
+			margin: 0;
+			color: #fff;
+			font-weight: normal;
+		}
+	}
+	#stick_1 {
+		z-index: 99999;
+		margin-bottom:0px;
+		&.is_stuck {
+			margin-bottom:0;
+		}
+		#stick_1_content {
+			background-image: linear-gradient(rgba(2,53,88, 0.60),rgba(2,53,88, 0.60)), image-url('experiment/welder.png');
+		}
+		#stick_1_message {
+			overflow:hidden;
+			nav{
+				padding-top: 1.625em;
+
+			}
+		}
+	}
+	#stick_2 {
+		z-index: 99998;
+		.register_banner {
+			padding:1em 0;
+			background-color: #fff;
+		}
+	}
+	#stick_3 {
+		background-color: #f5f5f5;
+	}
+	.hero {
+		height:36em;
+		padding: 0.5em 0 0 0;
+		nav {
+			margin-bottom: 10em;
+		}
+		h2 {
+			font-size: 28px;
+		}
+		h1 {
+			font-size: 32px;
+		}
+		label {
+			color: #fff;
+			text-shadow: 0 0 4px rgba(0,0,0,0.5);
+			margin-right: .25em;
+			font-size: 18px;
+		}
+		input {
+			height: 60px;
+			background-color: rgba(255,255,255,0.6);
+			font-size: 18px;
+			border: none;
+			margin-top:3px;
+		}
+		.search {
+			background: none;
+			padding: 0;
+			a {
+				margin-top: 30px;
+				height: 60px;
+				font-size: 18px;
+				line-height:60px;
+				background-color: #30B74D;
+			}
+		}
+	}
 }

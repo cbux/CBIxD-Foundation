@@ -122,7 +122,48 @@ function checkboxChange(id){
 	$(id).submit();
 }
 
+$("#stick_1").stick_in_parent({offset_top:-484})
+	.on("sticky_kit:stick", function(e) {
+		
+		$('#stick_1_message').slideToggle();
+	})
+  .on("sticky_kit:unstick", function(e) {
+		
+		$('#stick_1_message').toggle();
+	});
+
+$("#stick_2").stick_in_parent({bottoming:false, offset_top:-753})
+	.on("sticky_kit:stick", function(e) {
+		
+		$('#stick_2_message').slideToggle();
+	})
+  .on("sticky_kit:unstick", function(e) {
+		
+		$('#stick_2_message').toggle();
+	});
+
+$('#apply_icon').hover(function() {
+	$('#insights-banner').fadeOut();
+	$('#discovered-banner').fadeOut();
+	$('#apply-banner').delay(250).fadeIn();
+});
+
+$('#insights_icon').hover(function() {
+	$('#discovered-banner').fadeOut();
+	$('#apply-banner').fadeOut();
+	$('#insights-banner').delay(250).fadeIn();
+});
+
+$('#discovered_icon').hover(function() {
+	$('#apply-banner').fadeOut();
+	$('#insights-banner').fadeOut();
+	$('#discovered-banner').delay(250).fadeIn();
+});
+
 $(document).ready(function() {
+
+	
+
     $("#job_alert_btn").click(function(){
     $("#job_alert_btn").replaceWith( '<a class="job_alert_active">Job Alert Created</a>');
     });
@@ -463,8 +504,3 @@ $("#desiredTitle").autocomplete({
 $("#skills").autocomplete({
     source: skills
 });
-
- 
-
-
-$(function(){ $(document).foundation(); });

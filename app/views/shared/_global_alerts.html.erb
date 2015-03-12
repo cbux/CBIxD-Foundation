@@ -1,44 +1,46 @@
-<div data-magellan-expedition="fixed">
-	<dl class="sub-nav">
-		<dd>
-			<% if params[:warning] == 'true' %>
-				<div data-alert class="alert-box true warning">
-					<div class="row">
-						<div class="column small-12 medium-12 large-12">
-							<%= @warning_message.html_safe %>
-							<a href="#" class="close">&times;</a>
+<% if params[:warning] == 'true' || params[:error] == 'true' || params[:message] == 'true' || params[:success] == 'true' %>
+	<div data-magellan-expedition="fixed">
+		<dl class="sub-nav">
+			<dd>
+				<% if params[:warning] == 'true' %>
+					<div data-alert class="alert-box true warning">
+						<div class="row">
+							<div class="column small-12 medium-12 large-12">
+								<%= @warning_message.html_safe %>
+								<a href="#" class="close">&times;</a>
+							</div>
 						</div>
 					</div>
-				</div>
-			<% end %>
-			<% if params[:error] == 'true' %>
-				<div data-alert class="alert-box true alert">
-					<div class="row">
-						<div class="column small-12 medium-12 large-12">
-							<%= @error_message.html_safe %>
+				<% end %>
+				<% if params[:error] == 'true' %>
+					<div data-alert class="alert-box true alert">
+						<div class="row">
+							<div class="column small-12 medium-12 large-12">
+								<%= @error_message.html_safe %>
+							</div>
 						</div>
 					</div>
-				</div>
-			<% end %>
-			<% if params[:message] == 'true' %>
-				<div data-alert class="alert-box true">
-					<div class="row">
-						<div class="column small-12 medium-12 large-12">
-							<%= @message_message.html_safe %>
+				<% end %>
+				<% if params[:message] == 'true' %>
+					<div data-alert class="alert-box true">
+						<div class="row">
+							<div class="column small-12 medium-12 large-12">
+								<%= @message_message.html_safe %>
+							</div>
 						</div>
 					</div>
-				</div>
-			<% end %>
-			<% if params[:success] == 'true' %>
-				<div data-alert class="alert-box success true">
-					<div class="row">
-						<div class="column small-11">
-							<%= @success_message.html_safe %>
+				<% end %>
+				<% if params[:success] == 'true' %>
+					<div data-alert class="alert-box success true">
+						<div class="row">
+							<div class="column small-11">
+								<%= @success_message.html_safe %>
+							</div>
 						</div>
+						<a href="#" class="close right">&times;</a>
 					</div>
-					<a href="#" class="close right">&times;</a>
-				</div>
-			<% end %>
-		</dd>
-	</dl>
-</div>
+				<% end %>
+			</dd>
+		</dl>
+	</div>
+<% end %>
