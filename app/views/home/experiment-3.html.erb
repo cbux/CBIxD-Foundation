@@ -53,13 +53,13 @@
 					<div class="column small-9 medium-8">
 						<div class="row collapse">
 							<div class="column small-4 small-push-1">
-								<input type="text" placeholder="keyword">
+								<input type="text" placeholder="keyword" id="search-key">
 							</div>
 							<div class="column small-4 small-push-1">
-								<input type="text" placeholder="location">
+								<input type="text" placeholder="location" id="search-loc">
 							</div>
 							<div class="column small-2 small-push-1 end">
-								<a class="button expand postfix" style="height:37px;">Search</a>
+								<a class="button expand postfix" style="height:37px;" id="search-btn">Search</a>
 							</div>
 						</div>
 					</div>
@@ -179,9 +179,92 @@
 		</div>
 	</div>
 	<div id="stick_3">
-		<div class="row">
-			<div class="column small-12">
-				<img src="http://placehold.it/600x600">
+		<div class="sob-story" style="background-color: #f5f5f5; padding: 1em 0 0;">
+			<div class="row">
+				<div class="column small-12 medium-5 medium-offset-2" style="padding-top: 1.75em;">
+					<h2 class="subheader">Stay <strong>Connected</strong></h2>
+					<p class="subheader">Quickly find job opportunities wherever you want with location-based search. Get automatic recommendations and notifications based on your job searches. Apply to jobs with your Careerbuilder resumes with just a couple taps.</p>
+					<a class="button" style="background-color:#000; padding: .3125em 1.5em 0em; border-radius: 8px; height: inherit;">
+						<ul class="inline-list">
+							<li>
+								<i class="fa fa-mobile-phone fa-3x" style="margin-top: -0px; margin-bottom: -2px;"></i>
+							</li>
+							<li style="padding-top: .6875em;">
+								<small style="line-height: .75;">Available on the<br></small>App Store
+							</li>
+						</ul>
+					</a>
+
+					<a class="button" style="background-color:#000; padding: .6125em 1.5em 0em; border-radius: 8px; height: inherit;">
+						<ul class="inline-list" style="margin-top:2px; padding-bottom: 1px;">
+							<li>
+								<i class="fa fa-google fa-3x" style="padding-top: 6px; font-size: 32px;"></i>
+							</li>
+							<li class="text-left" style="padding-top: .5em;">
+								<small style="line-height: .75;">GET IT ON<br></small>Google Play
+							</li>
+						</ul>
+					</a>
+				</div>
+				<div class="column small-12 medium-3 end">
+					<%= image_tag "experiment/app.png" %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="stick_4">
+		<div class="pop-searches" style="background-color: #fff; padding: 1em 0">
+			<div class="row">
+				<div class="column small-12 text-center">
+					<h2 class="subheader" style="margin-bottom: 36px;">
+						Don't know where to start? <strong>Check out Popular Searches.</strong>
+					</h2>
+				</div>
+				<div class="column small-12 medium-8 medium-centered">
+					<ul class="medium-block-grid-3">
+						<li>
+							<select>
+								<option>Top Job Categories</option>
+								<option>Sales</option>
+								<option>Costumer Service</option>
+								<option>Accounting</option>
+								<option>Entry Level</option>
+								<option>Administrative Assistant</option>
+								<option>Retail</option>
+								<option>Registered Nurse</option>
+								<option>Browse All Categories</option>
+							</select>
+						</li>
+						<li>
+							<select>
+								<option>Top Cities</option>
+								<option>Chicago</option>
+								<option>Atlanta</option>
+								<option>Houston</option>
+								<option>Dallas</option>
+								<option>Boston</option>
+								<option>New York</option>
+								<option>San Francisco</option>
+								<option>Miami</option>
+								<option>Denver</option>
+								<option>Browse All Cities</option>
+							</select>
+						</li>
+						<li>
+							<select>
+								<option>Top Companies</option>
+								<option>Macy's</option>
+								<option>Robert Half</option>
+								<option>UPS</option>
+								<option>Aerotek</option>
+								<option>Army National Guard</option>
+								<option>UnitedHealth Group</option>
+								<option>Kelly Services</option>
+								<option>Browse All Companies</option>
+							</select>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
