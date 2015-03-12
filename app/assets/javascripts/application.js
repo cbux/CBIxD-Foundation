@@ -180,7 +180,6 @@ $('#search-btn').click(function() {
 $(document).ready(function() {
 
 	$('#fullpage').fullpage({
-		normalScrollElements: '#scroll',
 	});
 
     $("#job_alert_btn").click(function(){
