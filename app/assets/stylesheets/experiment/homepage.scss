@@ -114,10 +114,12 @@
 	}
 	.banner {
 		// background: image-url('experiment/meeting-room.png') no-repeat top center;
-		background: rgba(0, 72, 106, .7);
+		background-image: linear-gradient(rgba(0, 72, 106, .7),rgba(0, 72, 106, .7)), image-url('experiment/atlanta-hero.png');
+		// background: rgba(0, 72, 106, .7);
 		// background: rgba(120, 120, 120, .8);
 		background-size: cover;
 		padding:.5em 0 11em 0;
+		background-position: 0 -125px;
 		overflow: hidden;
 		position:relative;
 		video {
