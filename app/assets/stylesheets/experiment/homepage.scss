@@ -311,8 +311,92 @@
 }
 
 .home-exp-4 {
-	#scroll {
-		height: inherit !important;
-		overflow: scroll;
+	.section:first-of-type {
+		background-image: linear-gradient(rgba(2,53,88, 0.60),rgba(2,53,88, 0.60)), image-url('experiment/atlanta-hero.png');
+		background-size:cover;
+		background-repeat: no-repeat;
 	}
+	// #scroll {
+	// 	height: inherit !important;
+	// 	overflow: scroll;
+	// }
+	.large-block-grid-4 {
+	  i {
+	  	&.fa {
+	  		text-align:center;
+	  		display:block;
+	  	}
+	  }
+	}
+	h2 {
+		font-size: 1.875em;
+	}
+	nav {
+		height: 3em;
+		background-color: rgba(0,255,255, 0.0);
+		margin-bottom: 3em;
+		.button {
+			height: 3em;
+			margin-bottom: 0;
+		}
+		a {
+			color: #fff;
+		}
+		h2 {
+			line-height: 2.1818em;
+			margin: 0;
+			color: #fff;
+			font-weight: normal;
+		}
+	}
+	.hero {
+		height:100%;
+		padding: 0.5em 0 0 0;
+		nav {
+			margin-bottom: 10em;
+			top: 0;
+		}
+		.logo {
+			h2 {
+				color: #fff;
+				text-shadow: 0 0 3px rgba(0,0,0,0.25);
+			}
+			a {
+				line-height: 3em;
+				color: #fff;
+				text-shadow: 0 0 3px rgba(0,0,0,0.25);
+			}
+		}
+		h2 {
+			font-size: 28px;
+		}
+		h1 {
+			font-size: 32px;
+		}
+		label {
+			color: #fff;
+			text-shadow: 0 0 4px rgba(0,0,0,0.5);
+			margin-right: .25em;
+			font-size: 18px;
+		}
+		input {
+			height: 60px;
+			background-color: rgba(255,255,255,0.6);
+			font-size: 18px;
+			border: none;
+			margin-top:3px;
+		}
+		.search {
+			background: none;
+			padding: 0;
+			a {
+				margin-top: 30px;
+				height: 60px;
+				font-size: 18px;
+				line-height:60px;
+				background-color: #30B74D;
+			}
+		}
+	}
+
 }

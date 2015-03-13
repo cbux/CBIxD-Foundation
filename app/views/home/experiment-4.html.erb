@@ -1,100 +1,174 @@
 <script>
 $(document).ready(function() {
-
 	$('#fullpage').fullpage({
+		verticalCentered: false
 	});
+});
 </script>
 
 <% @nav_bar = "no-nav" %>
 <% @footer_help = "no_help" %>
 <div class="home-exp-4">
 	<div id="fullpage">
-		<div class="section" style="background-color: #3498DB">
-			<h1>SEARCH AND REGISTRATION HERE</h1>
-		</div>
 		<div class="section">
-			<div class="registration">
-				<div class="row">
+			<div class="hero" style="display:table; table-layout:fixed; height:100%; width:100%;">
+				<div class="row logo" style="display:table-row;">
 					<div class="column small-12">
-						<h2 class="text-center subheader">
-							Job searching is hard.<br>Let us make it <strong>easier</strong> for you.
-						</h2>
+						<h2 class="subheader left"><a style="margin-top: 0; line-height:inherit;" href="../home-two">careerbuilder</a></h2>
+						<ul class="inline-list right" style="margin-bottom: 0; margin-top: .25em;">
+							<li>
+								<a class="button" href="https://www.careerbuilder.com/share/login.aspx" style="margin-bottom: 0; line-height:2.5em; padding: 0 1.25em; height: inherit; background-color: #1B7CB2;">
+									Sign In
+								</a>
+							</li>
+							<li>
+								<a href="https://www.careerbuilder.com/share/register.aspx" style="margin-bottom: 0; line-height:2.5em;">
+									Sign Up
+								</a>
+							</li>
+							<li>
+								<a href="http://www.careerbuilderforemployers.com/" style="margin-bottom: 0; line-height:2.5em;">
+									Employers
+								</a>
+							</li>
+						</ul>
 					</div>
 				</div>
-				<div class="row">
-					<div class="column small-12 medium-10 medium-centered">
-						<div class="row">
-							<div class="column small-12 medium-6 large-6">
-								<div class="row">
-									<div class="column small-3">
-										<i class="fa fa-bolt fa-4x" style="text-align:center; display:block; color: #6f6f6f"></i>
-									</div>
-									<div class="column small-8 end">
-										<h3>
-											Apply Quickly
-											<br>
-											<small class="clearfix">
-												With your own account you’ll be able to save your resume and apply to jobs with single click.<br> <br>
-											</small>
-										</h3>
-									</div>
-								</div>
-								<div class="row">
-									<div class="column small-3">
-										<i class="fa fa-pie-chart fa-4x" style="text-align:center; display:block; color: #6f6f6f"></i>
-									</div>
-									<div class="column small-8 end">
-										<h3>
-											Gain Insights
-											<br>
-											<small class="clearfix">
-												See who you’re competing with for each job. Improve your chances of being discovered by applying to jobs you’re a good fit for.
-											</small>
-										</h3>
-									</div>
-								</div>
-								<div class="row">
-									<div class="column small-3">
-										<i class="fa fa-search fa-4x" style="text-align:center; display:block; color: #6f6f6f"></i>
-									</div>
-									<div class="column small-8 end">
-										<h3>
-											Be Discovered
-											<br>
-											<small class="clearfix">
-												Make your resume available to empoyers when the time is right and let them reach out to you with opportunities.
-											</small>
-										</h3>
+				<div class="display: table-row;">
+					<div class="search" style="display: table; table-layout: fixed; width: 100%; height: 90%;">
+						<div class="display:table-row">
+							<div class="display:table-cell vertical-align:middle;">
+								<div class="row" style="">
+									<div class="column small-12 medium-10 medium-centered">
+										<h1 style="line-height: 1.125; margin-left: 2.45em; margin-bottom: .75em; color: #fff" class="subheader">
+										Find the Right Job.<strong> Right Now.</strong>
+										</h1>
+										<div class="row collapse">
+											<div class="column small-4 small-push-1">
+												<label>keyword
+													<input type="text" id="search-key">
+												</label>
+											</div>
+											<div class="column small-4 small-push-1">
+												<label>location
+													<input type="text" id="search-loc">
+												</label>
+											</div>
+											<div class="column small-2 small-push-1 end">
+												<a class="button expand postfix" id="search-btn">Search</a>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
-							<div class="column small-12 medium-6 large-6">
-								<label>First Name
-									<input type="text">
-								</label>
-								<label>Last Name
-									<input type="text">
-								</label>
-								<label>Email Name
-									<input type="email">
-								</label>
-								<label>Zip
-									<input type="number">
-								</label>
-								<label>Password
-									<input type="password">
-								</label>
-								<a class="button expand" style="background-color: #1B7CB2;" href="">Sign Up</a>
+						</div>
+					</div>
+				</div>
+				<div style="display:table-row">
+					<div class="downarrow" style="display: table-cell; vertical-align:bottom;">
+						<a style="background: none;" onclick="$.fn.fullpage.moveSectionDown();"><i class="fa fa-angle-down fa-3x" style="color: #fff; display:block; text-align:center;"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="registration" style="display: table; table-layout:fixed; height:98%; width: 100%;">
+				<div style="display:table-row">
+					<div class="uparrow" style="display: table-cell; vertical-align:top;">
+						<a style="background: none;" onclick="$.fn.fullpage.moveSectionUp();"><i class="fa fa-angle-up fa-3x" style="color: #1B7CB2; display:block; text-align:center;"></i></a>
+					</div>
+				</div>
+				<div class="row" style="display: table-row; vertical-align:middle;">
+					<div class="column small-12 medium-10 medium-centered">
+						<div class="row">
+							<div class="small-12 columns">
+								<h2 class="text-center subheader" >
+									Get started with an account.
+								</h2>
+								<p class="subheader text-center" style="margin-bottom:1em;">Upload a resume to get started.</p>
+							</div>
+							<div class="small-12 medium-6 medium-centered column">
+								<%= form_tag(@path, method: "get", id: "demo-upload", class: "dropzone", style: "padding: 1.5em 0;", :data => {:equalizer_watch => {}}) do %>
+									<div class="dz-message">
+										<i class="fa fa-cloud-upload fa-4x" style="color:#1B7CB2"></i>
+										<h2 style="margin-bottom:0;">DRAG &amp; DROP</h2>
+										<h2 class="subheader" style="line-height:0.75em;">
+											or
+										</h2>
+										<h3 class="subheader">
+											click to browse
+										</h3>
+										<h3>
+											<small>
+												We accept .DOCX, .DOC, .RTF, .TXT, .PDF up to 1 MB.
+											</small>
+										</h3>
+										<div class="fallback">
+											<input type="file" name="file" />
+										</div>
+									</div>
+								<% end %>
+							</div>
+							<div class="small-12 columns" style="margin-top: 2em;">
+								<h3 class="text-center" style="margin-bottom: 1em;">
+									Why create an account?
+								</h3>
+								<div class="small-12 medium-10 medium-push-1 columns double-bump">
+									<ul class="large-block-grid-4 medium-block-grid-4">
+										<li>
+											<div class="small-12">
+												<i class="fa fa-search fa-3x" style="color:#444"></i>
+												<br>
+											</div>
+											<div class="small-12 text-center bump">
+												Know when a company <br/>finds your resume.
+											</div>
+										</li>
+										<li>
+											<div class="small-12">
+												<i class="fa fa-file-text fa-3x" style="color:#444"></i>
+												<br>
+											</div>
+											<div class="small-12 text-center bump">
+												Save up to 5 resumes to <br/>quickly apply to jobs.
+											</div>
+										</li>
+										<li>
+											<div class="small-12">
+												<i class="fa fa-bell fa-3x" style="color:#444"></i>
+												<br>
+											</div>
+											<div class="small-12 text-center bump">
+												Be notified when your <br/>application is viewed.
+											</div>
+										</li>
+										<li>
+											<div class="small-12">
+												<i class="fa fa-group fa-3x" style="color:#444"></i>
+												<br>
+											</div>
+											<div class="small-12 text-center bump">
+												View the competition <br/>when applying to jobs.
+											</div>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
 					<!-- REGISTRATION TO GO HERE -->
 				</div>
+				<div style="display:table-row">
+					<div class="downarrow" style="display: table-cell; vertical-align:top;">
+						<a style="background: none;" onclick="$.fn.fullpage.moveSectionDown();"><i class="fa fa-angle-down fa-3x" style="color: #1B7CB2; display:block; text-align:center;"></i></a>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="section">
 			<div id="scroll">
-				<div class="sob-story" style="background-color: #f5f5f5; padding: 1em 0 0;">
+				<div class="sob-story" style="background-color: #f5f5f5; padding: .5em 0 0;">
 					<div class="row">
 						<div class="column small-12 medium-5 medium-offset-2" style="padding-top: 1.75em;">
 							<h2 class="subheader">Stay <strong>Connected</strong></h2>
@@ -180,6 +254,7 @@ $(document).ready(function() {
 						</div>
 					</div>
 				</div>
+				<%= render 'shared/footer' %>
 			</div>
 		</div>
 	</div>
