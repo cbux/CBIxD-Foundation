@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # Routes
   get 'account' => 'account#index'
   get 'apply' => 'apply#index'
-  get 'jobs' => 'jobs#index3'
+  get 'jobs' => 'jobs#index'
   get 'jobs/job_collapse' => 'jobs#job_collapse'
   get 'jobs/jdp' => 'jobs#jdp'
   get 'jobs/job_emailed_jdp' => 'jobs#job_emailed_jdp'
