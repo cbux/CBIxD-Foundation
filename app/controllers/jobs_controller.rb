@@ -3,6 +3,8 @@ class JobsController < ApplicationController
 	def index
 		if params[:experiment] == "true"
 			render 'jobs/index2'
+		else
+		render 'jobs/index'
 		end
 	end
 
