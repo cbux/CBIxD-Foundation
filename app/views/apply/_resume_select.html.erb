@@ -18,16 +18,16 @@
 			<% elsif session[:resumes].to_i > 0 && session[:auth] == "authenticated" %>
 				<ul class="resume accordion" data-accordion>
 					<li class="accordion-navigation">
-						<a href="#panel1a">Used a Saved Resume</a>
+						<a href="#panel1a"> <h3> Saved Resumes </h3> </a>
 						<div id="panel1a" class="content active">
 							<% session[:resumes].to_i.times do |i| %>
 								<ul class="inline-list">
 									<li>
 										<input type="radio" id="radio-<%= i %>" name="saved_res" />
 										<label for="radio-<%= i %>">
-											<h3>
+										
 												Resume Name Here
-											</h3>
+											
 										</label>
 									</li>
 									<li class="right small">
@@ -38,7 +38,7 @@
 						</div>
 					</li>
 					<li class="accordion-navigation">
-						<a href="#panel2a">Upload a New Resume</a>
+						<a href="#panel2a"> <i class="fa fa-plus-circle"> Upload a New Resume</i></a>
 						<div id="panel2a" class="content">
 							<%= render 'resumes/upload_resume' %>
 						</div>
