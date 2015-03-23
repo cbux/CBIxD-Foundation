@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'jdp/index'
+
   # You can have the root of your site routed with "root"
   root 'home#index'
 

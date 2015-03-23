@@ -16,6 +16,11 @@
 //= require turbolinks
 //= require_tree .
 //= require emailjobshowhide
+var slideDoorStatus = true;
+var slideSaveJobStatus = true;
+var slideEmailJobStatus = true;
+var slidePreviousJobStatus = true;
+var slideNextJobStatus = true;
 $(document)
   .foundation(
   {
@@ -250,12 +255,12 @@ $(document).ready(function() {
     // $("#emailopen").click(function(){
     // $("#emailopened").toggle('fast');
     $('#location-filter input[type="checkbox"]').change(function() {
-			if($(this).attr("name") != "all") {
-				$('#location-filter .filter-all').prop('checked', false);
-			}
-			if($(this).attr("name") == "all") {
-				$('#location-filter .filter').prop('checked', false);
-			}
+		if($(this).attr("name") != "all") {
+			$('#location-filter .filter-all').prop('checked', false);
+		}
+		if($(this).attr("name") == "all") {
+			$('#location-filter .filter').prop('checked', false);
+		}
     });
     $('#job-type-filter input[type="checkbox"]').change(function() {
         if($(this).attr("name") != "all") {
@@ -407,6 +412,8 @@ $(document).ready(function() {
         shell.remove();
     }); 
 
+
+
 });
 
 
@@ -463,6 +470,102 @@ $("#desiredTitle").autocomplete({
 $("#skills").autocomplete({
     source: skills
 });
+
+$( ".slide-door-handle" ).click(function() {
+     //  $('.slide-door-handle').toggleClass("shift-position");
+    if(slideDoorStatus){
+        $( ".slide-door" ).animate({ "right": "+=610px" }, "slow" );
+        slideDoorStatus = false;
+    }
+
+    else{
+        $( ".slide-door" ).animate({ "right": "-=610px" }, "slow" );
+        slideDoorStatus = true;
+    }
+});
+var saveJobStatus = false;
+
+$('#save-job').click(function(e) {
+    var $this = $('.sticky-sub-menu-1');
+    $this.animate({left: 65 + $this.outerHeight() / 2 },350);
+   $('#save-icon').toggleClass("fa-star fa-star-o");
+    if (saveJobStatus){
+
+        $("#status-saved").css('display','none'); 
+        $("#status-unsaved").css('display','block'); 
+        saveJobStatus = false;
+    }else {
+        $("#status-saved").css('display','block'); 
+        $("#status-unsaved").css('display','none');  
+        saveJobStatus = true; 
+    }
+});
+
+
+$('#save-job').on( "mouseleave", function() {
+    var $this = $('.sticky-sub-menu-1');
+    console.log("leaving");
+    $this.animate({left: - $this.outerWidth()},350);
+});
+
+
+$('#email-job').click(function(e) {
+    var $this = $('.sticky-sub-menu-2');
+    $this.animate({left: 65 + $this.outerHeight() / 2 },350);
+    $('#recepients-email').focus();
+});
+
+
+$('#recepients-email-send').click(function(e) {
+    $('#email-job-form').hide();
+    $('#email-job-success').show();
+    
+});
+
+$('#previous-job').mouseenter(function(e) {
+    var $this = $('.sticky-sub-menu-3');
+    console.log("previous job enter");
+    $this.animate({left: 65 + $this.outerHeight() / 2 },350);
+});
+
+$('#next-job').hover(
+    function() {
+        var $this = $('.sticky-sub-menu-4');
+        $this.animate({left: 65 + $this.outerHeight() / 2 },350);
+    }, function() {
+        var $this = $('.sticky-sub-menu-4');
+        $this.animate({left: - $this.outerWidth()},350);
+    }
+);
+
+$('#previous-job').hover(
+    function() {
+        var $this = $('.sticky-sub-menu-3');
+        $this.animate({left: 65 + $this.outerHeight() / 2 },350);
+    }, function() {
+        var $this = $('.sticky-sub-menu-3');
+        $this.animate({left: - $this.outerWidth()},350);
+    }
+);
+
+
+$('.sticky-sub-menu-2').on( "mouseleave", function() {
+    var $this = $('.sticky-sub-menu-2');
+    console.log("leaving");
+    $this.animate({left: - $this.outerWidth()},350);
+}); 
+ 
+ 
+
+
+ 
+$( "#scroll-down" ).mousedown(function(){
+    $('html, body').animate({ scrollTop: 0}, 800);
+});
+
+
+
+ 
 
  
 
