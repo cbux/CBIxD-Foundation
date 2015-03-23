@@ -1,0 +1,402 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+.home-ex-1 {
+	* {
+		font-family: 'Open Sans', sans-serif;
+	}
+	i {
+		font-family: FontAwesome;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: 600;
+	}
+	nav {
+		height: 3em;
+		background-color: rgba(0,255,255, 0.0);
+		margin-bottom: 3em;
+		.button {
+			height: 3em;
+			margin-bottom: 0;
+		}
+		a {
+			color: #fff;
+		}
+		h2 {
+			line-height: 2.1818em;
+			margin: 0;
+			color: #fff;
+			font-weight: normal;
+		}
+	}
+	.hero {
+		padding: 1em 0 0 0;
+		background-image: linear-gradient(rgba(20,74,122, 0.74),rgba(20,74,122, 0.74)), image-url('experiment/atlanta-hero.png');
+		background-position: 0 -150px;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		overflow: hidden;
+		background-repeat-y: repeat;
+		.banner {
+			background-color: rgba(53,103,154,0.75);
+			padding: 1em 1.875em;
+			color: #fff;
+			margin: 0 -.9375em;
+			display: inline-block;
+			float:right;
+			margin-top: .5em;
+		}
+	}
+	h1 {
+		margin-bottom: .5em;
+	}
+	.top-companies {
+		background-color: #35679A;
+		
+		padding-top: 2em;
+		h2 {
+			font-size:1.875em;
+			color: #fff;
+		}
+		img {
+			opacity: 0.6;
+			&:hover {
+				filter: invert(100%);
+				-webkit-filter: invert(100%);
+				opacity: 1;
+			}
+		}
+	}
+	.registration {
+		padding-top: 2em;
+		padding-bottom: 4em;
+		h2 {
+			font-size: 1.875em;
+		}
+		h3 {
+			font-size: 1.25em;
+		}
+	}
+	strong {
+		font-weight: 600;
+	}
+	.subheader {
+		font-weight: 300;
+	}
+	.button {
+		background-color: #FD9923;
+	}
+	.sob-story {
+		p {
+			font-size: 1em;
+			line-height: 1.75;
+		}
+	}
+}
+
+.home-exp-2 {
+	margin-top: -10px;
+	margin-bottom: -10px;
+	background-color: #fff;
+	padding-bottom: 0px;
+	* {
+		font-family: 'Open Sans', sans-serif;
+	}
+	i {
+		font-family: FontAwesome;
+	}
+	.columns.no-padding {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.button {
+		line-height: 45px;
+		padding-top:0;
+		padding-bottom: 0;
+	}
+	.banner {
+		// background: image-url('experiment/meeting-room.png') no-repeat top center;
+		background-image: linear-gradient(rgba(0, 72, 106, .7),rgba(0, 72, 106, .7)), image-url('experiment/atlanta-hero.png');
+		// background: rgba(0, 72, 106, .7);
+		// background: rgba(120, 120, 120, .8);
+		background-size: cover;
+		padding:.5em 0 11em 0;
+		background-position: 0 -125px;
+		overflow: hidden;
+		position:relative;
+		video {
+			width: 100%;
+			position:absolute;
+			top:-100px;
+			opacity: 0.6;
+			-webkit-filter: saturate(2.5) contrast(1.2) brightness(0.8) grayscale(0.8);
+		}
+		.logo {
+			margin-bottom: 8em;
+			h2 {
+				color: #fff;
+				text-shadow: 0 0 3px rgba(0,0,0,0.25);
+			}
+			a {
+				line-height: 3em;
+				color: #fff;
+				text-shadow: 0 0 3px rgba(0,0,0,0.25);
+			}
+		}
+	}
+	.searchBox {
+		background: rgba(0, 72, 106, .8);
+		padding: 24px;
+		color: #fff;
+		.clear-input {
+			top: 19px;
+			right: -5px;
+		}
+		h1 {
+			color: #fff;
+			font-size: 32px;
+			margin-bottom: 21px;
+		}
+		label {
+			font-weight: normal;
+			color: #fff;
+		}
+		input {
+			height: 45px;
+    }
+    .button {
+      margin-top: 21px;
+    }
+  }
+  .large-block-grid-4 {
+	  i {
+	  	&.fa {
+	  		text-align:center;
+	  		display:block;
+	  	}
+	  }
+	}
+  .major-bump {
+    margin-top: 72px;
+  }
+  .double-bump {
+    margin-top: 24px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 21px;
+  }
+  .button.secondary {
+    background-color: #EEEEEE;
+    border: #CCCCCC 1px solid;
+    color: #2d52a2;
+  }
+
+  .band {
+    background-color: #EEEEEE;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    &.popular-search {
+	  	padding-bottom: 4em;
+	  }
+  }
+  li.columns.no-padding:nth-of-type(1) .small-12 a.button.secondary {
+    border-radius: 8px 0px 0px 8px;
+  }
+  li.columns.no-padding:nth-of-type(3) .small-12 a.button.secondary {
+    border-radius: 0 8px 8px 0;
+  }
+}
+
+.home-exp-3 {
+	* {
+		font-family: 'Open Sans', sans-serif;
+	}
+	i {
+		font-family: FontAwesome;
+	}
+	nav {
+		height: 3em;
+		background-color: rgba(0,255,255, 0.0);
+		margin-bottom: 3em;
+		.button {
+			height: 3em;
+			margin-bottom: 0;
+		}
+		a {
+			color: #fff;
+		}
+		h2 {
+			line-height: 2.1818em;
+			margin: 0;
+			color: #fff;
+			font-weight: normal;
+		}
+	}
+	#stick_1 {
+		z-index: 99999;
+		margin-bottom:0px;
+		&.is_stuck {
+			margin-bottom:0;
+		}
+		#stick_1_content {
+			background-image: linear-gradient(rgba(2,53,88, 0.60),rgba(2,53,88, 0.60)), image-url('experiment/atlanta-hero.png');
+			background-size: cover;
+			background-position: 0 -100px;
+		}
+		#stick_1_message {
+			overflow:hidden;
+			nav{
+				padding-top: 1.25em;
+
+			}
+		}
+	}
+	#stick_2 {
+		z-index: 99998;
+		#stick_2_message {
+			z-index: 999999;
+		}
+		.register_banner {
+			padding:.75em 0;
+			background-color: #fff;
+		}
+	}
+	#stick_3 {
+		background-color: #f5f5f5;
+	}
+	.hero {
+		height:36em;
+		padding: 0.5em 0 0 0;
+		nav {
+			margin-bottom: 10em;
+		}
+		h2 {
+			font-size: 28px;
+		}
+		h1 {
+			font-size: 32px;
+		}
+		label {
+			color: #fff;
+			text-shadow: 0 0 4px rgba(0,0,0,0.5);
+			margin-right: .25em;
+			font-size: 18px;
+		}
+		input {
+			height: 60px;
+			background-color: rgba(255,255,255,0.6);
+			font-size: 18px;
+			border: none;
+			margin-top:3px;
+		}
+		.search {
+			background: none;
+			padding: 0;
+			a {
+				margin-top: 30px;
+				height: 60px;
+				font-size: 18px;
+				line-height:60px;
+				background-color: #30B74D;
+			}
+		}
+	}
+	.sob-story {
+		p {
+			font-size: 1em;
+			line-height: 1.75;
+		}
+	}
+}
+
+.home-exp-4 {
+	.section:first-of-type {
+		background-image: linear-gradient(rgba(2,53,88, 0.60),rgba(2,53,88, 0.60)), image-url('experiment/atlanta-hero.png');
+		background-size:cover;
+		background-repeat: no-repeat;
+	}
+	// #scroll {
+	// 	height: inherit !important;
+	// 	overflow: scroll;
+	// }
+	.large-block-grid-4 {
+	  i {
+	  	&.fa {
+	  		text-align:center;
+	  		display:block;
+	  	}
+	  }
+	}
+	h2 {
+		font-size: 1.875em;
+	}
+	nav {
+		height: 3em;
+		background-color: rgba(0,255,255, 0.0);
+		margin-bottom: 3em;
+		.button {
+			height: 3em;
+			margin-bottom: 0;
+		}
+		a {
+			color: #fff;
+		}
+		h2 {
+			line-height: 2.1818em;
+			margin: 0;
+			color: #fff;
+			font-weight: normal;
+		}
+	}
+	.hero {
+		height:100%;
+		padding: 0.5em 0 0 0;
+		nav {
+			margin-bottom: 10em;
+			top: 0;
+		}
+		.logo {
+			h2 {
+				color: #fff;
+				text-shadow: 0 0 3px rgba(0,0,0,0.25);
+			}
+			a {
+				line-height: 3em;
+				color: #fff;
+				text-shadow: 0 0 3px rgba(0,0,0,0.25);
+			}
+		}
+		h2 {
+			font-size: 28px;
+		}
+		h1 {
+			font-size: 32px;
+		}
+		label {
+			color: #fff;
+			text-shadow: 0 0 4px rgba(0,0,0,0.5);
+			margin-right: .25em;
+			font-size: 18px;
+		}
+		input {
+			height: 60px;
+			background-color: rgba(255,255,255,0.6);
+			font-size: 18px;
+			border: none;
+			margin-top:3px;
+		}
+		.search {
+			background: none;
+			padding: 0;
+			a {
+				margin-top: 30px;
+				height: 60px;
+				font-size: 18px;
+				line-height:60px;
+				background-color: #30B74D;
+			}
+		}
+	}
+
+}

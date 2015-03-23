@@ -3,6 +3,8 @@ class JobsController < ApplicationController
 	def index
 		if params[:experiment] == "true"
 			render 'jobs/index2'
+		else
+		render 'jobs/index'
 		end
 	end
 
@@ -158,12 +160,12 @@ class JobsController < ApplicationController
 		
 		# Hash for Job Level
 		@job_level_filters = {
-			"Entry-level (" => "entry-level",
-			"Mid-Level" => "mid-level",
-			"Senior" => "senior",
-			"Associate" => "associate",
-			"Director" => "director",
-			"Executive" => 'executive',
+			"Entry-level (123)" => "entry-level",
+			"Mid-Level (67)" => "mid-level",
+			"Senior (890)" => "senior",
+			"Associate (345)" => "associate",
+			"Director (49)" => "director",
+			"Executive (10)" => 'executive',
 			# "Not Applicable" => "not-applicable",
 		}
 
@@ -214,10 +216,10 @@ class JobsController < ApplicationController
 
 		# Hash for Skills
 		@skills_filters = {
-			"Sales" => "sales",
-			"Account Management" => "account-management",
-			"Accounting" => "accounting",
-			"Outside Sales" => "outside-sales",
+			"Sales (4574)" => "sales",
+			"Account Management (347)" => "account-management",
+			"Accounting (987)" => "accounting",
+			"Outside Sales (146)" => "outside-sales",
 		}
 
 		# Change active sort

@@ -14,56 +14,52 @@
   	<% if session[:debug] == "true" %>
   		<%= render 'shared/debug_menu_open' %>
   	<% end %>
-  	<!-- Objects for Menu Rotate In
-  	<div id="st-container" class="st-container">
-			<div class="st-pusher">
-				<nav class="st-menu st-effect-7" id="menu-7">
-					<h2 class="icon icon-lab">Sidebar</h2>
-					<ul>
-						<li><a class="icon icon-data" href="#">Data Management</a></li>
-						<li><a class="icon icon-location" href="#">Location</a></li>
-						<li><a class="icon icon-study" href="#">Study</a></li>
-						<li><a class="icon icon-photo" href="#">Collections</a></li>
-						<li><a class="icon icon-wallet" href="#">Credits</a></li>
-					</ul>
-				</nav>
-				<div class="st-content">
-					<div class="st-content-inner">
-
-					-->
-				  	<% if params[:signed_out] == 'true' %>
-				  		<div data-alert class="alert-box success">
-				  			<div class="row">
-									<div class="column small-12 medium-12 large-12">
-							 			You have successfully signed out. 
-							  		<a href="#" class="close">&times;</a>
-									</div>
-								</div>
-							</div>
-						<% end %>
-						<% if @nav_bar != "no-nav" %>
-				  		<%= render 'shared/global_header' %>
-				  	<% end %>
-				  	<%= render 'shared/global_alerts' %>
-				  	<!-- <div class="main clearfix">
-							<div id="st-trigger-effects" class="column">
-				  			<button data-effect="st-effect-7">3D rotate in</button>
-				  		</div>
-				  	</div> -->
-
-				    <%= yield %>
-				    <%= javascript_include_tag "application" %>
-				    <% if @footer_bar != "no-footer" %>
-				  		<%= render 'shared/footer' %>
-				  	<% end %>
-				  <!-- Objects for menu rotate in
-				  </div>
+   	<% if params[:signed_out] == 'true' %>
+	 		<div data-alert class="alert-box success">
+	 			<div class="row">
+					<div class="column small-12 medium-12 large-12">
+			 			You have successfully signed out. 
+			  		<a href="#" class="close">&times;</a>
+					</div>
 				</div>
 			</div>
-	  </div> -->
+		<% end %>
+		<% if @nav_bar != "no-nav" %>
+  		<%= render 'shared/global_header' %>
+  	<% end %>
+  	<%= render 'shared/global_alerts' %>
+		<%= yield %>
+		<%= javascript_include_tag "application" %>
+		<% if @footer_bar != "no-footer" %>
+			<%= render 'shared/footer' %>
+		<% end %>
+		<!-- Objects for menu rotate in -->
 		<%= render 'shared/debug_menu_close' %>
-
-
-
   </body>
 </html>
+
+<!-- <div class="main clearfix">
+	<div id="st-trigger-effects" class="column">
+		<button data-effect="st-effect-7">3D rotate in</button>
+	</div>
+</div>
+
+<div id="st-container" class="st-container">
+	<div class="st-pusher">
+		<nav class="st-menu st-effect-7" id="menu-7">
+			<h2 class="icon icon-lab">Sidebar</h2>
+			<ul>
+				<li><a class="icon icon-data" href="#">Data Management</a></li>
+				<li><a class="icon icon-location" href="#">Location</a></li>
+				<li><a class="icon icon-study" href="#">Study</a></li>
+				<li><a class="icon icon-photo" href="#">Collections</a></li>
+				<li><a class="icon icon-wallet" href="#">Credits</a></li>
+			</ul>
+		</nav>
+		<div class="st-content">
+			<div class="st-content-inner">
+
+			</div>
+		</div>
+	</div>
+</div> -->

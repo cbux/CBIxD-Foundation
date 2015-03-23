@@ -127,7 +127,67 @@ function checkboxChange(id){
 	$(id).submit();
 }
 
+$("#stick_1").stick_in_parent({offset_top:-500})
+	.on("sticky_kit:stick", function(e) {
+		
+		$('#stick_1_message').slideToggle();
+	})
+  .on("sticky_kit:unstick", function(e) {
+		
+		$('#stick_1_message').toggle();
+	});
+
+$("#stick_2").stick_in_parent({bottoming:false, offset_top:-776})
+	.on("sticky_kit:stick", function(e) {
+		
+		$('#stick_2_message').slideToggle();
+	})
+  .on("sticky_kit:unstick", function(e) {
+		
+		$('#stick_2_message').toggle();
+	});
+
+$('#apply_icon').hover(function() {
+	$('#insights-banner').fadeOut();
+	$('#discovered-banner').fadeOut();
+	$('#apply-banner').delay(250).fadeIn();
+});
+
+$('#insights_icon').hover(function() {
+	$('#discovered-banner').fadeOut();
+	$('#apply-banner').fadeOut();
+	$('#insights-banner').delay(250).fadeIn();
+});
+
+$('#discovered_icon').hover(function() {
+	$('#apply-banner').fadeOut();
+	$('#insights-banner').fadeOut();
+	$('#discovered-banner').delay(250).fadeIn();
+});
+
+$('#search-btn').click(function() {
+	var key = $('#search-key').val();
+	if($('#search-loc').val()) {
+		loc = $('#search-loc').val();
+	}
+	else {
+		loc = "";
+	}
+	if($('#ipfill').val()) {
+		loc2 = $('#ipfill').val();
+	}
+	else {
+		loc2 = "";
+	}
+	window.location.href = "http://www.careerbuilder.com/jobseeker/jobs/jobresults.aspx?s_rawwords=" + key + "&s_freeloc=" + loc + loc2;
+});
+
 $(document).ready(function() {
+
+	if($(".home-exp-4").length >0 ) {
+		$('#fullpage').fullpage();
+	}
+
     $("#job_alert_btn").click(function(){
     $("#job_alert_btn").replaceWith( '<a class="job_alert_active">Job Alert Created</a>');
     });
@@ -470,6 +530,7 @@ $("#desiredTitle").autocomplete({
 $("#skills").autocomplete({
     source: skills
 });
+ 
 
 $( ".slide-door-handle" ).click(function() {
      //  $('.slide-door-handle').toggleClass("shift-position");
@@ -548,16 +609,11 @@ $('#previous-job').hover(
     }
 );
 
-
 $('.sticky-sub-menu-2').on( "mouseleave", function() {
     var $this = $('.sticky-sub-menu-2');
     console.log("leaving");
     $this.animate({left: - $this.outerWidth()},350);
 }); 
- 
- 
-
-
  
 $( "#scroll-down" ).mousedown(function(){
     $('html, body').animate({ scrollTop: 0}, 800);
@@ -565,9 +621,5 @@ $( "#scroll-down" ).mousedown(function(){
 
 
 
- 
-
- 
-
-
 $(function(){ $(document).foundation(); });
+ 
