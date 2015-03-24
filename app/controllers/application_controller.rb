@@ -11,8 +11,7 @@ class ApplicationController < ActionController::Base
   	if params[:auth]
   		session[:auth] = params[:auth]
   	end
-  	@auth = session[:auth]
-  	@auth ||= "unknown"
+  	session[:auth] ||= "unknown"
   end
 
   def debug_mode
