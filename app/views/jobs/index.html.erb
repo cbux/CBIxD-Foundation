@@ -23,52 +23,55 @@
 <!--filters-->
 <div class="row">
   <div class="large-3 columns show-for-large-up">
-
-      <div class="show-for-medium-up">
+    <div class="show-for-medium-up">
       <button href="#" data-dropdown="jobalertdrop" aria-controls="jobalertdrop" aria-expanded="false" id="job-alert-btn" class="button secondary">Create Job Alert</button><br>
       <div id="jobalertdrop" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
-          <div class="medium-12 columns">
-          <p class="emailalerttext"><i class="fa fa-envelope-o">&nbsp;&nbsp;</i>Be the first to hear about new jobs like these</p>
-          <p>Sales Representative Jobs in Atlanta, GA</a>
-                        <% if session[:auth] == "authenticated" %>
-                          <label>Your Email
-                          <input type="text" placeholder="prepopulatedemail@gmail.com">
-                          </label>
-                        <% else %>
-                          <label>Your Email
-                          <input type="text" placeholder="">
-                          </label>
-                        <% end %>
-                          <label>
-                            <a class="button postfix unauthalertbtn" id="job_alert_btn create-alert-dropdown">Create Job Alert</a>
-                          </label>
-                          <p>You can cancel job alerts anytime</p>
-          </div>
+        <div class="medium-12 columns">
+        <p class="emailalerttext"><i class="fa fa-envelope-o">&nbsp;&nbsp;</i>Be the first to hear about new jobs like these</p>
+        <p>Sales Representative Jobs in Atlanta, GA</p>
+        <% if session[:auth] == "authenticated" %>
+          <label>Your Email
+          <input type="text" placeholder="prepopulatedemail@gmail.com">
+          </label>
+        <% else %>
+          <label>Your Email
+          <input type="text" placeholder="">
+          </label>
+        <% end %>
+          <label>
+            <a class="button postfix unauthalertbtn" id="job_alert_btn create-alert-dropdown">Create Job Alert</a>
+          </label>
+          <p>You can cancel job alerts anytime</p>
+        </div>
       </div>
-      </div>
+    </div>
+    <div class="filter-pane">
+      <h4>Filter By <span id="reset-filter">Reset Filter</span></h4>
+      <!--Distance from you-->
+      <form id="jrp-filter">
+        <%= render 'distance_within_filter' %>
+    		<!--Date Posted-->
+        <!-- TODO Style this radio list to our tag/radio list-->
+        <%= render 'date_posted_filter' %>
+        <!--Job Type-->
+    		<%= render 'job_type_filter' %>
 
-  	<h4>Filter By</h4>
-    <!--Distance from you-->
-    <%= render 'distance_within_filter' %>
-		<!--Date Posted-->
-    <!-- TODO Style this radio list to our tag/radio list-->
-    <%= render 'date_posted_filter' %>
-    <!--Job Type-->
-		<%= render 'job_type_filter' %>
-		<!--Salary-->
-		<%= render 'salary_range_filter' %>
-    <!--Location (City/State)-->
-    <%= render 'location_filter' %>
-    <!--Job Level-->
-    <%= render 'job_level_filters' %>
-		<!--Job Category-->
-    <%= render 'shared/multiselect_field', multiselect_label: "Job Categories", multiselect_id: "job-category-filter", hash_for_options: @job_category_filters %>
-    <!--Skills-->
-    <%= render 'shared/multiselect_field', multiselect_label: "Skills", multiselect_id: "skills-filter", hash_for_options: @skills_filters %>
-		<!--Degree Required-->
-    <% render 'degree_required_filter' %>
-    <% render 'shared/multiselect_field', multiselect_label: "Degree Required", multiselect_id: "degree-required-filter", hash_for_options: @degree_requirements_filters %>
-
+        <!--Location (City/State)-->
+        <%= render 'location_filter' %>
+        <!--Job Level-->
+        <%= render 'job_level_filters' %>
+        <!--Salary-->
+        <%= render 'salary_range_filter' %>
+    		<!--Job Category-->
+        <%= render 'shared/multiselect_field', multiselect_label: "Job Categories", multiselect_id: "job-category-filter", hash_for_options: @job_category_filters %>
+        <!--Skills-->
+        <%= render 'shared/multiselect_field', multiselect_label: "Skills", multiselect_id: "skills-filter", hash_for_options: @skills_filters %>
+    		<!--Degree Required-->
+        <% render 'degree_required_filter' %>
+        <% render 'shared/multiselect_field', multiselect_label: "Degree Required", multiselect_id: "degree-required-filter", hash_for_options: @degree_requirements_filters %>
+      </form>
+    </div><!--Closure of Filter pane-->
+  
     <div class="hide-for-small-only">
       <img src="http://placehold.it/160x600&text=Ad+160+x+600" alt="in-line ad">
     </div>

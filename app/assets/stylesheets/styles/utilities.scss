@@ -148,4 +148,47 @@
     }
   }
 }
+
+
+/******JRP Filter pane styles*******/
+
+.filter-pane{
+ // background: red;
+ h4{
+   #reset-filter{
+    float: right;
+    cursor: pointer;
+    color: #008CBA;
+    display: none;
+   }
+ }
+  fieldset {
+    padding: 0px;
+    border: none;
+    legend{
+      display: block;
+      width: 100%;
+      //background: #999;
+      font: .9em/1.6em arial;
+      span{
+        float: right;
+      }
+    }
+    .input-group{
+      display: none;
+      label{
+        span{
+          color:  #008CBA;
+        }
+      }
+    }
+    ul{
+      margin: 0px;
+      padding: 0px;
+      list-style-type: none;
+
+    }
+  }
+}
+
  
