@@ -134,7 +134,7 @@
 			<div class="column small-12" >
 				<% if session[:auth] == "authenticated" %>
 				<% if @has_screener == "true" %>
-				<%= link_to "Continue to Screener", url_for(step: "screener"), class: "button expand", id: "continue" %>
+				<%= link_to "Continue", url_for(step: "screener"), class: "button expand", id: "continue" %>
 				<%= render 'resumes/add_details' %>
 				<%= link_to "Save Resume", url_for(step: "details", apply_save_resume: "true"), class: "button expand", id: "save", style: "display: none;" %>
 				<% else %>
