@@ -1,15 +1,10 @@
-<div class="row" id="location-filter">
-  <div class="column small-12">
-  	<label>Location</label>
-  	<label>
-  		<input type="checkbox" class="filter-all" checked name="all">
-  		All
-  	</label>
-		<% @location_filters.each do |key, value| %>
-    	<label>
-        <input type="checkbox" class="filter" name="<%= value %>">
-        <%= key %>
-    	</label>
-		<% end %>
-	</div>
-</div>
+<fieldset id="location-filter">
+  <legend>Location <span class="fa fa-chevron-down"></span></legend>
+  <ul class="input-group">
+    <li><input type="checkbox" class="filter-all" checked name="all"><label>All</label></li>
+    <% @location_filters.each do |key, value| %>
+   
+      <li><input type="checkbox" class="filter" name="<%= value %>"> <label><%= key.split('(').first %> <span><%= key[/\(.*?\)/] %></span></label></li>
+    <% end %>
+  </ul>
+</fieldset>
