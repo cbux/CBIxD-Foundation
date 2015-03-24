@@ -1,0 +1,427 @@
+// Place all the styles related to the jdp controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.full-fluid{
+	max-width: 100%;
+}
+/********/
+@mixin sexy-chevron-box($width , $height) {
+	 
+	  width: $width;
+	  height: $height;
+	  top :(35px - ($height / 2));
+	  left:  - $width;
+	  position: absolute;
+		z-index: -1;
+		text-align: left;
+		padding: 10px 15px;
+		background: #999999;
+	
+	&:before {
+	  width: ($width / 2);
+	  height: ($height / 2);
+	  content: '';
+	  top: 0;
+	  left: -($height / 4);
+	  position: absolute;
+		z-index: -1;
+		background: #999999;
+	
+		-webkit-transform: rotate(180deg) skew(-45deg, 0deg) ;
+		-moz-transform: rotate(180deg) skew(-45deg, 0deg) ;
+		-ms-transform: rotate(180deg) skew(-45deg, 0deg) ;
+		-o-transform: rotate(180deg) skew(-45deg, 0deg) ;
+		transform: rotate(180deg) skew(-45deg, 0deg) ;
+	}	
+	
+	&:after {
+	  width: ($width / 2);
+	  height: ($height / 2);
+	  content: '';
+	  position: absolute;
+	  bottom: 0;
+	  left: -($height / 4);
+		background: #999999;
+		z-index: -1;
+
+		-webkit-transform: rotate(180deg) skew(45deg, 0deg) ;
+		-moz-transform: rotate(180deg) skew(45deg, 0deg) ;
+		-ms-transform: rotate(180deg) skew(45deg, 0deg) ;
+		-o-transform: rotate(180deg) skew(45deg, 0deg) ;
+		transform: rotate(180deg) skew(45deg, 0deg) ;
+	}
+
+
+}
+
+/********/
+
+
+
+
+.sticky-menu{
+	width: 65px;
+	height: 377px;
+	position: fixed;
+	top: 25%;
+	left: 0px;
+	z-index: 15;
+	background: #666666;
+
+	ul{
+			list-style-type: none;
+			margin: 0px;
+			padding: 0px;
+		li{
+			position: relative;
+			background: #d4d4d4;
+			margin: 0 0 1px 0;
+			padding: 15px 0;
+			text-align: center;
+
+			.fa{
+				font-size: 40px;
+				color: #fff;
+			}
+
+			.sticky-sub-menu-1{
+				
+
+				&.chevron-box{
+					@include sexy-chevron-box(200px, 60px);
+
+				}
+
+			}
+			.sticky-sub-menu-2{
+				&.chevron-box{
+					@include sexy-chevron-box(300px, 150px);
+
+				}
+			}
+			.sticky-sub-menu-3{
+				&.chevron-box{
+					@include sexy-chevron-box(400px, 90px);
+
+				}
+			}			
+			.sticky-sub-menu-4{
+				&.chevron-box{
+					@include sexy-chevron-box(400px, 90px);
+
+				}
+			}			
+			.sticky-sub-menu-5{
+				&.chevron-box{
+					@include sexy-chevron-box(400px, 290px);
+				}
+			}
+ 
+		}
+	}
+}
+
+.central-container{
+	position:relative;
+}
+.banner-container{
+	position:relative;
+	.banner{
+		height: 540px;
+		background: #bdc3c7;
+		max-width: 100%;
+		position: absolute;
+		margin: 0px;
+		top: 0px;
+		h1{
+			text-align: center;
+			padding: 120px 0 15px 0;
+		}
+		.align-right{
+			text-align: right;
+		}
+		.mirror-list{
+			margin: 0px;
+			list-style-type: none;
+			li{
+				margin: 0 0 15px 0;
+				line-height: 2em;
+				span{
+					border-radius: 25px;
+					padding: 7px;
+					border: solid 1px #fff;
+					color: #fff;
+				}
+				&:first-child{
+					span{
+					background: #999;
+				}
+				}
+			}
+		}
+
+
+	}
+}
+.dl-style-compact{
+	dt{
+
+	}
+	dd{
+		margin: 0 0 10px 0;
+	}
+}
+
+.footer-banner{
+	background: #d4d4d4;
+	height: 100px;
+	vertical-align: middle;
+}
+.thin-band{
+	margin :0px;
+	text-align: center;
+	background: #dfdfdf;
+	padding: 30px 0 20px 0;
+	height: 100px;
+	p{
+		margin: 0px;
+		button{
+			padding: 15px 75px;
+		}
+	}
+}
+.list-style-1{
+	ul{
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+		li{
+			float: left;
+			color: #fff;
+			padding: 5px 10px;
+			background: #999999;
+			border-radius: 2px;
+			margin: 0 15px 15px 0;
+		}
+	}	
+}
+ 
+
+.slide-door-frame{
+	position: relative;
+	height: 540px;
+	overflow-x: hidden;
+	z-index: 12;
+}
+
+.slide-door{
+	
+	position: absolute;
+	height: 540px;
+	width: 810px;
+	right: -472px;
+
+	.column{
+	padding: 0px;
+	}
+	.row{
+	margin: 0px;
+	}
+}
+
+.slide-door-handle-hinge{
+float: left;
+width: 200px;
+height: 100%;
+overflow: hidden;
+	.slide-door-handle{
+		display: block;
+		height: 100px;
+		width: 200px;
+	//	border-radius: 50px;
+		//border-left: solid 50px #790000;
+	}
+	.shift-position{
+		margin: 200px 0 0 0;
+	}
+}
+
+ .slide-door-pane{
+ width: 610px;
+ float: left;
+ }
+
+.snap-shot{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	z-index: 10;
+	float:right;
+	width: 138px;
+	background: #94979a;
+	height: 100%;
+ 
+
+	dl{
+		margin: 0px;
+		padding: 20px 0 0 0;
+		text-align: center;
+		color: #fff;
+		line-height: 1;
+		dd{
+			margin: 0 0 5px 0;
+			span{
+				background: #666666;
+				height: 75px;
+				width: 75px;
+				display: table-cell;
+				vertical-align: middle;
+				border-radius: 50px;
+				padding: 15px 10px;
+			}
+			padding: 0 30px;
+		}
+		dt{
+		margin: 0 0 25px 0;
+
+		}
+
+	}
+}
+
+.insights-graph1{
+	height: 175px;
+	background: #999;
+	text-align: center;
+	padding: 70px 0 0 0;
+	color: #fff;
+}
+.insights-graph2{
+	height: 175px;
+	background: #666;
+	text-align: center;
+	padding: 70px 0 0 0;
+	color: #fff;
+
+}
+.insights-graph3{
+	height: 240px;
+	background: #666;
+	text-align: center;
+	padding: 100px 0 0 0;
+	color: #fff;
+
+}
+.insights-graph4{
+	height: 110px;
+	background: #ccc;
+	text-align: center;
+	padding: 40px 0 0 0;
+	color: #fff;
+
+}
+.insights-graph5{
+	height: 190px;
+	background: #999;
+	text-align: center;
+	padding: 90px 0 0 0;
+	color: #fff;
+
+}
+
+#status-saved{
+	display: none;
+}
+.company-details{
+	background: #d4d4d4;
+	padding: 15px;
+	.company-images{
+		position:relative;
+		height: 200px;
+		background: #333333;
+		margin: 0 0 75px 0;
+		a{
+
+		}
+		.company-logo{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			top: 150px;
+			left: 33%;
+			border-radius: 50px;
+			background: #999;
+		}
+	}
+
+	ul{
+		margin: 0 0 15px 0;
+		padding: 0px;
+		list-style-type: none;
+		li{
+			margin: 0 0 15px 0;
+		}
+	}
+	button{
+		width: 100%;
+	}
+	.spots{
+		text-align: center;
+		span{
+			color: #999;
+			margin: 0 10px 0 0;
+			&:first-child{
+				color:#666;
+			}
+		}
+	}
+	.social-icons{
+	font-size: 2em;
+	}
+}
+.well{
+	background: #fff;
+	padding: 15px;
+	position:relative;
+	z-index: 10;
+	border-radius: 4px;
+	margin: 0 0 15px 0;
+
+	&:after {
+	  width: 25px;
+	  height: 25px;
+	  content: '';
+	  bottom: -13px;
+	  left: 30px;
+	  position: absolute;
+		z-index: 9;
+		background: white;
+	-webkit-transform: rotate(45deg);
+
+		}	
+	/*	-moz-transform: rotate(180deg) skew(-45deg, 0deg) ;
+	-ms-transform: rotate(180deg) skew(-45deg, 0deg) ;
+		-o-transform: rotate(180deg) skew(-45deg, 0deg) ;
+		transform: rotate(180deg) skew(-45deg, 0deg) ;*/
+
+	
+	/*&:after {
+	  width: ($width / 2);
+	  height: ($height / 2);
+	  content: '';
+	  position: absolute;
+	  bottom: 0;
+	  left: -($height / 4);
+		background: #999999;
+		z-index: -1;
+
+		-webkit-transform: rotate(180deg) skew(45deg, 0deg) ;
+		-moz-transform: rotate(180deg) skew(45deg, 0deg) ;
+		-ms-transform: rotate(180deg) skew(45deg, 0deg) ;
+		-o-transform: rotate(180deg) skew(45deg, 0deg) ;
+		transform: rotate(180deg) skew(45deg, 0deg) ;
+	}*/
+
+}

@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
+  
+  get 'jobs_matrix/index'
+  get 'jobs_matrix/jdp'
+
+  get 'jdp/index'
+
   # You can have the root of your site routed with "root"
   root 'home#index'
 
   # Routes
   get 'account' => 'account#index'
   get 'apply' => 'apply#index'
-  get 'jobs' => 'jobs#index3'
+  get 'jobs_matrix' => 'jobs_matrix#index'
+
+  get 'jobs' => 'jobs#index'
   get 'jobs/job_collapse' => 'jobs#job_collapse'
   get 'jobs/jdp' => 'jobs#jdp'
   get 'jobs/job_emailed_jdp' => 'jobs#job_emailed_jdp'
