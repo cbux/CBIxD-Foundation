@@ -1,15 +1,10 @@
-<div class="row" id="job-level-filter">
-    <div class="column small-12">
-    <label>Job Level</label>
-    <label>
-        <input type="checkbox" class="filter-all" checked name="all">
-        All
-    </label>
-  <% @job_level_filters.each do |key, value| %>
-        <label>
-            <input type="checkbox" class="filter" name="<%= value %>">
-            <%= key %>
-        </label>
-  <% end %>
-</div>
-</div>
+<fieldset id="job-level-filter">
+    <legend>Job Level <span class="fa fa-chevron-down"></span></legend>
+    <ul class="input-group">
+        <li><input type="checkbox" class="filter-all" checked name="all"><label>All</label></li>
+        <% @job_level_filters.each do |key, value| %>
+            <li><input type="checkbox" class="filter" name="<%= value %>"> <label><%= key.split('(').first %> <span><%= key[/\(.*?\)/] %></span></label></li>
+        <% end %>
+    </ul>
+</fieldset>
+ 

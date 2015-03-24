@@ -619,7 +619,18 @@ $( "#scroll-down" ).mousedown(function(){
     $('html, body').animate({ scrollTop: 0}, 800);
 });
 
+$( ".filter-pane legend span" ).click(function(){
+    $(this).toggleClass('fa-chevron-up fa-chevron-down ');
+    $(this).parent().next().slideToggle();
+});
 
+$( "#reset-filter" ).click(function(){
+     $("#jrp-filter").get(0).reset();
+     $(this).hide();
+});
+$( "#jrp-filter" ).click(function(){
+     $("#reset-filter").show();
+});
 
 $(function(){ $(document).foundation(); });
  
