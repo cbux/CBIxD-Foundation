@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'jdp/index'
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  root 'home#experiment-4'
 
   # Routes
   get 'account' => 'account#index'
