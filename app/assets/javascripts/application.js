@@ -179,7 +179,7 @@ $('#search-btn').click(function() {
 	else {
 		loc2 = "";
 	}
-	window.location.href = "http://www.careerbuilder.com/jobseeker/jobs/jobresults.aspx?s_rawwords=" + key + "&s_freeloc=" + loc + loc2;
+	window.location.href = "../jobs?keyword=" + key + "&location=" + loc + loc2;
 });
 
 $(document).ready(function() {
