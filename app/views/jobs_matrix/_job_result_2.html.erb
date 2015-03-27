@@ -1,0 +1,76 @@
+<% if params[:action] == "after_apply" %>
+<% job_columns = "columns small-10 large-4" %>
+<% company_columns = "small-10 large-2 columns" %>
+<% location_columns = "small-10 large-2 columns" %>
+<% date_columns = "small-10 large-2 columns" %>
+<% elsif params[:action] == "resumerecs" %>
+<% job_columns = "columns small-10 medium-5 large-5" %>
+<% company_columns = "small-10 medium-2 large-2 columns" %>
+<% location_columns = "small-10 medium-2 large-2 columns" %>
+<% date_columns = "small-10 medium-1 large-1 columns" %>
+<% else %>
+<% job_columns = "columns small-12 medium-6 large-6" %>
+<% company_columns = "small-12 medium-2 large-2 columns" %>
+<% location_columns = "small-12 medium-2 large-2 columns" %>
+<% date_columns = "small-12 medium-2 large-2 columns" %>
+<% end %>
+<!-- QUICK APPLY FOR AFTER APPLY -->
+<!--QUICK APPLY FOR RESUME RECS -->
+<div class="flip">
+	<div class="card">
+		<div class="front face">
+			<div class='<%= job_columns %>' >
+				<h2><%= link_to "Commercial Property and Casualty Insurance Account Executive", jobs_jdp_path %></h2>
+				<p class="hide-for-small-only">Full-Time | Entry Level | $10/hr | Our client, a leader in the production of medical technology solutions has an immediate need for...</p>
+				<ul class="inline-list show-for-large-up">
+					<li><a class="emailJob">Email Job</a></li>
+				</ul>
+			</div>
+			<div class='<%= company_columns %>'>
+				<a href="jobs/companyprofile">Account Control Technology Inc.</a>
+				</div><!--close column-->
+				<div class='<%= location_columns %>'>
+					<p>GA-Atlanta
+					</p>
+				</div>
+				<div class='<%= date_columns %>'>
+					<p>1 Hour Ago</p>
+				</div>
+				<hr />
+			</div>
+			<div class="face back">
+				<div class="row">
+					<div class="medium-12 columns">
+						<% if session[:auth] == "authenticated" %>
+						<h4>Email This Job</h4>
+						<label>From (Your Email Address)
+							<input type="text" placeholder="prepopulatedemail@gmail.com" />
+						</label>
+						<% else %>
+						<label>From (Your Email Address)
+							<input type="text" placeholder="" />
+						</label>
+						<% end %>
+						<label>To (Recipients Email Address)
+							<input type="text" placeholder="" />
+						</label>
+						<% if session[:auth] == "authenticated" %>
+						<label>Your Name
+							<input type="text" placeholder="Prepopulated Name" />
+						</label>
+						<% else %>
+						<label>Your Name
+							<input type="text" placeholder="" />
+						</label>
+						<% end %>
+						<label>Notes
+							<textarea placeholder=""></textarea>
+						</label>
+						<p>140 Characters Left</p>
+						<%= link_to "Send Email", url_for(status: "email_sent", success: "true"), class: "button expand" %>
+						<a class="button secondary expand">Cancel</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

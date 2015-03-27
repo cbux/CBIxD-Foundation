@@ -1,0 +1,104 @@
+<% if params[:action] == "after_apply" %>
+	<% job_columns = "columns small-10 large-4" %>
+	<% company_columns = "small-10 large-2 columns" %>
+	<% location_columns = "small-10 large-2 columns" %>
+	<% date_columns = "small-10 large-2 columns" %>
+<% elsif params[:action] == "resumerecs" %>
+  <% job_columns = "columns small-10 medium-5 large-5" %>
+  <% company_columns = "small-10 medium-2 large-2 columns" %>
+  <% location_columns = "small-10 medium-2 large-2 columns" %>
+  <% date_columns = "small-10 medium-1 large-1 columns" %>
+<% else %>
+	<% job_columns = "columns small-12 medium-6 large-6" %>
+	<% company_columns = "small-12 medium-2 large-2 columns" %>
+	<% location_columns = "small-12 medium-2 large-2 columns" %>
+	<% date_columns = "small-12 medium-2 large-2 columns" %>
+<% end %>
+
+	<!-- QUICK APPLY FOR AFTER APPLY -->
+	<% if params[:action] == "after_apply" %>
+		<div class="small-3 medium-2 large-2 columns">
+			<a class="button" id="quickapplybtn">Quick Apply</a>
+      <a id="quickapplied" class="hidden inline-success">Applied</a>
+	  </div>
+	<% end %>
+
+  <!--QUICK APPLY FOR RESUME RECS -->
+  <% if params[:action] == "resumerecs" %>
+    <div class="small-3 medium-2 large-2 columns">
+      <a class="button" id="quickapplybtn">Quick Apply</a>
+      <a id="quickapplied" class="hidden inline-success">Applied</a>
+    </div>
+  <% end %>
+
+  <div class='<%= job_columns %>' >
+    <h2><%= link_to "Commercial Property and Casualty Insurance Account Executive", jobs_jdp_path %></h2>
+      <% if params[:action] != "applied" %>
+      <span class="applied-tag">Applied</span>
+      <% end %>
+    <% if params[:action] != "after_apply" %>
+	    <p class="hide-for-small-only">Full-Time | Entry Level | $10/hr | Our client, a leader in the production of medical technology solutions has an immediate need for...</p>
+      <% end %>
+      <ul class="inline-list show-for-large-up">
+        <% if session[:auth] == "authenticated" %>
+          <li>
+            <a class="hide_show" data-1="#job_saved_btn-<%= count %>" data-2="#job_saved_msg-<%= count %>" id="job_saved_btn-<%= count %>"><i class="fa fa-star-o"></i>&nbsp;Save Job</a>
+            <a  class="hide_show" data-1="#job_saved_btn-<%= count %>" data-2="#job_saved_msg-<%= count %>"  id="job_saved_msg-<%= count %>" style="display:none"><i class="fa fa-star"></i>&nbsp;Job Saved</a>
+          </li>
+        <li><a href="" data-dropdown="emaildrop-<%= count %>" aria-controls="emaildrop-<%= count %>" aria-expanded="false"><i class="fa fa-envelope-o"></i>&nbsp;Email Job</a><li>
+            <div class="show-for-medium-up">
+              <div id="emaildrop-<%= count %>" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
+                  <div class="medium-12 columns">
+                          <% if session[:auth] == "authenticated" %>
+                          <h4>Email This Job</h4>
+                          <label>From (Your Email Address)
+                          <input type="text" placeholder="prepopulatedemail@gmail.com" />
+                          </label>
+                          <% else %>
+                          <label>From (Your Email Address)
+                          <input type="text" placeholder="" />
+                          </label>
+                          <% end %>
+                          <label>To (Recipients Email Address)
+                          <input type="text" placeholder="" />
+                          </label>
+                          <% if session[:auth] == "authenticated" %>
+                          <label>Your Name
+                          <input type="text" placeholder="Prepopulated Name" />
+                          </label>
+                          <% else %>
+                          <label>Your Name
+                          <input type="text" placeholder="" />
+                          </label>
+                          <% end %>
+                          <label>Notes
+                          <textarea placeholder=""></textarea>
+                          </label>
+                          <p>140 Characters Left</p>
+                          <%= link_to "Send Email", url_for(status: "email_sent", success: "true"), class: "button expand" %>
+                          <a class="button secondary expand">Cancel</a>
+                  </div>
+              </div>
+            </div>
+      </li>
+      </ul>
+    <% end %>
+  </div>
+
+  <div class='<%= company_columns %>'>
+    <a href="jobs/companyprofile">Account Control Technology Inc.</a>
+  </div><!--close column-->
+  <div class='<%= location_columns %>'>
+    <p>Atlanta, Georgia
+    	<% if params[:action] != "after_apply" %>
+      <% if params[:page] != "recommendations" %>
+        <br /><a href="/jobs/job_collapse"> + View 2 more</a>
+    	<% end %>
+      <% end %>
+    </p>
+  </div>
+  <div class='<%= date_columns %>'>
+    <p>1 Hour Ago</p>
+  </div>
+  <hr />
+
