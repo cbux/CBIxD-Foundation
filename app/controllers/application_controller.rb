@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
   		session[:auth] = params[:auth]
   	end
   	session[:auth] ||= "unknown"
+  	@auth = session[:auth]
   end
 
   def debug_mode
