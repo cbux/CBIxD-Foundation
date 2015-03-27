@@ -17,12 +17,12 @@ $(document).ready(function() {
 						<h2 class="subheader left"><a style="margin-top: 0; line-height:inherit;" href="../home-two">careerbuilder</a></h2>
 						<ul class="inline-list right" style="margin-bottom: 0; margin-top: .25em;">
 							<li>
-								<a class="button" href="https://www.careerbuilder.com/share/login.aspx" style="margin-bottom: 0; line-height:2.5em; padding: 0 1.25em; height: inherit; background-color: #1B7CB2;">
+								<a class="button" href="<%= sign_in_path %>" style="margin-bottom: 0; line-height:2.5em; padding: 0 1.25em; height: inherit; background-color: #1B7CB2;">
 									Sign In
 								</a>
 							</li>
 							<li>
-								<a href="https://www.careerbuilder.com/share/register.aspx" style="margin-bottom: 0; line-height:2.5em;">
+								<a href="#registration" style="margin-bottom: 0; line-height:2.5em;">
 									Sign Up
 								</a>
 							</li>
@@ -73,7 +73,7 @@ $(document).ready(function() {
 		</div>
 
 		<div class="section">
-			<div class="registration" style="display: table; table-layout:fixed; height:98%; width: 100%;">
+			<div class="registration" id="registration" style="display: table; table-layout:fixed; height:98%; width: 100%;">
 				<div style="display:table-row">
 					<div class="uparrow" style="display: table-cell; vertical-align:top;">
 						<a style="background: none;" onclick="$.fn.fullpage.moveSectionUp();"><i class="fa fa-angle-up fa-3x" style="color: #1B7CB2; display:block; text-align:center;"></i></a>
@@ -238,21 +238,21 @@ $(document).ready(function() {
 					<div class="row">
 						<div class="small-8 small-push-2 end columns text-center">
 							<br>
-							<a href='http://www.careerbuilder.com/browse/category/sales'>Sales</a>
+							<a href='<%= jobs_path(keyword: "sales") %>'>Sales</a>
 							&nbsp;|&nbsp;
-							<a href='http://www.careerbuilder.com/browse/category/customer-service'>Costumer Service</a>
+							<a href='<%= jobs_path(keyword: "customer service") %>'>Costumer Service</a>
 							&nbsp;|&nbsp;
-							<a href='http://www.careerbuilder.com/browse/category/accounting'>Accounting</a>
+							<a href='<%= jobs_path(keyword: "accounting") %>'>Accounting</a>
 							&nbsp;|&nbsp;
-							<a href='http://www.careerbuilder.com/browse/category/entry-level'>Entry Level</a>
+							<a href='<%= jobs_path(keyword: "entry level") %>'>Entry Level</a>
 							&nbsp;|&nbsp;
-							<a href='http://www.careerbuilder.com/browse/category/administrative-assistant'>Administrative Assistant</a>
+							<a href='<%= jobs_path(keyword: "administrative assistant") %>'>Administrative Assistant</a>
 							&nbsp;|&nbsp;
-							<a href='http://www.careerbuilder.com/browse/category/retail'>Registered Nurse</a>
+							<a href='<%= jobs_path(keyword: "registered nurse") %>'>Registered Nurse</a>
 						</div>
 						<div class="small-8 small-push-2 end columns text-center">
 							<br>
-							<a href='http://www.careerbuilder.com/browse/categorytoppage'> Browse All Catagories</a>
+							<a href='<%= jobs_find_jobs_category_path %>'> Browse All Catagories</a>
 						</div>
 					</div>
 				</div>
