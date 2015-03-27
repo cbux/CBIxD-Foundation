@@ -46,7 +46,7 @@
       </div>
     </div>
     <div class="filter-pane">
-      <h4>Filter By <span id="reset-filter">Reset Filter</span></h4>
+      <h4>Filter By <span id="reset-filter">Clear Filters</span></h4>
       <!--Distance from you-->
       <form id="jrp-filter">
         <%= render 'distance_within_filter' %>
@@ -461,6 +461,12 @@
   </ul>
 </div>
 <hr />
+
+<!--INLINE AD-->
+  <div class="hide-for-small-only">
+    <img src="http://placehold.it/728x90&text=Ad+728+x+90" alt="in-line ad">
+    <hr />
+  </div>
 
 <!--JOB RESULT AGGREGATOR-->
 <% if params[:action] == "after_apply" %>
