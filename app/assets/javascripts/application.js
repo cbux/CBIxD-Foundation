@@ -179,7 +179,7 @@ $('#search-btn').click(function() {
 	else {
 		loc2 = "";
 	}
-	window.location.href = "http://www.careerbuilder.com/jobseeker/jobs/jobresults.aspx?s_rawwords=" + key + "&s_freeloc=" + loc + loc2;
+	window.location.href = "../jobs?keyword=" + key + "&location=" + loc + loc2;
 });
 
 $(document).ready(function() {
@@ -630,6 +630,18 @@ $( "#reset-filter" ).click(function(){
 });
 $( "#jrp-filter" ).click(function(){
      $("#reset-filter").show();
+});
+
+setTimeout(function() {
+      $(".sticky-pop-up").show(600);
+}, 2000);
+
+$( ".sticky-pop-up-close" ).click(function(){
+     $(".sticky-pop-up").hide(600);
+});
+
+$("#email-job").click(function(){
+    $(".email-drawer-jdp").toggle(300);
 });
 
 $(function(){ $(document).foundation(); });

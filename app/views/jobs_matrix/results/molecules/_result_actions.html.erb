@@ -1,0 +1,50 @@
+<ul class="inline-list show-for-large-up">
+	
+	<!-- If the user is authenticated -->
+	<% if session[:auth] == "authenticated" %>
+	<!-- Show the save job button -->
+	<li>
+		<%= render 'jobs/results/molecules/atoms/save_job_button', count: count %>
+	</li>
+<% end %>
+	<!-- End Save Jobs Button -->
+	
+	<li>
+	<%= render 'jobs/results/molecules/atoms/email_job_button', count: count %>
+	</li>
+</ul>
+
+<div id="emaildrop-<%= count %>" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
+	<div class="column small-12">
+		
+		<!-- If the user is authenticated -->
+		<% if session[:auth] == "authenticated" %>
+		<!-- Prepopulate the from email field -->
+		<%= render 'shared_molecules/form_fields/email_field', email_label: "From (Your Email Address)", email_populated: "populatedemail@gmail.com" %>
+		<% else %>
+		<!-- Else show an empty email field -->
+		<%= render 'shared_molecules/form_fields/email_field', email_label: "From (Your Email Address)" %>
+		<% end %>
+		<!-- End From Email Field -->
+		
+		<!-- Start To Email Field -->
+		<%= render 'shared_molecules/form_fields/email_field', email_label: "To (Recipients Email Address)" %>
+		<!-- End To Email Field -->
+		
+		<!-- If the user is authenticated -->
+		<% if session[:auth] == "authenticated" %>
+		<!-- Prepopulate the from Mame field -->
+		<%= render 'shared_molecules/form_fields/text_field', name_label: "Your Name", name_populated: "Paul" %>
+		<% else %>
+		<!-- Else show an empty Name field -->
+		<%= render 'shared_molecules/form_fields/text_field', name_label: "Your Name" %>
+		<% end %>
+		<!-- End From from Name Field -->
+
+		<%= render 'shared_molecules/form_fields/textarea_field', text_label: "Notes" %>
+		<p>140 Characters Left</p>
+
+		<%= link_to "Send Email", url_for(status: "email_sent", success: "true"), class: "button expand" %>
+		<a class="button secondary expand">Cancel</a>
+	</div>
+</div>

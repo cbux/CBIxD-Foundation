@@ -1,0 +1,169 @@
+<!--header-->
+<div class="row">
+  <div class="small-12 large-7 columns">
+      <h1> Sales Representative Jobs in Atlanta, GA</h1>
+        <p>2 jobs found &nbsp;&nbsp; <a href="../jobs">Show all results</p>
+  </div><!--close column-->
+</div>
+
+
+<!--filters-->
+<div class="row">
+  <div class="large-3 columns show-for-large-up">
+      <div class="show-for-medium-up">
+        <button href="#" data-dropdown="jobalertdrop" aria-controls="jobalertdrop" aria-expanded="false" id="job-alert-btn" class="button secondary">Create Job Alert</button><br>
+          <div id="jobalertdrop" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
+              <div class="medium-12 columns">
+                <p class="emailalerttext"><i class="fa fa-envelope-o">&nbsp;&nbsp;</i>Be the first to hear about new jobs like these</p>
+                <p>Sales Representative Jobs in Atlanta, GA</a>
+                    <% if session[:auth] == "authenticated" %>
+                        <label>Your Email
+                        <input type="text" placeholder="prepopulatedemail@gmail.com">
+                        </label>
+                      <% else %>
+                        <label>Your Email
+                        <input type="text" placeholder="">
+                        </label>
+                      <% end %>
+                        <label>
+                          <a class="button postfix unauthalertbtn" id="job_alert_btn create-alert-dropdown">Create Job Alert</a>
+                        </label>
+                <p>You can cancel job alerts anytime</p>
+              </div>
+          </div>
+      </div>
+    <h4>Filter By</h4>
+    <!--Distance from you-->
+    <%= render 'distance_within_filter' %>
+        <!--Date Posted-->
+    <!-- TODO Style this radio list to our tag/radio list-->
+    <%= render 'date_posted_filter' %>
+    <!--Job Type-->
+        <% render 'job_type_filter' %>
+    <%= render 'shared/multiselect_field', multiselect_label: "Job Type", multiselect_id: "job-type-filter", hash_for_options: @job_type_filters %>
+        <!--Salary-->
+        <%= render 'salary_range_filter' %>
+    <!--Location (City/State)-->
+    <%= render 'shared/multiselect_field', multiselect_label: "Location", multiselect_id: "location-filter", hash_for_options: @location_filters %>
+        <!--Job Category-->
+    <%= render 'shared/multiselect_field', multiselect_label: "Job Categories", multiselect_id: "job-category-filter", hash_for_options: @job_category_filters %>
+    <!--Job Level-->
+    <%= render 'shared/multiselect_field', multiselect_label: "Job Level", multiselect_id: "job-level-filter", hash_for_options: @job_level_filters %>
+    <!--Skills-->
+    <%= render 'shared/multiselect_field', multiselect_label: "Skills", multiselect_id: "skills-filter", hash_for_options: @skills_filters %>
+        <!--Degree Required-->
+    <% render 'degree_required_filter' %>
+    <% render 'shared/multiselect_field', multiselect_label: "Degree Required", multiselect_id: "degree-required-filter", hash_for_options: @degree_requirements_filters %>
+
+    <div class="hide-for-small-only">
+      <img src="http://placehold.it/160x600&text=Ad+160+x+600" alt="in-line ad">
+    </div>
+  </div>
+
+<!--job result columns-->
+  <% job_columns = "columns small-12 medium-6 large-5" %>
+  <% company_columns = "small-12 medium-2 large-2 columns" %>
+  <% location_columns = "small-12 medium-2 large-1 columns" %>
+  <% date_columns = "small-12 medium-2 large-1 columns" %>
+
+<!--job results 1 -->
+  <div class='<%= job_columns %>' >
+    <h2><%= link_to "Commercial Property and Casualty Insurance Account Executive", jobs_jdp_path %></h2>
+    <% if params[:action] != "after_apply" %>
+      <p class="hide-for-small-only">Full-Time | Entry Level | $10/hr | Our client, a leader in the production of medical technology solutions has an immediate need for...</p>
+      <ul class="inline-list show-for-large-up">
+        <% if session[:auth] == "authenticated" %>
+          <li>
+            <% count = "1" %>
+            <a class="hide_show" data-1="#job_saved_btn-<%= count %>" data-2="#job_saved_msg-<%= count %>" id="job_saved_btn-<%= count %>">Save Job</a>
+            <a  class="hide_show" data-1="#job_saved_btn-<%= count %>" data-2="#job_saved_msg-<%= count %>"  id="job_saved_msg-<%= count %>" style="display:none">Job Saved</a>
+          </li>
+        <% end %>
+        <li><a href="" data-dropdown="emaildrop-<%= count %>" aria-controls="emaildrop-<%= count %>" aria-expanded="false">Email Job</a><li>
+      </li>
+      </ul>
+    <% end %>
+  </div>
+
+  <div class='<%= company_columns %>'>
+    <a href="jobs/companyprofile">Account Control Technology Inc.</a>
+  </div><!--close column-->
+  <div class='<%= location_columns %>'>
+    <p>GA-Atlanta
+      <% if params[:action] != "after_apply" %>
+      <% if params[:page] != "recommendations" %>
+      <% end %>
+      <% end %>
+    </p>
+  </div>
+  <div class='<%= date_columns %>'>
+    <p>1 Hour Ago</p>
+  </div>
+
+ <!--end job result-->
+ <!-- job result 2-->
+ <div class="small-12 large-9 columns">
+  <hr />
+ </div>
+ <div class='<%= job_columns %>'>
+    <h2><%= link_to "Commercial Property and Casualty Insurance Account Executive", jobs_jdp_path %></h2>
+    <% if params[:action] != "after_apply" %>
+      <p class="hide-for-small-only">Full-Time | Entry Level | $10/hr | Our client, a leader in the production of medical technology solutions has an immediate need for...</p>
+      <ul class="inline-list show-for-large-up">
+        <% if session[:auth] == "authenticated" %>
+          <li>
+            <% count = "1" %>
+            <a class="hide_show" data-1="#job_saved_btn-<%= count %>" data-2="#job_saved_msg-<%= count %>" id="job_saved_btn-<%= count %>">Save Job</a>
+            <a  class="hide_show" data-1="#job_saved_btn-<%= count %>" data-2="#job_saved_msg-<%= count %>"  id="job_saved_msg-<%= count %>" style="display:none">Job Saved</a>
+          </li>
+        <% end %>
+        <li><a href="" data-dropdown="emaildrop-<%= count %>" aria-controls="emaildrop-<%= count %>" aria-expanded="false">Email Job</a><li>
+      </li>
+      </ul>
+    <% end %>
+  </div>
+
+  <div class='<%= company_columns %>'>
+    <a href="jobs/companyprofile">Account Control Technology Inc.</a>
+  </div><!--close column-->
+  <div class='<%= location_columns %>'>
+    <p>GA-Atlanta
+      <% if params[:action] != "after_apply" %>
+      <% if params[:page] != "recommendations" %>
+      <% end %>
+      <% end %>
+    </p>
+  </div>
+  <div class='<%= date_columns %>'>
+    <p>1 Hour Ago</p>
+  </div>
+ <!--end job result-->
+        <div class="medium-12 large-9 large-centered right columns hide-for-small-only panel">
+          <p class="emailalerttext"><i class="fa fa-envelope-o">&nbsp;&nbsp;</i>Be the first to hear about new jobs like these</p>
+          <p>Sales Representative Jobs in Atlanta, GA</a>
+                  <div class="row">
+                      <% if session[:auth] == "authenticated" %>
+                      <div class="small-8 medium-6 large-5 columns">
+                          <label>Your Email
+                          <input type="text" placeholder="prepopulatedemail@gmail.com">
+                          </label>
+                        </div>
+                        <% else %>
+                          <div class="small-8 medium-6 large-5 columns">
+                            <label>Your Email
+                            <input type="text" placeholder="">
+                            </label>
+                          </div>
+                        <% end %>
+                      <div class="small-4 medium-5 large-3 columns">
+                          <label>
+                            <a class="button postfix unauthalertbtn" id="job_alert_btn">Create Job Alert</a>
+                          </label>
+                       </div>
+                       <div class ="small-2 medium-2 large-2 columns">
+                       </div>
+                    </div>
+                  <p>You can cancel job alerts anytime</p>
+                </div>
+        </div>
+</div><!--close row-->
