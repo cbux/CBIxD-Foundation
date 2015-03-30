@@ -74,8 +74,11 @@
 			        <br /><br />
 			    </p>
 			    <hr/>
-				  <p><%= link_to "View Full Job Description", jobs_matrix_jdp_path(branding:"premium") %> <span class="right fa fa-chevron-right"></span></p>
-			    
+				  <p class="more_jdp">
+				  	<%= link_to jobs_matrix_jdp_path(branding:"premium")  do %>
+						   View Full Job Description <span class="right fa fa-chevron-right"></span>
+						<% end %>
+				  </p>
 			</div>
 		  </div>
 		  <h3>OTHER JOBS YOU MAY LIKE</h3>
