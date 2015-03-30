@@ -1,0 +1,9 @@
+<fieldset>
+	<legend>Job Type <span class="fa fa-chevron-down"></span></legend>
+  <ul class="input-group">
+    <li><input type="checkbox" class="filter-all" checked name="all"><label>All</label></li>
+    <% @job_type_filters.each do |key, value| %>
+      <li><input type="checkbox" class="filter" name="<%= value %>"> <label><%= key.split('(').first %> <span><%= key[/\(.*?\)/] %></span></label></li>
+    <% end %>
+  </ul>
+</fieldset>

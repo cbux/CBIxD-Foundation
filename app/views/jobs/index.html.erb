@@ -61,7 +61,7 @@
         <!--Job Level-->
         <%= render 'job_level_filters' %>
         <!--Salary-->
-        <%= render 'salary_range_filter' %>
+        <%= render 'salary_filter' %>
     		<!--Job Category-->
         <%= render 'shared/multiselect_field', multiselect_label: "Job Categories", multiselect_id: "job-category-filter", hash_for_options: @job_category_filters %>
         <!--Skills-->
@@ -104,6 +104,8 @@
     <p id="spinner">
       <span class="fa fa-spinner fa-spin" style="font-sie: 60px;"></span>
     </p>
+
+
   <div class="row" id="gs-job-results">
     <% if params[:keyword] == "careerbuilder" %>
       <%= render 'company_search_result' %>
@@ -117,8 +119,10 @@
 		<%= render "job_result_branding", branding: "standard", count: count %>
 	<% elsif i == 2 %>
 		<%= render "job_result_branding", branding: "basic", count: count %>
-	<% elsif i == 4 %>
+	<% elsif i == 3 %>
 		<%= render "job_result_branding", count: count %>
+	<% elsif i == 4 %>
+		<%= render "job_result_branding", branding: "aggregator", count: count %>
 		<div class="hide-for-small-only">
 		  <img src="http://placehold.it/728x90&text=Ad+728+x+90" alt="in-line ad">
 		  <hr />

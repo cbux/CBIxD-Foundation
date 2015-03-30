@@ -167,6 +167,18 @@ class JobsController < ApplicationController
 			# "Not Applicable" => "not-applicable",
 		}
 
+		#Hash for salary
+		@salary_filters = {
+			"$40,000+ (4563)" => "$40,000+",
+			"$60,000+ (945)" => "$60,000+",
+			"$80,000+ (867)" => "$80,000+",
+			"$100,000+ (701)" => "$100,000+",
+			"$140,000+ (603)" => "$120,000+",
+			"$160,000+ (545)" => "$160,000+",
+			"$180,000+ (345)" => "$180,000+",
+			"$200,000+ (222)" => "$200,000+",
+		}
+
 
 		# Hash for Category Filters
 		@job_category_filters = {

@@ -1,0 +1,167 @@
+<!--header-->
+<div id="st-container" class="st-container">
+<!-- content push wrapper -->
+<div class="st-pusher">
+<div class="row">
+  <div class="small-12 large-7 columns">
+      <h1> Sales Representative Jobs in Atlanta, GA</h1>
+        <p>100 jobs found</p>
+  </div><!--close column-->
+
+<!--start sort larger devices-->
+<div class="row">
+  <div class="medium-8 right columns show-for-medium-up">
+    <dl class="sub-nav right">
+      <dt>Sort By:</dt>
+        <dd class=<%= @sort_relevance %>>
+            <%= link_to "Relevance", params.merge(:sort => "relevance").except(:action, :controller) %>
+        </dd>
+          <dd class=<%= @sort_location %>>
+          <%= link_to "Location", params.merge(:sort => "location").except(:action, :controller) %>
+        </dd>
+        <dd class=<%= @sort_date %>>
+            <%= link_to "Date", params.merge(:sort => "date").except(:action, :controller) %>
+        </dd>
+      </dl>
+  </div>
+
+<!--filter button for mobile only-->
+  <div class="small-4 medium-2 columns hide-for-large-up">
+    <a href="jobs/mobile_filters" class="button secondary expand">Filter</a>
+  </div>
+
+  <!--start sort small devices-->
+  <div class="small-5 medium-3 right hide-for-medium-up">
+        <select>
+          <option checked value="husker">Relevance</option>
+          <option value="starbuck">Date</option>
+          <option value="hotdog">Location</option>
+        </select>
+  </div>
+</div>
+
+<!--filters-->
+<div class="row">
+  <div class="large-3 columns show-for-large-up">
+      <div class="show-for-medium-up">
+        <button href="#" data-dropdown="jobalertdrop" aria-controls="jobalertdrop" aria-expanded="false" id="job-alert-btn" class="button secondary">Create Job Alert</button><br>
+          <div id="jobalertdrop" data-dropdown-content class="f-dropdown" aria-hidden="true" tabindex="-1">
+            <div class="medium-12 columns">
+              <p class="emailalerttext"><i class="fa fa-envelope-o">&nbsp;&nbsp;</i>Be the first to hear about new jobs like these</p>
+                <p>Sales Representative Jobs in Atlanta, GA</a>
+                    <% if session[:auth] == "authenticated" %>
+                      <label>Your Email
+                      <input type="text" placeholder="prepopulatedemail@gmail.com">
+                      </label>
+                    <% else %>
+                      <label>Your Email
+                      <input type="text" placeholder="">
+                      </label>
+                    <% end %>
+                      <label>
+                        <a class="button postfix unauthalertbtn" id="job_alert_btn create-alert-dropdown">Create Job Alert</a>
+                      </label>
+                      <p>You can cancel job alerts anytime</p>
+          </div>
+      </div>
+      </div>
+    <h4>Filter By</h4>
+    <!--Distance from you-->
+    <%= render 'distance_within_filter' %>
+        <!--Date Posted-->
+    <!-- TODO Style this radio list to our tag/radio list-->
+    <%= render 'date_posted_filter' %>
+    <!--Job Type-->
+    <%= render 'job_type_filter' %>
+        <!--Salary-->
+    <%= render 'salary_range_filter' %>
+    <!--Location (City/State)-->
+    <%= render 'location_filter' %>
+    <!--Job Level-->
+    <%= render 'job_level_filters' %>
+        <!--Job Category-->
+    <%= render 'shared/multiselect_field', multiselect_label: "Job Categories", multiselect_id: "job-category-filter", hash_for_options: @job_category_filters %>
+    <!--Skills-->
+    <%= render 'shared/multiselect_field', multiselect_label: "Skills", multiselect_id: "skills-filter", hash_for_options: @skills_filters %>
+        <!--Degree Required-->
+    <% render 'degree_required_filter' %>
+    <% render 'shared/multiselect_field', multiselect_label: "Degree Required", multiselect_id: "degree-required-filter", hash_for_options: @degree_requirements_filters %>
+    <div class="hide-for-small-only">
+      <img src="http://placehold.it/160x600&text=Ad+160+x+600" alt="in-line ad">
+    </div>
+</div>
+
+<!--job result-->
+  <div class="small-12 large-9 columns refresh">
+
+    <p id="spinner"><span class="fa fa-spinner fa-spin" style="font-sie: 60px;"></span></p>
+    <div id="gs-job-results">
+
+      <% if params[:keyword] == "careerbuilder" %>
+    <%= render 'company_search_result' %>
+    <% end %>
+
+    <% if params[:results].to_i > 0 %>
+      <% params[:results].to_i.times do |i| %>
+        <% if i.to_i == 5 %>
+          <div class="hide-for-small-only">
+            <img src="http://placehold.it/728x90&text=Ad+728+x+90" alt="in-line ad">
+            <hr />
+          </div>
+        <% else %>
+          <%= render 'job_result', count: i %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+<!--job alert-->
+      <% if params[:action] != "after_apply" %>
+                  <div class="medium-12 large-12 large-centered right columns hide-for-small-only panel">
+                    <p class="emailalerttext"><i class="fa fa-envelope-o">&nbsp;&nbsp;</i>Be the first to hear about new jobs like these</p>
+                    <p>Sales Representative Jobs in Atlanta, GA</a>
+                            <div class="row">
+                                <% if session[:auth] == "authenticated" %>
+                                  <div class="small-8 medium-6 large-5 columns">
+                                    <label>Your Email
+                                    <input type="text" placeholder="prepopulatedemail@gmail.com">
+                                    </label>
+                                  </div>
+                                  <% else %>
+                                    <div class="small-8 medium-6 large-5 columns">
+                                    <label>Your Email
+                                    <input type="text" placeholder="">
+                                    </label>
+                                  </div>
+                                  <% end %>
+                                <div class="small-4 medium-5 large-3 columns">
+                                    <label>
+                                      <a class="button postfix unauthalertbtn" id="job_alert_btn">Create Job Alert</a>
+                                    </label>
+                                 </div>
+                                 <div class ="small-2 medium-2 large-2 columns">
+                                 </div>
+                            </div>
+                            <p>You can cancel job alerts anytime</p>
+                  </div>
+  </div>
+  <% end %>
+
+  </div>
+</div>
+  <div class="row">
+<%= render 'pagination' %>
+
+<!--JDRP Quickview-->
+    <nav class="st-menu st-effect-7" id="menu-7">
+      <!-- sidebar content -->
+    </nav>
+
+    <div class="st-content"><!-- this is the wrapper for the content -->
+      <div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+        JDP Quick View
+      </div><!-- /st-content-inner -->
+    </div><!-- /st-content -->
+
+</div>
+</div><!-- /st-pusher -->
+</div><!-- /st-container -->

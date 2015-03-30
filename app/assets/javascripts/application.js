@@ -632,5 +632,17 @@ $( "#jrp-filter" ).click(function(){
      $("#reset-filter").show();
 });
 
+setTimeout(function() {
+      $(".sticky-pop-up").show(600);
+}, 2000);
+
+$( ".sticky-pop-up-close" ).click(function(){
+     $(".sticky-pop-up").hide(600);
+});
+
+$("#email-job").click(function(){
+    $(".email-drawer-jdp").toggle(300);
+});
+
 $(function(){ $(document).foundation(); });
  
