@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   get 'jobs_matrix/index'
   get 'jobs_matrix/jdp'
+  get 'jobs_matrix/aggregator'
 
   get 'jdp/index'
 

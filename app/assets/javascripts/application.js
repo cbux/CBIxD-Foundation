@@ -631,6 +631,21 @@ $( "#reset-filter" ).click(function(){
 $( "#jrp-filter" ).click(function(){
      $("#reset-filter").show();
 });
+var moreJDP ="false"
+$( "#show-more-jd span" ).click(function(){
+    $(this).toggleClass('fa-chevron-left fa-chevron-right ');
+    if(moreJDP){
+        $(this).siblings(".view-hide-jdp").html("Show Less JOB Description");
+        moreJDP=false;
+    }
+    else{
+        $(this).siblings(".view-hide-jdp").html("View More JOB Description");
+        moreJDP=true;
+
+    }
+    $(this).parent().next().slideToggle();
+});
+
 
 setTimeout(function() {
       $(".sticky-pop-up").show(600);

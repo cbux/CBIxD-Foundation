@@ -1,5 +1,8 @@
 class JobsMatrixController < ApplicationController
   def index
+  end  
+
+  def aggregator
   end
 
   def jdp
