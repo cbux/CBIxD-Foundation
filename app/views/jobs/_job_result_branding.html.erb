@@ -18,7 +18,13 @@
 <% end %>
 
 <div class='columns small-10 large-6' >
-  <h2><%= link_to "Commercial Property and Casualty Insurance Account Executive - #{branding.upcase}", jobs_jdp_path(branding: branding) %></h2>
+  <h2>
+  	<% if branding == "aggregator" %>
+  		<%= link_to "Commercial Property and Casualty Insurance Account Executive - #{branding.upcase}", jobs_matrix_aggregator_path %>
+  	<% else %>
+  		<%= link_to "Commercial Property and Casualty Insurance Account Executive - #{branding.upcase}", jobs_jdp_path(branding: branding) %>
+  	<% end %>
+  </h2>
 </div>
 
 <div class='<%= company_columns %>'>
