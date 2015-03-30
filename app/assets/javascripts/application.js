@@ -338,6 +338,14 @@ $(document).ready(function() {
             $('#job-level-filter .filter').prop('checked', false);
         }
     });
+    $('#salary-filter input[type="checkbox"]').change(function() {
+        if($(this).attr("name") != "all") {
+            $('#salary-filter .filter-all').prop('checked', false);
+        }
+        if($(this).attr("name") == "all") {
+            $('#salary-filter .filter').prop('checked', false);
+        }
+    });
 // });
   jQuery(function($) {
     $("select[multiple]").bsmSelect({
