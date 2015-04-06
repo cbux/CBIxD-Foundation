@@ -17,12 +17,13 @@
 			background-image: linear-gradient(rgba(0, 70, 107, 0) 50%, rgba(0, 70, 107, 0.5));
 			height:624px;
 			width:100%;
-			padding-top:4em;
+			padding-top:3em;
 		}
 		h1 {
 			font-size: 2.25em;
 			color: #fff;
 			font-weight:300;
+			margin-bottom: 0.5em;
 		}
 		.search {
 			padding: 1.5em 2.5em;
@@ -89,6 +90,10 @@
 				color: #1A8EC0;
 			}
 		}
-
+		.browse img {
+			height: 24px;
+			width: auto;
+			margin-right: 1em;
+		}
 	}
 }
