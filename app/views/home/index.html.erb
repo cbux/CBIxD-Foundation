@@ -1,102 +1,30 @@
 <% @search_bar = "no-search" %>
-<div class="fullpage-home">
-	<div class="section search">
-		<div class="row no-top-margin">
-			<div class="column small-12 medium-10 medium-centered text-center">
-				<h1>
-					Find the right job. Right now.
-				</h1>
+<div class="new-homepage">
+	<div class="hero-wrapper">
+		<div class="hero">
+			<div class="row">
+				<div class="column small-12 text-center">
+					<h1>Find the Right Job. <strong>Right Now</strong></h1>
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="column small-12 medium-9 medium-centered">
-				<%= form_tag(jobs_path, method: "get") do %>
-					<div class="row collapse"> 
-				  	<div class="column small-12 medium-4">
-				  		<label>Keyword
-				  			<input type="text" name="keyword" placeholder="" style="height: 50px; font-size: 2em;" />
+			<div class="row">
+				<div class="column small-10 small-centered search">
+					<div class="row collapse">
+						<div class="column input-wrapper">
+							<label>KEYWORD
+								<input type="text" id="search-key">
 							</label>
-				  	</div>
-				  	<div class="column small-12 medium-4">
-				  		<label>Location
-				  			<input type="text" name="location" placeholder="" style="height: 50px; font-size: 2em;" />
+						</div>
+						<div class="column input-wrapper">
+							<label>LOCATION
+								<input type="text" id="search-loc">
 							</label>
-				  	</div>
-				  	<div class="column small-12 medium-4 end">
-				  		<%= submit_tag "Search", class: "button postfix", name: "", style: "height: 50px; font-size: 1.5em; line-height: 50px;" %>
-				  	</div>
-					</div>
-				<% end %>
-			</div>
-		</div>
-	</div>
-	<div class="hide-for-small-only" style="padding:1.5em 0">
-		<div class="row no-top-margin">
-			<div class="column medium-12">
-				<image src="http://placehold.it/630x90" style="display:block; margin-left: auto; margin-right: auto;" />
-			</div>
-		</div>
-	</div>
-	<% if session[:recent_searches].count > 0 %>
-		<div class="section">
-			<%= render 'home/recent_searches' %>
-		</div>
-	<% end %>
-	<div class="section">
-		<div class="row">
-			<div class="column small-12 medium-10 medium-centered">
-				<h1 class="text-center">
-					Let our network of employers find you
-				</h1>
-			</div>
-			<div class="column small-10 medium-3 medium-offset-1">
-				<div class="row">
-					<div class="column small-12">
-						<div class="row">
-							<div class="column small-2">
-								<i class="fa fa-search fa-2x"></i>
-							</div>
-							<div class="column small-10">
-								<h3>Know when a company finds your resume.</h3>
-							</div>
 						</div>
-						<div class="row">
-							<div class="column small-2">
-								<i class="fa fa-file-text fa-2x"></i>
-							</div>
-							<div class="column small-10">
-								<h3>Save up to 5 resumes to quickly apply to jobs.</h3>
-							</div>
-						</div>
-						<div class="row">
-							<div class="column small-2">
-								<i class="fa fa-eye fa-2x"></i>
-							</div>
-							<div class="column small-10">
-								<h3>Be notified when your application is viewed. </h3>
-							</div>
-						</div>
-						<div class="row">
-							<div class="column small-2">
-								<i class="fa fa-group fa-2x"></i>
-							</div>
-							<div class="column small-10">
-								<h3>View the competition when applying to jobs.</h3>
-							</div>
+						<div class="column input-wrapper">
+							<input type="submit" class="button expand" value="FIND JOBS">
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="column small-12 medium-7 end">
-				<% @path = resumes_path(step: "details") %>
-				<%= render 'resumes/upload_resume' %>
-			</div>
-		</div>
-	</div>
-	<div class="hide-for-small-only" style="padding:1.5em 0">
-		<div class="row no-top-margin">
-			<div class="column medium-12">
-				<image src="http://placehold.it/630x90" style="display:block; margin-left: auto; margin-right: auto;" />
 			</div>
 		</div>
 	</div>

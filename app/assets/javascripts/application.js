@@ -184,10 +184,6 @@ $('#search-btn').click(function() {
 
 $(document).ready(function() {
 
-	if($(".home-exp-4").length >0 ) {
-		$('#fullpage').fullpage();
-	}
-
     $("#job_alert_btn").click(function(){
     $("#job_alert_btn").replaceWith( '<a class="job_alert_active">Job Alert Created</a>');
     });
